@@ -12,10 +12,12 @@ D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.AssemblyReference.cache
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.g.cs
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.cache
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.lref
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.baml
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.g.resources
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
@@ -23,5 +25,3 @@ D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.exe
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.pdb
-D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.g.cs
-D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.baml
