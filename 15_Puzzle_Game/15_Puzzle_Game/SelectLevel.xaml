@@ -8,6 +8,9 @@
         Title="MainWindow" Height="450" Width="800"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/BackGround.jpg"/>
+        </Grid.Background>
         <Grid Margin="30,30,30,30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -27,7 +30,7 @@
                 Height="160"
                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
-                ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFF89B29" 
             />
 
             <Button
@@ -39,7 +42,7 @@
                  Height="160"
                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                  Style="{StaticResource MaterialDesignRaisedLightButton}"
-                 ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                 ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFF89B29" 
             />
 
             <Button
@@ -51,7 +54,7 @@
                  Height="160"
                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                  Style="{StaticResource MaterialDesignRaisedLightButton}"
-                 ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                 ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFF89B29" 
              />
 
             <Button
@@ -63,7 +66,7 @@
                  Height="160"
                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                  Style="{StaticResource MaterialDesignRaisedLightButton}"
-                 ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                 ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFF89B29" 
             />
 
         </Grid>

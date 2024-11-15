@@ -1,5 +1,9 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace _15_Puzzle_Game
@@ -10,5 +14,4 @@ namespace _15_Puzzle_Game
     public partial class App : Application
     {
     }
-
 }

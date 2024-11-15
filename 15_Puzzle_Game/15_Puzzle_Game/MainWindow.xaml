@@ -15,14 +15,18 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
+
         <StackPanel>
-            <Label Height="100" Width="470" FontSize="60" HorizontalAlignment="Center">The Puzzle Game</Label>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/BackGround.jpg"/>
+            </StackPanel.Background>
+            <Label Height="100" Width="557" FontSize="60" HorizontalAlignment="Center" Foreground="White" FontFamily="Unispace">The Puzzle Game</Label>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="*" />
                     <RowDefinition Height="50"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <Grid
@@ -33,10 +37,10 @@
                         materialDesign:ButtonAssist.CornerRadius="10"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Style="{StaticResource MaterialDesignRaisedButton}"
-                        ToolTip="MaterialDesignRaisedButton with Round Corners"
+                        ToolTip="MaterialDesignRaisedButton with Round Corners" Background="#FFF89B29"
                         >
-                    <TextBlock
-                           FontSize="40" Text="CHỌN MÀN" />        
+                        <TextBlock
+                           FontSize="40" Text="CHỌN MÀN" Foreground="White" />
                     </Button>
                 </Grid>
 
@@ -48,17 +52,13 @@
                         materialDesign:ButtonAssist.CornerRadius="10"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Style="{StaticResource MaterialDesignRaisedButton}"
-                        ToolTip="MaterialDesignRaisedButton with Round Corners"
+                        ToolTip="MaterialDesignRaisedButton with Round Corners" Foreground="White" Background="#FFF89B29"
                         >
-                    <TextBlock
-                           FontSize="40" Text="THOÁT" />                
+                        <TextBlock
+                           FontSize="40" Text="THOÁT" />
                     </Button>
                 </Grid>
 
-
-                <!--<Button Grid.Row="3" Height="100" FontSize="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="194,0,212,0">
-                    THOÁT
-                </Button>-->
             </Grid>
         </StackPanel>
 
