@@ -24,3 +24,4 @@ D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\SelectLevel\obj\De
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\SelectLevel\obj\Debug\net8.0-windows\SelectLevel.pdb
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\SelectLevel\obj\Debug\net8.0-windows\SelectLevel.genruntimeconfig.cache
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\SelectLevel\obj\Debug\net8.0-windows\ref\SelectLevel.dll
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\SelectLevel\obj\Debug\net8.0-windows\SelectLevel.sourcelink.json

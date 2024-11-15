@@ -24,3 +24,6 @@ D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\net8.0-windows\15_Puzzle_Game.pdb
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\net8.0-windows\15_Puzzle_Game.genruntimeconfig.cache
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\net8.0-windows\ref\15_Puzzle_Game.dll
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\net8.0-windows\SelectLevel.baml
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\net8.0-windows\SelectLevel.g.cs
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\net8.0-windows\15_Puzzle_Game.sourcelink.json
