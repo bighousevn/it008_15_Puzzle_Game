@@ -1,0 +1,86 @@
+﻿<Window x:Class="_15_Puzzle_Game.PauseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_15_Puzzle_Game"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        DataContext="{StaticResource MainVM}"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        Title="PauseWindow" Height="450" Width="400">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="Exit Game"
+                   TextAlignment="Center"
+                   FontFamily="{StaticResource mainFont}"
+                   FontSize="100"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="1"></TextBlock>
+
+        <TextBlock Grid.Row="1"
+                   Margin="3, 0, 3, 0"
+                   Text="Bạn có chắc chắn muốn thoát game không?"
+                   TextAlignment="Center"
+                   FontFamily="{StaticResource mainFont}"
+                   FontSize="50"
+                   TextWrapping="Wrap"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"></TextBlock>    
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Button Height="100"
+                        materialDesign:ButtonAssist.CornerRadius="25 25 0 0"
+                        Margin="5 0 5 0"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        ToolTip="MaterialDesignRaisedSecondaryButton with Round Top Corners"
+                        VerticalAlignment="Bottom">
+                    <TextBlock Text="Xác Nhận"
+                               FontFamily="{StaticResource mainFont}"
+                               FontSize="50"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></TextBlock>
+                </Button>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button Height="100"
+                        materialDesign:ButtonAssist.CornerRadius="25 25 0 0"
+                        Margin="5 0 5 0"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        ToolTip="MaterialDesignRaisedSecondaryButton with Round Top Corners"
+                        VerticalAlignment="Bottom"
+                        Command="{Binding CloseWindowCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+                    <TextBlock Text="Hủy"
+                               FontFamily="{StaticResource mainFont}"
+                               FontSize="50"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></TextBlock>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
