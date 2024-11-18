@@ -66,6 +66,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Congratulation.xaml.cs">
+      <DependentUpon>Congratulation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GamePlayWindow.xaml.cs">
       <DependentUpon>GamePlayWindow.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Page Include="Congratulation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GamePlayWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

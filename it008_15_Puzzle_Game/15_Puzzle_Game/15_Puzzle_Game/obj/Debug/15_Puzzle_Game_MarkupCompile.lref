@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
 FD:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\App.xaml;;
 FD:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\GamePlayWindow.xaml;;
@@ -6,4 +7,15 @@ FD:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzl
 FD:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\ResourceXAML\MainResource.xaml;;
 FD:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\SelectLevel.xaml;;
 FD:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\SettingWindow.xaml;;
+=======
+﻿
+FC:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\App.xaml;;
+FC:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\Congratulation.xaml;;
+FC:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\GamePlayWindow.xaml;;
+FC:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\MainWindow.xaml;;
+FC:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\PauseWindow.xaml;;
+FC:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\ResourceXAML\MainResource.xaml;;
+FC:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\SelectLevel.xaml;;
+FC:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\SettingWindow.xaml;;
+>>>>>>> 539ba17b90cef05d1b41c59df24f541e1fbf7c64
 
