@@ -4,7 +4,7 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
   xmlns:local="clr-namespace:_15_Puzzle_Game"
-  StartupUri="GamePlayWindow.xaml">
+  StartupUri="Congratulation.xaml">
   <!--StartupUri="SelectLevel.xaml">-->
     <Application.Resources>
         <ResourceDictionary>
