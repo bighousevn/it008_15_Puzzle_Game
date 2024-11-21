@@ -186,87 +186,87 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top" Margin="0,10,0,0"/>
 
-            <materialDesign:Card Grid.Row="1" Grid.RowSpan="2">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Grid.Row="1" ItemsSource="{Binding Items1}" Grid.RowSpan="2">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn DisplayMemberBinding="{Binding Code}" Width="120">
-                                    <GridViewColumn.HeaderTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="UserName"
-                                           FontSize="35"
-                                           FontFamily="{StaticResource mainFont}"/>
-                                        </DataTemplate>
-                                    </GridViewColumn.HeaderTemplate>
+                <materialDesign:Card Grid.Row="1" Grid.RowSpan="2">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <ListView Grid.Row="1" ItemsSource="{Binding Items1}" Grid.RowSpan="2">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Code}" Width="120">
+                                        <GridViewColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="UserName"
+                                               FontSize="35"
+                                               FontFamily="{StaticResource mainFont}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.HeaderTemplate>
 
-                                    <GridViewColumn.Header>
-                                        <GridViewColumnHeader Padding="0">
-                                            <GridViewColumnHeader.Template>
-                                                <ControlTemplate TargetType="GridViewColumnHeader">
-                                                    <Grid Background="{TemplateBinding Background}">
-                                                        <ContentPresenter HorizontalAlignment="Center" 
-                                          VerticalAlignment="Center"/>
-                                                    </Grid>
-                                                </ControlTemplate>
-                                            </GridViewColumnHeader.Template>
-                                        </GridViewColumnHeader>
-                                    </GridViewColumn.Header>
-                                </GridViewColumn>
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Padding="0">
+                                                <GridViewColumnHeader.Template>
+                                                    <ControlTemplate TargetType="GridViewColumnHeader">
+                                                        <Grid Background="{TemplateBinding Background}">
+                                                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </GridViewColumnHeader.Template>
+                                            </GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
 
-                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="100">
-                                    <GridViewColumn.HeaderTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="Move"
-                                           FontSize="35"
-                                           FontFamily="{StaticResource mainFont}"/>
-                                        </DataTemplate>
-                                    </GridViewColumn.HeaderTemplate>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="100">
+                                        <GridViewColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="Move"
+                                               FontSize="35"
+                                               FontFamily="{StaticResource mainFont}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.HeaderTemplate>
 
-                                    <GridViewColumn.Header>
-                                        <GridViewColumnHeader Padding="0" 
-                                                  Width="140" 
-                                                  Margin="0">
-                                            <GridViewColumnHeader.Template>
-                                                <ControlTemplate TargetType="GridViewColumnHeader">
-                                                    <Grid Background="{TemplateBinding Background}">
-                                                        <ContentPresenter HorizontalAlignment="Center" 
-                                          VerticalAlignment="Center"/>
-                                                    </Grid>
-                                                </ControlTemplate>
-                                            </GridViewColumnHeader.Template>
-                                        </GridViewColumnHeader>
-                                    </GridViewColumn.Header>
-                                </GridViewColumn>
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Padding="0" 
+                                                      Width="140" 
+                                                      Margin="0">
+                                                <GridViewColumnHeader.Template>
+                                                    <ControlTemplate TargetType="GridViewColumnHeader">
+                                                        <Grid Background="{TemplateBinding Background}">
+                                                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </GridViewColumnHeader.Template>
+                                            </GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
 
-                                <GridViewColumn DisplayMemberBinding="{Binding Description}" Width="100">
-                                    <GridViewColumn.HeaderTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="Time"
-                                           FontSize="35"
-                                           FontFamily="{StaticResource mainFont}"/>
-                                        </DataTemplate>
-                                    </GridViewColumn.HeaderTemplate>
-                                    <GridViewColumn.Header>
-                                        <GridViewColumnHeader Padding="0" 
-                                                  Width="140" 
-                                                  Margin="0">
-                                            <GridViewColumnHeader.Template>
-                                                <ControlTemplate TargetType="GridViewColumnHeader">
-                                                    <Grid Background="{TemplateBinding Background}">
-                                                        <ContentPresenter HorizontalAlignment="Center" 
-                                                              VerticalAlignment="Center"/>
-                                                    </Grid>
-                                                </ControlTemplate>
-                                            </GridViewColumnHeader.Template>
-                                        </GridViewColumnHeader>
-                                    </GridViewColumn.Header>
-                                </GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </ScrollViewer>
-            </materialDesign:Card>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Width="100">
+                                        <GridViewColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="Time"
+                                               FontSize="35"
+                                               FontFamily="{StaticResource mainFont}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.HeaderTemplate>
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Padding="0" 
+                                                      Width="140" 
+                                                      Margin="0">
+                                                <GridViewColumnHeader.Template>
+                                                    <ControlTemplate TargetType="GridViewColumnHeader">
+                                                        <Grid Background="{TemplateBinding Background}">
+                                                            <ContentPresenter HorizontalAlignment="Center" 
+                                                                  VerticalAlignment="Center"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </GridViewColumnHeader.Template>
+                                            </GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </ScrollViewer>
+                </materialDesign:Card>
         </Grid>
         <Grid Grid.Row="0"
               Grid.Column="1">

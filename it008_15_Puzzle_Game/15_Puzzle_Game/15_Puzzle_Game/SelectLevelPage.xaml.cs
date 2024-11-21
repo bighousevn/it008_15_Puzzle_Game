@@ -53,5 +53,10 @@ namespace _15_Puzzle_Game
                                                         "D:\\DoAnLegit\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Picture\\sunset-river-nature-scenery-4k-wallpaper-uhdpaper.com-693@0@j.jpg",
                                                         "D:\\DoAnLegit\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Picture\\BackGround.jpg"));
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

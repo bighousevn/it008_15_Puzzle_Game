@@ -34,7 +34,6 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
-
         public MainViewModel()
         {
             PauseCommand = new RelayCommand<object>((p) => { return true; }, (p) => { 
