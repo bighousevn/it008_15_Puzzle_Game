@@ -1,0 +1,71 @@
+﻿<Page x:Class="_15_Puzzle_Game.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_15_Puzzle_Game"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:viewmodel="clr-namespace:_15_Puzzle_Game.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      DataContext="{StaticResource MainVM}"
+      mc:Ignorable="d"
+      Height="675" Width="1200"
+      Title="MainPage">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/BackGround.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.8*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <Button Background="Transparent"
+                BorderBrush="Transparent"
+                Content="Let's play!"
+                FontFamily="{StaticResource mainFont}"
+                FontSize="70"
+                Height="100"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center" 
+                Margin="442,160,442,10" Click="Button_Click" />
+        <TextBlock Text="Sliding Puzzle"
+                   FontFamily="{StaticResource mainFont}"
+                   FontSize="100"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top" 
+                   Margin="0,268,0,0" 
+                   Grid.RowSpan="2"/>
+
+        <materialDesign:PopupBox Grid.Row="0" 
+                                 StaysOpen="True"
+                                 Margin="0,30,25,0"
+                                 Height="90"
+                                 Width="90"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalAlignment="Top"
+                                 HorizontalAlignment="Right">
+            <materialDesign:PopupBox.ToggleContent>
+                <materialDesign:PackIcon Kind="Settings"
+                                         Width="80"
+                                         Height="80"
+                                         VerticalAlignment="Center"/>
+            </materialDesign:PopupBox.ToggleContent>
+
+            <Button></Button>
+        </materialDesign:PopupBox>
+    </Grid>
+</Page>

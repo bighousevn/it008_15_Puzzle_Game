@@ -15,7 +15,7 @@
 
             <StackPanel  Height="Auto" Width="Auto" Margin="0,-20,0,0">
 
-                <TextBlock Text="YOU WON" FontFamily="Fonts/#SVN-Coder's Crux" FontSize="70"  FontWeight="Bold" Height ="Auto" Foreground="#FFFAA41B" HorizontalAlignment="Center"/>
+                <TextBlock Text="YOU WON" FontFamily="Fonts/#SVN-Coder's Crux" FontSize="100"  FontWeight="Bold" Height ="Auto" Foreground="#FFFAA41B" HorizontalAlignment="Center"/>
                 <TextBlock Text="Congratulations" FontFamily="pack://application:,,,/Fonts/#SVN-Coder's Crux" FontSize="40" Margin="0,0,0,10" HorizontalAlignment="Center"/>
 
                 <Border  Margin="0,0,0,20" CornerRadius="10">
@@ -33,7 +33,11 @@
                     </Grid>
                 </Border>
                 <Border  CornerRadius="10" Margin="0,0,0,20" >
-                    <Grid Background="#FF18B3EC" Height="280">
+                    <Grid Background="#FF18B3EC" Height="250">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="0*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
@@ -42,8 +46,7 @@
                         <TextBlock Grid.Row="0" Text="Leaderboard" FontFamily="pack://application:,,,/Fonts/#SVN-Coder's Crux" FontSize="30" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center" Foreground="#3a6689">
                         </TextBlock>
 
-                        <DataGrid x:Name="LeaderboardDataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
-                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF18B3EC" BorderBrush="Transparent" FontFamily="pack://application:,,,/Fonts/#SVN-Coder's Crux" FontSize="25">
+                        <DataGrid x:Name="LeaderboardDataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Background="#FF18B3EC" BorderBrush="Transparent" FontFamily="pack://application:,,,/Fonts/#SVN-Coder's Crux" FontSize="25">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Rank"  Binding="{Binding Rank}" Width="80" />
                                 <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" Width="140" />
