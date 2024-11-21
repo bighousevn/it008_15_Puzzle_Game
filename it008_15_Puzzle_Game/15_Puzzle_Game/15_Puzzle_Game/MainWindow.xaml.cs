@@ -23,6 +23,7 @@ namespace _15_Puzzle_Game
         public MainWindow()
         {
             InitializeComponent();
+            mainFrame.Navigate(new MainPage());
         }
     }
 }

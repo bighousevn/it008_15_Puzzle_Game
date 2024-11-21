@@ -29,5 +29,9 @@ namespace _15_Puzzle_Game
             mediaPlayer.Position = TimeSpan.Zero;  // Đưa về đầu
             mediaPlayer.Play();  // Phát lại nhạc
         }
+        public void AdjustVolume(double value)
+        {
+            mediaPlayer.Volume = value;
+        }
     }
 }

@@ -1,0 +1,66 @@
+﻿<Page x:Class="_15_Puzzle_Game.PicturePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_15_Puzzle_Game"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      DataContext="{StaticResource MainVM}"
+      mc:Ignorable="d"
+      Title="PicturePage"
+      Height="487.5"
+      Width="825">
+    <Grid Margin="40">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="Button1"
+                Grid.Column="0"
+                Grid.Row="0"
+                Height="150"
+                Width="150">
+            <Button.Background>
+                <ImageBrush x:Name="BtnBackGround1"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Button2"
+                Grid.Column="0"
+                Grid.Row="1"
+                Height="150"
+                Width="150">
+            <Button.Background>
+                <ImageBrush x:Name="BtnBackGround2"
+                            Stretch="Uniform"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Button3"
+                Grid.Column="1"
+                Grid.Row="0"
+                Height="150"
+                Width="150">
+            <Button.Background>
+                <ImageBrush x:Name="BtnBackGround3"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Button4"
+                Grid.Column="1"
+                Grid.Row="1"
+                Height="150"
+                Width="150">
+            <Button.Background>
+                <ImageBrush x:Name="BtnBackGround4"></ImageBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

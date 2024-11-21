@@ -4,30 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
-D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\
-=======
-C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\
->>>>>>> 539ba17b90cef05d1b41c59df24f541e1fbf7c64
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\
 _15_Puzzle_Game
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\App.xaml
-6-66010358
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\App.xaml
+9-1116068877
 
-121140003187
-161617940403
-GamePlayWindow.xaml;MainWindow.xaml;PauseWindow.xaml;ResourceXAML\MainResource.xaml;SelectLevel.xaml;SettingWindow.xaml;
-=======
-C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\App.xaml
-71292610102
-
-12774859273
-16-1838083980
-Congratulation.xaml;GamePlayWindow.xaml;MainWindow.xaml;PauseWindow.xaml;ResourceXAML\MainResource.xaml;SelectLevel.xaml;SettingWindow.xaml;
->>>>>>> 539ba17b90cef05d1b41c59df24f541e1fbf7c64
+151865427940
+21-1761658466
+Congratulation.xaml;GamePlayPage.xaml;MainPage.xaml;MainWindow.xaml;PauseWindow.xaml;PicturePage.xaml;ResourceXAML\MainResource.xaml;SelectLevelPage.xaml;SettingWindow.xaml;
 
 False
 
