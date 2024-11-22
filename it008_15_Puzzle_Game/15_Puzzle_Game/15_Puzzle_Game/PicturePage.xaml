@@ -29,7 +29,9 @@
                 Grid.Column="0"
                 Grid.Row="0"
                 Height="150"
-                Width="150">
+                Width="150"
+                Command="{Binding PictureCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
             <Button.Background>
                 <ImageBrush x:Name="BtnBackGround1"></ImageBrush>
             </Button.Background>
@@ -38,7 +40,9 @@
                 Grid.Column="0"
                 Grid.Row="1"
                 Height="150"
-                Width="150">
+                Width="150"
+                Command="{Binding PictureCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
             <Button.Background>
                 <ImageBrush x:Name="BtnBackGround2"
                             Stretch="Uniform"></ImageBrush>
@@ -48,16 +52,21 @@
                 Grid.Column="1"
                 Grid.Row="0"
                 Height="150"
-                Width="150">
+                Width="150"
+                Command="{Binding PictureCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
             <Button.Background>
-                <ImageBrush x:Name="BtnBackGround3"></ImageBrush>
+                <ImageBrush x:Name="BtnBackGround3"
+                            ImageSource="{Binding PictureSource}"></ImageBrush>
             </Button.Background>
         </Button>
         <Button x:Name="Button4"
                 Grid.Column="1"
                 Grid.Row="1"
                 Height="150"
-                Width="150">
+                Width="150"
+                Command="{Binding PictureCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
             <Button.Background>
                 <ImageBrush x:Name="BtnBackGround4"></ImageBrush>
             </Button.Background>

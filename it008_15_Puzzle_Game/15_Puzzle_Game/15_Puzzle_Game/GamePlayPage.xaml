@@ -24,7 +24,6 @@
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="7.5*"></RowDefinition>
         </Grid.RowDefinitions>
-
         <Grid Grid.Column="0"
               Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -298,9 +297,10 @@
             </Grid>
             <Grid>
                 <Image x:Name="sampleImage"
-                       Source="Picture/BackGround.jpg"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Center"></Image>
+                       VerticalAlignment="Center"
+                       Source="{Binding PictureSource}">
+                </Image>
             </Grid>
         </Grid>
         <Frame Grid.Column="0"

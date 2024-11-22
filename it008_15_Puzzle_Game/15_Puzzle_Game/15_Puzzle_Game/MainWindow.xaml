@@ -13,7 +13,6 @@
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
         TextOptions.TextRenderingMode="Auto"
-        WindowStyle="SingleBorderWindow"
         Style="{StaticResource MaterialDesignWindow}"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 
 namespace _15_Puzzle_Game.ViewModel
@@ -18,6 +20,7 @@ namespace _15_Puzzle_Game.ViewModel
         public ICommand CloseWindowCommand { get; set; }
         public ICommand GamePlayCommand { get; set; }
         public ICommand SelectLevelCommand { get; set; }
+        public ICommand PictureCommand { get; set; }
 
         private double _SiderValue = 0.3;
         public double SiderValue
@@ -29,6 +32,21 @@ namespace _15_Puzzle_Game.ViewModel
                 {
                     _SiderValue = value;
                     OnPropertyChanged(nameof(SiderValue));
+                }
+
+            }
+        }
+
+        private BitmapImage _PictureSource;
+        public BitmapImage PictureSource
+        {
+            get { return _PictureSource; }
+            set
+            {
+                if (_PictureSource != value)
+                {
+                    _PictureSource = value;
+                    OnPropertyChanged(nameof(PictureSource));
                 }
 
             }
@@ -47,12 +65,24 @@ namespace _15_Puzzle_Game.ViewModel
             });
 
             CloseWindowCommand = new RelayCommand<object>((p) => { return true; }, p => CloseWindow(p));
+
+            PictureCommand = new RelayCommand<Button>((p) => { return true; }, (p) => getPictureSource(p));
         }
 
         private void CloseWindow(object parameter) 
         {
             if (parameter is Window window)
                 window.Close();
+        }
+
+        private void getPictureSource(object parameter)
+        {
+            if (parameter is Button button)
+            {
+                var backGround = button.Background as ImageBrush;
+                BitmapImage bitmapImage = backGround.ImageSource as BitmapImage;
+                PictureSource = bitmapImage;
+            }
         }
     }
 }
