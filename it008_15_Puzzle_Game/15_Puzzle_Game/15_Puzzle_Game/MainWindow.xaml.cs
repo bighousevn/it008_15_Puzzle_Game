@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _15_Puzzle_Game.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

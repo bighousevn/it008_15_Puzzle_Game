@@ -27,7 +27,7 @@ namespace _15_Puzzle_Game
         {
             InitializeComponent();
             appInstance = (App)Application.Current;
-            page = new SelectLevelPage();   
+            page = new SelectLevelPage(); 
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

@@ -14,7 +14,9 @@
       Background="{DynamicResource MaterialDesignPaper}"
       DataContext="{StaticResource MainVM}"
       mc:Ignorable="d"
-      Title="GamePlayPage" Height="675" Width="1200">
+      Title="GamePlayPage"
+      d:DesignHeight="675"
+      d:DesignWidth="1210">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"></ColumnDefinition>
@@ -24,7 +26,6 @@
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="7.5*"></RowDefinition>
         </Grid.RowDefinitions>
-
         <Grid Grid.Column="0"
               Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -67,9 +68,10 @@
                                FontFamily="{StaticResource mainFont}"
                                FontSize="60"
                                FontStyle="Italic"></TextBlock>
+                    
                     <TextBlock x:Name="TextBlockTime"
                                Grid.Row="1"
-                               Text="00:00:00"
+                               Text="{Binding DisplayTime}"
                                TextAlignment="Center" 
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
@@ -186,87 +188,95 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top" Margin="0,10,0,0"/>
 
-            <materialDesign:Card Grid.Row="1" Grid.RowSpan="2">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Grid.Row="1" ItemsSource="{Binding Items1}" Grid.RowSpan="2">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn DisplayMemberBinding="{Binding Code}" Width="120">
-                                    <GridViewColumn.HeaderTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="UserName"
-                                           FontSize="35"
-                                           FontFamily="{StaticResource mainFont}"/>
-                                        </DataTemplate>
-                                    </GridViewColumn.HeaderTemplate>
+                <materialDesign:Card Grid.Row="1" Grid.RowSpan="2"
+                                     HorizontalAlignment="Stretch"
+                                     VerticalAlignment="Stretch">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch">
+                        <ListView Grid.Row="1" 
+                                  ItemsSource="{Binding Items1}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Code}" 
+                                                    Width="auto">
+                                        <GridViewColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="UserName"
+                                                           FontSize="35"
+                                                           FontFamily="{StaticResource mainFont}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.HeaderTemplate>
 
-                                    <GridViewColumn.Header>
-                                        <GridViewColumnHeader Padding="0">
-                                            <GridViewColumnHeader.Template>
-                                                <ControlTemplate TargetType="GridViewColumnHeader">
-                                                    <Grid Background="{TemplateBinding Background}">
-                                                        <ContentPresenter HorizontalAlignment="Center" 
-                                          VerticalAlignment="Center"/>
-                                                    </Grid>
-                                                </ControlTemplate>
-                                            </GridViewColumnHeader.Template>
-                                        </GridViewColumnHeader>
-                                    </GridViewColumn.Header>
-                                </GridViewColumn>
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Padding="0">
+                                                <GridViewColumnHeader.Template>
+                                                    <ControlTemplate TargetType="GridViewColumnHeader">
+                                                        <Grid Background="{TemplateBinding Background}">
+                                                            <ContentPresenter HorizontalAlignment="Center" 
+                                                                              VerticalAlignment="Center"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </GridViewColumnHeader.Template>
+                                            </GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
 
-                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="100">
-                                    <GridViewColumn.HeaderTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="Move"
-                                           FontSize="35"
-                                           FontFamily="{StaticResource mainFont}"/>
-                                        </DataTemplate>
-                                    </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name}"
+                                                Width="auto">
+                                        <GridViewColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="Move"
+                                               FontSize="35"
+                                               FontFamily="{StaticResource mainFont}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.HeaderTemplate>
 
-                                    <GridViewColumn.Header>
-                                        <GridViewColumnHeader Padding="0" 
-                                                  Width="140" 
-                                                  Margin="0">
-                                            <GridViewColumnHeader.Template>
-                                                <ControlTemplate TargetType="GridViewColumnHeader">
-                                                    <Grid Background="{TemplateBinding Background}">
-                                                        <ContentPresenter HorizontalAlignment="Center" 
-                                          VerticalAlignment="Center"/>
-                                                    </Grid>
-                                                </ControlTemplate>
-                                            </GridViewColumnHeader.Template>
-                                        </GridViewColumnHeader>
-                                    </GridViewColumn.Header>
-                                </GridViewColumn>
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Padding="0" 
+                                                      Width="140" 
+                                                      Margin="0">
+                                                <GridViewColumnHeader.Template>
+                                                    <ControlTemplate TargetType="GridViewColumnHeader">
+                                                        <Grid Background="{TemplateBinding Background}">
+                                                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </GridViewColumnHeader.Template>
+                                            </GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
 
-                                <GridViewColumn DisplayMemberBinding="{Binding Description}" Width="100">
-                                    <GridViewColumn.HeaderTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="Time"
-                                           FontSize="35"
-                                           FontFamily="{StaticResource mainFont}"/>
-                                        </DataTemplate>
-                                    </GridViewColumn.HeaderTemplate>
-                                    <GridViewColumn.Header>
-                                        <GridViewColumnHeader Padding="0" 
-                                                  Width="140" 
-                                                  Margin="0">
-                                            <GridViewColumnHeader.Template>
-                                                <ControlTemplate TargetType="GridViewColumnHeader">
-                                                    <Grid Background="{TemplateBinding Background}">
-                                                        <ContentPresenter HorizontalAlignment="Center" 
-                                                              VerticalAlignment="Center"/>
-                                                    </Grid>
-                                                </ControlTemplate>
-                                            </GridViewColumnHeader.Template>
-                                        </GridViewColumnHeader>
-                                    </GridViewColumn.Header>
-                                </GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </ScrollViewer>
-            </materialDesign:Card>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Description}"
+                                                    Width="auto">
+                                        <GridViewColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="Time"
+                                               FontSize="35"
+                                               FontFamily="{StaticResource mainFont}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.HeaderTemplate>
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Padding="0" 
+                                                      Width="140" 
+                                                      Margin="0">
+                                                <GridViewColumnHeader.Template>
+                                                    <ControlTemplate TargetType="GridViewColumnHeader">
+                                                        <Grid Background="{TemplateBinding Background}">
+                                                            <ContentPresenter HorizontalAlignment="Center" 
+                                                                  VerticalAlignment="Center"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </GridViewColumnHeader.Template>
+                                            </GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </ScrollViewer>
+                </materialDesign:Card>
         </Grid>
         <Grid Grid.Row="0"
               Grid.Column="1">
@@ -289,18 +299,16 @@
                         Style="{StaticResource MaterialDesignFloatingActionButton}"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
-                        Margin="0,10,0,0" Click="SettingButton_Click">
-                    <Button.InputBindings>
-                        <KeyBinding Key="Esc" 
-                                    Command="{Binding SettingCommand}"/>
-                    </Button.InputBindings>
+                        Margin="0,10,0,0" 
+                        Command="{Binding SettingGamePlayCommand}">
                 </Button>
             </Grid>
             <Grid>
                 <Image x:Name="sampleImage"
-                       Source="Picture/BackGround.jpg"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Center"></Image>
+                       VerticalAlignment="Center"
+                       Source="{Binding PictureSource}">
+                </Image>
             </Grid>
         </Grid>
         <Frame Grid.Column="0"

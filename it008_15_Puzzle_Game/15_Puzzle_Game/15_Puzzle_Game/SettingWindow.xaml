@@ -92,7 +92,7 @@
                         Height="80"
                         Margin="10, 0, 10, 0"
                         Padding="0"
-                        Command="{Binding CloseWindowCommand}"
+                        Command="{Binding CloseSettingGamePlayWindowCommand}"
                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
                     
                     <TextBlock Text="Hủy"

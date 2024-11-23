@@ -1,4 +1,5 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using _15_Puzzle_Game.ViewModel;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,13 +25,7 @@ namespace _15_Puzzle_Game
         public GamePlayPage()
         {
             InitializeComponent();
-            
-        }
-
-        public GamePlayPage(string path1, string path2, string path3, string path4)
-        {
-            InitializeComponent();
-            PlayFrame.Navigate(new PicturePage(path1, path2, path3, path4));
+            PlayFrame.Navigate(new PicturePage());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -48,12 +43,6 @@ namespace _15_Puzzle_Game
             {
                 UndoButton.IsEnabled = false;
             }
-        }
-
-        private void SettingButton_Click(object sender, RoutedEventArgs e)
-        {
-            SettingWindow wd = new SettingWindow();
-            wd.ShowDialog();
         }
     }
 }

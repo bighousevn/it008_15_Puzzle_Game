@@ -5,10 +5,12 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace _15_Puzzle_Game.ViewModel
-{
+{ 
     public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

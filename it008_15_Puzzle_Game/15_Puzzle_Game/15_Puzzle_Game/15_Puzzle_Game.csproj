@@ -183,9 +183,6 @@
     <Resource Include="Picture\1039168.png" />
     <Resource Include="Picture\1092839.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="BackGround.jpg" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
