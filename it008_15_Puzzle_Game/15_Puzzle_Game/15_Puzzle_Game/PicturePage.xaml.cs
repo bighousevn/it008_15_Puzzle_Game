@@ -28,18 +28,6 @@ namespace _15_Puzzle_Game
         public PicturePage(string path1, string path2, string path3, string path4)
         {
             InitializeComponent();
-            ImageBrush imageBrush1 = new ImageBrush();
-            imageBrush1.ImageSource = new BitmapImage(new Uri(path1, UriKind.RelativeOrAbsolute));
-            Button1.Background = imageBrush1;
-            ImageBrush imageBrush2 = new ImageBrush();
-            imageBrush2.ImageSource = new BitmapImage(new Uri(path2, UriKind.RelativeOrAbsolute));
-            Button2.Background = imageBrush2;
-            ImageBrush imageBrush3 = new ImageBrush();
-            imageBrush3.ImageSource = new BitmapImage(new Uri(path3, UriKind.RelativeOrAbsolute));
-            Button3.Background = imageBrush3;
-            ImageBrush imageBrush4 = new ImageBrush();
-            imageBrush4.ImageSource = new BitmapImage(new Uri(path4, UriKind.RelativeOrAbsolute));
-            Button4.Background = imageBrush4;
         }
     }
 }

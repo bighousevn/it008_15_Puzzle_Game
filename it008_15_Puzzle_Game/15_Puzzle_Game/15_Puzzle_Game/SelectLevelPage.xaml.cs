@@ -32,15 +32,18 @@ namespace _15_Puzzle_Game
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new GamePlayPage("D:\\DoAnLegitFinal\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Picture\\1039168.png",
-                                                        "D:\\DoAnLegitFinal\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Picture\\1092839.jpg",
-                                                        "D:\\DoAnLegitFinal\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Picture\\BackGround.jpg",
-                                                        "D:\\DoAnLegitFinal\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Picture\\sunset-river-nature-scenery-4k-wallpaper-uhdpaper.com-693@0@j.jpg"));
+            NavigationService.Navigate(new GamePlayPage());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void SettingButton_Click(object sender, RoutedEventArgs e)
+        {
+            SettingWindow wd = new SettingWindow();
+            wd.ShowDialog();
         }
     }
 }

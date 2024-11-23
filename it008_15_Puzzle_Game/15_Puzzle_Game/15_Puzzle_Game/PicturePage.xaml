@@ -13,8 +13,8 @@
       DataContext="{StaticResource MainVM}"
       mc:Ignorable="d"
       Title="PicturePage"
-      Height="487.5"
-      Width="825">
+      d:DesignHeight="487.5"
+      d:DesignWidth="825">
     <Grid Margin="40">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -33,7 +33,8 @@
                 Command="{Binding PictureCommand}"
                 CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
             <Button.Background>
-                <ImageBrush x:Name="BtnBackGround1"></ImageBrush>
+                <ImageBrush x:Name="BtnBackGround1"
+                            ImageSource="{Binding Picture1}"></ImageBrush>
             </Button.Background>
         </Button>
         <Button x:Name="Button2"
@@ -45,7 +46,8 @@
                 CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
             <Button.Background>
                 <ImageBrush x:Name="BtnBackGround2"
-                            Stretch="Uniform"></ImageBrush>
+                            Stretch="Uniform"
+                            ImageSource="{Binding Picture2}"></ImageBrush>
             </Button.Background>
         </Button>
         <Button x:Name="Button3"
@@ -57,7 +59,7 @@
                 CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
             <Button.Background>
                 <ImageBrush x:Name="BtnBackGround3"
-                            ImageSource="{Binding PictureSource}"></ImageBrush>
+                            ImageSource="{Binding Picture3}"></ImageBrush>
             </Button.Background>
         </Button>
         <Button x:Name="Button4"
@@ -68,7 +70,8 @@
                 Command="{Binding PictureCommand}"
                 CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
             <Button.Background>
-                <ImageBrush x:Name="BtnBackGround4"></ImageBrush>
+                <ImageBrush x:Name="BtnBackGround4"
+                            ImageSource="{Binding Picture4}"></ImageBrush>
             </Button.Background>
         </Button>
     </Grid>

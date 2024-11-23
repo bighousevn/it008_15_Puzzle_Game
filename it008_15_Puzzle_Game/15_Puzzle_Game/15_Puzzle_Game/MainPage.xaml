@@ -13,10 +13,11 @@
       TextOptions.TextRenderingMode="Auto"
       Background="{DynamicResource MaterialDesignPaper}"
       DataContext="{StaticResource MainVM}"
-      mc:Ignorable="d"
-      Height="675" Width="1200"
-      Title="MainPage">
-
+      mc:Ignorable="d" 
+      d:DesignHeight="675"
+      d:DesignWidth="1210"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Picture/BackGround.jpg"/>
@@ -31,25 +32,35 @@
                 <ColumnDefinition Width="0.8*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="1"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Content="Let's play!"
+                        FontFamily="{StaticResource mainFont}"
+                        FontSize="70"
+                        Height="100"
+                        Width="300"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Padding="0"
+                        Click="Button_Click" />
+            </Grid>
+            
         </Grid>
 
-        <Button Background="Transparent"
-                BorderBrush="Transparent"
-                Content="Let's play!"
-                FontFamily="{StaticResource mainFont}"
-                FontSize="70"
-                Height="100"
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center" 
-                Margin="442,160,442,10" Click="Button_Click" />
         <TextBlock Text="Sliding Puzzle"
                    FontFamily="{StaticResource mainFont}"
                    FontSize="100"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Top" 
-                   Margin="0,268,0,0" 
-                   Grid.RowSpan="2"/>
+                   VerticalAlignment="Top" Grid.Row="1"/>
 
         <Button Background="Transparent"
                 BorderBrush="Transparent"
@@ -59,11 +70,11 @@
                 VerticalAlignment="Top"
                 Margin="10 100 0 0">
             <materialDesign:PackIcon Kind="ExitToApp"
-                                     Width="80"
-                                     Height="80" 
-                                     RenderTransformOrigin="0.5,0.5"
-                                     HorizontalAlignment="Center"
-                                     VerticalAlignment="Center">
+                                 Width="80"
+                                 Height="80" 
+                                 RenderTransformOrigin="0.5,0.5"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center">
                 <materialDesign:PackIcon.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -76,15 +87,15 @@
         </Button>
 
         <Button Background="Transparent"
-                BorderBrush="Transparent"
-                Height="100"
-                Width="100"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Margin="0 100 10 0"
-                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                Style="{StaticResource MaterialDesignFloatingActionButton}"
-                Command="{Binding SettingCommand}">
+            BorderBrush="Transparent"
+            Height="100"
+            Width="100"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0 100 10 0"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            Style="{StaticResource MaterialDesignFloatingActionButton}"
+            Command="{Binding SettingCommand}">
             <materialDesign:PackIcon Kind="Settings"
                                      Width="80"
                                      Height="80"
@@ -92,4 +103,5 @@
                                      VerticalAlignment="Center"></materialDesign:PackIcon>
         </Button>
     </Grid>
+
 </Page>
