@@ -39,11 +39,5 @@ namespace _15_Puzzle_Game
         {
             NavigationService.GoBack();
         }
-
-        private void SettingButton_Click(object sender, RoutedEventArgs e)
-        {
-            SettingWindow wd = new SettingWindow();
-            wd.ShowDialog();
-        }
     }
 }

@@ -56,7 +56,7 @@
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Style="{StaticResource MaterialDesignRaisedButton}"
                         ToolTip="MaterialDesignRaisedSecondaryButton with Round Top Corners"
-                        VerticalAlignment="Bottom">
+                        VerticalAlignment="Bottom" Click="Button_Click">
                     <TextBlock Text="Xác Nhận"
                                FontFamily="{StaticResource mainFont}"
                                FontSize="50"

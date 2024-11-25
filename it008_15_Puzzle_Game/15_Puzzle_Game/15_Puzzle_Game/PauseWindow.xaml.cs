@@ -19,9 +19,23 @@ namespace _15_Puzzle_Game
     /// </summary>
     public partial class PauseWindow : Window
     {
+        private SettingWindow _settingWindow;
+
         public PauseWindow()
         {
             InitializeComponent();
+        }
+
+        public PauseWindow(SettingWindow settingWindow)
+        {
+            InitializeComponent();
+            _settingWindow = settingWindow;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            _settingWindow.Close();
         }
     }
 }
