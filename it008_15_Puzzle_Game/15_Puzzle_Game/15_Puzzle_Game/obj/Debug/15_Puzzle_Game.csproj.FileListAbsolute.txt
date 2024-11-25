@@ -301,3 +301,5 @@ D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Ga
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.exe
 D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.pdb
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.g.cs
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.baml
