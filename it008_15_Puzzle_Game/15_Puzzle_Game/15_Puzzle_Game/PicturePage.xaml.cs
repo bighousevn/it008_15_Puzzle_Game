@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _15_Puzzle_Game.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,11 +22,6 @@ namespace _15_Puzzle_Game
     public partial class PicturePage : Page
     {
         public PicturePage()
-        {
-            InitializeComponent();
-        }
-
-        public PicturePage(string path1, string path2, string path3, string path4)
         {
             InitializeComponent();
         }

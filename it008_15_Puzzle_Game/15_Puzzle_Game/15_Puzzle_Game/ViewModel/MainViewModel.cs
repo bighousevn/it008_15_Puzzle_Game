@@ -31,10 +31,10 @@ namespace _15_Puzzle_Game.ViewModel
 
 
 
-        private string path1 = "D:\\DoAnLegitFinal\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Picture\\1039168.png";
-        private string path2 = "D:\\DoAnLegitFinal\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Picture\\1092839.jpg";
-        private string path3 = "D:\\DoAnLegitFinal\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Picture\\BackGround.jpg";
-        private string path4 = "D:\\DoAnLegitFinal\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Picture\\sunset-river-nature-scenery-4k-wallpaper-uhdpaper.com-693@0@j.jpg";
+        private string path1 = "Picture/1039168.png";
+        private string path2 = "Picture/1092839.jpg";
+        private string path3 = "Picture/BackGround.jpg";
+        private string path4 = "Picture/sunset-river-nature-scenery-4k-wallpaper-uhdpaper.com-693@0@j.jpg";
 
         private string _Picture1;
         private string _Picture2;
