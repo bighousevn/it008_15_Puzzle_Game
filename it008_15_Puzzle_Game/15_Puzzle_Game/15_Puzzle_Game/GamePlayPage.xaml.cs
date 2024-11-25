@@ -25,7 +25,6 @@ namespace _15_Puzzle_Game
         public GamePlayPage()
         {
             InitializeComponent();
-            PlayFrame.Navigate(new PicturePage());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

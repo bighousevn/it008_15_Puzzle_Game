@@ -25,5 +25,10 @@ namespace _15_Puzzle_Game
         {
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new GamePlayPage());
+        }
     }
 }
