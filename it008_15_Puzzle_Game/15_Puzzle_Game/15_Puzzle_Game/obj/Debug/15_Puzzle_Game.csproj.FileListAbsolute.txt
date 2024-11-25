@@ -257,3 +257,5 @@ D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Pu
 D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
 D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.exe
 D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.pdb
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.baml

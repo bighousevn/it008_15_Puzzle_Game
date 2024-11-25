@@ -186,6 +186,7 @@ namespace _15_Puzzle_Game.ViewModel
             PictureCommand = new RelayCommand<Button>((p) => { return true; }, (p) =>
             {
                 getPictureSource(p);
+                ResetTimer();
                 StartTimer();
             });
 
@@ -234,6 +235,14 @@ namespace _15_Puzzle_Game.ViewModel
                     PictureSource = Picture3;
                 if (button.Name == "Button4")
                     PictureSource = Picture4;
+            }
+        }
+
+        private void ResetTimer()
+        {
+            if (_isTimerRunning)
+            {
+                _elapsedTime = 0;
             }
         }
 
