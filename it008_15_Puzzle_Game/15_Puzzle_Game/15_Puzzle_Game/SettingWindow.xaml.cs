@@ -21,13 +21,11 @@ namespace _15_Puzzle_Game
     public partial class SettingWindow : Window
     {
         private App appInstance;
-        private SelectLevelPage page;
 
         public SettingWindow()
         {
             InitializeComponent();
             appInstance = (App)Application.Current;
-            page = new SelectLevelPage(); 
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -36,6 +34,12 @@ namespace _15_Puzzle_Game
             {
                 appInstance.AdjustVolume(e.NewValue);
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PauseWindow wd = new PauseWindow(this); 
+            wd.ShowDialog();
         }
     }
 }

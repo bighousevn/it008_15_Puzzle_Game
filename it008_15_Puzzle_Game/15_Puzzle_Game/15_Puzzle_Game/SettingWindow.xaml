@@ -76,7 +76,7 @@
                         Height="80"
                         Margin="10, 0, 10, 0"
                         Padding="0"
-                        Command="{Binding PauseCommand}">
+                        Click="Button_Click">
                     <TextBlock Text="Xác Nhận"
                                TextAlignment="Center"
                                FontSize="50"

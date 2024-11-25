@@ -27,6 +27,7 @@ namespace _15_Puzzle_Game.ViewModel
         public ICommand Button3 { get; set; }
         public ICommand Button4 { get; set; }
         public ICommand Button5 { get; set; }
+        public ICommand ClearPictureSourceCommand {  get; set; }
 
 
 
@@ -178,10 +179,6 @@ namespace _15_Puzzle_Game.ViewModel
                 CloseWindow(p);
             });
 
-            SettingCommand = new RelayCommand<object>((p) => { return true; }, p => {
-                CloseWindow(p);
-            });
-
             CloseWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
                 CloseWindow(p);
             });
@@ -192,25 +189,30 @@ namespace _15_Puzzle_Game.ViewModel
                 StartTimer();
             });
 
-            Button3 = new RelayCommand<Frame>((p) => { return true; }, p => {
+            Button3 = new RelayCommand<object>((p) => { return true; }, p => {
                 Picture1 = path1;
                 Picture2 = path2;
                 Picture3 = path3;
                 Picture4 = path4;
             });
 
-            Button4 = new RelayCommand<Frame>((p) => { return true; }, p => {
+            Button4 = new RelayCommand<object>((p) => { return true; }, p => {
                 Picture1 = path3;
                 Picture2 = path2;
                 Picture3 = path1;
                 Picture4 = path4;
             });
             
-            Button5 = new RelayCommand<Frame>((p) => { return true; }, p => {
+            Button5 = new RelayCommand<object>((p) => { return true; }, p => {
                 Picture1 = path1;
                 Picture2 = path4;
                 Picture3 = path3;
                 Picture4 = path2;
+            });
+
+            ClearPictureSourceCommand = new RelayCommand<object>((p) => { return true; }, p =>
+            {
+                PictureSource = string.Empty;
             });
         }
 
