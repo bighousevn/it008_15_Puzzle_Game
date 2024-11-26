@@ -316,7 +316,8 @@
         <Frame Grid.Column="0"
                Grid.Row="1"
                x:Name ="PlayFrame"
-               NavigationUIVisibility ="Hidden">
+               NavigationUIVisibility ="Hidden"
+               >
             
         </Frame>
     </Grid>

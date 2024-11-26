@@ -29,6 +29,7 @@ namespace _15_Puzzle_Game
         public List<string> locations = new List<string>();
         public List<string> currentLocations = new List<string>();
         public BitmapImage bitmap;
+        public double paddingBetween;
 
         string win_position;
         string current_position;
@@ -37,12 +38,16 @@ namespace _15_Puzzle_Game
         public PlayPage()
         {
             InitializeComponent();
-            Initial();
+            Initial("3");
+        }
+        public PlayPage(string n)
+        {
+            InitializeComponent();
+            Initial(n);
         }
 
-
         //Thêm hình ảnh vào
-        private void Initial()
+        private void Initial(string n)
         {
             if (imageList != null)
             {
@@ -61,30 +66,56 @@ namespace _15_Puzzle_Game
                 win_position = "";
             }
 
-            MainViewModel ViewModel = new MainViewModel();
+            bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            switch (n)
             {
-                bitmap = new BitmapImage();
-                bitmap.BeginInit();
-
-                bitmap.UriSource = new Uri("file:///C:/Users/Admin/Downloads/462572198_1069373354980230_9189314957615253265_n.png");
-                bitmap.EndInit();
-
-                CreateImageList();
-                AddImages();
+                case "1":
+                    OpenFileDialog openFileDialog = new OpenFileDialog();
+                    openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                    if (openFileDialog.ShowDialog() == true)
+                    {
+                        bitmap.UriSource = new Uri(openFileDialog.FileName);
+                        bitmap.EndInit();
+                        n = "3";
+                    }
+                    break;
+                default:
+                    bitmap.UriSource = new Uri("file:///C:/Users/Admin/Downloads/att.SnDpF8p5BlAIgRHWIy3BF1F1ec5cJQ3TGPcztQtLMOY.jpg");
+                    bitmap.EndInit();
+                    break;
 
             }
+
+            switch (int.Parse(n))
+            {
+                case 3:
+                    paddingBetween = 10;
+                    break;
+                case 4:
+                    paddingBetween = 8;
+                    break;
+                default:
+                    paddingBetween = 5;
+                    break;
+            }
+
+            CreateImageList(int.Parse(n));
+            AddImages(int.Parse(n));
+
+            
         }
 
 
 
         //Tạo các image nhỏ 3x3,4x4,5x5
-        private void CreateImageList()
+        private void CreateImageList(int n)
         {
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < n*n; i++)
             {
                 Image temp = new Image();
-                temp.Width = 130;
-                temp.Height = 130;
+                temp.Width = 390/n;
+                temp.Height = 390/n;
                 temp.Tag = i.ToString();
 
                 temp.MouseLeftButtonDown += OnPicClick;
@@ -95,9 +126,9 @@ namespace _15_Puzzle_Game
 
 
 
-        private CroppedBitmap CropImage2(BitmapImage main_bitmap, int x, int y, int height, int width)
+        private CroppedBitmap CropImage2(BitmapImage main_bitmap, int x, int y, int height, int width, int n)
         {
-            if (main_bitmap.PixelWidth == width * 3 && main_bitmap.PixelHeight == height * 3)
+            if (main_bitmap.PixelWidth >= width * n && main_bitmap.PixelHeight >= height * n)
             {
                 CroppedBitmap croppedImage = new CroppedBitmap(main_bitmap, new Int32Rect(x, y, height, width));
                 return croppedImage;
@@ -110,16 +141,17 @@ namespace _15_Puzzle_Game
         }
 
 
-        private void CropImage(BitmapImage main_bitmap, int height, int width)
+        private void CropImage(BitmapImage main_bitmap, int height, int width,int n)
         {
             int x = 0, y = 0;
+           
 
-            for (int blocks = 0; blocks < 9; blocks++)
+            for (int blocks = 0; blocks < n*n; blocks++)
             {
-                CroppedBitmap cropped_image = CropImage2(main_bitmap, x, y, height, width);
+                CroppedBitmap cropped_image = CropImage2(main_bitmap, x, y, height, width, n);
                 images.Add(cropped_image);
                 x += width;
-                if (x == width * 3)
+                if (x == width * n)
                 {
                     x = 0;
                     y += height;
@@ -127,18 +159,18 @@ namespace _15_Puzzle_Game
             }
         }
 
-        private void AddImages()
+        private void AddImages(int n)
         {
-            float scaleX = (float)390 / bitmap.PixelWidth;
-            float scaleY = (float)390 / bitmap.PixelHeight;
+            float scaleX = (float) 390 / bitmap.PixelWidth;
+            float scaleY = (float) 390 / bitmap.PixelHeight;
 
             BitmapImage tempBitmap = ResizeAndDisplayImage(bitmap, scaleX, scaleY);
-            CropImage(tempBitmap, 130, 130);
+            CropImage(tempBitmap, ((int)tempBitmap.Width)/n, ((int)tempBitmap.Height)/n, n);
             for (int i = 1; i < imageList.Count; i++)
             {
                 imageList[i].Source = images[i];
             }
-            PlaceImageList();
+            PlaceImageList(n);
         }
 
 
@@ -177,19 +209,37 @@ namespace _15_Puzzle_Game
         }
 
 
+        static bool CountInversions(List<Image> puzzle)
+        {
+            int inversions = 0;
+            int length = puzzle.Count;
 
-        private void PlaceImageList()
+            // Tính số đảo
+            for (int i = 0; i < length - 1; i++)
+            {
+                for (int j = i + 1; j < length; j++)
+                {
+                    if (int.Parse(puzzle[i].Tag.ToString())> int.Parse(puzzle[j].Tag.ToString()) && puzzle[i].Tag.ToString() != "0" && puzzle[j].Tag.ToString() != "0")
+                    {
+                        inversions++;
+                    }
+                }
+            }
+            return inversions%2==0;
+        }
+
+
+        private void PlaceImageList(int n)
         {
             //Shuffle lại danh sách hình ảnh
-           // var shuffleImages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            //imageList = shuffleImages;
 
+            var shuffleImages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            while(!CountInversions(shuffleImages))
+                shuffleImages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            imageList = shuffleImages;
 
-
-
-            double paddingBetween = 20; // Padding giữa các hình ảnh
-            double x = 0; // Khởi tạo vị trí x
-            double y = 0; // Khởi tạo vị trí y
+            double x = 200; // Khởi tạo vị trí x
+            double y = 50; // Khởi tạo vị trí y
             double width = imageList[0].Width; // Chiều rộng của mỗi hình ảnh
             double height = imageList[0].Height; // Chiều cao của mỗi hình ảnh
 
@@ -199,10 +249,10 @@ namespace _15_Puzzle_Game
                 var img = imageList[i];
 
                 // Điều chỉnh vị trí hình ảnh
-                if (i == 3 || i == 6)  // Khi tới hình ảnh thứ 4 và thứ 7, di chuyển xuống hàng mới
+                if (i % n == 0 && i!=0)  // Khi tới hình ảnh thứ 4 và thứ 7, di chuyển xuống hàng mới
                 {
                     y = y + height + paddingBetween;  // Di chuyển xuống hàng mới
-                    x = 0; // Đặt lại x về vị trí đầu dòng mới
+                    x = 200; // Đặt lại x về vị trí đầu dòng mới
                 }
 
                 // Đặt vị trí hình ảnh trong Canvas hoặc Grid
@@ -228,7 +278,7 @@ namespace _15_Puzzle_Game
                 {
                     // Kiểm tra thuộc tính Tag (hoặc các thuộc tính khác tùy theo yêu cầu)
                     locations.Add(image.Tag?.ToString());
-                    //Console.WriteLine(image.Tag.ToString());
+                    
                 }
             }
 
@@ -236,17 +286,18 @@ namespace _15_Puzzle_Game
         }
 
 
-        private bool CanSwap(Image clickedImage, Image emptyBox)
+        private bool CanSwap(Image clickedImage, Image emptyBox, double n)
         {
             // Lấy tọa độ của mảnh ghép đã click và ô trống
             double clickedLeft = Canvas.GetLeft(clickedImage);
             double clickedTop = Canvas.GetTop(clickedImage);
             double emptyLeft = Canvas.GetLeft(emptyBox);
             double emptyTop = Canvas.GetTop(emptyBox);
-
+            var check = 390 / n + paddingBetween;
+            
             // Kiểm tra nếu mảnh ghép kề ô trống theo chiều ngang hoặc chiều dọc
-            return (Math.Abs(clickedLeft - emptyLeft) == 150 && clickedTop == emptyTop) || // Kề nhau theo chiều ngang
-                   (Math.Abs(clickedTop - emptyTop) == 150 && clickedLeft == emptyLeft);   // Kề nhau theo chiều dọc
+            return (Math.Abs(clickedLeft - emptyLeft) == ((int)check) && clickedTop == emptyTop) || // Kề nhau theo chiều ngang
+                   (Math.Abs(clickedTop - emptyTop) == ((int)check) && clickedLeft == emptyLeft);   // Kề nhau theo chiều dọc
         }
 
         private void UpdateLocations(Image clickedImage, Image emptyBox)
@@ -280,36 +331,35 @@ namespace _15_Puzzle_Game
                     congratulationWindow.Show();
 
             }
-            //Console.WriteLine(current_position);
-           // Console.WriteLine(win_position);
+           
         }
 
 
 
         private void OnPicClick(object sender, MouseButtonEventArgs e)
         {
-            //Image clickedImage = (Image)sender;
-            //Image emptyBox = imageList.FirstOrDefault(x => x.Tag.ToString() == "0");
+            Image clickedImage = (Image)sender;
+            Image emptyBox = imageList.FirstOrDefault(x => x.Tag.ToString() == "0");
 
-            //// Lấy tọa độ của các mảnh ghép
-            //Point clickedImagePosition = new Point(Canvas.GetLeft(clickedImage), Canvas.GetTop(clickedImage));
-            //Point emptyBoxPosition = new Point(Canvas.GetLeft(emptyBox), Canvas.GetTop(emptyBox));
+            // Lấy tọa độ của các mảnh ghép
+            Point clickedImagePosition = new Point(Canvas.GetLeft(clickedImage), Canvas.GetTop(clickedImage));
+            Point emptyBoxPosition = new Point(Canvas.GetLeft(emptyBox), Canvas.GetTop(emptyBox));
 
+            var n = Math.Sqrt(imageList.Count());
+            // Kiểm tra xem mảnh ghép có thể hoán đổi với ô trống không
+            if (CanSwap(clickedImage, emptyBox, n))
+            {
+                // Hoán đổi vị trí giữa mảnh ghép và ô trống
+                Canvas.SetLeft(clickedImage, emptyBoxPosition.X);
+                Canvas.SetTop(clickedImage, emptyBoxPosition.Y);
 
-            //// Kiểm tra xem mảnh ghép có thể hoán đổi với ô trống không
-            //if (CanSwap(clickedImage, emptyBox))
-            //{
-            //    // Hoán đổi vị trí giữa mảnh ghép và ô trống
-            //    Canvas.SetLeft(clickedImage, emptyBoxPosition.X);
-            //    Canvas.SetTop(clickedImage, emptyBoxPosition.Y);
+                Canvas.SetLeft(emptyBox, clickedImagePosition.X);
+                Canvas.SetTop(emptyBox, clickedImagePosition.Y);
 
-            //    Canvas.SetLeft(emptyBox, clickedImagePosition.X);
-            //    Canvas.SetTop(emptyBox, clickedImagePosition.Y);
+                // Cập nhật lại danh sách các vị trí của mảnh ghép
+                UpdateLocations(clickedImage, emptyBox);
 
-            //    // Cập nhật lại danh sách các vị trí của mảnh ghép
-            //    UpdateLocations(clickedImage, emptyBox);
-
-            //}
+            }
 
             // Kiểm tra xem trò chơi đã hoàn thành chưa
             CheckGame();
