@@ -1,0 +1,25 @@
+﻿<Page x:Class="_15_Puzzle_Game.PlayPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_15_Puzzle_Game"
+
+       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+       TextElement.FontWeight="Regular"
+       TextElement.FontSize="13"
+       TextOptions.TextRenderingMode="Auto"
+       Background="{DynamicResource MaterialDesignPaper}"
+       DataContext="{StaticResource MainVM}"
+       mc:Ignorable="d"
+       Title="PlayPage"
+       d:DesignHeight="487.5"
+       d:DesignWidth="825"
+      >
+    
+    <Grid>
+        <Canvas Name="PuzzleCanvas">
+            
+        </Canvas>
+    </Grid>
+</Page>
