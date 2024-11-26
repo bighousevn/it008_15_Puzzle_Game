@@ -28,7 +28,28 @@ namespace _15_Puzzle_Game
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new GamePlayPage());
+            Button clickedButton = sender as Button;
+            if (clickedButton != null)
+            {
+                // Lấy background của button vừa click
+                var backgroundImage = clickedButton.Background as ImageBrush;
+                if (backgroundImage != null)
+                {
+                    // Nếu ImageSource là BitmapImage, lấy đường dẫn
+                    string imagePath = backgroundImage.ImageSource.ToString();
+
+
+
+                    // Chuyển sang Page2 và truyền đường dẫn hình ảnh
+                    GamePlayPage gamePlayPage = new GamePlayPage(imagePath);
+                    this.NavigationService.Navigate(gamePlayPage);
+                }
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

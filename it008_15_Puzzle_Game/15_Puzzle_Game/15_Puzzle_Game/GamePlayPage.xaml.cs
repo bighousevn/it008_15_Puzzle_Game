@@ -22,7 +22,7 @@ namespace _15_Puzzle_Game
     /// </summary>
     public partial class GamePlayPage : Page
     {
-        public GamePlayPage()
+        public GamePlayPage(string picture)
         {
             InitializeComponent();
         }
