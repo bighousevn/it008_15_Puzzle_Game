@@ -93,6 +93,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\LeaderBoard.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -120,6 +121,7 @@
     <Compile Include="Model\User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\XepHang.cs" />
     <Compile Include="PauseWindow.xaml.cs">
       <DependentUpon>PauseWindow.xaml</DependentUpon>
     </Compile>

@@ -11,11 +11,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Threading;
-
+using System.Collections.ObjectModel;
+using _15_Puzzle_Game.Model;
+using System.Data.Entity;
 namespace _15_Puzzle_Game.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
+        private ObservableCollection<XepHang> _XepHangList;
+        public ObservableCollection<XepHang> XepHangList { get => _XepHangList; set { _XepHangList = value; OnPropertyChanged(); } }
+
         public ICommand PauseCommand { get; set; }
         public ICommand SettingGamePlayCommand { get; set; }
         public ICommand SettingCommand { get; set; }
@@ -161,7 +166,7 @@ namespace _15_Puzzle_Game.ViewModel
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);
             _timer.Tick += Timer_Tick;
-
+            LoadXepHangData();
             PauseCommand = new RelayCommand<object>((p) => { return true; }, (p) => { 
                 PauseWindow wd = new PauseWindow();
                 wd.ShowDialog();
@@ -172,6 +177,7 @@ namespace _15_Puzzle_Game.ViewModel
                 StopTimer();
                 SettingWindow wd = new SettingWindow();
                 wd.ShowDialog();
+                
             });
 
             CloseSettingGamePlayWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
@@ -269,5 +275,30 @@ namespace _15_Puzzle_Game.ViewModel
             _elapsedTime++;
             DisplayTime = TimeSpan.FromSeconds(_elapsedTime).ToString(@"mm\:ss");
         }
+        void LoadXepHangData()
+        {
+            XepHangList = new ObservableCollection<XepHang>();
+
+            var top10Leaderboards = DataProvider.Instance.DB.LeaderBoards
+                .OrderBy(lb => lb.time_taken)
+                .ThenBy(lb => lb.move)
+                .Take(10);
+
+            foreach (var item in top10Leaderboards)
+            {
+                XepHang xepHang = new XepHang();
+                var user = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.user_id == item.user_id);
+                xepHang.UserName = user?.username ?? "Unknown";
+                xepHang.LeaderBoard = item;
+                int minutes = item.time_taken / 60;
+                int seconds = item.time_taken % 60;
+                string timeFormatted = $"{minutes:D2}:{seconds:D2}"; 
+                xepHang.TimeDisplay = timeFormatted;
+
+                XepHangList.Add(xepHang);
+            }
+        }
+
+
     }
 }

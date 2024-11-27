@@ -197,10 +197,10 @@
                                   HorizontalAlignment="Stretch"
                                   VerticalAlignment="Stretch">
                         <ListView Grid.Row="1" 
-                                  ItemsSource="{Binding Items1}">
+                                  ItemsSource="{Binding XepHangList}">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn DisplayMemberBinding="{Binding Code}" 
+                                    <GridViewColumn DisplayMemberBinding="{Binding UserName }" 
                                                     Width="auto">
                                         <GridViewColumn.HeaderTemplate>
                                             <DataTemplate>
@@ -224,7 +224,7 @@
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
-                                <GridViewColumn DisplayMemberBinding="{Binding Name}"
+                                <GridViewColumn DisplayMemberBinding="{Binding LeaderBoard.move}"
                                                 Width="auto">
                                         <GridViewColumn.HeaderTemplate>
                                             <DataTemplate>
@@ -250,7 +250,7 @@
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
-                                    <GridViewColumn DisplayMemberBinding="{Binding Description}"
+                                    <GridViewColumn DisplayMemberBinding="{Binding TimeDisplay}"
                                                     Width="auto">
                                         <GridViewColumn.HeaderTemplate>
                                             <DataTemplate>
