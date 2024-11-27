@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PuzzleGameDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LeaderBoards">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="puzzle_id" />
+            <PropertyRef Name="level_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="puzzle_id" Type="int" Nullable="false" />
+          <Property Name="level_id" Type="int" Nullable="false" />
+          <Property Name="move" Type="int" Nullable="false" />
+          <Property Name="time_taken" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Levels">
+          <Key>
+            <PropertyRef Name="level_id" />
+          </Key>
+          <Property Name="level_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="level_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="grid_size" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Puzzles">
+          <Key>
+            <PropertyRef Name="puzzle_id" />
+          </Key>
+          <Property Name="puzzle_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image_path" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="level_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password_hash" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__LeaderBoa__level__34C8D9D1">
+          <End Role="Levels" Type="Self.Levels" Multiplicity="1" />
+          <End Role="LeaderBoards" Type="Self.LeaderBoards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Levels">
+              <PropertyRef Name="level_id" />
+            </Principal>
+            <Dependent Role="LeaderBoards">
+              <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LeaderBoa__puzzl__33D4B598">
+          <End Role="Puzzles" Type="Self.Puzzles" Multiplicity="1" />
+          <End Role="LeaderBoards" Type="Self.LeaderBoards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puzzles">
+              <PropertyRef Name="puzzle_id" />
+            </Principal>
+            <Dependent Role="LeaderBoards">
+              <PropertyRef Name="puzzle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LeaderBoa__user___32E0915F">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="LeaderBoards" Type="Self.LeaderBoards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="LeaderBoards">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Puzzles__level_i__2B3F6F97">
+          <End Role="Levels" Type="Self.Levels" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Puzzles" Type="Self.Puzzles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Levels">
+              <PropertyRef Name="level_id" />
+            </Principal>
+            <Dependent Role="Puzzles">
+              <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PuzzleGameDBModelStoreContainer">
+          <EntitySet Name="LeaderBoards" EntityType="Self.LeaderBoards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Levels" EntityType="Self.Levels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Puzzles" EntityType="Self.Puzzles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__LeaderBoa__level__34C8D9D1" Association="Self.FK__LeaderBoa__level__34C8D9D1">
+            <End Role="Levels" EntitySet="Levels" />
+            <End Role="LeaderBoards" EntitySet="LeaderBoards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LeaderBoa__puzzl__33D4B598" Association="Self.FK__LeaderBoa__puzzl__33D4B598">
+            <End Role="Puzzles" EntitySet="Puzzles" />
+            <End Role="LeaderBoards" EntitySet="LeaderBoards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LeaderBoa__user___32E0915F" Association="Self.FK__LeaderBoa__user___32E0915F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LeaderBoards" EntitySet="LeaderBoards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Puzzles__level_i__2B3F6F97" Association="Self.FK__Puzzles__level_i__2B3F6F97">
+            <End Role="Levels" EntitySet="Levels" />
+            <End Role="Puzzles" EntitySet="Puzzles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PuzzleGameDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LeaderBoard">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="puzzle_id" />
+            <PropertyRef Name="level_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="puzzle_id" Type="Int32" Nullable="false" />
+          <Property Name="level_id" Type="Int32" Nullable="false" />
+          <Property Name="move" Type="Int32" Nullable="false" />
+          <Property Name="time_taken" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Level" Relationship="Self.FK__LeaderBoa__level__34C8D9D1" FromRole="LeaderBoards" ToRole="Levels" />
+          <NavigationProperty Name="Puzzle" Relationship="Self.FK__LeaderBoa__puzzl__33D4B598" FromRole="LeaderBoards" ToRole="Puzzles" />
+          <NavigationProperty Name="User" Relationship="Self.FK__LeaderBoa__user___32E0915F" FromRole="LeaderBoards" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Level">
+          <Key>
+            <PropertyRef Name="level_id" />
+          </Key>
+          <Property Name="level_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="level_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="grid_size" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LeaderBoards" Relationship="Self.FK__LeaderBoa__level__34C8D9D1" FromRole="Levels" ToRole="LeaderBoards" />
+          <NavigationProperty Name="Puzzles" Relationship="Self.FK__Puzzles__level_i__2B3F6F97" FromRole="Levels" ToRole="Puzzles" />
+        </EntityType>
+        <EntityType Name="Puzzle">
+          <Key>
+            <PropertyRef Name="puzzle_id" />
+          </Key>
+          <Property Name="puzzle_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image_path" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="level_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LeaderBoards" Relationship="Self.FK__LeaderBoa__puzzl__33D4B598" FromRole="Puzzles" ToRole="LeaderBoards" />
+          <NavigationProperty Name="Level" Relationship="Self.FK__Puzzles__level_i__2B3F6F97" FromRole="Puzzles" ToRole="Levels" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password_hash" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="LeaderBoards" Relationship="Self.FK__LeaderBoa__user___32E0915F" FromRole="Users" ToRole="LeaderBoards" />
+        </EntityType>
+        <Association Name="FK__LeaderBoa__level__34C8D9D1">
+          <End Role="Levels" Type="Self.Level" Multiplicity="1" />
+          <End Role="LeaderBoards" Type="Self.LeaderBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Levels">
+              <PropertyRef Name="level_id" />
+            </Principal>
+            <Dependent Role="LeaderBoards">
+              <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LeaderBoa__puzzl__33D4B598">
+          <End Role="Puzzles" Type="Self.Puzzle" Multiplicity="1" />
+          <End Role="LeaderBoards" Type="Self.LeaderBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puzzles">
+              <PropertyRef Name="puzzle_id" />
+            </Principal>
+            <Dependent Role="LeaderBoards">
+              <PropertyRef Name="puzzle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LeaderBoa__user___32E0915F">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="LeaderBoards" Type="Self.LeaderBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="LeaderBoards">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Puzzles__level_i__2B3F6F97">
+          <End Role="Levels" Type="Self.Level" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Puzzles" Type="Self.Puzzle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Levels">
+              <PropertyRef Name="level_id" />
+            </Principal>
+            <Dependent Role="Puzzles">
+              <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PuzzleGameDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LeaderBoards" EntityType="Self.LeaderBoard" />
+          <EntitySet Name="Levels" EntityType="Self.Level" />
+          <EntitySet Name="Puzzles" EntityType="Self.Puzzle" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__LeaderBoa__level__34C8D9D1" Association="Self.FK__LeaderBoa__level__34C8D9D1">
+            <End Role="Levels" EntitySet="Levels" />
+            <End Role="LeaderBoards" EntitySet="LeaderBoards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LeaderBoa__puzzl__33D4B598" Association="Self.FK__LeaderBoa__puzzl__33D4B598">
+            <End Role="Puzzles" EntitySet="Puzzles" />
+            <End Role="LeaderBoards" EntitySet="LeaderBoards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LeaderBoa__user___32E0915F" Association="Self.FK__LeaderBoa__user___32E0915F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LeaderBoards" EntitySet="LeaderBoards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Puzzles__level_i__2B3F6F97" Association="Self.FK__Puzzles__level_i__2B3F6F97">
+            <End Role="Levels" EntitySet="Levels" />
+            <End Role="Puzzles" EntitySet="Puzzles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PuzzleGameDBModelStoreContainer" CdmEntityContainer="PuzzleGameDBEntities1">
+          <EntitySetMapping Name="LeaderBoards">
+            <EntityTypeMapping TypeName="PuzzleGameDBModel.LeaderBoard">
+              <MappingFragment StoreEntitySet="LeaderBoards">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="puzzle_id" ColumnName="puzzle_id" />
+                <ScalarProperty Name="level_id" ColumnName="level_id" />
+                <ScalarProperty Name="move" ColumnName="move" />
+                <ScalarProperty Name="time_taken" ColumnName="time_taken" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Levels">
+            <EntityTypeMapping TypeName="PuzzleGameDBModel.Level">
+              <MappingFragment StoreEntitySet="Levels">
+                <ScalarProperty Name="level_id" ColumnName="level_id" />
+                <ScalarProperty Name="level_name" ColumnName="level_name" />
+                <ScalarProperty Name="grid_size" ColumnName="grid_size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Puzzles">
+            <EntityTypeMapping TypeName="PuzzleGameDBModel.Puzzle">
+              <MappingFragment StoreEntitySet="Puzzles">
+                <ScalarProperty Name="puzzle_id" ColumnName="puzzle_id" />
+                <ScalarProperty Name="image_path" ColumnName="image_path" />
+                <ScalarProperty Name="level_id" ColumnName="level_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="PuzzleGameDBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password_hash" ColumnName="password_hash" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
