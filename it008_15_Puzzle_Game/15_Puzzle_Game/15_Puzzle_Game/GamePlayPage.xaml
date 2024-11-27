@@ -167,7 +167,7 @@
                             Style="{StaticResource MaterialDesignFloatingActionButton}"
                             ToolTip="MaterialDesignFloatingActionButton"
                             Width="80"
-                            Height="80">
+                            Height="80" Click="Button_Click_2">
                         <materialDesign:PackIcon Kind="Shuffle"
                                                  Width="30"
                                                  Height="30"></materialDesign:PackIcon>

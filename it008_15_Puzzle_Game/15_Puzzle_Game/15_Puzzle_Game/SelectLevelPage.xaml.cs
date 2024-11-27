@@ -33,7 +33,10 @@ namespace _15_Puzzle_Game
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = sender as Button;
-            NavigationService.Navigate(new GamePlayPage(clickedButton.Tag.ToString()));
+            if(clickedButton.Tag.ToString()!="1")
+                NavigationService.Navigate(new PicturePage(clickedButton.Tag.ToString()));
+            else
+                NavigationService.Navigate(new GamePlayPage(clickedButton.Tag.ToString(),"path"));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

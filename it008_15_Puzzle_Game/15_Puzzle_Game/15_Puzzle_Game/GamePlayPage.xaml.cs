@@ -22,15 +22,11 @@ namespace _15_Puzzle_Game
     /// </summary>
     public partial class GamePlayPage : Page
     {
-        public GamePlayPage()
+        
+        public GamePlayPage(string n, string path)
         {
             InitializeComponent();
-            PlayFrame.Navigate(new PlayPage());
-        }
-        public GamePlayPage(string n)
-        {
-            InitializeComponent();
-            PlayFrame.Navigate(new PlayPage(n));
+            PlayFrame.Navigate(new PlayPage(n, path));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,6 +43,16 @@ namespace _15_Puzzle_Game
             if (temp == 0)
             {
                 UndoButton.IsEnabled = false;
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            
+            if (PlayFrame.Content is PlayPage playPage)
+            {
+                // Gọi phương thức ShuffleClick trong PlayPage
+                playPage.ShuffleClick(sender, e);
             }
         }
     }

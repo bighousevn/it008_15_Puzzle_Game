@@ -30,24 +30,21 @@ namespace _15_Puzzle_Game
         public List<string> currentLocations = new List<string>();
         public BitmapImage bitmap;
         public double paddingBetween;
+        public int n2;
 
         string win_position;
         string current_position;
        
 
-        public PlayPage()
+        
+        public PlayPage(string n, string path)
         {
             InitializeComponent();
-            Initial("3");
-        }
-        public PlayPage(string n)
-        {
-            InitializeComponent();
-            Initial(n);
+            Initial(n,path);
         }
 
         //Thêm hình ảnh vào
-        private void Initial(string n)
+        private void Initial(string n, string path)
         {
             if (imageList != null)
             {
@@ -81,7 +78,7 @@ namespace _15_Puzzle_Game
                     }
                     break;
                 default:
-                    bitmap.UriSource = new Uri("file:///C:/Users/Admin/Downloads/att.SnDpF8p5BlAIgRHWIy3BF1F1ec5cJQ3TGPcztQtLMOY.jpg");
+                    bitmap.UriSource = new Uri(path);
                     bitmap.EndInit();
                     break;
 
@@ -100,8 +97,9 @@ namespace _15_Puzzle_Game
                     break;
             }
 
-            CreateImageList(int.Parse(n));
-            AddImages(int.Parse(n));
+            n2 = int.Parse(n);
+            CreateImageList();
+            AddImages();
 
             
         }
@@ -109,13 +107,13 @@ namespace _15_Puzzle_Game
 
 
         //Tạo các image nhỏ 3x3,4x4,5x5
-        private void CreateImageList(int n)
+        private void CreateImageList()
         {
-            for (int i = 0; i < n*n; i++)
+            for (int i = 0; i < n2*n2; i++)
             {
                 Image temp = new Image();
-                temp.Width = 390/n;
-                temp.Height = 390/n;
+                temp.Width = 390/n2;
+                temp.Height = 390/n2;
                 temp.Tag = i.ToString();
 
                 temp.MouseLeftButtonDown += OnPicClick;
@@ -126,32 +124,35 @@ namespace _15_Puzzle_Game
 
 
 
-        private CroppedBitmap CropImage2(BitmapImage main_bitmap, int x, int y, int height, int width, int n)
+        private CroppedBitmap CropImage2(BitmapImage main_bitmap, int x, int y, int height, int width)
         {
-            if (main_bitmap.PixelWidth >= width * n && main_bitmap.PixelHeight >= height * n)
-            {
-                CroppedBitmap croppedImage = new CroppedBitmap(main_bitmap, new Int32Rect(x, y, height, width));
-                return croppedImage;
-            }
-            else
-            {
-                MessageBox.Show("Ảnh quá lớn để cắt", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-                return null;
-            }
+            //if (main_bitmap.PixelWidth >= width * n2 && main_bitmap.PixelHeight >= height * n2)
+            //{
+            //    CroppedBitmap croppedImage = new CroppedBitmap(main_bitmap, new Int32Rect(x, y, height, width));
+            //    return croppedImage;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Ảnh quá lớn để cắt", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    return null;
+            //}
+            
+            CroppedBitmap croppedImage = new CroppedBitmap(main_bitmap, new Int32Rect(x, y, height, width));
+            return croppedImage;
         }
 
 
-        private void CropImage(BitmapImage main_bitmap, int height, int width,int n)
+        private void CropImage(BitmapImage main_bitmap, int height, int width)
         {
             int x = 0, y = 0;
            
 
-            for (int blocks = 0; blocks < n*n; blocks++)
+            for (int blocks = 0; blocks < n2*n2; blocks++)
             {
-                CroppedBitmap cropped_image = CropImage2(main_bitmap, x, y, height, width, n);
+                CroppedBitmap cropped_image = CropImage2(main_bitmap, x, y, height, width);
                 images.Add(cropped_image);
                 x += width;
-                if (x == width * n)
+                if (x == width * n2)
                 {
                     x = 0;
                     y += height;
@@ -159,54 +160,67 @@ namespace _15_Puzzle_Game
             }
         }
 
-        private void AddImages(int n)
+        private void AddImages()
         {
             float scaleX = (float) 390 / bitmap.PixelWidth;
             float scaleY = (float) 390 / bitmap.PixelHeight;
 
             BitmapImage tempBitmap = ResizeAndDisplayImage(bitmap, scaleX, scaleY);
-            CropImage(tempBitmap, ((int)tempBitmap.Width)/n, ((int)tempBitmap.Height)/n, n);
+           
+            CropImage(tempBitmap, ((int)tempBitmap.Width)/n2, ((int)tempBitmap.Height)/n2);
             for (int i = 1; i < imageList.Count; i++)
             {
                 imageList[i].Source = images[i];
             }
-            PlaceImageList(n);
+            PlaceImageList();
         }
-
-
 
 
         public BitmapImage ResizeAndDisplayImage(BitmapImage main_bitmap, double scaleX, double scaleY)
         {
+            // Calculate the new width and height based on the scaling factors
+            int newWidth = (int)(main_bitmap.PixelWidth * scaleX);
+            int newHeight = (int)(main_bitmap.PixelHeight * scaleY);
+
+            // Create a WriteableBitmap with the new size
+            WriteableBitmap writeableBitmap = new WriteableBitmap(newWidth, newHeight, 96, 96, PixelFormats.Pbgra32, null);
 
 
-            // Tạo một ScaleTransform để thay đổi kích thước hình ảnh
-            ScaleTransform scaleTransform = new ScaleTransform(scaleX, scaleY);
+            // Create a DrawingVisual to use for drawing the image
+            DrawingVisual drawingVisual = new DrawingVisual();
+            using (DrawingContext drawingContext = drawingVisual.RenderOpen())
+            {
+                // Draw the image into the DrawingContext with the new dimensions
+                drawingContext.DrawImage(main_bitmap, new Rect(0, 0, newWidth, newHeight));
+            }
 
-            // Tạo một TransformedBitmap với ScaleTransform
-            TransformedBitmap transformedBitmap = new TransformedBitmap(main_bitmap, scaleTransform);
+            // Create a RenderTargetBitmap to render the DrawingVisual into the WriteableBitmap
+            RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap(newWidth, newHeight, 96, 96, PixelFormats.Pbgra32);
+            renderTargetBitmap.Render(drawingVisual);
 
-            // Tạo MemoryStream để lưu hình ảnh đã thay đổi kích thước
+            // Now copy the rendered result into the WriteableBitmap
+            writeableBitmap = new WriteableBitmap(renderTargetBitmap);
+
+            // Create a MemoryStream to save the resized image
             MemoryStream memoryStream = new MemoryStream();
-
-            // Mã hóa transformedBitmap vào MemoryStream
             PngBitmapEncoder encoder = new PngBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(transformedBitmap));
+            encoder.Frames.Add(BitmapFrame.Create(writeableBitmap));
             encoder.Save(memoryStream);
 
-            // Đảm bảo rằng MemoryStream đang trỏ về vị trí bắt đầu (vị trí 0)
+            // Reset MemoryStream to the beginning
             memoryStream.Position = 0;
 
-            // Tạo BitmapImage từ MemoryStream
+            // Create a new BitmapImage from the MemoryStream
             BitmapImage resizedImage = new BitmapImage();
             resizedImage.BeginInit();
             resizedImage.StreamSource = memoryStream;
-            resizedImage.CacheOption = BitmapCacheOption.OnLoad; // Đảm bảo hình ảnh được tải vào bộ nhớ ngay lập tức
+            resizedImage.CacheOption = BitmapCacheOption.OnLoad;
             resizedImage.EndInit();
 
-            // Gán resizedImage vào Image control để hiển thị
+            // Return the resized BitmapImage
             return resizedImage;
         }
+
 
 
         static bool CountInversions(List<Image> puzzle)
@@ -229,7 +243,7 @@ namespace _15_Puzzle_Game
         }
 
 
-        private void PlaceImageList(int n)
+        private void PlaceImageList()
         {
             //Shuffle lại danh sách hình ảnh
 
@@ -243,13 +257,13 @@ namespace _15_Puzzle_Game
             double width = imageList[0].Width; // Chiều rộng của mỗi hình ảnh
             double height = imageList[0].Height; // Chiều cao của mỗi hình ảnh
 
-
+            PuzzleCanvas.Children.Clear();
             for (int i = 0; i < imageList.Count; i++)
             {
                 var img = imageList[i];
 
                 // Điều chỉnh vị trí hình ảnh
-                if (i % n == 0 && i!=0)  // Khi tới hình ảnh thứ 4 và thứ 7, di chuyển xuống hàng mới
+                if (i % n2 == 0 && i!=0)  // Khi tới hình ảnh thứ 4 và thứ 7, di chuyển xuống hàng mới
                 {
                     y = y + height + paddingBetween;  // Di chuyển xuống hàng mới
                     x = 200; // Đặt lại x về vị trí đầu dòng mới
@@ -363,8 +377,12 @@ namespace _15_Puzzle_Game
 
             // Kiểm tra xem trò chơi đã hoàn thành chưa
             CheckGame();
-        }
+        } 
 
+        public void ShuffleClick(object sender, RoutedEventArgs e)
+        {
+            PlaceImageList();
+        }
     }
 }
 

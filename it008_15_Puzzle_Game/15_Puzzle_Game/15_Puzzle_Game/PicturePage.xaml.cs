@@ -21,9 +21,11 @@ namespace _15_Puzzle_Game
     /// </summary>
     public partial class PicturePage : Page
     {
-        public PicturePage()
+        public string n;
+        public PicturePage(string x)
         {
             InitializeComponent();
+            n = x.Trim();
         }
 
         private void Button1_Click(object sender, RoutedEventArgs e)
@@ -41,7 +43,7 @@ namespace _15_Puzzle_Game
 
 
                     // Chuyển sang Page2 và truyền đường dẫn hình ảnh
-                    GamePlayPage gamePlayPage = new GamePlayPage(imagePath);
+                    GamePlayPage gamePlayPage = new GamePlayPage(n,imagePath);
                     this.NavigationService.Navigate(gamePlayPage);
                 }
             }
