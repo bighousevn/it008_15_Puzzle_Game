@@ -26,7 +26,9 @@ namespace _15_Puzzle_Game
         public GamePlayPage(string n, string path)
         {
             InitializeComponent();
-            PlayFrame.Navigate(new PlayPage(n, path));
+            var playPage = new PlayPage(n, path);
+            PlayFrame.Navigate(playPage);
+            playPage.OnMoveTextChanged += PlayPage_OnMoveTextChanged;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -54,6 +56,12 @@ namespace _15_Puzzle_Game
                 // Gọi phương thức ShuffleClick trong PlayPage
                 playPage.ShuffleClick(sender, e);
             }
+        }
+
+        private void PlayPage_OnMoveTextChanged(object sender, string newText)
+        {
+            // Cập nhật nội dung của TextBlockMove từ sự kiện
+            TextBlockMove.Text = newText;
         }
     }
 }

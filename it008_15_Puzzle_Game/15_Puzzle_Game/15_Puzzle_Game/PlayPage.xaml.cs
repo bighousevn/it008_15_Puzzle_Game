@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace _15_Puzzle_Game
 {
@@ -31,12 +32,23 @@ namespace _15_Puzzle_Game
         public BitmapImage bitmap;
         public double paddingBetween;
         public int n2;
+        int steps;
 
         string win_position;
         string current_position;
-       
 
-        
+
+        public event EventHandler<string> OnMoveTextChanged;
+
+
+        // Phương thức để thay đổi nội dung TextBlockMove và gọi sự kiện
+        public void ChangeMoveText(string newText)
+        {
+            // Gọi sự kiện OnMoveTextChanged nếu nó có người đăng ký
+            OnMoveTextChanged?.Invoke(this, newText);
+        }
+
+
         public PlayPage(string n, string path)
         {
             InitializeComponent();
@@ -61,6 +73,7 @@ namespace _15_Puzzle_Game
                 locations.Clear();
                 currentLocations.Clear();
                 win_position = "";
+                steps = 0;
             }
 
             bitmap = new BitmapImage();
@@ -336,6 +349,8 @@ namespace _15_Puzzle_Game
             string temp = locations[clickedIndex];
             locations[clickedIndex] = locations[emptyIndex];
             locations[emptyIndex] = temp;
+            steps++;
+            ChangeMoveText(steps.ToString());
         }
 
         private void CheckGame()
@@ -391,6 +406,8 @@ namespace _15_Puzzle_Game
         {
             PlaceImageList();
         }
+
+       
     }
 }
 
