@@ -75,6 +75,8 @@ namespace _15_Puzzle_Game
                         bitmap.UriSource = new Uri(openFileDialog.FileName);
                         bitmap.EndInit();
                         n = "3";
+                        Myborder.Width = 415;
+                        Myborder.Height = 415;
                     }
                     break;
                 default:
@@ -87,13 +89,19 @@ namespace _15_Puzzle_Game
             switch (int.Parse(n))
             {
                 case 3:
-                    paddingBetween = 10;
+                    paddingBetween = 8;
+                    Myborder.Width = 411;
+                    Myborder.Height = 411;
                     break;
                 case 4:
-                    paddingBetween = 8;
+                    paddingBetween = 5;
+                    Myborder.Width = 408;
+                    Myborder.Height = 408;
                     break;
                 default:
-                    paddingBetween = 5;
+                    paddingBetween = 3;
+                    Myborder.Width = 405;
+                    Myborder.Height = 405;
                     break;
             }
 
@@ -252,8 +260,8 @@ namespace _15_Puzzle_Game
                 shuffleImages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
             imageList = shuffleImages;
 
-            double x = 200; // Khởi tạo vị trí x
-            double y = 50; // Khởi tạo vị trí y
+            double x = 0; // Khởi tạo vị trí x
+            double y = 0; // Khởi tạo vị trí y
             double width = imageList[0].Width; // Chiều rộng của mỗi hình ảnh
             double height = imageList[0].Height; // Chiều cao của mỗi hình ảnh
 
@@ -266,7 +274,7 @@ namespace _15_Puzzle_Game
                 if (i % n2 == 0 && i!=0)  // Khi tới hình ảnh thứ 4 và thứ 7, di chuyển xuống hàng mới
                 {
                     y = y + height + paddingBetween;  // Di chuyển xuống hàng mới
-                    x = 200; // Đặt lại x về vị trí đầu dòng mới
+                    x = 0; // Đặt lại x về vị trí đầu dòng mới
                 }
 
                 // Đặt vị trí hình ảnh trong Canvas hoặc Grid

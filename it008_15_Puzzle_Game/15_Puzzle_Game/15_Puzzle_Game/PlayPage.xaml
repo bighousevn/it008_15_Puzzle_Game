@@ -18,8 +18,13 @@
       >
     
     <Grid>
+        <Border BorderBrush="Black" BorderThickness="2" Width="0" Height="0" 
+        HorizontalAlignment="Center" VerticalAlignment="Center"
+        Name="Myborder">
+    
         <Canvas Name="PuzzleCanvas">
-            
+
         </Canvas>
+        </Border>
     </Grid>
 </Page>
