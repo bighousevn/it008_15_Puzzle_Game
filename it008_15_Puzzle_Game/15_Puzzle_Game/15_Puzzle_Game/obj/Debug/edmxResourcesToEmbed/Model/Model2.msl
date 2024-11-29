@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PuzzleGameDBModel1StoreContainer" CdmEntityContainer="PuzzleGameDBEntities2">
+    <EntitySetMapping Name="LeaderBoards">
+      <EntityTypeMapping TypeName="PuzzleGameDBModel1.LeaderBoards">
+        <MappingFragment StoreEntitySet="LeaderBoards">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="puzzle_id" ColumnName="puzzle_id" />
+          <ScalarProperty Name="level_id" ColumnName="level_id" />
+          <ScalarProperty Name="move" ColumnName="move" />
+          <ScalarProperty Name="time_taken" ColumnName="time_taken" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Levels">
+      <EntityTypeMapping TypeName="PuzzleGameDBModel1.Levels">
+        <MappingFragment StoreEntitySet="Levels">
+          <ScalarProperty Name="level_id" ColumnName="level_id" />
+          <ScalarProperty Name="level_name" ColumnName="level_name" />
+          <ScalarProperty Name="grid_size" ColumnName="grid_size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Puzzles">
+      <EntityTypeMapping TypeName="PuzzleGameDBModel1.Puzzles">
+        <MappingFragment StoreEntitySet="Puzzles">
+          <ScalarProperty Name="puzzle_id" ColumnName="puzzle_id" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="level_id" ColumnName="level_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PuzzleGameDBModel1.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password_hash" ColumnName="password_hash" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

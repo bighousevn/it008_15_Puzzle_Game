@@ -33,8 +33,9 @@ namespace _15_Puzzle_Game.ViewModel
         public ICommand Button4 { get; set; }
         public ICommand Button5 { get; set; }
         public ICommand ClearPictureSourceCommand {  get; set; }
+        public ICommand LoadedWindowCommand {  get; set; }
 
-
+        public bool Isloaded = false;
 
         private string path1 = "Picture/1039168.png";
         private string path2 = "Picture/1092839.jpg";
@@ -167,6 +168,31 @@ namespace _15_Puzzle_Game.ViewModel
             _timer.Interval = TimeSpan.FromSeconds(1);
             _timer.Tick += Timer_Tick;
             LoadXepHangData();
+
+            LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            {
+                Isloaded = true;
+                if (p == null)
+                    return;
+                p.Hide();
+                LoginWindow loginwindow = new LoginWindow();
+                loginwindow.ShowDialog();
+
+                if (loginwindow.DataContext == null)
+                    return;
+                var loginvm = loginwindow.DataContext as LoginViewModel;
+
+                if (loginvm.IsLogin)
+                {
+                    p.Show();
+                }
+                else
+                {
+                    p.Close();
+                }
+            }
+              );
+
             PauseCommand = new RelayCommand<object>((p) => { return true; }, (p) => { 
                 PauseWindow wd = new PauseWindow();
                 wd.ShowDialog();
