@@ -5,7 +5,7 @@
   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
   xmlns:local="clr-namespace:_15_Puzzle_Game"
   StartupUri="MainWindow.xaml">
-    <!--StartupUri="SelectLevelPage.xaml">-->
+    
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

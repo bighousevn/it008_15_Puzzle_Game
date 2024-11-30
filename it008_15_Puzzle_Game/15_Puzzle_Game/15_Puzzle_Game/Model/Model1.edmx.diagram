@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="45fc5bc4cf29462e8da9615c0517ace4" Name="Diagram1">
-        <EntityTypeShape EntityType="PuzzleGameDBModel.LeaderBoard" Width="1.5" PointX="7.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PuzzleGameDBModel.Level" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PuzzleGameDBModel.Puzzle" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="PuzzleGameDBModel.User" Width="1.5" PointX="3.25" PointY="1.75" IsExpanded="true" />
-        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__level__34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__puzzl__33D4B598" ManuallyRouted="false" />
-        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__user___32E0915F" ManuallyRouted="false" />
-        <AssociationConnector Association="PuzzleGameDBModel.FK__Puzzles__level_i__2B3F6F97" ManuallyRouted="false" />
+      <Diagram DiagramId="545ba36feb7b433cbfd72b9cfa4b2946" Name="Diagram1">
+        <EntityTypeShape EntityType="PuzzleGameDBModel.LeaderBoards" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PuzzleGameDBModel.Levels" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PuzzleGameDBModel.Puzzles" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="PuzzleGameDBModel.Users" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__level__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__puzzl__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__user___534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="PuzzleGameDBModel.FK__Puzzles__level_i__5070F446" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

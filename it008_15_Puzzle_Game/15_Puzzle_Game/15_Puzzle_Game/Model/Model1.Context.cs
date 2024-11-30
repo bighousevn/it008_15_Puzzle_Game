@@ -13,10 +13,10 @@ namespace _15_Puzzle_Game.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PuzzleGameDBEntities1 : DbContext
+    public partial class PuzzleGameDBEntities : DbContext
     {
-        public PuzzleGameDBEntities1()
-            : base("name=PuzzleGameDBEntities1")
+        public PuzzleGameDBEntities()
+            : base("name=PuzzleGameDBEntities")
         {
         }
     
@@ -25,9 +25,9 @@ namespace _15_Puzzle_Game.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<LeaderBoard> LeaderBoards { get; set; }
-        public virtual DbSet<Level> Levels { get; set; }
-        public virtual DbSet<Puzzle> Puzzles { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<LeaderBoards> LeaderBoards { get; set; }
+        public virtual DbSet<Levels> Levels { get; set; }
+        public virtual DbSet<Puzzles> Puzzles { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

@@ -19,10 +19,10 @@ namespace _15_Puzzle_Game.Model
             }
             set { instance = value; }
         }
-        public PuzzleGameDBEntities2 DB { get; set; }
+        public PuzzleGameDBEntities DB { get; set; }
         private DataProvider()
         {
-            DB= new PuzzleGameDBEntities2 ();  
+            DB= new PuzzleGameDBEntities ();  
         }
     }
 }

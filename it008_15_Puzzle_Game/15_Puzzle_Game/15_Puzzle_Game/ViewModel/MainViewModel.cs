@@ -36,7 +36,6 @@ namespace _15_Puzzle_Game.ViewModel
         public ICommand LoadedWindowCommand {  get; set; }
 
         public bool Isloaded = false;
-
         private string path1 = "Picture/1039168.png";
         private string path2 = "Picture/1092839.jpg";
         private string path3 = "Picture/BackGround.jpg";
