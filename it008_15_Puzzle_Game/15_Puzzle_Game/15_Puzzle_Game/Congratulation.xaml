@@ -53,13 +53,13 @@
                 <RowDefinition Height="3.8*"></RowDefinition>
             </Grid.RowDefinitions>
             
-            <Grid Grid.Row="0">
+            <Grid Grid.Row="0" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions >
 
                 <TextBlock Grid.Column="0"
                            Text="Time:"
@@ -68,7 +68,7 @@
                            FontFamily="{StaticResource mainFont}"></TextBlock>
 
                 <TextBlock Grid.Column="1"
-                           Text="100"
+                           Text="{Binding DisplayTime}"
                            FontFamily="{StaticResource mainFont}"
                            FontSize="50"
                            TextAlignment="Left"></TextBlock>
@@ -80,17 +80,17 @@
                            TextAlignment="Center"
                            HorizontalAlignment="Center"></TextBlock>
                 <TextBlock Grid.Column="3"
-                           Text="100"
+                           Text="{Binding Move }"
                            FontFamily="{StaticResource mainFont}"
                            FontSize="50"
                            TextAlignment="Left"></TextBlock>
             </Grid>
             <materialDesign:Card Grid.Row="1">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Grid.Row="1">
+                    <ListView Grid.Row="1" ItemsSource="{Binding XepHangList}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Width="100">
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding Rank }">
                                     <GridViewColumn.HeaderTemplate>
                                         <DataTemplate>
                                             <TextBlock Text="Rank"
@@ -113,8 +113,8 @@
                                             </GridViewColumnHeader.Template>
                                         </GridViewColumnHeader>
                                     </GridViewColumn.Header>
-                                </GridViewColumn>
-                                <GridViewColumn Width="150">
+                                </GridViewColumn >
+                                <GridViewColumn Width="150" DisplayMemberBinding="{Binding UserName }">
                                     <GridViewColumn.HeaderTemplate>
                                         <DataTemplate>
                                             <TextBlock Text="UserName"
@@ -138,7 +138,7 @@
                                         </GridViewColumnHeader>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
-                                <GridViewColumn Width="170">
+                                <GridViewColumn Width="170" DisplayMemberBinding="{Binding TimeDisplay }">
                                     <GridViewColumn.HeaderTemplate>
                                         <DataTemplate>
                                             <TextBlock Text="Time"
@@ -162,7 +162,7 @@
                                         </GridViewColumnHeader>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
-                                <GridViewColumn Width="100">
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding _LeaderBoard.move }">
                                     <GridViewColumn.HeaderTemplate>
                                         <DataTemplate>
                                             <TextBlock Text="Move"

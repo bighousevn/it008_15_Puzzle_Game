@@ -1,4 +1,5 @@
-﻿using _15_Puzzle_Game.ViewModel;
+﻿using _15_Puzzle_Game.Model;
+using _15_Puzzle_Game.ViewModel;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Win32;
 using System;
@@ -16,7 +17,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using System.Xml.Linq;
+using static MaterialDesignThemes.Wpf.Theme.ToolBar;
 
 namespace _15_Puzzle_Game
 {
@@ -122,8 +125,9 @@ namespace _15_Puzzle_Game
             CreateImageList();
             AddImages();
 
-            
+
         }
+      
 
 
 
@@ -364,11 +368,80 @@ namespace _15_Puzzle_Game
             // Kiểm tra nếu vị trí hiện tại khớp với vị trí chiến thắng
             if (win_position == current_position)
             {
-                    Congratulation congratulationWindow = new Congratulation();
-                    congratulationWindow.Show();
+                var mainViewModel = (MainViewModel)DataContext;
+                mainViewModel.StopTimer();
 
+                //var newLevel = new Level();
+                //if (DataProvider.Instance.DB.Levels.Count() == 0) newLevel.level_id = 1;
+                //else newLevel.level_id = DataProvider.Instance.DB.Levels.Max(l => l.level_id)+1;
+
+                //newLevel.level_name = CurrentUser.Instance.CurrentLevelName;
+                //newLevel.grid_size = getGridSize();
+
+                //DataProvider.Instance.DB.Levels.Add(newLevel);
+                //DataProvider.Instance.DB.SaveChanges();
+
+                //var newPuzzle = new Puzzle();
+                //if (DataProvider.Instance.DB.Puzzles.Count() == 0) newPuzzle.puzzle_id = 1;
+                //else newPuzzle.puzzle_id = DataProvider.Instance.DB.Puzzles.Max(l => l.puzzle_id)+1;
+
+                //newPuzzle.image_path = CurrentUser.Instance.CurrentImagePath;
+                //DataProvider.Instance.DB.Puzzles.Add(newPuzzle);
+                //DataProvider.Instance.DB.SaveChanges();
+
+                var user = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
+                var level= DataProvider.Instance.DB.Levels.FirstOrDefault(p=> p.level_name == CurrentUser.Instance.CurrentLevelName);
+                var puzzle=DataProvider.Instance.DB.Puzzles.FirstOrDefault(p=> p.image_path==CurrentUser.Instance.CurrentImagePath);
+
+                var existingLeaderBoard = DataProvider.Instance.DB.LeaderBoards
+                    .FirstOrDefault(p => p.user_id == user.user_id
+                                      && p.puzzle_id == puzzle.puzzle_id
+                                      && p.level_id == level.level_id);
+
+                int newMove = steps;
+                int newTimeTaken = mainViewModel.getTime();
+
+                if (existingLeaderBoard != null)
+                {
+                    // Cập nhật nếu move hoặc time_taken mới nhỏ hơn
+                    if (newTimeTaken < existingLeaderBoard.time_taken ||
+                       (newTimeTaken == existingLeaderBoard.time_taken && newMove < existingLeaderBoard.move))
+                    {
+                        existingLeaderBoard.move = newMove;
+                        existingLeaderBoard.time_taken = newTimeTaken;
+                        DataProvider.Instance.DB.SaveChanges();
+                    }
+                }
+                else
+                {
+                    // Thêm mới nếu không tồn tại
+                    var newLeaderBoard = new LeaderBoard
+                    {
+                        leaderboards_id = DataProvider.Instance.DB.LeaderBoards.Count() == 0
+                                            ? 1
+                                            : DataProvider.Instance.DB.LeaderBoards.Max(p => p.leaderboards_id) + 1,
+                        user_id = user.user_id,
+                        puzzle_id = puzzle.puzzle_id,
+                        level_id = level.level_id,
+                        move = newMove,
+                        time_taken = newTimeTaken
+                    };
+                    DataProvider.Instance.DB.LeaderBoards.Add(newLeaderBoard);
+                    DataProvider.Instance.DB.SaveChanges();
+                }
+                mainViewModel.Move = steps;
+                Congratulation congratulationWindow = new Congratulation();
+                    congratulationWindow.Show();
             }
            
+        }
+        private int getGridSize()
+        {
+            if (CurrentUser.Instance.CurrentLevelName == "4x4" ) 
+                return 16;
+            if (CurrentUser.Instance.CurrentLevelName == "5x5")
+                return 25;
+            return 9;
         }
 
 

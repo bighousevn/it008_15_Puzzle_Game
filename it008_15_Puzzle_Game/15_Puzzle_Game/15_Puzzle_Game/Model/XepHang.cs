@@ -9,7 +9,8 @@ namespace _15_Puzzle_Game.Model
     public class XepHang
     {
         public string UserName { get; set; }
-        public LeaderBoards LeaderBoard { get; set; }
+        public int Rank { get;set; }
+        public LeaderBoard _LeaderBoard { get; set; }
         public string TimeDisplay { get; set; } 
     }
 

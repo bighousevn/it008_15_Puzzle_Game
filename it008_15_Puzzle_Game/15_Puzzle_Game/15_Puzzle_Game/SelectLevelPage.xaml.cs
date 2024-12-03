@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using MaterialDesignColors;
 using MaterialDesignThemes;
 using MaterialDesignThemes.Wpf;
+using _15_Puzzle_Game.Model;
 
 namespace _15_Puzzle_Game
 {
@@ -33,10 +34,27 @@ namespace _15_Puzzle_Game
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = sender as Button;
-            if(clickedButton.Tag.ToString()!="1")
+            if (clickedButton.Tag.ToString() != "1")
+            {
+                if (clickedButton.Tag.ToString() == "3")
+                {
+                    CurrentUser.Instance.CurrentLevelName = "3x3";
+                }
+                else if (clickedButton.Tag.ToString() == "4")
+                {
+                    CurrentUser.Instance.CurrentLevelName = "4x4";
+                }
+                else
+                {
+                    CurrentUser.Instance.CurrentLevelName = "5x5";
+                }
                 NavigationService.Navigate(new PicturePage(clickedButton.Tag.ToString()));
+            }
             else
-                NavigationService.Navigate(new GamePlayPage(clickedButton.Tag.ToString(),"path"));
+            {
+                CurrentUser.Instance.CurrentLevelName = "Option";
+                NavigationService.Navigate(new GamePlayPage(clickedButton.Tag.ToString(), "path"));
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

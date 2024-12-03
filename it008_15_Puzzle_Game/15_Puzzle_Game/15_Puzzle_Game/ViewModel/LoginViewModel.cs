@@ -58,6 +58,7 @@ namespace _15_Puzzle_Game.ViewModel
             if (accCount)
             {
                 IsLogin = true;
+                CurrentUser.Instance.CurrentUserName= UserName;
                 p.Close();
             }
             else
@@ -83,7 +84,7 @@ namespace _15_Puzzle_Game.ViewModel
                 return;
             }
 
-            var user = new Users
+            var user = new User
             {
                 username = RegisterUserName,
                 password_hash = RegisterPassWord,

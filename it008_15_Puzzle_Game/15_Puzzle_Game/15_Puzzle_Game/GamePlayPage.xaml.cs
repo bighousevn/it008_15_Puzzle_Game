@@ -29,6 +29,8 @@ namespace _15_Puzzle_Game
             var playPage = new PlayPage(n, path);
             PlayFrame.Navigate(playPage);
             playPage.OnMoveTextChanged += PlayPage_OnMoveTextChanged;
+            var mainViewModel = (MainViewModel)DataContext;
+            mainViewModel.LoadXepHangData();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

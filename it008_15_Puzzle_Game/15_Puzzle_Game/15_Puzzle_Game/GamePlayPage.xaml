@@ -224,7 +224,7 @@
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
-                                <GridViewColumn DisplayMemberBinding="{Binding LeaderBoard.move}"
+                                <GridViewColumn DisplayMemberBinding="{Binding _LeaderBoard.move}"
                                                 Width="auto">
                                         <GridViewColumn.HeaderTemplate>
                                             <DataTemplate>

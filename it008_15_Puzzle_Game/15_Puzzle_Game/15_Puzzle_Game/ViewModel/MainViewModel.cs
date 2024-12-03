@@ -14,13 +14,13 @@ using System.Windows.Threading;
 using System.Collections.ObjectModel;
 using _15_Puzzle_Game.Model;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 namespace _15_Puzzle_Game.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
         private ObservableCollection<XepHang> _XepHangList;
         public ObservableCollection<XepHang> XepHangList { get => _XepHangList; set { _XepHangList = value; OnPropertyChanged(); } }
-
         public ICommand PauseCommand { get; set; }
         public ICommand SettingGamePlayCommand { get; set; }
         public ICommand SettingCommand { get; set; }
@@ -127,6 +127,12 @@ namespace _15_Puzzle_Game.ViewModel
                 }
 
             }
+        }
+        private int _move=0;
+        public int Move
+        {
+            get { return _move; }
+            set { _move = value; OnPropertyChanged(nameof(Move)); }
         }
 
         private DispatcherTimer _timer;
@@ -294,30 +300,46 @@ namespace _15_Puzzle_Game.ViewModel
                 IsTimerRunning = false;
             }
         }
+        public int getTime() { return  _elapsedTime; }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             _elapsedTime++;
             DisplayTime = TimeSpan.FromSeconds(_elapsedTime).ToString(@"mm\:ss");
         }
-        void LoadXepHangData()
+
+        public void LoadXepHangData()
         {
             XepHangList = new ObservableCollection<XepHang>();
 
-            var top10Leaderboards = DataProvider.Instance.DB.LeaderBoards
-                .OrderBy(lb => lb.time_taken)
-                .ThenBy(lb => lb.move)
-                .Take(10);
+            var level = DataProvider.Instance.DB.Levels
+                .FirstOrDefault(p => p.level_name == CurrentUser.Instance.CurrentLevelName);
+            var puzzle = DataProvider.Instance.DB.Puzzles
+                .FirstOrDefault(p => p.image_path == CurrentUser.Instance.CurrentImagePath);
 
+            if (level == null || puzzle == null)
+            {
+                return;
+            }
+
+            // Lấy danh sách top 10 LeaderBoard
+            var top10Leaderboards = DataProvider.Instance.DB.LeaderBoards
+                .Where(lb => lb.level_id == level.level_id && lb.puzzle_id == puzzle.puzzle_id)
+                .OrderBy(lb => lb.time_taken)   
+                .ThenBy(lb => lb.move)      
+                .Take(10);
+            int rank = 1;
             foreach (var item in top10Leaderboards)
             {
                 XepHang xepHang = new XepHang();
                 var user = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.user_id == item.user_id);
+                xepHang.Rank = rank;
+                rank++;
                 xepHang.UserName = user?.username ?? "Unknown";
-                xepHang.LeaderBoard = item;
+                xepHang._LeaderBoard = item;
                 int minutes = item.time_taken / 60;
                 int seconds = item.time_taken % 60;
-                string timeFormatted = $"{minutes:D2}:{seconds:D2}"; 
+                string timeFormatted = $"{minutes:D2}:{seconds:D2}";
                 xepHang.TimeDisplay = timeFormatted;
 
                 XepHangList.Add(xepHang);
