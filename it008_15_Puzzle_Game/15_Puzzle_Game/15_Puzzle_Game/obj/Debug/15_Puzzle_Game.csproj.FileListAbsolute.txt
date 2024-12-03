@@ -342,3 +342,14 @@ C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_P
 C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.xml
 C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.g.cs
 C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.baml
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.dll
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.dll
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.dll
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.xml
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.xml
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.xml
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.g.cs
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_Content.g.cs
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.baml
