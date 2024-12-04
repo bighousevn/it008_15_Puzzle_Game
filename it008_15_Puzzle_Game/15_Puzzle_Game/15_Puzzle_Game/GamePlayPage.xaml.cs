@@ -3,6 +3,7 @@ using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,13 +27,44 @@ namespace _15_Puzzle_Game
         public GamePlayPage(string n, string path)
         {
             InitializeComponent();
-            var playPage = new PlayPage(n, path);
-            PlayFrame.Navigate(playPage);
-            playPage.OnMoveTextChanged += PlayPage_OnMoveTextChanged;
+
+            // Lấy ViewModel
             var mainViewModel = (MainViewModel)DataContext;
             mainViewModel.LoadXepHangData();
-        }
 
+            // Khởi tạo PlayPage
+            var playPage = new PlayPage(n, path);
+            
+            PlayFrame.Navigate(playPage);
+
+            // Nếu n == "1", lắng nghe URI từ PlayPage
+            if (n == "1")
+            {
+                Console.WriteLine("n == 1, subscribing to event...");
+                playPage.OnImageUriChanged += PlayPage_UpdateUri;
+                playPage.UpdateImageUri();
+            }
+            
+            else
+            {
+                // Nếu n != "1", sử dụng Binding
+                sampleImage.SetBinding(Image.SourceProperty, new Binding("PictureSource") { Source = mainViewModel });
+            }
+
+            // Xử lý sự kiện khác nếu có
+            playPage.OnMoveTextChanged += PlayPage_OnMoveTextChanged;
+        }
+        void PlayPage_UpdateUri(string uri)
+        {
+            Console.WriteLine("Inside PlayPage_UpdateUri");
+            Console.WriteLine(uri);
+
+            // Cập nhật ảnh
+            Dispatcher.Invoke(() =>
+            {
+                sampleImage.Source = new BitmapImage(new Uri(uri, UriKind.Absolute));
+            });
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
@@ -65,5 +97,8 @@ namespace _15_Puzzle_Game
             // Cập nhật nội dung của TextBlockMove từ sự kiện
             TextBlockMove.Text = newText;
         }
+
+        
+
     }
 }

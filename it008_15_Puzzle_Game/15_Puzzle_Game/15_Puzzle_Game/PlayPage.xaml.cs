@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,10 +36,26 @@ namespace _15_Puzzle_Game
         public BitmapImage bitmap;
         public double paddingBetween;
         public int n2;
+        public string path2;
         int steps;
 
         string win_position;
         string current_position;
+
+
+        public event Action<string> OnImageUriChanged;
+
+        public void UpdateImageUri()
+        {
+            Console.WriteLine("Updating URI: " + path2);  // Kiểm tra xem phương thức có được gọi không.
+            OnImageUriChanged?.Invoke(path2);  // Kích hoạt sự kiện
+        }
+        public void TestEventInvocation()
+        {
+            Console.WriteLine("Testing event invocation...");
+            OnImageUriChanged?.Invoke("C:\\Users\\Admin\\Downloads\\att.v5kAs0117MGxDhRV4hh_o5PAjYUqJ1koE4tF9k0gijk.jpg"); // Giả lập việc gọi sự kiện với URI
+        }
+
 
 
         public event EventHandler<string> OnMoveTextChanged;
@@ -89,6 +106,7 @@ namespace _15_Puzzle_Game
                     if (openFileDialog.ShowDialog() == true)
                     {
                         bitmap.UriSource = new Uri(openFileDialog.FileName);
+                        path2 = openFileDialog.FileName;
                         bitmap.EndInit();
                         n = "3";
                         Myborder.Width = 415;
