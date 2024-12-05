@@ -52,7 +52,7 @@ namespace _15_Puzzle_Game.ViewModel
             if (p == null)
                 return;
             
-            string pass = Password;
+            string pass = sha256(Password);
             var accCount = DataProvider.Instance.DB.Users.Any(x => x.username == UserName && x.password_hash == pass);
 
             if (accCount)
@@ -87,7 +87,7 @@ namespace _15_Puzzle_Game.ViewModel
             var user = new User
             {
                 username = RegisterUserName,
-                password_hash = RegisterPassWord,
+                password_hash = sha256(RegisterPassWord),
                 email = RegisterEmail,
                 created_at = DateTime.Now,
             };
@@ -114,5 +114,17 @@ namespace _15_Puzzle_Game.ViewModel
             var emailRegex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             return Regex.IsMatch(email, emailRegex);
         }
+        static string sha256(string randomString)
+        {
+            var crypt = new System.Security.Cryptography.SHA256Managed();
+            var hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
+
     }
 }

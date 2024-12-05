@@ -23,8 +23,8 @@ namespace _15_Puzzle_Game.ViewModel
         public ObservableCollection<XepHang> XepHangList { get => _XepHangList; set { _XepHangList = value; OnPropertyChanged(); } }
         public ICommand PauseCommand { get; set; }
         public ICommand SettingGamePlayCommand { get; set; }
-        public ICommand SettingCommand { get; set; }
         public ICommand CloseSettingGamePlayWindowCommand { get; set; }
+        public ICommand SettingCommand { get; set; }
         public ICommand GamePlayCommand { get; set; }
         public ICommand SelectLevelCommand { get; set; }
         public ICommand PictureCommand { get; set; }
@@ -209,6 +209,12 @@ namespace _15_Puzzle_Game.ViewModel
                 SettingWindow wd = new SettingWindow();
                 wd.ShowDialog();
                 
+            });
+
+            SettingCommand = new RelayCommand<object>((p) => { return true; }, (p) =>
+            {
+                SettingWindow wd = new SettingWindow();
+                wd.ShowDialog();
             });
 
             CloseSettingGamePlayWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {

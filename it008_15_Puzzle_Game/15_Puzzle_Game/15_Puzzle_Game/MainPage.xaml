@@ -68,7 +68,8 @@
                 Width="100" 
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Margin="10 100 0 0">
+                Margin="10 100 0 0"
+                Command="{Binding PauseCommand}">
             <materialDesign:PackIcon Kind="ExitToApp"
                                  Width="80"
                                  Height="80" 

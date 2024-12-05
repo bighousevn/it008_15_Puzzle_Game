@@ -4,83 +4,84 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_15_Puzzle_Game"
+        xmlns:viewmodel="clr-namespace:_15_Puzzle_Game.ViewModel"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        DataContext="{StaticResource MainVM}"
         mc:Ignorable="d"
         WindowStyle="None"
+        DataContext="{StaticResource MainVM}"
         ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterScreen"
-        Title="PauseWindow" Height="450" Width="400">
-    
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"></RowDefinition>
-            <RowDefinition Height="1.5*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-        </Grid.RowDefinitions>
+        Title="PauseWindow" Height="300" Width="400">
 
-        <TextBlock Grid.Row="0"
-                   Text="Exit Game"
-                   TextAlignment="Center"
-                   FontFamily="{StaticResource mainFont}"
-                   FontSize="100"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="1"></TextBlock>
+    <Border BorderBrush="Gray"
+            BorderThickness="5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="1"
-                   Margin="3, 0, 3, 0"
-                   Text="Bạn có chắc chắn muốn thoát game không?"
-                   TextAlignment="Center"
-                   FontFamily="{StaticResource mainFont}"
-                   FontSize="50"
-                   TextWrapping="Wrap"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"></TextBlock>    
-        
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0"
+               Margin="3, 0, 3, 0"
+               Text="ARE YOU SURE      YOU WANT TO EXIT    THE GAME?"
+               TextAlignment="Center"
+               FontFamily="{StaticResource mainFont}"
+               FontSize="50"
+                       FontWeight="Bold"
+               TextWrapping="Wrap"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"></TextBlock>
 
-            <Grid Grid.Column="0">
-                <Button Height="100"
-                        materialDesign:ButtonAssist.CornerRadius="25 25 0 0"
-                        Margin="5 0 5 0"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Style="{StaticResource MaterialDesignRaisedButton}"
-                        ToolTip="MaterialDesignRaisedSecondaryButton with Round Top Corners"
-                        VerticalAlignment="Bottom" Click="Button_Click">
-                    <TextBlock Text="Xác Nhận"
-                               FontFamily="{StaticResource mainFont}"
-                               FontSize="50"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"></TextBlock>
-                </Button>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Button Height="100"
-                        materialDesign:ButtonAssist.CornerRadius="25 25 0 0"
-                        Margin="5 0 5 0"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Style="{StaticResource MaterialDesignRaisedButton}"
-                        ToolTip="MaterialDesignRaisedSecondaryButton with Round Top Corners"
-                        VerticalAlignment="Bottom"
-                        Command="{Binding CloseWindowCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
-                    <TextBlock Text="Hủy"
-                               FontFamily="{StaticResource mainFont}"
-                               FontSize="50"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"></TextBlock>
-                </Button>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0"
+                      Height="80"
+                      Width="160">
+                    <Button materialDesign:ButtonAssist.CornerRadius="25"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                            Background="#e753df"
+                            BorderBrush="Transparent"
+                            Height="80">
+                        <TextBlock Text="OK"
+                                   FontSize="60"
+                                   FontFamily="{StaticResource mainFont}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   TextAlignment="Center" Height="87"
+                                   Foreground="Black"/>
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="1"
+                      Height="80"
+                      Width="160">
+                    <Button materialDesign:ButtonAssist.CornerRadius="25"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                            Height="80"
+                            Background="#e753df"
+                            BorderBrush="Transparent"
+                            Command="{Binding CloseWindowCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+                        <TextBlock Text="CANCEL"
+                                   FontSize="50"
+                                   FontFamily="{StaticResource mainFont}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   TextAlignment="Center" Height="62"
+                                   Foreground="Black"/>
+                    </Button>
+                </Grid>
             </Grid>
         </Grid>
-    </Grid>
+    </Border>
+
 </Window>
