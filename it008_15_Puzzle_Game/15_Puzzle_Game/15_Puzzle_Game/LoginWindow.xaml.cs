@@ -23,16 +23,5 @@ namespace _15_Puzzle_Game
         {
             InitializeComponent();
         }
-
-        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            RegisterWindow wd = new RegisterWindow();
-            wd.ShowDialog();
-        }
-
-        private void TextBlock_MouseDown_1(object sender, MouseButtonEventArgs e)
-        {
-
-        }
     }
 }

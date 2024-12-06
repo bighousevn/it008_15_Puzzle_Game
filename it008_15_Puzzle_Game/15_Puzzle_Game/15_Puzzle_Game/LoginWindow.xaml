@@ -114,14 +114,49 @@
                     </Grid>
 
                     <Grid Grid.Row="2">
-                        <TextBlock Background="Transparent"
+                        <TextBlock x:Name="Register"
+                                   Background="Transparent"
                                    Text="Don't have an account?"
                                    FontFamily="{StaticResource mainFont}"
                                    FontSize="26"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Center"
-                                   Foreground="Blue"
-                                   MouseDown="TextBlock_MouseDown">
+                                   Foreground="Blue">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                                            <Setter Property="FontStyle" Value="Italic"></Setter>
+                                            <Setter Property="Foreground" Value="#0e5898"></Setter>
+                                            <Setter Property="Background" Value="Transparent"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDown">
+                                    <i:InvokeCommandAction Command="{Binding RegisterWindowCommand}" 
+                                                           CommandParameter="{Binding ElementName=Register}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBlock>
+
+                        <TextBlock x:Name="Forgot"
+                                   Background="Transparent"
+                                   Text="Forgot password?"
+                                   FontFamily="{StaticResource mainFont}"
+                                   FontSize="26"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Center"
+                                   Foreground="Blue">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDown">
+                                    <i:InvokeCommandAction Command="{Binding ForgotPasswordWindowCommand}"
+                                                           CommandParameter="{Binding ElementName=Register}">
+                                    </i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
                                     <Style.Triggers>
@@ -135,15 +170,6 @@
                                 </Style>
                             </TextBlock.Style>
                         </TextBlock>
-
-                        <TextBlock Background="Transparent"
-                                   Text="Forgot password?"
-                                   FontFamily="{StaticResource mainFont}"
-                                   FontSize="26"
-                                   HorizontalAlignment="Right"
-                                   VerticalAlignment="Center"
-                                   Foreground="Blue"
-                                   MouseDown="TextBlock_MouseDown_1"></TextBlock>
                     </Grid>
 
                     <Grid Grid.Row="3">

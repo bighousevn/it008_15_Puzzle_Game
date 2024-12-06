@@ -76,9 +76,11 @@
                  Text="{Binding RegisterEmail}"
                  FontSize="35"
                  FontFamily="{StaticResource mainFont}"></TextBox>
-        <Grid Grid.Row="4"
-              Height="60"
-              Width="150">
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
             <Button materialDesign:ButtonAssist.CornerRadius="25"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     ToolTip="MaterialDesignRaisedButton with Round Corners"
@@ -89,6 +91,19 @@
                     Command="{Binding RegisterCommand}"
                     CommandParameter="{Binding ElementName=registerWindow}">
                 <TextBlock Text="Register"
+                           FontSize="30"
+                           FontFamily="{StaticResource mainFont}"/>
+            </Button>
+            <Button Grid.Column="1" materialDesign:ButtonAssist.CornerRadius="25"
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    ToolTip="MaterialDesignRaisedButton with Round Corners"
+                    Background="#cb6be6"
+                    BorderBrush="Transparent"
+                    Height="60"
+                    Width="150"
+                    Command="{Binding CloseWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+                <TextBlock Text="Exit"
                            FontSize="30"
                            FontFamily="{StaticResource mainFont}"/>
             </Button>

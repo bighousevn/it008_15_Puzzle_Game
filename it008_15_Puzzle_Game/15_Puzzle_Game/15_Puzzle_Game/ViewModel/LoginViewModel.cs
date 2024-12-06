@@ -30,6 +30,10 @@ namespace _15_Puzzle_Game.ViewModel
         public ICommand OpenRegisterWindowCommand { get; set; }
         public ICommand RegisterPasswordChangedCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
+        public ICommand ForgotPasswordWindowCommand { get; set; }
+        public ICommand RegisterWindowCommand { get; set; }
+        public ICommand CloseWindowCommand { get; set; }
+
 
 
         public LoginViewModel()
@@ -45,6 +49,25 @@ namespace _15_Puzzle_Game.ViewModel
             RegisterPasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { RegisterPassWord = p.Password; });
             RegisterCommand = new RelayCommand<Window>((p) => { return true; }, (p) => { Register(p); });
 
+            ForgotPasswordWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
+                ForgotPasswordWindow wd = new ForgotPasswordWindow();   
+                wd.ShowDialog();
+            });
+
+            RegisterWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
+                RegisterWindow wd = new RegisterWindow();
+                wd.ShowDialog();
+            });
+
+            CloseWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
+                CloseWindow(p);
+            });
+        }
+
+        private void CloseWindow(object parameter)
+        {
+            if (parameter is Window window)
+                window.Close();
         }
 
         void Login(Window p)
