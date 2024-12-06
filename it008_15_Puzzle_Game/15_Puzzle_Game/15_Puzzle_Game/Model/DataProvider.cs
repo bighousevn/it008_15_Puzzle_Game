@@ -10,7 +10,7 @@ namespace _15_Puzzle_Game.Model
     {
        private static DataProvider instance;
        public static DataProvider Instance
-        {
+       {
             get
             {
                 if (instance == null)
@@ -18,11 +18,11 @@ namespace _15_Puzzle_Game.Model
                 return instance;
             }
             set { instance = value; }
-        }
+       }
         public PuzzleGameDBEntities DB { get; set; }
         private DataProvider()
         {
-            DB= new PuzzleGameDBEntities ();  
+            DB = new PuzzleGameDBEntities();  
         }
     }
 }

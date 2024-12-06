@@ -25,9 +25,9 @@ namespace _15_Puzzle_Game.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<LeaderBoard> LeaderBoards { get; set; }
-        public virtual DbSet<Level> Levels { get; set; }
-        public virtual DbSet<Puzzle> Puzzles { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<LeaderBoards> LeaderBoards { get; set; }
+        public virtual DbSet<Levels> Levels { get; set; }
+        public virtual DbSet<Puzzles> Puzzles { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

@@ -90,6 +90,9 @@
     <Compile Include="Congratulation.xaml.cs">
       <DependentUpon>Congratulation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ForgotPasswordWindow.xaml.cs">
+      <DependentUpon>ForgotPasswordWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GamePlayPage.xaml.cs">
       <DependentUpon>GamePlayPage.xaml</DependentUpon>
     </Compile>
@@ -100,11 +103,10 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DataProvider.cs" />
-    <Compile Include="Model\LeaderBoard.cs">
+    <Compile Include="Model\LeaderBoards.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\LeaderBoards.cs" />
-    <Compile Include="Model\Level.cs">
+    <Compile Include="Model\Levels.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Model1.Context.cs">
@@ -122,10 +124,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Puzzle.cs">
+    <Compile Include="Model\Puzzles.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\User.cs">
+    <Compile Include="Model\Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\XepHang.cs" />
@@ -153,6 +155,10 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Page Include="Congratulation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForgotPasswordWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,20 +251,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Picture\BackGround.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Picture\sunset-river-nature-scenery-4k-wallpaper-uhdpaper.com-693%400%40j.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Picture\1039168.png" />
-    <Resource Include="Picture\1092839.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Picture\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\YouWon.jpg" />
+    <Resource Include="Picture\MainPageBackGround.jpg" />
+    <Resource Include="Picture\BackGroundLogin.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\Model1.Context.tt">
@@ -271,7 +272,20 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Picture\BackGroundLogin.jpg" />
+    <Content Include="Music\BackGroundMusic.mp3" />
+    <Resource Include="Picture\GamePlay\Cat.jpg" />
+    <Resource Include="Picture\GamePlay\ChillGuy.jpg" />
+    <Resource Include="Picture\GamePlay\Dog.png" />
+    <Resource Include="Picture\GamePlay\DragonBall.jpg" />
+    <Resource Include="Picture\GamePlay\Duck.jpg" />
+    <Resource Include="Picture\GamePlay\Kid.jpg" />
+    <Resource Include="Picture\GamePlay\Main3x3.jpg" />
+    <Resource Include="Picture\GamePlay\Main4x4.jpg" />
+    <Resource Include="Picture\GamePlay\Main5x5.jpg" />
+    <Resource Include="Picture\GamePlay\Naruto.jpg" />
+    <Resource Include="Picture\GamePlay\OnePiece.jpg" />
+    <Resource Include="Picture\GamePlay\Pepe.jpg" />
+    <Resource Include="Picture\PicturePageBackGround.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />

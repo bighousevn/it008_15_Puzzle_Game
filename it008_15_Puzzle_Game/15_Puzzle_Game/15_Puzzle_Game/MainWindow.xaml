@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:_15_Puzzle_Game"   
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="Sliding Puzzle" 
         Height="675"
         Width="1210"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:viewmodel="clr-namespace:_15_Puzzle_Game.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"

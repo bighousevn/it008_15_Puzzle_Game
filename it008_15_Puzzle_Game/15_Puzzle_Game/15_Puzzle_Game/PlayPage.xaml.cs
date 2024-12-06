@@ -266,34 +266,34 @@ namespace _15_Puzzle_Game
 
 
 
-        static bool CountInversions(List<Image> puzzle)
-        {
-            int inversions = 0;
-            int length = puzzle.Count;
+        //static bool CountInversions(List<Image> puzzle)
+        //{
+        //    int inversions = 0;
+        //    int length = puzzle.Count;
 
-            // Tính số đảo
-            for (int i = 0; i < length - 1; i++)
-            {
-                for (int j = i + 1; j < length; j++)
-                {
-                    if (int.Parse(puzzle[i].Tag.ToString())> int.Parse(puzzle[j].Tag.ToString()) && puzzle[i].Tag.ToString() != "0" && puzzle[j].Tag.ToString() != "0")
-                    {
-                        inversions++;
-                    }
-                }
-            }
-            return inversions%2==0;
-        }
+        //    // Tính số đảo
+        //    for (int i = 0; i < length - 1; i++)
+        //    {
+        //        for (int j = i + 1; j < length; j++)
+        //        {
+        //            if (int.Parse(puzzle[i].Tag.ToString())> int.Parse(puzzle[j].Tag.ToString()) && puzzle[i].Tag.ToString() != "0" && puzzle[j].Tag.ToString() != "0")
+        //            {
+        //                inversions++;
+        //            }
+        //        }
+        //    }
+        //    return inversions%2==0;
+        //}
 
 
         private void PlaceImageList()
         {
             //Shuffle lại danh sách hình ảnh
 
-            var shuffleImages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            while(!CountInversions(shuffleImages))
-                shuffleImages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            imageList = shuffleImages;
+            //var shuffleImages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            //while (!CountInversions(shuffleImages))
+            //    shuffleImages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            //imageList = shuffleImages;
 
             double x = 0; // Khởi tạo vị trí x
             double y = 0; // Khởi tạo vị trí y
@@ -338,10 +338,7 @@ namespace _15_Puzzle_Game
                     
                 }
             }
-
-
         }
-
 
         private bool CanSwap(Image clickedImage, Image emptyBox, double n)
         {
@@ -408,36 +405,51 @@ namespace _15_Puzzle_Game
                 //DataProvider.Instance.DB.SaveChanges();
 
                 var user = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
-                var level= DataProvider.Instance.DB.Levels.FirstOrDefault(p=> p.level_name == CurrentUser.Instance.CurrentLevelName);
-                var puzzle=DataProvider.Instance.DB.Puzzles.FirstOrDefault(p=> p.image_path==CurrentUser.Instance.CurrentImagePath);
-
-                var existingLeaderBoard = DataProvider.Instance.DB.LeaderBoards
+                var level = DataProvider.Instance.DB.Levels.FirstOrDefault(p => p.level_name == CurrentUser.Instance.CurrentLevelName);
+                var puzzle = DataProvider.Instance.DB.Puzzles.FirstOrDefault(p => p.image_path == CurrentUser.Instance.CurrentImagePath);
+                int newMove = steps;
+                int newTimeTaken = mainViewModel.getTime();
+                if (DataProvider.Instance.DB.LeaderBoards.Count() > 0)
+                {
+                    var existingLeaderBoard = DataProvider.Instance.DB.LeaderBoards
                     .FirstOrDefault(p => p.user_id == user.user_id
                                       && p.puzzle_id == puzzle.puzzle_id
                                       && p.level_id == level.level_id);
 
-                int newMove = steps;
-                int newTimeTaken = mainViewModel.getTime();
 
-                if (existingLeaderBoard != null)
-                {
-                    // Cập nhật nếu move hoặc time_taken mới nhỏ hơn
-                    if (newTimeTaken < existingLeaderBoard.time_taken ||
-                       (newTimeTaken == existingLeaderBoard.time_taken && newMove < existingLeaderBoard.move))
+
+                    if (existingLeaderBoard != null)
                     {
-                        existingLeaderBoard.move = newMove;
-                        existingLeaderBoard.time_taken = newTimeTaken;
+                        // Cập nhật nếu move hoặc time_taken mới nhỏ hơn
+                        if (newTimeTaken < existingLeaderBoard.time_taken ||
+                           (newTimeTaken == existingLeaderBoard.time_taken && newMove < existingLeaderBoard.move))
+                        {
+                            existingLeaderBoard.move = newMove;
+                            existingLeaderBoard.time_taken = newTimeTaken;
+                            DataProvider.Instance.DB.SaveChanges();
+                        }
+                    }
+                    else
+                    {
+                        // Thêm mới nếu không tồn tại
+                        var newLeaderBoard = new LeaderBoards
+                        {
+                            leaderboards_id = DataProvider.Instance.DB.LeaderBoards.Max(p => p.leaderboards_id) + 1,
+                            user_id = user.user_id,
+                            puzzle_id = puzzle.puzzle_id,
+                            level_id = level.level_id,
+                            move = newMove,
+                            time_taken = newTimeTaken
+                        };
+                        DataProvider.Instance.DB.LeaderBoards.Add(newLeaderBoard);
                         DataProvider.Instance.DB.SaveChanges();
                     }
                 }
                 else
                 {
-                    // Thêm mới nếu không tồn tại
-                    var newLeaderBoard = new LeaderBoard
+                    var newLeaderBoard = new LeaderBoards   
                     {
-                        leaderboards_id = DataProvider.Instance.DB.LeaderBoards.Count() == 0
-                                            ? 1
-                                            : DataProvider.Instance.DB.LeaderBoards.Max(p => p.leaderboards_id) + 1,
+                        leaderboards_id = 1,
                         user_id = user.user_id,
                         puzzle_id = puzzle.puzzle_id,
                         level_id = level.level_id,
@@ -447,20 +459,21 @@ namespace _15_Puzzle_Game
                     DataProvider.Instance.DB.LeaderBoards.Add(newLeaderBoard);
                     DataProvider.Instance.DB.SaveChanges();
                 }
+
+
                 mainViewModel.Move = steps;
                 Congratulation congratulationWindow = new Congratulation();
-                    congratulationWindow.Show();
+                congratulationWindow.Show();
             }
-           
         }
-        private int getGridSize()
-        {
-            if (CurrentUser.Instance.CurrentLevelName == "4x4" ) 
-                return 16;
-            if (CurrentUser.Instance.CurrentLevelName == "5x5")
-                return 25;
-            return 9;
-        }
+        //private int getGridSize()
+        //{
+        //    if (CurrentUser.Instance.CurrentLevelName == "4x4" ) 
+        //        return 16;
+        //    if (CurrentUser.Instance.CurrentLevelName == "5x5")
+        //        return 25;
+        //    return 9;
+        //}
 
 
 

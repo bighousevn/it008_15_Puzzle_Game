@@ -36,15 +36,63 @@ namespace _15_Puzzle_Game.ViewModel
         public ICommand LoadedWindowCommand {  get; set; }
 
         public bool Isloaded = false;
-        private string path1 = "Picture/1039168.png";
-        private string path2 = "Picture/1092839.jpg";
-        private string path3 = "Picture/BackGround.jpg";
-        private string path4 = "Picture/sunset-river-nature-scenery-4k-wallpaper-uhdpaper.com-693@0@j.jpg";
+        private string path1 = "Picture/GamePlay/Dog.png";
+        private string path2 = "Picture/GamePlay/Duck.jpg";
+        private string path3 = "Picture/GamePlay/Cat.jpg";
+        private string path4 = "Picture/GamePlay/Kid.jpg";
+        private string path5 = "Picture/GamePlay/Pepe.jpg";
+        private string path6 = "Picture/GamePlay/ChillGuy.jpg";
+        private string path7 = "Picture/GamePlay/DragonBall.jpg";
+        private string path8 = "Picture/GamePlay/Naruto.jpg";
+        private string path9 = "Picture/GamePlay/OnePiece.jpg";
+
+        private string _PictureName1;
+        private string _PictureName2;
+        private string _PictureName3;
+
+        public string PictureName1
+        {
+            get { return _PictureName1; }
+            set
+            {
+                if (_PictureName1 != value)
+                {
+                    _PictureName1 = value;
+                    OnPropertyChanged(nameof(PictureName1));
+                }
+
+            }
+        }
+        public string PictureName2
+        {
+            get { return _PictureName2; }
+            set
+            {
+                if (_PictureName2 != value)
+                {
+                    _PictureName2 = value;
+                    OnPropertyChanged(nameof(PictureName2));
+                }
+
+            }
+        }
+        public string PictureName3
+        {
+            get { return _PictureName3; }
+            set
+            {
+                if (_PictureName3 != value)
+                {
+                    _PictureName3 = value;
+                    OnPropertyChanged(nameof(PictureName3));
+                }
+
+            }
+        }
 
         private string _Picture1;
         private string _Picture2;
         private string _Picture3;
-        private string _Picture4;
 
         public string Picture1
         {
@@ -81,19 +129,6 @@ namespace _15_Puzzle_Game.ViewModel
                 {
                     _Picture3 = value;
                     OnPropertyChanged(nameof(Picture3));
-                }
-
-            }
-        }
-        public string Picture4
-        {
-            get { return _Picture4; }
-            set
-            {
-                if (_Picture4 != value)
-                {
-                    _Picture4 = value;
-                    OnPropertyChanged(nameof(Picture4));
                 }
 
             }
@@ -237,21 +272,27 @@ namespace _15_Puzzle_Game.ViewModel
                 Picture1 = path1;
                 Picture2 = path2;
                 Picture3 = path3;
-                Picture4 = path4;
+                PictureName1 = "Dog";
+                PictureName2 = "Duck";
+                PictureName3 = "Cat";
             });
 
             Button4 = new RelayCommand<object>((p) => { return true; }, p => {
-                Picture1 = path3;
-                Picture2 = path2;
-                Picture3 = path1;
-                Picture4 = path4;
+                Picture1 = path4;
+                Picture2 = path5;
+                Picture3 = path6;
+                PictureName1 = "Kid";
+                PictureName2 = "Pepe";
+                PictureName3 = "ChillGuy";
             });
             
             Button5 = new RelayCommand<object>((p) => { return true; }, p => {
-                Picture1 = path1;
-                Picture2 = path4;
-                Picture3 = path3;
-                Picture4 = path2;
+                Picture1 = path7;
+                Picture2 = path8;
+                Picture3 = path9;
+                PictureName1 = "DragonBall";
+                PictureName2 = "Naruto";
+                PictureName3 = "OpePiece";
             });
 
             ClearPictureSourceCommand = new RelayCommand<object>((p) => { return true; }, p =>
@@ -276,8 +317,6 @@ namespace _15_Puzzle_Game.ViewModel
                     PictureSource = Picture2;
                 if (button.Name == "Button3")
                     PictureSource = Picture3;
-                if (button.Name == "Button4")
-                    PictureSource = Picture4;
             }
         }
 
@@ -328,7 +367,6 @@ namespace _15_Puzzle_Game.ViewModel
                 return;
             }
 
-            // Lấy danh sách top 10 LeaderBoard
             var top10Leaderboards = DataProvider.Instance.DB.LeaderBoards
                 .Where(lb => lb.level_id == level.level_id && lb.puzzle_id == puzzle.puzzle_id)
                 .OrderBy(lb => lb.time_taken)   

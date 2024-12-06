@@ -10,22 +10,21 @@
        TextElement.FontWeight="Regular"
        TextElement.FontSize="13"
        TextOptions.TextRenderingMode="Auto"
-       Background="{DynamicResource MaterialDesignPaper}"
+       Background="Transparent"
        DataContext="{StaticResource MainVM}"
        mc:Ignorable="d"
        Title="PlayPage"
        d:DesignHeight="487.5"
-       d:DesignWidth="825"
-      >
-    
+       d:DesignWidth="825">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="2" Width="0" Height="0" 
-        HorizontalAlignment="Center" VerticalAlignment="Center"
-        Name="Myborder">
-    
-        <Canvas Name="PuzzleCanvas">
-
-        </Canvas>
+        <Border BorderBrush="Black" 
+                BorderThickness="2" 
+                Width="0" 
+                Height="0" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Name="Myborder">
+            <Canvas Name="PuzzleCanvas"></Canvas>
         </Border>
     </Grid>
 </Page>

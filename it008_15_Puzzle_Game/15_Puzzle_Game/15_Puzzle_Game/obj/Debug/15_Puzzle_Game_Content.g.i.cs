@@ -10,5 +10,6 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/model1.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/model1.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/backgroundmusic.mp3")]
 
 

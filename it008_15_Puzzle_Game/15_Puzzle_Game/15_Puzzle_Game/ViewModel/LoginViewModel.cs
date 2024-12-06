@@ -84,7 +84,7 @@ namespace _15_Puzzle_Game.ViewModel
                 return;
             }
 
-            var user = new User
+            var user = new Users
             {
                 username = RegisterUserName,
                 password_hash = sha256(RegisterPassWord),

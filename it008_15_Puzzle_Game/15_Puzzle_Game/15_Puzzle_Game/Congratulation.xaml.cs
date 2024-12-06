@@ -26,5 +26,15 @@ namespace _15_Puzzle_Game
             var mainViewModel = (MainViewModel)DataContext;
             mainViewModel.LoadXepHangData();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            var mainwindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (mainwindow != null)
+            {
+                mainwindow.mainFrame.NavigationService.GoBack();
+            }
+        }
     }
 }

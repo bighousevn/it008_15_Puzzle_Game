@@ -11,7 +11,7 @@
       TextElement.FontWeight="Regular"
       TextElement.FontSize="13"
       TextOptions.TextRenderingMode="Auto"
-      Background="{DynamicResource MaterialDesignPaper}"
+      Background="#e6f5fc"
       DataContext="{StaticResource MainVM}"
       mc:Ignorable="d"
       Title="GamePlayPage"
@@ -43,16 +43,17 @@
                 <Grid>
                     <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                             Style="{StaticResource MaterialDesignFloatingActionButton}"
-                            ToolTip="MaterialDesignFloatingActionButton"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Top" Margin="0,10,0,0"
+                            Background="#4a74c0"
                             Width="50"
                             Height="50" 
                             Click="Button_Click"
                             Command="{Binding ClearPictureSourceCommand}">
                         <materialDesign:PackIcon Kind="ArrowBack"
                                                  Width="30"
-                                                 Height="30"/>
+                                                 Height="30"
+                                                 Foreground="White"/>
                     </Button>
                 </Grid>
 
@@ -69,7 +70,8 @@
                                VerticalAlignment="Center"
                                FontFamily="{StaticResource mainFont}"
                                FontSize="60"
-                               FontStyle="Italic"></TextBlock>
+                               FontStyle="Italic"
+                               Foreground="#4a74c0"></TextBlock>
                     
                     <TextBlock x:Name="TextBlockTime"
                                Grid.Row="1"
@@ -79,7 +81,8 @@
                                VerticalAlignment="Center"
                                FontFamily="{StaticResource mainFont}"
                                FontSize="70"
-                               FontStyle="Italic"></TextBlock>
+                               FontStyle="Italic"
+                               Foreground="#4a74c0"></TextBlock>
                 </Grid>
 
                 <Grid Grid.Column="2">
@@ -95,7 +98,8 @@
                                VerticalAlignment="Center"
                                FontFamily="{StaticResource mainFont}"
                                FontSize="60"
-                               FontStyle="Italic"></TextBlock>
+                               FontStyle="Italic"
+                               Foreground="#4a74c0"></TextBlock>
                     <TextBlock x:Name="TextBlockMove"
                                Grid.Row="1"
                                Text="0"
@@ -104,52 +108,18 @@
                                VerticalAlignment="Center"
                                FontFamily="{StaticResource mainFont}"
                                FontSize="80"
-                               FontStyle="Italic"></TextBlock>
+                               FontStyle="Italic"
+                               Foreground="#4a74c0"></TextBlock>
                 </Grid>
             </Grid>
 
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"></ColumnDefinition>
-                    <ColumnDefinition Width="4*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                
                 <Grid Grid.Column="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"></RowDefinition>
-                        <RowDefinition Height="2*"></RowDefinition>
-                    </Grid.RowDefinitions>
-
-                    <TextBlock Text="Undo"
-                               FontSize="45"
-                               FontFamily="{StaticResource mainFont}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Bottom">
-                    </TextBlock>
-
-                    <materialDesign:Badged x:Name="UndoButtonBadge"
-                                           Grid.Row="1"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Badge="5"
-                                           Height="80"
-                                           Width="80">
-                        <Button x:Name="UndoButton"
-                                Grid.Row="1"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                                Style="{StaticResource MaterialDesignFloatingActionButton}"
-                                ToolTip="MaterialDesignFloatingActionButton" RenderTransformOrigin="0.558,1.223"
-                                Width="80"
-                                Height="80" 
-                                Click="Button_Click_1">
-                            <materialDesign:PackIcon Kind="Undo"
-                                                     Width="30"
-                                                     Height="30"></materialDesign:PackIcon>
-                        </Button>
-                    </materialDesign:Badged>
-
-                </Grid>
-                <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"></RowDefinition>
                         <RowDefinition Height="2*"></RowDefinition>
@@ -159,18 +129,21 @@
                                FontSize="45"
                                FontFamily="{StaticResource mainFont}"
                                HorizontalAlignment="Center"
-                               VerticalAlignment="Bottom">
-                    </TextBlock>
+                               VerticalAlignment="Bottom"
+                               Foreground="#4a74c0"></TextBlock>
 
                     <Button Grid.Row="1"
                             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                             Style="{StaticResource MaterialDesignFloatingActionButton}"
                             ToolTip="MaterialDesignFloatingActionButton"
                             Width="80"
-                            Height="80" Click="Button_Click_2">
+                            Height="80" 
+                            Click="Button_Click_2"
+                            Background="#4a74c0">
                         <materialDesign:PackIcon Kind="Shuffle"
                                                  Width="30"
-                                                 Height="30"></materialDesign:PackIcon>
+                                                 Height="30"
+                                                 Foreground="White"></materialDesign:PackIcon>
                     </Button>
                 </Grid>
             </Grid>
@@ -180,19 +153,25 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="68*"></RowDefinition>
                 <RowDefinition Height="199*"></RowDefinition>
-                <RowDefinition Height="209*"/>
+                <RowDefinition Height="209*"></RowDefinition>
             </Grid.RowDefinitions>
 
             <TextBlock Text="LeaderBoards"
                        TextAlignment="Center"
                        FontFamily="{StaticResource mainFont}"
                        FontSize="50"
+                       Foreground="#4a74c0"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Top" Margin="0,10,0,0"/>
+                       VerticalAlignment="Top" 
+                       Margin="0,10,0,0"/>
 
-                <materialDesign:Card Grid.Row="1" Grid.RowSpan="2"
+                <materialDesign:Card Grid.Row="1" 
+                                     Grid.RowSpan="2"
                                      HorizontalAlignment="Stretch"
-                                     VerticalAlignment="Stretch">
+                                     VerticalAlignment="Stretch"
+                                     Width="350">
+                <Border BorderBrush="#1791f8"
+                        BorderThickness="2">
                     <ScrollViewer VerticalScrollBarVisibility="Auto"
                                   HorizontalAlignment="Stretch"
                                   VerticalAlignment="Stretch">
@@ -200,13 +179,15 @@
                                   ItemsSource="{Binding XepHangList}">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn DisplayMemberBinding="{Binding UserName }" 
-                                                    Width="auto">
+                                    <GridViewColumn DisplayMemberBinding="{Binding UserName}" 
+                                                    Width="150">
                                         <GridViewColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="UserName"
                                                            FontSize="35"
-                                                           FontFamily="{StaticResource mainFont}"/>
+                                                           FontWeight="Bold"
+                                                           FontFamily="{StaticResource mainFont}"
+                                                           Foreground="#1791f8"/>
                                             </DataTemplate>
                                         </GridViewColumn.HeaderTemplate>
 
@@ -224,25 +205,26 @@
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
-                                <GridViewColumn DisplayMemberBinding="{Binding _LeaderBoard.move}"
-                                                Width="auto">
+                                    <GridViewColumn DisplayMemberBinding="{Binding _LeaderBoard.move}"
+                                                    Width="75">
                                         <GridViewColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="Move"
-                                               FontSize="35"
-                                               FontFamily="{StaticResource mainFont}"/>
+                                                           FontSize="35"
+                                                           FontFamily="{StaticResource mainFont}"
+                                                           FontWeight="Bold"
+                                                           Foreground="#1791f8"/>
                                             </DataTemplate>
                                         </GridViewColumn.HeaderTemplate>
 
                                         <GridViewColumn.Header>
-                                            <GridViewColumnHeader Padding="0" 
-                                                      Width="140" 
-                                                      Margin="0">
+                                            <GridViewColumnHeader Padding="0"
+                                                                  Margin="0">
                                                 <GridViewColumnHeader.Template>
                                                     <ControlTemplate TargetType="GridViewColumnHeader">
                                                         <Grid Background="{TemplateBinding Background}">
                                                             <ContentPresenter HorizontalAlignment="Center" 
-                                              VerticalAlignment="Center"/>
+                                                                              VerticalAlignment="Center"/>
                                                         </Grid>
                                                     </ControlTemplate>
                                                 </GridViewColumnHeader.Template>
@@ -251,23 +233,24 @@
                                     </GridViewColumn>
 
                                     <GridViewColumn DisplayMemberBinding="{Binding TimeDisplay}"
-                                                    Width="auto">
+                                                    Width="125">
                                         <GridViewColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="Time"
-                                               FontSize="35"
-                                               FontFamily="{StaticResource mainFont}"/>
+                                                           FontSize="35"
+                                                           FontFamily="{StaticResource mainFont}"
+                                                           FontWeight="Bold"
+                                                           Foreground="#1791f8"/>
                                             </DataTemplate>
                                         </GridViewColumn.HeaderTemplate>
                                         <GridViewColumn.Header>
-                                            <GridViewColumnHeader Padding="0" 
-                                                      Width="140" 
-                                                      Margin="0">
+                                            <GridViewColumnHeader Padding="0"
+                                                                  Margin="0">
                                                 <GridViewColumnHeader.Template>
                                                     <ControlTemplate TargetType="GridViewColumnHeader">
                                                         <Grid Background="{TemplateBinding Background}">
                                                             <ContentPresenter HorizontalAlignment="Center" 
-                                                                  VerticalAlignment="Center"/>
+                                                                              VerticalAlignment="Center"/>
                                                         </Grid>
                                                     </ControlTemplate>
                                                 </GridViewColumnHeader.Template>
@@ -278,6 +261,8 @@
                             </ListView.View>
                         </ListView>
                     </ScrollViewer>
+                </Border>
+                    
                 </materialDesign:Card>
         </Grid>
         <Grid Grid.Row="0"
@@ -296,13 +281,14 @@
                         materialDesign:ButtonProgressAssist.IsIndeterminate="True"
                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                         materialDesign:ButtonProgressAssist.Value="-1"
-                        Content="{materialDesign:PackIcon DotsHorizontal}"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Style="{StaticResource MaterialDesignFloatingActionButton}"
+                        Background="#4a74c0"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
                         Margin="0,10,0,0" 
                         Command="{Binding SettingGamePlayCommand}">
+                    <materialDesign:PackIcon Kind="DotsHorizontal"
+                                             Foreground="White"></materialDesign:PackIcon>
                 </Button>
             </Grid>
             <Grid>

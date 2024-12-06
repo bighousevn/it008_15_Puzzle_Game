@@ -70,18 +70,6 @@ namespace _15_Puzzle_Game
             NavigationService.GoBack();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            int temp = int.Parse(UndoButtonBadge.Badge.ToString());
-            temp--;
-            UndoButtonBadge.Badge = temp;   
-
-            if (temp == 0)
-            {
-                UndoButton.IsEnabled = false;
-            }
-        }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             
@@ -97,8 +85,5 @@ namespace _15_Puzzle_Game
             // Cập nhật nội dung của TextBlockMove từ sự kiện
             TextBlockMove.Text = newText;
         }
-
-        
-
     }
 }

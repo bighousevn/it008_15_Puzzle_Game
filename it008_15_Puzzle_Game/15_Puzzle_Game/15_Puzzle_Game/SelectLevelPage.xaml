@@ -16,7 +16,7 @@
       mc:Ignorable="d"
       Title="SelectLevelPage" 
       d:DesignHeight="675"
-      d:DesignWidth="1210">
+      d:DesignWidth="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -29,17 +29,14 @@
 
         <Grid Grid.Column="0"
               Grid.Row="0">
-            <Button 
-                    Tag="3"
+            <Button Tag="3"
                     materialDesign:ButtonAssist.CornerRadius="10"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     ToolTip="MaterialDesignRaisedButton with Round Corners"
                     Height="200"
                     Width="350"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Bottom"
-                    Margin="100, 100, 40, 40"
+                    Margin="150 50 0 0"
                     Command="{Binding Button3}"
                     Click="Button_Click">
                 <TextBlock Text="3 X 3"
@@ -72,9 +69,8 @@
                     ToolTip="MaterialDesignRaisedButton with Round Corners"
                     Height="200"
                     Width="350"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"
-                    Margin="100, 40, 40, 100"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
                     Click="Button_Click"
                     Command="{Binding Button5}">
                 <TextBlock Text="5 X 5"
@@ -93,9 +89,8 @@
                     ToolTip="MaterialDesignRaisedButton with Round Corners"
                     Height="200"
                     Width="350"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom"
-                    Margin="40, 100, 100, 40"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
                     Click="Button_Click"
                     Command="{Binding Button4}">
                 <TextBlock Text="4 X 4"
@@ -133,9 +128,8 @@
                     ToolTip="MaterialDesignRaisedButton with Round Corners"
                     Height="200"
                     Width="350"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    Margin="40, 40, 100, 100"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
                     Click="Button_Click">
                 <TextBlock Text="Tùy Chỉnh"
                            FontSize="80"

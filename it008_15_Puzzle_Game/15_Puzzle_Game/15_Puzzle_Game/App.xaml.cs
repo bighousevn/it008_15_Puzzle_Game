@@ -19,7 +19,7 @@ namespace _15_Puzzle_Game
         public App()
         {
             mediaPlayer = new MediaPlayer();
-            mediaPlayer.Open(new Uri("C:\\Users\\ToanHuynh\\Downloads\\Như Anh Mơ.mp3"));
+            mediaPlayer.Open(new Uri("D:\\Đồ Án\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Music\\BackGroundMusic.mp3"));
             mediaPlayer.Play();
             mediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
         }

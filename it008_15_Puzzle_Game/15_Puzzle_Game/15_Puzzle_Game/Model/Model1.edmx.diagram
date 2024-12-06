@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5b0fe5a45e69428fa30ac720e9e0e4f4" Name="Diagram1">
-        <EntityTypeShape EntityType="PuzzleGameDBModel.LeaderBoard" Width="1.5" PointX="3.625" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PuzzleGameDBModel.Level" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PuzzleGameDBModel.Puzzle" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PuzzleGameDBModel.User" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
-        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__level__2F10007B" ManuallyRouted="false" />
-        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__puzzl__2E1BDC42" ManuallyRouted="false" />
-        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__user___2D27B809" ManuallyRouted="false" />
+      <Diagram DiagramId="92b49d63de96481e96a3e3df561f941b" Name="Diagram1">
+        <EntityTypeShape EntityType="PuzzleGameDBModel.LeaderBoards" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PuzzleGameDBModel.Levels" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PuzzleGameDBModel.Puzzles" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PuzzleGameDBModel.Users" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__level__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__puzzl__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__user___52593CB8" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
