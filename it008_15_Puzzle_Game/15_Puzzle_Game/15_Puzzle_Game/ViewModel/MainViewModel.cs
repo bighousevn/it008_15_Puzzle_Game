@@ -200,6 +200,21 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
+        private string _LevelName;
+        public string LevelName
+        {
+            get { return _LevelName; }
+            set
+            {
+                if (_LevelName != value)
+                {
+                    _LevelName = value;
+                    OnPropertyChanged(nameof(LevelName));
+                }
+
+            }
+        }
+
         public MainViewModel()
         {
             _elapsedTime = 0;
@@ -275,6 +290,7 @@ namespace _15_Puzzle_Game.ViewModel
                 PictureName1 = "Dog";
                 PictureName2 = "Duck";
                 PictureName3 = "Cat";
+                LevelName = "Level name: 3x3";
             });
 
             Button4 = new RelayCommand<object>((p) => { return true; }, p => {
@@ -284,6 +300,7 @@ namespace _15_Puzzle_Game.ViewModel
                 PictureName1 = "Kid";
                 PictureName2 = "Pepe";
                 PictureName3 = "ChillGuy";
+                LevelName = "Level name: 4x4";
             });
             
             Button5 = new RelayCommand<object>((p) => { return true; }, p => {
@@ -293,6 +310,7 @@ namespace _15_Puzzle_Game.ViewModel
                 PictureName1 = "DragonBall";
                 PictureName2 = "Naruto";
                 PictureName3 = "OpePiece";
+                LevelName = "Level name: 5x5";
             });
 
             ClearPictureSourceCommand = new RelayCommand<object>((p) => { return true; }, p =>
