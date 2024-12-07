@@ -45,7 +45,7 @@
                             Style="{StaticResource MaterialDesignFloatingActionButton}"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Top" Margin="0,10,0,0"
-                            Background="#4a74c0"
+                            Background="#0e5898"
                             Width="50"
                             Height="50" 
                             Click="Button_Click"
@@ -71,7 +71,7 @@
                                FontFamily="{StaticResource mainFont}"
                                FontSize="60"
                                FontStyle="Italic"
-                               Foreground="#4a74c0"></TextBlock>
+                               Foreground="#0e5898"></TextBlock>
                     
                     <TextBlock x:Name="TextBlockTime"
                                Grid.Row="1"
@@ -82,7 +82,7 @@
                                FontFamily="{StaticResource mainFont}"
                                FontSize="70"
                                FontStyle="Italic"
-                               Foreground="#4a74c0"></TextBlock>
+                               Foreground="#0e5898"></TextBlock>
                 </Grid>
 
                 <Grid Grid.Column="2">
@@ -99,7 +99,7 @@
                                FontFamily="{StaticResource mainFont}"
                                FontSize="60"
                                FontStyle="Italic"
-                               Foreground="#4a74c0"></TextBlock>
+                               Foreground="#0e5898"></TextBlock>
                     <TextBlock x:Name="TextBlockMove"
                                Grid.Row="1"
                                Text="0"
@@ -109,7 +109,7 @@
                                FontFamily="{StaticResource mainFont}"
                                FontSize="80"
                                FontStyle="Italic"
-                               Foreground="#4a74c0"></TextBlock>
+                               Foreground="#0e5898"></TextBlock>
                 </Grid>
             </Grid>
 
@@ -130,7 +130,7 @@
                                FontFamily="{StaticResource mainFont}"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
-                               Foreground="#4a74c0"></TextBlock>
+                               Foreground="#0e5898"></TextBlock>
 
                     <Button Grid.Row="1"
                             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
@@ -139,7 +139,7 @@
                             Width="80"
                             Height="80" 
                             Click="Button_Click_2"
-                            Background="#4a74c0">
+                            Background="#0e5898">
                         <materialDesign:PackIcon Kind="Shuffle"
                                                  Width="30"
                                                  Height="30"
@@ -160,7 +160,7 @@
                        TextAlignment="Center"
                        FontFamily="{StaticResource mainFont}"
                        FontSize="50"
-                       Foreground="#4a74c0"
+                       Foreground="#0e5898"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top" 
                        Margin="0,10,0,0"/>
@@ -282,7 +282,7 @@
                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                         materialDesign:ButtonProgressAssist.Value="-1"
                         Style="{StaticResource MaterialDesignFloatingActionButton}"
-                        Background="#4a74c0"
+                        Background="#0e5898"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
                         Margin="0,10,0,0" 
@@ -293,8 +293,9 @@
             </Grid>
             <Grid>
                 <Image x:Name="sampleImage"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
                        VerticalAlignment="Center"
+                       Margin="20 0 0 0"
                        Source="{Binding PictureSource}">
                 </Image>
             </Grid>

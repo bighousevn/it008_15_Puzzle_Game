@@ -8,8 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("picture/icon.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/model1.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/model1.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/backgroundmusic.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/closewindow.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/discord-notification.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/wood-plank-flicks.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/wood.mp3")]
 
 

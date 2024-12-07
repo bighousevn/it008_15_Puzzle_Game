@@ -12,8 +12,14 @@ namespace _15_Puzzle_Game.ViewModel
     {
         private static AudioControl _instance;
         private MediaPlayer BackgroundMusic;
+        private MediaPlayer WoodEffect;
+        private MediaPlayer FlickEffect;
+        private MediaPlayer CloseWindowEffect;
+        private MediaPlayer DiscordEffect;
 
         public Double BackGroundMusicVolume { get; set; }
+        public Double EffectVolume { get; set; }
+
         public static AudioControl Instance
         {
             get
@@ -31,6 +37,24 @@ namespace _15_Puzzle_Game.ViewModel
         {
             BackGroundMusicVolume = 1;
             BackgroundMusic = new MediaPlayer();
+
+            EffectVolume = 1;
+            WoodEffect = new MediaPlayer();
+            WoodEffect.Open(new Uri("D:\\Đồ Án\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Music\\Wood.mp3"));
+            WoodEffect.Volume = EffectVolume;
+
+            FlickEffect = new MediaPlayer();
+            FlickEffect.Open(new Uri("D:\\Đồ Án\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Music\\wood-plank-flicks.mp3"));
+            FlickEffect.Volume = EffectVolume;
+
+            DiscordEffect = new MediaPlayer();
+            DiscordEffect.Open(new Uri("D:\\Đồ Án\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Music\\discord-notification.mp3"));
+            DiscordEffect.Volume = EffectVolume;
+
+            CloseWindowEffect = new MediaPlayer();
+            CloseWindowEffect.Open(new Uri("D:\\Đồ Án\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Music\\CloseWindow.mp3"));
+            CloseWindowEffect.Volume = EffectVolume;
+
             BackgroundMusic.Open(new Uri("D:\\Đồ Án\\it008_15_Puzzle_Game\\it008_15_Puzzle_Game\\15_Puzzle_Game\\15_Puzzle_Game\\Music\\BackGroundMusic.mp3"));
             BackgroundMusic.Volume = BackGroundMusicVolume;
             BackgroundMusic.MediaEnded += BackgroundMusic_MediaEnded;
@@ -48,9 +72,41 @@ namespace _15_Puzzle_Game.ViewModel
             BackgroundMusic.Volume = BackGroundMusicVolume;
         }
 
+        public void SetEffectVolume(double volume)
+        {
+            EffectVolume = volume;
+            WoodEffect.Volume = EffectVolume;
+            FlickEffect.Volume = EffectVolume;
+            DiscordEffect.Volume = EffectVolume;
+        }
+
         public void BackgroundMusic_Play()
         {
             BackgroundMusic.Play();
+        }
+
+        public void WoodEffect_Play()
+        {
+            WoodEffect.Play();
+            WoodEffect.Position = TimeSpan.Zero;  // Đưa về đầu
+        }
+
+        public void FlickEffect_Play()
+        {
+            FlickEffect.Play();
+            FlickEffect.Position = TimeSpan.Zero;  // Đưa về đầu
+
+        }
+        public void DiscordEffect_Play()
+        {
+            DiscordEffect.Play();
+            DiscordEffect.Position = TimeSpan.Zero;  // Đưa về đầu
+        }
+
+        public void CloseWindowEffect_Play()
+        {
+            CloseWindowEffect.Play();
+            CloseWindowEffect.Position = TimeSpan.Zero;  // Đưa về đầu
         }
     }
 }

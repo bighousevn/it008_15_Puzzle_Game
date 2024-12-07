@@ -10,7 +10,6 @@
       d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
       DataContext="{StaticResource MainVM}"
       mc:Ignorable="d"
-      mc:Ignorable="d" 
       d:DesignHeight="675"
       d:DesignWidth="1210"
       Title="SelectLevelOptional">
@@ -71,8 +70,7 @@
                 Margin="10,10,0,0"
                 Width="80"
                 Height="80" 
-                Background="#0e5898"
-                Click="Button_Click_1">
+                Background="#0e5898">
                     <materialDesign:PackIcon Kind="ArrowBack"
                                      Width="30"
                                      Height="30"/>

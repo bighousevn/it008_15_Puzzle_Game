@@ -16,6 +16,7 @@
         TextElement.FontSize="13"
         TextOptions.TextRenderingMode="Auto"
         Style="{StaticResource MaterialDesignWindow}"
+        WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"

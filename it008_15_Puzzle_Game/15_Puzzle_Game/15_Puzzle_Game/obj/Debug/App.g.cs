@@ -61,7 +61,7 @@ namespace _15_Puzzle_Game {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/15_Puzzle_Game;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Sliding Puzzle;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

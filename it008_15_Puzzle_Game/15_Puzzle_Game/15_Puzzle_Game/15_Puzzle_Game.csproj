@@ -7,12 +7,12 @@
     <ProjectGuid>{E6FDDDB6-9BDB-43B3-8FF2-3665F1944C0F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>_15_Puzzle_Game</RootNamespace>
-    <AssemblyName>15_Puzzle_Game</AssemblyName>
+    <AssemblyName>Sliding Puzzle</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -35,6 +35,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
@@ -87,6 +90,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChangePasswordWindow.xaml.cs">
+      <DependentUpon>ChangePasswordWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Congratulation.xaml.cs">
       <DependentUpon>Congratulation.xaml</DependentUpon>
     </Compile>
@@ -158,6 +164,10 @@
     <Compile Include="ViewModel\CurrentUser.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Page Include="ChangePasswordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Congratulation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -259,7 +269,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Picture\Icon.png" />
+    <Resource Include="Icon.ico" />
+    <Content Include="Picture\Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -281,6 +292,10 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Music\BackGroundMusic.mp3" />
+    <Content Include="Music\CloseWindow.mp3" />
+    <Content Include="Music\discord-notification.mp3" />
+    <Content Include="Music\wood-plank-flicks.mp3" />
+    <Content Include="Music\Wood.mp3" />
     <Resource Include="Picture\GamePlay\MainOptional.jpg" />
     <Resource Include="Picture\GamePlay\Cat.jpg" />
     <Resource Include="Picture\GamePlay\ChillGuy.jpg" />

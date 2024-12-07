@@ -193,5 +193,22 @@
                 </Grid>
             </materialDesign:Card>
         </Grid>
+        <Button Grid.Column="1"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Height="100"
+                Width="100"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0 70 18 0"
+                Command="{Binding ExitCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+            <materialDesign:PackIcon Kind="ExitRun"
+                                     Foreground="#8b3bda"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Height="80"
+                                     Width="80"></materialDesign:PackIcon>
+        </Button>
     </Grid>
 </Window>

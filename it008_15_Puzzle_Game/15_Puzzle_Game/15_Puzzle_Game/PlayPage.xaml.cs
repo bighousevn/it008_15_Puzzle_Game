@@ -266,34 +266,34 @@ namespace _15_Puzzle_Game
 
 
 
-        //static bool CountInversions(List<Image> puzzle)
-        //{
-        //    int inversions = 0;
-        //    int length = puzzle.Count;
+        static bool CountInversions(List<Image> puzzle)
+        {
+            int inversions = 0;
+            int length = puzzle.Count;
 
-        //    // Tính số đảo
-        //    for (int i = 0; i < length - 1; i++)
-        //    {
-        //        for (int j = i + 1; j < length; j++)
-        //        {
-        //            if (int.Parse(puzzle[i].Tag.ToString())> int.Parse(puzzle[j].Tag.ToString()) && puzzle[i].Tag.ToString() != "0" && puzzle[j].Tag.ToString() != "0")
-        //            {
-        //                inversions++;
-        //            }
-        //        }
-        //    }
-        //    return inversions%2==0;
-        //}
+            // Tính số đảo
+            for (int i = 0; i < length - 1; i++)
+            {
+                for (int j = i + 1; j < length; j++)
+                {
+                    if (int.Parse(puzzle[i].Tag.ToString()) > int.Parse(puzzle[j].Tag.ToString()) && puzzle[i].Tag.ToString() != "0" && puzzle[j].Tag.ToString() != "0")
+                    {
+                        inversions++;
+                    }
+                }
+            }
+            return inversions % 2 == 0;
+        }
 
 
         private void PlaceImageList()
         {
             //Shuffle lại danh sách hình ảnh
 
-            //var shuffleImages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            //while (!CountInversions(shuffleImages))
-            //    shuffleImages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            //imageList = shuffleImages;
+            var shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            while (!CountInversions(shuffleimages))
+                shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            imageList = shuffleimages;
 
             double x = 0; // Khởi tạo vị trí x
             double y = 0; // Khởi tạo vị trí y
@@ -335,7 +335,6 @@ namespace _15_Puzzle_Game
                 {
                     // Kiểm tra thuộc tính Tag (hoặc các thuộc tính khác tùy theo yêu cầu)
                     locations.Add(image.Tag?.ToString());
-                    
                 }
             }
         }
@@ -500,6 +499,7 @@ namespace _15_Puzzle_Game
                 // Cập nhật lại danh sách các vị trí của mảnh ghép
                 UpdateLocations(clickedImage, emptyBox);
 
+                AudioControl.Instance.WoodEffect_Play();
             }
 
             // Kiểm tra xem trò chơi đã hoàn thành chưa
@@ -510,8 +510,6 @@ namespace _15_Puzzle_Game
         {
             PlaceImageList();
         }
-
-       
     }
 }
 

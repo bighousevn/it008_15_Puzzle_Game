@@ -11,16 +11,16 @@
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
         TextOptions.TextRenderingMode="Auto"
-        Background="{DynamicResource MaterialDesignPaper}"
+        Background="Transparent"
         mc:Ignorable="d"
         WindowStyle="None"
         DataContext="{StaticResource MainVM}"
         ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterScreen"
         Title="PauseWindow" Height="300" Width="400">
-
     <Border BorderBrush="Gray"
-            BorderThickness="5">
+            BorderThickness="5"
+            Background="{DynamicResource MaterialDesignPaper}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1.5*"></RowDefinition>
@@ -51,7 +51,8 @@
                             Style="{StaticResource MaterialDesignRaisedDarkButton}"
                             Background="#e753df"
                             BorderBrush="Transparent"
-                            Height="80">
+                            Height="80"
+                            Click="Button_Click">
                         <TextBlock Text="OK"
                                    FontSize="60"
                                    FontFamily="{StaticResource mainFont}"

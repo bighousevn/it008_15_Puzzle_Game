@@ -33,12 +33,19 @@ namespace _15_Puzzle_Game.ViewModel
         public ICommand ForgotPasswordWindowCommand { get; set; }
         public ICommand RegisterWindowCommand { get; set; }
         public ICommand CloseWindowCommand { get; set; }
+        public ICommand ExitCommand { get; set; }
 
-
+        Window mainWindow;
+        MainViewModel mainViewModel;
 
         public LoginViewModel()
         {
             IsLogin = false;
+            UserName = string.Empty;
+            Password = string.Empty;
+
+            mainWindow = Application.Current.MainWindow;
+            mainViewModel = mainWindow.DataContext as MainViewModel;
 
             LoginCommand = new RelayCommand<Window>((p) => { return true; }, (p) => { Login(p); });
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Password = p.Password; });
@@ -60,7 +67,14 @@ namespace _15_Puzzle_Game.ViewModel
             });
 
             CloseWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
+                AudioControl.Instance.CloseWindowEffect_Play();
                 CloseWindow(p);
+            });
+
+            ExitCommand = new RelayCommand<Window>((p) => { return true; }, p => {
+                AudioControl.Instance.CloseWindowEffect_Play();
+                p.Close();
+                mainWindow.Close();
             });
         }
 
@@ -74,6 +88,9 @@ namespace _15_Puzzle_Game.ViewModel
         {
             if (p == null)
                 return;
+
+            if(string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(UserName))
+                return;
             
             string pass = sha256(Password);
             var accCount = DataProvider.Instance.DB.Users.Any(x => x.username == UserName && x.password_hash == pass);
@@ -81,7 +98,7 @@ namespace _15_Puzzle_Game.ViewModel
             if (accCount)
             {
                 IsLogin = true;
-                CurrentUser.Instance.CurrentUserName= UserName;
+                CurrentUser.Instance.CurrentUserName = UserName;
                 p.Close();
             }
             else
@@ -89,6 +106,9 @@ namespace _15_Puzzle_Game.ViewModel
                 IsLogin = false;
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
             }
+
+            if (!mainViewModel.Isloaded)
+                mainViewModel.LoadedWindow(mainWindow);
         }
 
         void Register(Window p)

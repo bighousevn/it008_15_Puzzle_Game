@@ -19,6 +19,7 @@ namespace _15_Puzzle_Game.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
+
         private ObservableCollection<XepHang> _XepHangList;
         public ObservableCollection<XepHang> XepHangList { get => _XepHangList; set { _XepHangList = value; OnPropertyChanged(); } }
         public ICommand PauseCommand { get; set; }
@@ -34,8 +35,9 @@ namespace _15_Puzzle_Game.ViewModel
         public ICommand Button5 { get; set; }
         public ICommand ClearPictureSourceCommand {  get; set; }
         public ICommand LoadedWindowCommand {  get; set; }
+        public ICommand SignOutCommnand { get; set; }
 
-        public bool Isloaded = false;
+        public bool Isloaded;
         private string path1 = "Picture/GamePlay/Dog.png";
         private string path2 = "Picture/GamePlay/Duck.jpg";
         private string path3 = "Picture/GamePlay/Cat.jpg";
@@ -134,7 +136,7 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
-        private double _SiderValue = 0.3;
+        private double _SiderValue = AudioControl.Instance.BackGroundMusicVolume;
         public double SiderValue
         {
             get { return _SiderValue; }
@@ -217,6 +219,7 @@ namespace _15_Puzzle_Game.ViewModel
 
         public MainViewModel()
         {
+            Isloaded = false;
             _elapsedTime = 0;
             _DisplayTime = "00:00";
             _timer = new DispatcherTimer();
@@ -237,16 +240,10 @@ namespace _15_Puzzle_Game.ViewModel
                     return;
                 var loginvm = loginwindow.DataContext as LoginViewModel;
 
-                if (loginvm.IsLogin)
-                {
-                    p.Show();
-                }
-                else
-                {
-                    p.Close();
-                }
-            }
-              );
+                LoadedWindow(p);
+            });
+
+            SignOutCommnand = new RelayCommand<Window>((p) => { return true; }, (p) =>{ SignOut(p);});
 
             PauseCommand = new RelayCommand<object>((p) => { return true; }, (p) => { 
                 PauseWindow wd = new PauseWindow();
@@ -270,10 +267,12 @@ namespace _15_Puzzle_Game.ViewModel
             CloseSettingGamePlayWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
                 StartTimer();
                 CloseWindow(p);
+                AudioControl.Instance.CloseWindowEffect_Play();
             });
 
             CloseWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
-                CloseWindow(p);
+                AudioControl.Instance.CloseWindowEffect_Play();
+                CloseWindow(p); 
             });
 
             PictureCommand = new RelayCommand<Button>((p) => { return true; }, (p) =>
@@ -309,7 +308,7 @@ namespace _15_Puzzle_Game.ViewModel
                 Picture3 = path9;
                 PictureName1 = "DragonBall";
                 PictureName2 = "Naruto";
-                PictureName3 = "OpePiece";
+                PictureName3 = "OnePiece";
                 LevelName = "Level name: 5x5";
             });
 
@@ -317,6 +316,40 @@ namespace _15_Puzzle_Game.ViewModel
             {
                 PictureSource = string.Empty;
             });
+        }
+
+        public void LoadedWindow(Window p)
+        {
+            LoginWindow loginwindow = new LoginWindow();
+            if (loginwindow.DataContext == null)
+                return;
+            var loginvm = loginwindow.DataContext as LoginViewModel;
+            if (loginvm.IsLogin)
+            {
+                p.Show();
+                Isloaded = false;
+                AudioControl.Instance.DiscordEffect_Play();
+            }
+            else
+            {
+                p.Close();
+            }
+        }
+
+        public void SignOut(Window p)
+        {
+            Isloaded = false;
+            if (p == null)
+                return;
+            p.Hide();
+            LoginWindow loginwindow = new LoginWindow();
+            if (loginwindow.DataContext == null)
+                return;
+            var loginvm = loginwindow.DataContext as LoginViewModel;
+            loginvm.IsLogin = false;
+            loginvm.UserName = string.Empty;
+            loginvm.Password = string.Empty;
+            loginwindow.ShowDialog();
         }
 
         private void CloseWindow(object parameter) 
@@ -387,8 +420,8 @@ namespace _15_Puzzle_Game.ViewModel
 
             var top10Leaderboards = DataProvider.Instance.DB.LeaderBoards
                 .Where(lb => lb.level_id == level.level_id && lb.puzzle_id == puzzle.puzzle_id)
-                .OrderBy(lb => lb.time_taken)   
-                .ThenBy(lb => lb.move)      
+                .OrderBy(lb => lb.time_taken)
+                .ThenBy(lb => lb.move)
                 .Take(10);
             int rank = 1;
             foreach (var item in top10Leaderboards)
@@ -407,7 +440,5 @@ namespace _15_Puzzle_Game.ViewModel
                 XepHangList.Add(xepHang);
             }
         }
-
-
     }
 }

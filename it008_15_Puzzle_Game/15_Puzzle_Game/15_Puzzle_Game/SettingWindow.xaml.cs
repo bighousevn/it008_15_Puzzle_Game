@@ -18,11 +18,5 @@ namespace _15_Puzzle_Game
         {
             AudioControl.Instance.SetBackGroundMusicVolume(siderVolumn.Value);
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            PauseWindow wd = new PauseWindow(this); 
-            wd.ShowDialog();
-        }
     }
 }

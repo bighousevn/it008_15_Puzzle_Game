@@ -11,13 +11,15 @@
       TextElement.FontWeight="Regular"
       TextElement.FontSize="13"
       TextOptions.TextRenderingMode="Auto"
-      Background="{DynamicResource MaterialDesignPaper}"
       DataContext="{StaticResource MainVM}"
       mc:Ignorable="d"
       Title="SelectLevelPage" 
       d:DesignHeight="675"
       d:DesignWidth="1200">
-    <Grid>
+    <Page.Background>
+        <ImageBrush ImageSource="/Picture/PicturePageBackGround.jpg"/>
+    </Page.Background>
+    <Grid Name="backgroundGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -29,6 +31,9 @@
 
         <Grid Grid.Column="0"
               Grid.Row="0">
+            <Grid.RenderTransform>
+                <ScaleTransform ScaleX="1" ScaleY="1"/>
+            </Grid.RenderTransform>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1.2*"></ColumnDefinition>
                 <ColumnDefinition Width="4*"></ColumnDefinition>
@@ -40,6 +45,9 @@
                     <RowDefinition Height="3*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
+                <Grid.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Grid.RenderTransform>
                 <Button Grid.Row="0"
                         Tag="3"
                         materialDesign:ButtonAssist.CornerRadius="10"
@@ -130,7 +138,7 @@
                     <RowDefinition Height="3*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button Tag="5" 
+                <Button Tag="4" 
                         materialDesign:ButtonAssist.CornerRadius="10"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Style="{StaticResource MaterialDesignRaisedButton}"

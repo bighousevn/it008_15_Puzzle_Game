@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _15_Puzzle_Game.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,23 +20,24 @@ namespace _15_Puzzle_Game
     /// </summary>
     public partial class PauseWindow : Window
     {
-        private SettingWindow _settingWindow;
-
+        MainWindow MainWD;
+        MainViewModel MainVM;
         public PauseWindow()
         {
             InitializeComponent();
         }
 
-        public PauseWindow(SettingWindow settingWindow)
+        public PauseWindow(Window mainWindow)
         {
             InitializeComponent();
-            _settingWindow = settingWindow;
+            MainWD = mainWindow as MainWindow;
+            MainVM = mainWindow.DataContext as MainViewModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            _settingWindow.Close();
+            MainVM.SignOut(MainWD);
         }
     }
 }

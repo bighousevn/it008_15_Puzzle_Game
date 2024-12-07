@@ -85,7 +85,7 @@
 
             <Grid Grid.Row="2">
                 <Grid Grid.Column="1">
-                    <Button materialDesign:ButtonAssist.CornerRadius="45"
+                    <Button materialDesign:ButtonAssist.CornerRadius="20"
                             Style="{StaticResource MaterialDesignRaisedButton}" 
                             HorizontalContentAlignment="Center"
                             VerticalContentAlignment="Center"

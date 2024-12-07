@@ -103,7 +103,7 @@
                     <TextBlock Grid.Row="1"
                                Text="{Binding PictureName1}"
                                FontFamily="{StaticResource mainFont}"
-                               FontSize="80"
+                               FontSize="70"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"></TextBlock>
                 </Grid>

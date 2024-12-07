@@ -81,10 +81,10 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button materialDesign:ButtonAssist.CornerRadius="25"
+            <Button materialDesign:ButtonAssist.CornerRadius="15"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     ToolTip="MaterialDesignRaisedButton with Round Corners"
-                    Background="#cb6be6"
+                    Background="#e753e2"
                     BorderBrush="Transparent"
                     Height="60"
                     Width="150"
@@ -94,10 +94,10 @@
                            FontSize="30"
                            FontFamily="{StaticResource mainFont}"/>
             </Button>
-            <Button Grid.Column="1" materialDesign:ButtonAssist.CornerRadius="25"
+            <Button Grid.Column="1" materialDesign:ButtonAssist.CornerRadius="15"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     ToolTip="MaterialDesignRaisedButton with Round Corners"
-                    Background="#cb6be6"
+                    Background="#e753e2"
                     BorderBrush="Transparent"
                     Height="60"
                     Width="150"
