@@ -21,6 +21,7 @@ namespace _15_Puzzle_Game.ViewModel
         private MediaPlayer SigninEffect;
         private MediaPlayer OpenWindowEffect;
         private MediaPlayer LogoutEffect;
+        private MediaPlayer VictoryEffect;
 
 
         public Double BackGroundMusicVolume { get; set; }
@@ -42,9 +43,13 @@ namespace _15_Puzzle_Game.ViewModel
         public AudioControl()
         {
             BackGroundMusicVolume = 0;
-            BackgroundMusic = new MediaPlayer();
-
             EffectVolume = 1;
+
+            BackgroundMusic = new MediaPlayer();
+            BackgroundMusic.Open(new Uri(Path.Combine(Environment.CurrentDirectory, "Music", "BackGroundMusic.mp3")));
+            BackgroundMusic.Volume = BackGroundMusicVolume;
+            BackgroundMusic.MediaEnded += BackgroundMusic_MediaEnded;
+
             WoodEffect = new MediaPlayer();
             WoodEffect.Open(new Uri(Path.Combine(Environment.CurrentDirectory, "Music", "Wood.mp3")));
             WoodEffect.Volume = EffectVolume;
@@ -69,9 +74,9 @@ namespace _15_Puzzle_Game.ViewModel
             LogoutEffect.Open(new Uri(Path.Combine(Environment.CurrentDirectory, "Music", "Logout.mp3")));
             LogoutEffect.Volume = EffectVolume;
 
-            BackgroundMusic.Open(new Uri(Path.Combine(Environment.CurrentDirectory, "Music", "BackGroundMusic.mp3")));
-            BackgroundMusic.Volume = BackGroundMusicVolume;
-            BackgroundMusic.MediaEnded += BackgroundMusic_MediaEnded;
+            VictoryEffect = new MediaPlayer();
+            VictoryEffect.Open(new Uri(Path.Combine(Environment.CurrentDirectory, "Music", "Victory.mp3")));
+            VictoryEffect.Volume = EffectVolume;
         }
 
         private void BackgroundMusic_MediaEnded(object sender, EventArgs e)
@@ -136,6 +141,12 @@ namespace _15_Puzzle_Game.ViewModel
         {
             LogoutEffect.Play();
             LogoutEffect.Position = TimeSpan.Zero;  // Đưa về đầu
+        }
+
+        public void VictoryEffect_Play()
+        {
+            VictoryEffect.Play();
+            VictoryEffect.Position = TimeSpan.Zero;
         }
     }
 }

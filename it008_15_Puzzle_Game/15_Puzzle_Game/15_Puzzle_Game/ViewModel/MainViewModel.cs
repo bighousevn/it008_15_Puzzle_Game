@@ -333,7 +333,6 @@ namespace _15_Puzzle_Game.ViewModel
                 PictureName3 = "OnePiece";
                 LevelName = "Level name: 5x5";
             });
-
             ClearPictureSourceCommand = new RelayCommand<object>((p) => { return true; }, p =>
             {
                 PictureSource = string.Empty;
@@ -392,7 +391,7 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
-        private void ResetTimer()
+        public void ResetTimer()
         {
             if (_isTimerRunning)
             {
@@ -400,7 +399,7 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
-        private void StartTimer()
+        public void StartTimer()
         {
             if(!_isTimerRunning)
             {
