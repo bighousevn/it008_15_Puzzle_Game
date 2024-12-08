@@ -18,6 +18,7 @@ using MaterialDesignColors;
 using MaterialDesignThemes;
 using MaterialDesignThemes.Wpf;
 using _15_Puzzle_Game.Model;
+using System.Diagnostics;
 
 namespace _15_Puzzle_Game
 {
@@ -53,7 +54,7 @@ namespace _15_Puzzle_Game
             else
             {
                 CurrentUser.Instance.CurrentLevelName = "Option";
-                NavigationService.Navigate(new GamePlayPage(clickedButton.Tag.ToString(), "path"));
+                NavigationService.Navigate(new SelectLevelOptional());
             }
         }
 

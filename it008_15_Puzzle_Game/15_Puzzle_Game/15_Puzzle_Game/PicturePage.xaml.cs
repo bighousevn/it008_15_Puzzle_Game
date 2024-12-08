@@ -41,7 +41,7 @@ namespace _15_Puzzle_Game
                     string imagePath = backgroundImage.ImageSource.ToString();
                     CurrentUser.Instance.CurrentImagePath=imagePath;
                     // Chuyển sang Page2 và truyền đường dẫn hình ảnh
-                    GamePlayPage gamePlayPage = new GamePlayPage(n,imagePath);
+                    GamePlayPage gamePlayPage = new GamePlayPage(n,imagePath,0);
                     this.NavigationService.Navigate(gamePlayPage);
                 }
             }

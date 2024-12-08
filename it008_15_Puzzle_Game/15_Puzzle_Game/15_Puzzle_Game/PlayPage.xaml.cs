@@ -2,6 +2,7 @@
 using _15_Puzzle_Game.ViewModel;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Win32;
+using Microsoft.Xaml.Behaviors.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -50,11 +51,7 @@ namespace _15_Puzzle_Game
             Console.WriteLine("Updating URI: " + path2);  // Kiểm tra xem phương thức có được gọi không.
             OnImageUriChanged?.Invoke(path2);  // Kích hoạt sự kiện
         }
-        public void TestEventInvocation()
-        {
-            Console.WriteLine("Testing event invocation...");
-            OnImageUriChanged?.Invoke("C:\\Users\\Admin\\Downloads\\att.v5kAs0117MGxDhRV4hh_o5PAjYUqJ1koE4tF9k0gijk.jpg"); // Giả lập việc gọi sự kiện với URI
-        }
+      
 
 
 
@@ -97,28 +94,12 @@ namespace _15_Puzzle_Game
             }
 
             bitmap = new BitmapImage();
-            bitmap.BeginInit();
-            switch (n)
-            {
-                case "1":
-                    OpenFileDialog openFileDialog = new OpenFileDialog();
-                    openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                    if (openFileDialog.ShowDialog() == true)
-                    {
-                        bitmap.UriSource = new Uri(openFileDialog.FileName);
-                        path2 = openFileDialog.FileName;
-                        bitmap.EndInit();
-                        n = "3";
-                        Myborder.Width = 415;
-                        Myborder.Height = 415;
-                    }
-                    break;
-                default:
-                    bitmap.UriSource = new Uri(path);
-                    bitmap.EndInit();
-                    break;
 
-            }
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(path);
+            bitmap.EndInit();
+
+            path2 = path;
 
             switch (int.Parse(n))
             {
@@ -140,8 +121,8 @@ namespace _15_Puzzle_Game
             }
 
             n2 = int.Parse(n);
-            CreateImageList();
-            AddImages();
+           CreateImageList();
+           AddImages();
 
 
         }

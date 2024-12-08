@@ -37,6 +37,7 @@ CREATE TABLE LeaderBoards (
     FOREIGN KEY (level_id) REFERENCES Levels(level_id)
 )
 
+
 -- Insert dữ liệu vào bảng Levels (3 bộ: Dễ, Trung Bình, Khó)
 INSERT INTO Levels (level_id, level_name, grid_size)
 VALUES

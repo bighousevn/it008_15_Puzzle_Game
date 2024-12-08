@@ -24,7 +24,7 @@ namespace _15_Puzzle_Game
     public partial class GamePlayPage : Page
     {
         
-        public GamePlayPage(string n, string path)
+        public GamePlayPage(string n, string path,int checkOption)
         {
             InitializeComponent();
 
@@ -34,17 +34,16 @@ namespace _15_Puzzle_Game
 
             // Khởi tạo PlayPage
             var playPage = new PlayPage(n, path);
-            
+
             PlayFrame.Navigate(playPage);
 
-            // Nếu n == "1", lắng nghe URI từ PlayPage
-            if (n == "1")
+            //Nếu n == "1", lắng nghe URI từ PlayPage
+            if (checkOption==1)
             {
-                Console.WriteLine("n == 1, subscribing to event...");
                 playPage.OnImageUriChanged += PlayPage_UpdateUri;
                 playPage.UpdateImageUri();
             }
-            
+
             else
             {
                 // Nếu n != "1", sử dụng Binding
