@@ -12,6 +12,7 @@ namespace _15_Puzzle_Game
         {
             InitializeComponent();
             mainFrame.Navigate(new MainPage());
+            AudioControl.Instance.BackgroundMusic_Play();
         }
     }
 }

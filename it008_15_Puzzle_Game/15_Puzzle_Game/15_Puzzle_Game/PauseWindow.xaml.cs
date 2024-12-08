@@ -36,6 +36,7 @@ namespace _15_Puzzle_Game
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            AudioControl.Instance.LogoutEffect_Play();
             this.Close();
             MainVM.SignOut(MainWD);
         }

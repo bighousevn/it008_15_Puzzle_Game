@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\
 _15_Puzzle_Game
 none
 false
 DEBUG;TRACE
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\App.xaml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\App.xaml
 15178213287
 3-1779014245
 34544808166
-27-457294937
+27-1840738277
 ChangePasswordWindow.xaml;Congratulation.xaml;ForgotPasswordWindow.xaml;GamePlayPage.xaml;LoginWindow.xaml;MainPage.xaml;MainWindow.xaml;PauseWindow.xaml;PicturePage.xaml;PlayPage.xaml;RegisterWindow.xaml;ResourceXAML\MainResource.xaml;SelectLevelOptional.xaml;SelectLevelPage.xaml;SettingWindow.xaml;
 
-True
+False
 

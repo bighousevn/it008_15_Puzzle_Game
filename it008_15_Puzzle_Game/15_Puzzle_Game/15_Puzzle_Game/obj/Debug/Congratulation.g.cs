@@ -56,7 +56,7 @@ namespace _15_Puzzle_Game {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Sliding Puzzle;component/congratulation.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Sliding_Puzzle;component/congratulation.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\Congratulation.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
