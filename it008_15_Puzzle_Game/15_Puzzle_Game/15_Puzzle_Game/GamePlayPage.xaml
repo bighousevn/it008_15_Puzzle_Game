@@ -179,8 +179,18 @@
                                   ItemsSource="{Binding XepHangList}">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn DisplayMemberBinding="{Binding UserName}" 
-                                                    Width="150">
+                                    <GridViewColumn Width="150">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding UserName}"
+                                                           Width="125"
+                                                           TextAlignment="Center"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           FontFamily="{StaticResource mainFont}"
+                                                           FontSize="30"></TextBlock>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
                                         <GridViewColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="UserName"
@@ -190,7 +200,6 @@
                                                            Foreground="#1791f8"/>
                                             </DataTemplate>
                                         </GridViewColumn.HeaderTemplate>
-
                                         <GridViewColumn.Header>
                                             <GridViewColumnHeader Padding="0">
                                                 <GridViewColumnHeader.Template>
@@ -205,8 +214,18 @@
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
-                                    <GridViewColumn DisplayMemberBinding="{Binding _LeaderBoard.move}"
-                                                    Width="75">
+                                    <GridViewColumn Width="75">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding _LeaderBoard.move}"
+                                                           Width="50"
+                                                           TextAlignment="Center"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           FontFamily="{StaticResource mainFont}"
+                                                           FontSize="30"></TextBlock>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
                                         <GridViewColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="Move"
@@ -232,8 +251,18 @@
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
-                                    <GridViewColumn DisplayMemberBinding="{Binding TimeDisplay}"
-                                                    Width="125">
+                                    <GridViewColumn Width="125">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding TimeDisplay}"
+                                                           Width="105"
+                                                           TextAlignment="Center"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           FontFamily="{StaticResource mainFont}"
+                                                           FontSize="30"></TextBlock>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
                                         <GridViewColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="Time"
