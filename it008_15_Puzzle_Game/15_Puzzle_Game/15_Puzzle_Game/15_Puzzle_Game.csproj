@@ -291,11 +291,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Music\BackGroundMusic.mp3" />
-    <Content Include="Music\CloseWindow.mp3" />
-    <Content Include="Music\discord-notification.mp3" />
-    <Content Include="Music\wood-plank-flicks.mp3" />
-    <Content Include="Music\Wood.mp3" />
+    <Resource Include="Music\BackGroundMusic.mp3" />
+    <Resource Include="Music\CloseWindow.mp3" />
+    <Resource Include="Music\discord-notification.mp3" />
+    <Resource Include="Music\wood-plank-flicks.mp3" />
+    <Resource Include="Music\Wood.mp3" />
     <Resource Include="Picture\GamePlay\MainOptional.jpg" />
     <Resource Include="Picture\GamePlay\Cat.jpg" />
     <Resource Include="Picture\GamePlay\ChillGuy.jpg" />

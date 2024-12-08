@@ -290,10 +290,10 @@ namespace _15_Puzzle_Game
         {
             //Shuffle lại danh sách hình ảnh
 
-            var shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            while (!CountInversions(shuffleimages))
-                shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            imageList = shuffleimages;
+            //var shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            //while (!CountInversions(shuffleimages))
+            //    shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            //imageList = shuffleimages;
 
             double x = 0; // Khởi tạo vị trí x
             double y = 0; // Khởi tạo vị trí y

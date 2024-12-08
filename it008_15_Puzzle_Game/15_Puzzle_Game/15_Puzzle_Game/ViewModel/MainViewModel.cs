@@ -219,6 +219,7 @@ namespace _15_Puzzle_Game.ViewModel
 
         public MainViewModel()
         {
+            AudioControl.Instance.BackgroundMusic_Play();
             Isloaded = false;
             _elapsedTime = 0;
             _DisplayTime = "00:00";
