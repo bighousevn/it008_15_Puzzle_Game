@@ -130,8 +130,8 @@
                        Padding="0"
                        TextAlignment="Center"
                        Foreground="#8b3bda"
-                       MouseDown="Button_Click" 
-                       Margin="455,15,455,10">
+                       MouseDown="Button_Click"
+                       Margin="0 8 0 0">
                 <TextBlock.Style>
                     <Style TargetType="TextBlock">
                         <Style.Triggers>

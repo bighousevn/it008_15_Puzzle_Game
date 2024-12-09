@@ -14,9 +14,14 @@ namespace _15_Puzzle_Game
             InitializeComponent();
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void SiderVolumeBackground_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            AudioControl.Instance.SetBackGroundMusicVolume(siderVolumn.Value);
+            AudioControl.Instance.SetBackGroundMusicVolume(SiderVolumeBackground.Value);
+        }
+
+        private void SiderVolumeEffect_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            AudioControl.Instance.SetEffectVolume(SiderVolumeEffect.Value);
         }
     }
 }

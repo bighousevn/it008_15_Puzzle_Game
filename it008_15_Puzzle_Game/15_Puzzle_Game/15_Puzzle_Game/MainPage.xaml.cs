@@ -36,12 +36,14 @@ namespace _15_Puzzle_Game
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            AudioControl.Instance.OpenWindowEffect_Play();
             PauseWindow wd = new PauseWindow(mainWindow); 
             wd.ShowDialog();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            AudioControl.Instance.OpenWindowEffect_Play();
             ChangePasswordWindow wd = new ChangePasswordWindow();
             wd.ShowDialog();
         }

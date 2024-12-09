@@ -136,16 +136,31 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
-        private double _SiderValue = AudioControl.Instance.BackGroundMusicVolume;
-        public double SiderValue
+        private double _SiderBackgroundValue = AudioControl.Instance.BackGroundMusicVolume;
+        public double SiderBackgroundValue
         {
-            get { return _SiderValue; }
+            get { return _SiderBackgroundValue; }
             set 
             { 
-                if(_SiderValue != value )
+                if(_SiderBackgroundValue != value )
                 {
-                    _SiderValue = value;
-                    OnPropertyChanged(nameof(SiderValue));
+                    _SiderBackgroundValue = value;
+                    OnPropertyChanged(nameof(SiderBackgroundValue));
+                }
+
+            }
+        }
+
+        private double _SiderEffectValue = AudioControl.Instance.EffectVolume;
+        public double SiderEffectValue
+        {
+            get { return _SiderEffectValue; }
+            set
+            {
+                if (_SiderEffectValue != value)
+                {
+                    _SiderEffectValue = value;
+                    OnPropertyChanged(nameof(SiderEffectValue));
                 }
 
             }
@@ -219,7 +234,6 @@ namespace _15_Puzzle_Game.ViewModel
 
         public MainViewModel()
         {
-            AudioControl.Instance.BackgroundMusic_Play();
             Isloaded = false;
             _elapsedTime = 0;
             _DisplayTime = "00:00";
@@ -244,15 +258,21 @@ namespace _15_Puzzle_Game.ViewModel
                 LoadedWindow(p);
             });
 
-            SignOutCommnand = new RelayCommand<Window>((p) => { return true; }, (p) =>{ SignOut(p);});
+            SignOutCommnand = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            {
+                AudioControl.Instance.SigninEffect_Play();
+                SignOut(p);
+            });
 
-            PauseCommand = new RelayCommand<object>((p) => { return true; }, (p) => { 
+            PauseCommand = new RelayCommand<object>((p) => { return true; }, (p) => {
+                AudioControl.Instance.OpenWindowEffect_Play();
                 PauseWindow wd = new PauseWindow();
                 wd.ShowDialog();
             });
 
             SettingGamePlayCommand = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
+                AudioControl.Instance.OpenWindowEffect_Play();
                 StopTimer();
                 SettingWindow wd = new SettingWindow();
                 wd.ShowDialog();
@@ -261,6 +281,7 @@ namespace _15_Puzzle_Game.ViewModel
 
             SettingCommand = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
+                AudioControl.Instance.OpenWindowEffect_Play();
                 SettingWindow wd = new SettingWindow();
                 wd.ShowDialog();
             });
@@ -312,7 +333,6 @@ namespace _15_Puzzle_Game.ViewModel
                 PictureName3 = "OnePiece";
                 LevelName = "Level name: 5x5";
             });
-
             ClearPictureSourceCommand = new RelayCommand<object>((p) => { return true; }, p =>
             {
                 PictureSource = string.Empty;
@@ -329,7 +349,6 @@ namespace _15_Puzzle_Game.ViewModel
             {
                 p.Show();
                 Isloaded = false;
-                AudioControl.Instance.DiscordEffect_Play();
             }
             else
             {
@@ -372,7 +391,7 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
-        private void ResetTimer()
+        public void ResetTimer()
         {
             if (_isTimerRunning)
             {
@@ -380,7 +399,7 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
-        private void StartTimer()
+        public void StartTimer()
         {
             if(!_isTimerRunning)
             {

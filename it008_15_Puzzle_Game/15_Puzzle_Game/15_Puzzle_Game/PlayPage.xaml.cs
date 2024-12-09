@@ -51,9 +51,6 @@ namespace _15_Puzzle_Game
             Console.WriteLine("Updating URI: " + path2);  // Kiểm tra xem phương thức có được gọi không.
             OnImageUriChanged?.Invoke(path2);  // Kích hoạt sự kiện
         }
-      
-
-
 
         public event EventHandler<string> OnMoveTextChanged;
 
@@ -123,12 +120,8 @@ namespace _15_Puzzle_Game
             n2 = int.Parse(n);
            CreateImageList();
            AddImages();
-
-
         }
       
-
-
 
         //Tạo các image nhỏ 3x3,4x4,5x5
         private void CreateImageList()
@@ -267,7 +260,7 @@ namespace _15_Puzzle_Game
         }
 
 
-        private void PlaceImageList()
+        public void PlaceImageList()
         {
             //Shuffle lại danh sách hình ảnh
 
@@ -275,6 +268,8 @@ namespace _15_Puzzle_Game
             //while (!CountInversions(shuffleimages))
             //    shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
             //imageList = shuffleimages;
+            steps = 0;
+            ChangeMoveText(steps.ToString());
 
             double x = 0; // Khởi tạo vị trí x
             double y = 0; // Khởi tạo vị trí y
@@ -352,7 +347,7 @@ namespace _15_Puzzle_Game
             ChangeMoveText(steps.ToString());
         }
 
-        private void CheckGame()
+        public void CheckGame()
         {
             current_position = "";
             // Kết hợp các vị trí hiện tại thành chuỗi
@@ -440,10 +435,11 @@ namespace _15_Puzzle_Game
                     DataProvider.Instance.DB.SaveChanges();
                 }
 
-
                 mainViewModel.Move = steps;
+
+                AudioControl.Instance.VictoryEffect_Play();
                 Congratulation congratulationWindow = new Congratulation();
-                congratulationWindow.Show();
+                congratulationWindow.ShowDialog();
             }
         }
         //private int getGridSize()

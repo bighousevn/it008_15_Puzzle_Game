@@ -27,14 +27,12 @@ namespace _15_Puzzle_Game
         public GamePlayPage(string n, string path,int checkOption)
         {
             InitializeComponent();
-
             // Lấy ViewModel
             var mainViewModel = (MainViewModel)DataContext;
             mainViewModel.LoadXepHangData();
 
             // Khởi tạo PlayPage
             var playPage = new PlayPage(n, path);
-
             PlayFrame.Navigate(playPage);
 
             //Nếu n == "1", lắng nghe URI từ PlayPage
@@ -75,7 +73,9 @@ namespace _15_Puzzle_Game
             if (PlayFrame.Content is PlayPage playPage)
             {
                 // Gọi phương thức ShuffleClick trong PlayPage
+                var mainvm = this.DataContext  as MainViewModel;
                 playPage.ShuffleClick(sender, e);
+                mainvm.ResetTimer();
             }
         }
 

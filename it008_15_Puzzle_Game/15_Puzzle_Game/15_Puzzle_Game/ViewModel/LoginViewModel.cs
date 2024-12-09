@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -47,21 +48,22 @@ namespace _15_Puzzle_Game.ViewModel
             mainWindow = Application.Current.MainWindow;
             mainViewModel = mainWindow.DataContext as MainViewModel;
 
-            LoginCommand = new RelayCommand<Window>((p) => { return true; }, (p) => { Login(p); });
-            PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Password = p.Password; });
-            OpenRegisterWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) =>{
-                RegisterWindow wd = new RegisterWindow();
-                wd.ShowDialog();    
+            LoginCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
+                AudioControl.Instance.SigninEffect_Play();
+                Login(p); 
             });
+            PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Password = p.Password; });
             RegisterPasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { RegisterPassWord = p.Password; });
             RegisterCommand = new RelayCommand<Window>((p) => { return true; }, (p) => { Register(p); });
 
             ForgotPasswordWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
+                AudioControl.Instance.OpenWindowEffect_Play();
                 ForgotPasswordWindow wd = new ForgotPasswordWindow();   
                 wd.ShowDialog();
             });
 
             RegisterWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
+                AudioControl.Instance.OpenWindowEffect_Play();
                 RegisterWindow wd = new RegisterWindow();
                 wd.ShowDialog();
             });
@@ -72,9 +74,7 @@ namespace _15_Puzzle_Game.ViewModel
             });
 
             ExitCommand = new RelayCommand<Window>((p) => { return true; }, p => {
-                AudioControl.Instance.CloseWindowEffect_Play();
-                p.Close();
-                mainWindow.Close();
+                Application.Current.Dispatcher.InvokeShutdown();
             });
         }
 

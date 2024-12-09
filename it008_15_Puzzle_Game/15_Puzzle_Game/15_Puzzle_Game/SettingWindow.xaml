@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:_15_Puzzle_Game"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:viewmodel="clr-namespace:_15_Puzzle_Game.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        ShowInTaskbar="False"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
         TextOptions.TextRenderingMode="Auto"
@@ -34,26 +35,35 @@
                        VerticalAlignment="Center"></TextBlock>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="8*"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <ListBox SelectedIndex="0"
-                         Style="{StaticResource MaterialDesignToolVerticalToggleListBox}"
-                         materialDesign:ListBoxAssist.CanUserToggleSelectedItem="True"
-                         VerticalAlignment="Center">
 
-                    <ListBoxItem Content="English"
-                                 VerticalContentAlignment="Center"
-                                 HorizontalContentAlignment="Center"
-                                 FontSize="50"
-                                 FontFamily="{StaticResource mainFont}"/>
+                <Grid Grid.Row="0"
+                      Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                    <ListBoxItem Content="Vietnamese"
-                                 VerticalContentAlignment="Center"
-                                 HorizontalContentAlignment="Center"
-                                 FontSize="50"
-                                 FontFamily="{StaticResource mainFont}"/>
-                </ListBox>
+                    <Slider Grid.Column="1"
+                            x:Name="SiderVolumeEffect"
+                            Minimum="0"
+                            Maximum="1"
+                            VerticalAlignment="Center"
+                            TickFrequency="0.1"
+                            TickPlacement="BottomRight"
+                            Value="{Binding SiderEffectValue, Mode=TwoWay}"
+                            ValueChanged="SiderVolumeEffect_ValueChanged"
+                            Foreground="#e753df"/>
+                    <TextBlock Text="Effect"
+                               FontFamily="{StaticResource mainFont}"
+                               FontSize="30"
+                               Margin="0 0 0 10"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"/>
+                </Grid>
 
                 <Grid Grid.Row="1"
                       Margin="5">
@@ -63,23 +73,23 @@
                     </Grid.ColumnDefinitions>
 
                     <Slider Grid.Column="1"
-                            x:Name="siderVolumn"
+                            x:Name="SiderVolumeBackground"
                             Minimum="0"
                             Maximum="1"
                             TickFrequency="0.1"
                             TickPlacement="BottomRight"
-                            Value="{Binding SiderValue, Mode=TwoWay}"
-                            ValueChanged="Slider_ValueChanged"
+                            VerticalAlignment="Center"
+                            Value="{Binding SiderBackgroundValue, Mode=TwoWay}"
+                            ValueChanged="SiderVolumeBackground_ValueChanged"
                             Foreground="#e753df"/>
 
-
-
-                    <TextBlock Text="{Binding SiderValue, StringFormat={}{0:F1}}"
+                    <TextBlock Text="Music"
                                FontFamily="{StaticResource mainFont}"
-                               FontSize="40"
+                               FontSize="30"
+                               Margin="5 0 0 10"
                                HorizontalAlignment="Left"
-                               VerticalAlignment="Top"
-                               TextAlignment="Center" Margin="0,-15,0,0"/>
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"/>
                 </Grid>
             </Grid>
 
