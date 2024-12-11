@@ -30,6 +30,8 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Register"
@@ -76,7 +78,29 @@
                  Text="{Binding RegisterEmail}"
                  FontSize="35"
                  FontFamily="{StaticResource mainFont}"></TextBox>
-        <Grid Grid.Row="4">
+        <TextBox Grid.Row="4"
+                 Margin="10 0 10 0"
+                 x:Name="VerificationCodeTextBox"
+                 materialDesign:HintAssist.Hint="Verification Code"
+                 materialDesign:HintAssist.Foreground="#cb6be6"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                 materialDesign:TextFieldAssist.UnderlineBrush="#cb6be6"
+                 Text="{Binding VerificationCode}"
+                 FontSize="35"
+                 FontFamily="{StaticResource mainFont}"></TextBox>
+        <Button Grid.Row="5" materialDesign:ButtonAssist.CornerRadius="15"
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    ToolTip="MaterialDesignRaisedButton with Round Corners"
+                    Background="#e753e2"
+                    BorderBrush="Transparent"
+                    Height="60"
+                    Width="150"
+                    Command="{Binding SendVerificationCodeCommand}">
+            <TextBlock Text="Send Code"
+                           FontSize="30"
+                           FontFamily="{StaticResource mainFont}"/>
+        </Button>
+        <Grid Grid.Row="6">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>

@@ -38,14 +38,14 @@ CREATE TABLE LeaderBoards (
 )
 
 
--- Insert dữ liệu vào bảng Levels (3 bộ: Dễ, Trung Bình, Khó)
 INSERT INTO Levels (level_id, level_name, grid_size)
 VALUES
-(1, 'Dễ', 3),
-(2, 'Trung Bình', 4),
-(3, 'Khó', 5);
+(1, '3x3', 9),
+(2, '4x4', 16),
+(3, '5x5', 25),
+(4, 'Option',9);
 
--- Insert dữ liệu vào bảng Puzzles (4 bộ với image_path)
+
 INSERT INTO Puzzles (puzzle_id, image_path)
 VALUES
 (1, 'Picture/1039168.png'),
@@ -53,17 +53,9 @@ VALUES
 (3, 'Picture/BackGroundLogin.jpg'),
 (4, 'Picture/sunset-river-nature-scenery-4k-wallpaper-uhdpaper.com-693@0@j.jpg');
 
--- Insert dữ liệu vào bảng Users (2 user: toan và admin)
--- Bạn có thể thêm password_hash và email sau khi tạo bảng
-
--- Insert dữ liệu vào bảng LeaderBoards (giả sử người dùng 'toan' và 'admin' tham gia vào các level và puzzle)
-INSERT INTO LeaderBoards (leaderboards_id, user_id, puzzle_id, level_id, move, time_taken)
+INSERT INTO Puzzles (puzzle_id, image_path)
 VALUES
-(1, 1, 1, 1, 10, 300), -- Người dùng 'toan' chơi puzzle 1, level 'Dễ'
-(2, 1, 2, 2, 20, 600), -- Người dùng 'toan' chơi puzzle 2, level 'Trung Bình'
-(3, 2, 3, 3, 30, 900), -- Người dùng 'admin' chơi puzzle 3, level 'Khó'
-(4, 2, 4, 1, 15, 450); -- Người dùng 'admin' chơi puzzle 4, level 'Dễ'
-
+(1, 'pack://application:,,,/Picture/GamePlay/Cat.jpg')
 
 
 

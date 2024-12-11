@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -25,7 +27,15 @@ namespace _15_Puzzle_Game.ViewModel
         public string RegisterEmail { get => _RegisterEmail; set { _RegisterEmail = value; OnPropertyChanged(); } }
         private string _RegisterPassWord;
         public string RegisterPassWord { get => _RegisterPassWord; set { _RegisterPassWord = value; OnPropertyChanged(); } }
+        public string _VerificationCode;
+        public string VerificationCode
+        {
+            get { return _VerificationCode; }
+            set { _VerificationCode = value; OnPropertyChanged(); }
+        }
+        private string _GeneratedVerificationCode;
 
+        public ICommand SendVerificationCodeCommand { get; set; }
         public ICommand LoginCommand { get; set; }
         public ICommand PasswordChangedCommand { get; set; }
         public ICommand OpenRegisterWindowCommand { get; set; }
@@ -54,6 +64,7 @@ namespace _15_Puzzle_Game.ViewModel
             });
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Password = p.Password; });
             RegisterPasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { RegisterPassWord = p.Password; });
+            SendVerificationCodeCommand= new RelayCommand<object>((p) => { return true;}, (p) => { SendVerificationCode(); });
             RegisterCommand = new RelayCommand<Window>((p) => { return true; }, (p) => { Register(p); });
 
             ForgotPasswordWindowCommand = new RelayCommand<object>((p) => { return true; }, p => {
@@ -76,6 +87,20 @@ namespace _15_Puzzle_Game.ViewModel
             ExitCommand = new RelayCommand<Window>((p) => { return true; }, p => {
                 Application.Current.Dispatcher.InvokeShutdown();
             });
+        }
+        void SendVerificationCode()
+        {
+            Random random = new Random();
+            _GeneratedVerificationCode= random.Next(100000,999999).ToString();
+            bool isSent= SendVerificationCode(RegisterEmail, _GeneratedVerificationCode);
+            if(isSent)
+            {
+                MessageBox.Show($"Email chứa mã xác thực đã được gửi tới {RegisterEmail}");
+            }
+            else
+            {
+                MessageBox.Show("Không thể gửi email. Vui lòng kiểm tra lại.");
+            }
         }
 
         private void CloseWindow(object parameter)
@@ -110,6 +135,36 @@ namespace _15_Puzzle_Game.ViewModel
             if (!mainViewModel.Isloaded)
                 mainViewModel.LoadedWindow(mainWindow);
         }
+        private bool SendVerificationCode(string toEmail, string VerificationCode)
+        {
+            try
+            {
+                string fromEmail = "vmt22479@gmail.com";
+                string fromPassword = "ureu ycei smql lzzp";
+                SmtpClient smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    Credentials = new NetworkCredential(fromEmail, fromPassword)
+                };
+                MailMessage mail = new MailMessage
+                {
+                    From = new MailAddress(fromEmail),
+                    Subject = "Mã xác minh ",
+                    Body = $"Mã xác minh của bạn là: {VerificationCode}",
+                    IsBodyHtml = true,
+                };
+                mail.To.Add(toEmail);
+                smtp.Send(mail);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi gửi email", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+        }
 
         void Register(Window p)
         {
@@ -124,6 +179,11 @@ namespace _15_Puzzle_Game.ViewModel
             if(!isValidEmail(RegisterEmail))
             {
                 MessageBox.Show("Invalid email format.");
+                return;
+            }
+            if(VerificationCode!= _GeneratedVerificationCode)
+            {
+                MessageBox.Show("Invalid verification code.");
                 return;
             }
 
@@ -157,7 +217,7 @@ namespace _15_Puzzle_Game.ViewModel
             var emailRegex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             return Regex.IsMatch(email, emailRegex);
         }
-        static string sha256(string randomString)
+        static public string sha256(string randomString)
         {
             var crypt = new System.Security.Cryptography.SHA256Managed();
             var hash = new System.Text.StringBuilder();
