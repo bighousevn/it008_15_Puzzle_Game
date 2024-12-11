@@ -277,6 +277,8 @@ namespace _15_Puzzle_Game
             double height = imageList[0].Height; // Chiều cao của mỗi hình ảnh
 
             PuzzleCanvas.Children.Clear();
+            win_position = "";
+            
             for (int i = 0; i < imageList.Count; i++)
             {
                 var img = imageList[i];
@@ -299,7 +301,7 @@ namespace _15_Puzzle_Game
                 x = x + width + paddingBetween;  // Di chuyển sang bên phải
 
                 // Nếu bạn muốn lưu vị trí hình ảnh, có thể lưu vào danh sách
-                win_position += (locations[i]);  // Lưu vị trí hiện tại (nếu cần)
+                win_position += (i);  // Lưu vị trí hiện tại (nếu cần)
 
             }
 
@@ -356,6 +358,8 @@ namespace _15_Puzzle_Game
             // Hiển thị kết quả trong các Label
 
             // Kiểm tra nếu vị trí hiện tại khớp với vị trí chiến thắng
+            Console.WriteLine(win_position);
+            Console.WriteLine(current_position);
             if (win_position == current_position)
             {
                 var mainViewModel = (MainViewModel)DataContext;
@@ -440,6 +444,9 @@ namespace _15_Puzzle_Game
                 AudioControl.Instance.VictoryEffect_Play();
                 Congratulation congratulationWindow = new Congratulation();
                 congratulationWindow.ShowDialog();
+                mainViewModel._elapsedTime = 1;
+                mainViewModel.StartTimer();
+                PlaceImageList();
             }
         }
         //private int getGridSize()

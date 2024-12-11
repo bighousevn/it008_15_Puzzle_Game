@@ -64,6 +64,9 @@ namespace _15_Puzzle_Game
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var mainViewModel = (MainViewModel)DataContext;
+            mainViewModel.StopTimer();
+            mainViewModel._elapsedTime = 0;
             NavigationService.GoBack();
         }
 

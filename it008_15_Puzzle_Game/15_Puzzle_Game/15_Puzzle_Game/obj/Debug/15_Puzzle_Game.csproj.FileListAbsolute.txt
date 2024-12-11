@@ -350,15 +350,12 @@ D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_
 D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelOptional.baml
 D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ChangePasswordWindow.g.cs
 D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ChangePasswordWindow.baml
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding Puzzle.exe
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.dll
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding Puzzle.exe.config
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding Puzzle.pdb
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.pdb
@@ -388,10 +385,7 @@ D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzz
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding Puzzle_Content.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding Puzzle_MarkupCompile.cache
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding Puzzle_MarkupCompile.lref
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ChangePasswordWindow.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.baml
@@ -408,13 +402,10 @@ D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzz
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelOptional.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.baml
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding Puzzle.g.resources
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding Puzzle.exe
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding Puzzle.pdb
 D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe.config
 D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe
 D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.pdb
@@ -432,3 +423,20 @@ D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_
 D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\EnterGame.mp3
 D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Logout.mp3
 D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Victory.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\BackGroundMusic.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\CloseWindow.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Signin.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\EnterGame.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Wood.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\OpenWindow.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Logout.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Victory.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe.config
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.pdb
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_Content.g.cs
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.cache
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.lref
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.g.resources
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.exe
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.pdb

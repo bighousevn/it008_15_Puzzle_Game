@@ -188,10 +188,9 @@ namespace _15_Puzzle_Game.ViewModel
         }
 
         private DispatcherTimer _timer;
-        private int _elapsedTime = 0;
+        public int _elapsedTime = 0;
         private string _DisplayTime;
-        public string DisplayTime
-        {
+        public string DisplayTime        {
             get { return _DisplayTime; }
             set
             {

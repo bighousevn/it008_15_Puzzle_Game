@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace _15_Puzzle_Game
@@ -35,6 +36,12 @@ namespace _15_Puzzle_Game
             {
                 mainwindow.mainFrame.NavigationService.GoBack();
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            
+            this.Close();
         }
     }
 }

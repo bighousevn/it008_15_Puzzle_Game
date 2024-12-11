@@ -1,4 +1,5 @@
 ﻿using _15_Puzzle_Game.ViewModel;
+using System.Runtime.Remoting.Channels;
 using System.Windows;
 
 namespace _15_Puzzle_Game
@@ -13,6 +14,11 @@ namespace _15_Puzzle_Game
             InitializeComponent();
             mainFrame.Navigate(new MainPage());
             AudioControl.Instance.BackgroundMusic_Play();
+        }
+
+        private void mainWindow_Closed(object sender, System.EventArgs e) 
+        {
+            Application.Current.Dispatcher.InvokeShutdown();
         }
     }
 }

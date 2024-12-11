@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using _15_Puzzle_Game.ViewModel;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,6 +31,7 @@ namespace _15_Puzzle_Game
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string n;
+            var mainViewModel = (MainViewModel)DataContext;
             string path="";
             Button clickedButton = sender as Button;
             n = clickedButton.Tag.ToString();
@@ -45,16 +47,18 @@ namespace _15_Puzzle_Game
                 {
                     path=openFileDialog.FileName; 
                     fileSelected = true; // Người dùng đã chọn file thành công
+                    mainViewModel.StartTimer();
                 }
 
                 else
                 {
-                    var result = MessageBox.Show("Bạn chưa chọn file. Bạn có muốn thử lại không?",
-                        "Thông báo", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                    if (result == MessageBoxResult.No) 
-                    {
-                        break;
-                    }
+                    //var result = MessageBox.Show("Bạn chưa chọn file. Bạn có muốn thử lại không?",
+                    //    "Thông báo", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    //if (result == MessageBoxResult.No) 
+                    //{
+                    //    break;
+                    //}
+                    break;
                 }
             }
             if(fileSelected)
