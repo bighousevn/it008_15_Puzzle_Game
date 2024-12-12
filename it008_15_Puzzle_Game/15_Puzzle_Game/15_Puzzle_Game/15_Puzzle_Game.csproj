@@ -305,6 +305,7 @@
     <EmbeddedResource Include="Music\Victory.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Resource Include="Picture\GamePlay\1.jpg" />
     <Content Include="Picture\Icon.ico" />
   </ItemGroup>
   <ItemGroup>

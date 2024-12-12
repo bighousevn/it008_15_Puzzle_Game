@@ -40,7 +40,7 @@ namespace _15_Puzzle_Game.ViewModel
         public bool Isloaded;
         private string path1 = "Picture/GamePlay/Dog.png";
         private string path2 = "Picture/GamePlay/Duck.jpg";
-        private string path3 = "Picture/GamePlay/Cat.jpg";
+        private string path3 = "Picture/GamePlay/1.jpg";
         private string path4 = "Picture/GamePlay/Kid.jpg";
         private string path5 = "Picture/GamePlay/Pepe.jpg";
         private string path6 = "Picture/GamePlay/ChillGuy.jpg";

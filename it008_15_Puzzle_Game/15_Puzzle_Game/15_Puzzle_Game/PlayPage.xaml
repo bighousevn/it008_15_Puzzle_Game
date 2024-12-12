@@ -16,7 +16,7 @@
        Title="PlayPage"
        d:DesignHeight="487.5"
        d:DesignWidth="825">
-    <Grid>
+    <Grid >
         <Border BorderBrush="Black" 
                 BorderThickness="2" 
                 Width="0" 

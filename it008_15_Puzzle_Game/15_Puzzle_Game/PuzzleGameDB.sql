@@ -55,7 +55,10 @@ VALUES
 
 INSERT INTO Puzzles (puzzle_id, image_path)
 VALUES
-(1, 'pack://application:,,,/Picture/GamePlay/Cat.jpg')
+(2, 'pack://application:,,,/Picture/GamePlay/1.jpg')
 
+drop table LeaderBoards
+drop table Puzzles
 
-
+select *
+from Puzzles
