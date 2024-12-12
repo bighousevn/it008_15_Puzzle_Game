@@ -54,7 +54,7 @@ namespace _15_Puzzle_Game
             else
             {
                 CurrentUser.Instance.CurrentLevelName = "Option";
-                NavigationService.Navigate(new SelectLevelOptional());
+                NavigationService.Navigate(new OptionalPage());
             }
         }
 

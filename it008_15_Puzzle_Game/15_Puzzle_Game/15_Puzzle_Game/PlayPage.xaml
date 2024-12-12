@@ -17,7 +17,7 @@
        d:DesignHeight="487.5"
        d:DesignWidth="825">
     <Grid>
-        <Border BorderBrush="Black" 
+        <Border BorderBrush="#0e5898" 
                 BorderThickness="2" 
                 Width="0" 
                 Height="0" 

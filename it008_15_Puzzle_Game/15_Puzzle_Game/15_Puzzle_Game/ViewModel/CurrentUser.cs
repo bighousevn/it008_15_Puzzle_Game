@@ -17,6 +17,18 @@ namespace _15_Puzzle_Game.ViewModel
             get { return _currentUserName; }
             set { _currentUserName = value; OnPropertyChanged(); }
         }
+        private int _currentUserid;
+        public int CurrentUserid
+        {
+            get { return _currentUserid; }
+            set { _currentUserid = value; OnPropertyChanged(); }
+        }
+        private int _currentUserMoney;
+        public int CurrentUserMoney
+        {
+            get { return _currentUserMoney; }
+            set { _currentUserMoney = value; OnPropertyChanged(); }
+        }
         private string _currentLevelName;
         public string CurrentLevelName
         {

@@ -30,11 +30,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UserImages">
+      <EntityTypeMapping TypeName="PuzzleGameDBModel.UserImages">
+        <MappingFragment StoreEntitySet="UserImages">
+          <ScalarProperty Name="image_id" ColumnName="image_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="image_byte" ColumnName="image_byte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="PuzzleGameDBModel.Users">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="usermoney" ColumnName="usermoney" />
           <ScalarProperty Name="password_hash" ColumnName="password_hash" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />

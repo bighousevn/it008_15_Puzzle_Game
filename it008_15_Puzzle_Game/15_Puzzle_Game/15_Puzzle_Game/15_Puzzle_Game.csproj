@@ -150,10 +150,16 @@
     <Compile Include="Model\Puzzles.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\UserImages.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\XepHang.cs" />
+    <Compile Include="OptionalPage.xaml.cs">
+      <DependentUpon>OptionalPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PauseWindow.xaml.cs">
       <DependentUpon>PauseWindow.xaml</DependentUpon>
     </Compile>
@@ -221,6 +227,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OptionalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PauseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -305,6 +315,34 @@
     <EmbeddedResource Include="Music\Victory.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Resource Include="Picture\GamePlay\Animal\Beaver.jpg" />
+    <Resource Include="Picture\GamePlay\Animal\Fox.jpg" />
+    <Resource Include="Picture\GamePlay\Animal\Rabbit.jpg" />
+    <Resource Include="Picture\GamePlay\Animal\RedPanda.jpg" />
+    <Resource Include="Picture\GamePlay\Animal\Tiger.jpg" />
+    <Resource Include="Picture\GamePlay\Animal\Wolf.jpg" />
+    <Resource Include="Picture\GamePlay\Meme\JerryLove.jpg" />
+    <Resource Include="Picture\GamePlay\Meme\MrBean.jpg" />
+    <Resource Include="Picture\GamePlay\Meme\ReallyNigger.jpg" />
+    <Resource Include="Picture\GamePlay\Meme\Sigma.jpg" />
+    <Resource Include="Picture\GamePlay\Meme\Stonks.jpg" />
+    <Resource Include="Picture\GamePlay\Meme\ThreeDragon.jpg" />
+    <Resource Include="Picture\GamePlay\Anime\Broly.jpg" />
+    <Resource Include="Picture\GamePlay\Anime\Doflamigo.jpg" />
+    <Resource Include="Picture\GamePlay\Anime\Kakashi.jpg" />
+    <Resource Include="Picture\GamePlay\Anime\Obito.jpg" />
+    <Resource Include="Picture\GamePlay\Anime\Vegeta.png" />
+    <Resource Include="Picture\GamePlay\Anime\Zoro.jpg" />
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Picture\Icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -316,29 +354,19 @@
     <Resource Include="Picture\BackGroundLogin.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Resource Include="Picture\GamePlay\MainOptional.jpg" />
-    <Resource Include="Picture\GamePlay\Cat.jpg" />
-    <Resource Include="Picture\GamePlay\ChillGuy.jpg" />
-    <Resource Include="Picture\GamePlay\Dog.png" />
-    <Resource Include="Picture\GamePlay\DragonBall.jpg" />
-    <Resource Include="Picture\GamePlay\Duck.jpg" />
-    <Resource Include="Picture\GamePlay\Kid.jpg" />
+    <Resource Include="Picture\GamePlay\Animal\Cat.jpg" />
+    <Resource Include="Picture\GamePlay\Meme\ChillGuy.jpg" />
+    <Resource Include="Picture\GamePlay\Animal\Dog.png" />
+    <Resource Include="Picture\GamePlay\Anime\DragonBall.jpg" />
+    <Resource Include="Picture\GamePlay\Animal\Duck.jpg" />
+    <Resource Include="Picture\GamePlay\Meme\Kid.jpg" />
     <Resource Include="Picture\GamePlay\Main3x3.jpg" />
     <Resource Include="Picture\GamePlay\Main4x4.jpg" />
     <Resource Include="Picture\GamePlay\Main5x5.jpg" />
-    <Resource Include="Picture\GamePlay\Naruto.jpg" />
-    <Resource Include="Picture\GamePlay\OnePiece.jpg" />
-    <Resource Include="Picture\GamePlay\Pepe.jpg" />
+    <Resource Include="Picture\GamePlay\Anime\Naruto.jpg" />
+    <Resource Include="Picture\GamePlay\Anime\OnePiece.jpg" />
+    <Resource Include="Picture\GamePlay\Meme\Pepe.jpg" />
     <Resource Include="Picture\PicturePageBackGround.jpg" />
   </ItemGroup>
   <ItemGroup>

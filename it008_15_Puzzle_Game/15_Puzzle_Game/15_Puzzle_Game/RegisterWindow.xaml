@@ -22,10 +22,9 @@
         WindowStyle="None"
         ShowInTaskbar="False"
         Name="registerWindow"
-        Title="Register" Height="450" Width="500">
+        Title="Register" Height="500" Width="500">
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -78,17 +77,23 @@
                  Text="{Binding RegisterEmail}"
                  FontSize="35"
                  FontFamily="{StaticResource mainFont}"></TextBox>
-        <TextBox Grid.Row="4"
-                 Margin="10 0 10 0"
-                 x:Name="VerificationCodeTextBox"
-                 materialDesign:HintAssist.Hint="Verification Code"
-                 materialDesign:HintAssist.Foreground="#cb6be6"
-                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                 materialDesign:TextFieldAssist.UnderlineBrush="#cb6be6"
-                 Text="{Binding VerificationCode}"
-                 FontSize="35"
-                 FontFamily="{StaticResource mainFont}"></TextBox>
-        <Button Grid.Row="5" materialDesign:ButtonAssist.CornerRadius="15"
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Row="4"
+                     Margin="10 0 10 0"
+                     x:Name="VerificationCodeTextBox"
+                     materialDesign:HintAssist.Hint="Verification Code"
+                     materialDesign:HintAssist.Foreground="#cb6be6"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     materialDesign:TextFieldAssist.UnderlineBrush="#cb6be6"
+                     Text="{Binding VerificationCode, Mode=TwoWay}"
+                     FontSize="35"
+                     FontFamily="{StaticResource mainFont}"></TextBox>
+            <Button Grid.Column="1" materialDesign:ButtonAssist.CornerRadius="15"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     ToolTip="MaterialDesignRaisedButton with Round Corners"
                     Background="#e753e2"
@@ -96,22 +101,28 @@
                     Height="60"
                     Width="150"
                     Command="{Binding SendVerificationCodeCommand}">
-            <TextBlock Text="Send Code"
+                <TextBlock Text="Send Code"
                            FontSize="30"
                            FontFamily="{StaticResource mainFont}"/>
-        </Button>
+            </Button>
+        </Grid>
+       
+        
         <Grid Grid.Row="6">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button materialDesign:ButtonAssist.CornerRadius="15"
+                    Name="RegisterButton"
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    ToolTip="MaterialDesignRaisedButton with Round Corners"
                     Background="#e753e2"
                     BorderBrush="Transparent"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
                     Height="60"
                     Width="150"
+                    IsEnabled="{Binding isEnabledRegisterButton}"
                     Command="{Binding RegisterCommand}"
                     CommandParameter="{Binding ElementName=registerWindow}">
                 <TextBlock Text="Register"
@@ -123,6 +134,8 @@
                     ToolTip="MaterialDesignRaisedButton with Round Corners"
                     Background="#e753e2"
                     BorderBrush="Transparent"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
                     Height="60"
                     Width="150"
                     Command="{Binding CloseWindowCommand}"

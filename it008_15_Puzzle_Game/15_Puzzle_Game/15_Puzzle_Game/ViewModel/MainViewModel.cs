@@ -38,19 +38,75 @@ namespace _15_Puzzle_Game.ViewModel
         public ICommand SignOutCommnand { get; set; }
 
         public bool Isloaded;
-        private string path1 = "Picture/GamePlay/Dog.png";
-        private string path2 = "Picture/GamePlay/Duck.jpg";
-        private string path3 = "Picture/GamePlay/Cat.jpg";
-        private string path4 = "Picture/GamePlay/Kid.jpg";
-        private string path5 = "Picture/GamePlay/Pepe.jpg";
-        private string path6 = "Picture/GamePlay/ChillGuy.jpg";
-        private string path7 = "Picture/GamePlay/DragonBall.jpg";
-        private string path8 = "Picture/GamePlay/Naruto.jpg";
-        private string path9 = "Picture/GamePlay/OnePiece.jpg";
+        private string path1 = "Picture/GamePlay/Animal/Beaver.jpg";
+        private string path2 = "Picture/GamePlay/Animal/Cat.jpg";
+        private string path3 = "Picture/GamePlay/Animal/Dog.png";
+        private string path4 = "Picture/GamePlay/Animal/Duck.jpg";
+        private string path5 = "Picture/GamePlay/Animal/Fox.jpg";
+        private string path6 = "Picture/GamePlay/Animal/Rabbit.jpg";
+        private string path7 = "Picture/GamePlay/Animal/RedPanda.jpg";
+        private string path8 = "Picture/GamePlay/Animal/Tiger.jpg";
+        private string path9 = "Picture/GamePlay/Animal/Wolf.jpg";
+
+        private string path10 = "Picture/GamePlay/Meme/ChillGuy.jpg";
+        private string path11 = "Picture/GamePlay/Meme/JerryLove.jpg";
+        private string path12 = "Picture/GamePlay/Meme/Kid.jpg";
+        private string path13 = "Picture/GamePlay/Meme/MrBean.jpg";
+        private string path14 = "Picture/GamePlay/Meme/Pepe.jpg";
+        private string path15 = "Picture/GamePlay/Meme/ReallyNigger.jpg";
+        private string path16 = "Picture/GamePlay/Meme/Sigma.jpg";
+        private string path17 = "Picture/GamePlay/Meme/Stonks.jpg";
+        private string path18 = "Picture/GamePlay/Meme/ThreeDragon.jpg";
+
+        private string path19 = "Picture/GamePlay/Anime/Broly.jpg";
+        private string path20 = "Picture/GamePlay/Anime/Doflamigo.jpg";
+        private string path21 = "Picture/GamePlay/Anime/DragonBall.jpg";
+        private string path22 = "Picture/GamePlay/Anime/Kakashi.jpg";
+        private string path23 = "Picture/GamePlay/Anime/Naruto.jpg";
+        private string path24 = "Picture/GamePlay/Anime/Obito.jpg";
+        private string path25 = "Picture/GamePlay/Anime/OnePiece.jpg";
+        private string path26 = "Picture/GamePlay/Anime/Vegeta.png";
+        private string path27 = "Picture/GamePlay/Anime/Zoro.jpg";
+
+        private string _username;
+        public string username
+        {
+            get { return _username; }
+            set
+            {
+                if (_username != value)
+                {
+                    _username = value;
+                    OnPropertyChanged(nameof(username));
+                }
+
+            }
+        }
+
+        private string _usermoney;
+        public string usermoney
+        {
+            get { return _usermoney; }
+            set
+            {
+                if (_usermoney != value)
+                {
+                    _usermoney = value;
+                    OnPropertyChanged(nameof(usermoney));
+                }
+
+            }
+        }
 
         private string _PictureName1;
         private string _PictureName2;
         private string _PictureName3;
+        private string _PictureName4;
+        private string _PictureName5;
+        private string _PictureName6;
+        private string _PictureName7;
+        private string _PictureName8;
+        private string _PictureName9;
 
         public string PictureName1
         {
@@ -91,10 +147,94 @@ namespace _15_Puzzle_Game.ViewModel
 
             }
         }
+        public string PictureName4
+        {
+            get { return _PictureName4; }
+            set
+            {
+                if (_PictureName4 != value)
+                {
+                    _PictureName4 = value;
+                    OnPropertyChanged(nameof(PictureName4));
+                }
+
+            }
+        }
+        public string PictureName5
+        {
+            get { return _PictureName5; }
+            set
+            {
+                if (_PictureName5 != value)
+                {
+                    _PictureName5 = value;
+                    OnPropertyChanged(nameof(PictureName5));
+                }
+
+            }
+        }
+        public string PictureName6
+        {
+            get { return _PictureName6; }
+            set
+            {
+                if (_PictureName6 != value)
+                {
+                    _PictureName6 = value;
+                    OnPropertyChanged(nameof(PictureName6));
+                }
+
+            }
+        }
+        public string PictureName7
+        {
+            get { return _PictureName7; }
+            set
+            {
+                if (_PictureName7 != value)
+                {
+                    _PictureName7 = value;
+                    OnPropertyChanged(nameof(PictureName7));
+                }
+
+            }
+        }
+        public string PictureName8
+        {
+            get { return _PictureName8; }
+            set
+            {
+                if (_PictureName8 != value)
+                {
+                    _PictureName8 = value;
+                    OnPropertyChanged(nameof(PictureName8));
+                }
+
+            }
+        }
+        public string PictureName9
+        {
+            get { return _PictureName9; }
+            set
+            {
+                if (_PictureName9 != value)
+                {
+                    _PictureName9 = value;
+                    OnPropertyChanged(nameof(PictureName9));
+                }
+
+            }
+        }
 
         private string _Picture1;
         private string _Picture2;
         private string _Picture3;
+        private string _Picture4;
+        private string _Picture5;
+        private string _Picture6;
+        private string _Picture7;
+        private string _Picture8;
+        private string _Picture9;
 
         public string Picture1
         {
@@ -131,6 +271,84 @@ namespace _15_Puzzle_Game.ViewModel
                 {
                     _Picture3 = value;
                     OnPropertyChanged(nameof(Picture3));
+                }
+
+            }
+        }
+        public string Picture4
+        {
+            get { return _Picture4; }
+            set
+            {
+                if (_Picture4 != value)
+                {
+                    _Picture4 = value;
+                    OnPropertyChanged(nameof(Picture4));
+                }
+
+            }
+        }
+        public string Picture5
+        {
+            get { return _Picture5; }
+            set
+            {
+                if (_Picture5 != value)
+                {
+                    _Picture5 = value;
+                    OnPropertyChanged(nameof(Picture5));
+                }
+
+            }
+        }
+        public string Picture6
+        {
+            get { return _Picture6; }
+            set
+            {
+                if (_Picture6 != value)
+                {
+                    _Picture6 = value;
+                    OnPropertyChanged(nameof(Picture6));
+                }
+
+            }
+        }
+        public string Picture7
+        {
+            get { return _Picture7; }
+            set
+            {
+                if (_Picture7 != value)
+                {
+                    _Picture7 = value;
+                    OnPropertyChanged(nameof(Picture7));
+                }
+
+            }
+        }
+        public string Picture8
+        {
+            get { return _Picture8; }
+            set
+            {
+                if (_Picture8 != value)
+                {
+                    _Picture8 = value;
+                    OnPropertyChanged(nameof(Picture8));
+                }
+
+            }
+        }
+        public string Picture9
+        {
+            get { return _Picture9; }
+            set
+            {
+                if (_Picture9 != value)
+                {
+                    _Picture9 = value;
+                    OnPropertyChanged(nameof(Picture9));
                 }
 
             }
@@ -307,30 +525,66 @@ namespace _15_Puzzle_Game.ViewModel
                 Picture1 = path1;
                 Picture2 = path2;
                 Picture3 = path3;
-                PictureName1 = "Dog";
-                PictureName2 = "Duck";
-                PictureName3 = "Cat";
-                LevelName = "Level name: 3x3";
+                Picture4 = path4;
+                Picture5 = path5;
+                Picture6 = path6;
+                Picture7 = path7;
+                Picture8 = path8;
+                Picture9 = path9;
+                PictureName1 = "Beaver";
+                PictureName2 = "Cat";
+                PictureName3 = "Dog";
+                PictureName4 = "Duck";
+                PictureName5 = "Fox";
+                PictureName6 = "Rabbit";
+                PictureName7 = "RedPanda";
+                PictureName8 = "Tiger";
+                PictureName9 = "Wolf";
+                LevelName = "Level: 3x3";
             });
 
             Button4 = new RelayCommand<object>((p) => { return true; }, p => {
-                Picture1 = path4;
-                Picture2 = path5;
-                Picture3 = path6;
-                PictureName1 = "Kid";
-                PictureName2 = "Pepe";
-                PictureName3 = "ChillGuy";
-                LevelName = "Level name: 4x4";
+                Picture1 = path10;
+                Picture2 = path11;
+                Picture3 = path12;
+                Picture4 = path13;
+                Picture5 = path14;
+                Picture6 = path15;
+                Picture7 = path16;
+                Picture8 = path17;
+                Picture9 = path18;
+                PictureName1 = "ChillGuy";
+                PictureName2 = "JerryLove";
+                PictureName3 = "Kid";
+                PictureName4 = "MrBean";
+                PictureName5 = "Pepe";
+                PictureName6 = "Really";
+                PictureName7 = "Sigma";
+                PictureName8 = "Stonks";
+                PictureName9 = "Dragon";
+                LevelName = "Level: 4x4";
             });
             
             Button5 = new RelayCommand<object>((p) => { return true; }, p => {
-                Picture1 = path7;
-                Picture2 = path8;
-                Picture3 = path9;
-                PictureName1 = "DragonBall";
-                PictureName2 = "Naruto";
-                PictureName3 = "OnePiece";
-                LevelName = "Level name: 5x5";
+                Picture1 = path19;
+                Picture2 = path20;
+                Picture3 = path21;
+                Picture4 = path22;
+                Picture5 = path23;
+                Picture6 = path24;
+                Picture7 = path25;
+                Picture8 = path26;
+                Picture9 = path27;
+                PictureName1 = "Broly";
+                PictureName2 = "Doflamigo";
+                PictureName3 = "Songoku";
+                PictureName4 = "Kakashi";
+                PictureName5 = "Naruto";
+                PictureName6 = "Obito";
+                PictureName7 = "OnePiece";
+                PictureName8 = "Vegeta";
+                PictureName9 = "Zoro";
+                LevelName = "Level: 5x5";
             });
             ClearPictureSourceCommand = new RelayCommand<object>((p) => { return true; }, p =>
             {
