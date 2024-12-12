@@ -7,6 +7,7 @@ CREATE TABLE Users (
     user_id INT IDENTITY(1,1) PRIMARY KEY, 
     username VARCHAR(50) NOT NULL UNIQUE,
 	usermoney int not null,
+	maxlevel int not null,
     password_hash VARCHAR(255) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     created_at DATETIME DEFAULT GETDATE()

@@ -46,6 +46,7 @@
           <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="usermoney" Type="int" Nullable="false" />
+          <Property Name="maxlevel" Type="int" Nullable="false" />
           <Property Name="password_hash" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="created_at" Type="datetime" />
@@ -173,6 +174,7 @@
           <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usermoney" Type="Int32" Nullable="false" />
+          <Property Name="maxlevel" Type="Int32" Nullable="false" />
           <Property Name="password_hash" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="created_at" Type="DateTime" Precision="3" />
@@ -300,6 +302,7 @@
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="usermoney" ColumnName="usermoney" />
+                <ScalarProperty Name="maxlevel" ColumnName="maxlevel" />
                 <ScalarProperty Name="password_hash" ColumnName="password_hash" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />

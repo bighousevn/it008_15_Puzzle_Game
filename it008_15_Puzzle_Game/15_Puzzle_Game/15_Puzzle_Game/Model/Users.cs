@@ -24,6 +24,7 @@ namespace _15_Puzzle_Game.Model
         public int user_id { get; set; }
         public string username { get; set; }
         public int usermoney { get; set; }
+        public int maxlevel { get; set; }
         public string password_hash { get; set; }
         public string email { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }

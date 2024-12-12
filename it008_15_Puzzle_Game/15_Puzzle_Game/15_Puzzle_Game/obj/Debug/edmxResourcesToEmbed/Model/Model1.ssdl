@@ -41,6 +41,7 @@
     <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="usermoney" Type="int" Nullable="false" />
+    <Property Name="maxlevel" Type="int" Nullable="false" />
     <Property Name="password_hash" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="created_at" Type="datetime" />

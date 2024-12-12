@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="41d7fcef2e0a4cbead4387947f840e47" Name="Diagram1">
+      <Diagram DiagramId="c2ae835bb7f642f2a713c6a2e469c47f" Name="Diagram1">
         <EntityTypeShape EntityType="PuzzleGameDBModel.LeaderBoards" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PuzzleGameDBModel.Levels" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PuzzleGameDBModel.Puzzles" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />

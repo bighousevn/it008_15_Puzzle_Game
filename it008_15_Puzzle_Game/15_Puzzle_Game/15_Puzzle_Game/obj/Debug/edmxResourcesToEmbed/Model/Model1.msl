@@ -45,6 +45,7 @@
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="usermoney" ColumnName="usermoney" />
+          <ScalarProperty Name="maxlevel" ColumnName="maxlevel" />
           <ScalarProperty Name="password_hash" ColumnName="password_hash" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
