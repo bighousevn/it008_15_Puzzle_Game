@@ -6,7 +6,6 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,6 +34,13 @@ namespace _15_Puzzle_Game.ViewModel
         }
         private string _GeneratedVerificationCode;
 
+        private bool _isEnabledRegisterButton = false;
+        public bool isEnabledRegisterButton
+        {
+            get { return _isEnabledRegisterButton; }
+            set { _isEnabledRegisterButton = value; OnPropertyChanged(); }
+        }
+
         public ICommand SendVerificationCodeCommand { get; set; }
         public ICommand LoginCommand { get; set; }
         public ICommand PasswordChangedCommand { get; set; }
@@ -48,9 +54,11 @@ namespace _15_Puzzle_Game.ViewModel
 
         Window mainWindow;
         MainViewModel mainViewModel;
+        Random random;
 
         public LoginViewModel()
         {
+            random = new Random();
             IsLogin = false;
             UserName = string.Empty;
             Password = string.Empty;
@@ -90,7 +98,6 @@ namespace _15_Puzzle_Game.ViewModel
         }
         void SendVerificationCode()
         {
-            Random random = new Random();
             _GeneratedVerificationCode= random.Next(100000,999999).ToString();
             bool isSent= SendVerificationCode(RegisterEmail, _GeneratedVerificationCode);
             if(isSent)
@@ -124,6 +131,11 @@ namespace _15_Puzzle_Game.ViewModel
             {
                 IsLogin = true;
                 CurrentUser.Instance.CurrentUserName = UserName;
+                var user = DataProvider.Instance.DB.Users.FirstOrDefault(x => x.username == UserName);
+                CurrentUser.Instance.CurrentUserid = user.user_id;
+                CurrentUser.Instance.CurrentUserMoney = (int)user.usermoney;
+                mainViewModel.username = "Hello, " + UserName;
+                mainViewModel.usermoney = user.usermoney.ToString();
                 p.Close();
             }
             else
@@ -157,6 +169,8 @@ namespace _15_Puzzle_Game.ViewModel
                 };
                 mail.To.Add(toEmail);
                 smtp.Send(mail);
+                isEnabledRegisterButton = true;
+                _ = ChangeVerificationCode();
                 return true;
             }
             catch (Exception ex)
@@ -181,7 +195,8 @@ namespace _15_Puzzle_Game.ViewModel
                 MessageBox.Show("Invalid email format.");
                 return;
             }
-            if(VerificationCode!= _GeneratedVerificationCode)
+
+            if(VerificationCode == string.Empty || VerificationCode == null || VerificationCode != _GeneratedVerificationCode)
             {
                 MessageBox.Show("Invalid verification code.");
                 return;
@@ -193,10 +208,14 @@ namespace _15_Puzzle_Game.ViewModel
                 password_hash = sha256(RegisterPassWord),
                 email = RegisterEmail,
                 created_at = DateTime.Now,
+                usermoney = 100
             };
 
             DataProvider.Instance.DB.Users.Add(user);
             DataProvider.Instance.DB.SaveChanges();
+            _GeneratedVerificationCode = null;
+            isEnabledRegisterButton = false;
+            VerificationCode = null;
             MessageBox.Show("Succeed!");
             p.Close();
             //DataProvider.Instance.DB.SaveChanges();
@@ -227,6 +246,14 @@ namespace _15_Puzzle_Game.ViewModel
                 hash.Append(theByte.ToString("x2"));
             }
             return hash.ToString();
+        }
+
+        async Task ChangeVerificationCode()
+        {
+            await Task.Delay(30000);
+            _GeneratedVerificationCode = null;
+            VerificationCode = null;
+            isEnabledRegisterButton = false;
         }
 
     }

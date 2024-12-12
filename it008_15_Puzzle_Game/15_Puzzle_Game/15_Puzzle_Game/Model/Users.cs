@@ -18,15 +18,20 @@ namespace _15_Puzzle_Game.Model
         public Users()
         {
             this.LeaderBoards = new HashSet<LeaderBoards>();
+            this.UserImages = new HashSet<UserImages>();
         }
     
         public int user_id { get; set; }
         public string username { get; set; }
+        public int usermoney { get; set; }
+        public int maxlevel { get; set; }
         public string password_hash { get; set; }
         public string email { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LeaderBoards> LeaderBoards { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserImages> UserImages { get; set; }
     }
 }

@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Sliding Puzzle" 
         Height="675"
-        Width="1210"
+        Width="1220"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:viewmodel="clr-namespace:_15_Puzzle_Game.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -22,7 +22,25 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         DataContext="{StaticResource MainVM}"
         Name="mainWindow"
+        ResizeMode="NoResize"
         Closed="mainWindow_Closed">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard BeginTime="0"
+                            Duration="Forever">
+                        <DoubleAnimation Storyboard.TargetName="mainWindow"
+                                     Storyboard.TargetProperty="(Window.Opacity)"
+                                     From="0"
+                                     To="1"
+                                     BeginTime="0:0:0"
+                                     Duration="0:0:2"></DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Window.Triggers>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 

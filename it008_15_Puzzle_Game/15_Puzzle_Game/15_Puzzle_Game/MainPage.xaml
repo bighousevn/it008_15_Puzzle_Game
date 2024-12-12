@@ -36,23 +36,71 @@
 
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" 
+                           Text="Welcome to our game!"
+                           FontFamily="{StaticResource mainFont}"
+                           FontSize="45"
+                           FontWeight="Bold"
+                           Foreground="#0e5898"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="Window.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard Storyboard.TargetProperty="(TextBlock.Text)">
+                                            <StringAnimationUsingKeyFrames RepeatBehavior="Forever">
+                                                <DiscreteStringKeyFrame Value="W" KeyTime="0:0:0"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="We" KeyTime="0:0:0.1"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Wel" KeyTime="0:0:0.2"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welc" KeyTime="0:0:0.3"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welco" KeyTime="0:0:0.4"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcom" KeyTime="0:0:0.5"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome" KeyTime="0:0:0.6"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome " KeyTime="0:0:0.7"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome t" KeyTime="0:0:0.8"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to" KeyTime="0:0:0.9"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to " KeyTime="0:0:1.1"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to o" KeyTime="0:0:1.2"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to ou" KeyTime="0:0:1.3"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to our" KeyTime="0:0:1.4"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to our " KeyTime="0:0:1.5"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to our g" KeyTime="0:0:1.6"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to our ga" KeyTime="0:0:1.7"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to our gam" KeyTime="0:0:1.8"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to our game" KeyTime="0:0:1.9"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to our game!" KeyTime="0:0:2"></DiscreteStringKeyFrame>
+                                                <DiscreteStringKeyFrame Value="Welcome to our game!" KeyTime="0:0:2.5"></DiscreteStringKeyFrame>
+                                            </StringAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <TextBlock Grid.Row="1" 
                            Text="Sliding"
                            FontStyle="Italic"
                            FontFamily="{StaticResource mainFont}"
                            FontSize="150"
+                           Margin="0 -30 0 0"
                            FontWeight="Bold"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Top"
                            Foreground="#a261e1"/>
 
-                <TextBlock Grid.Row="1"
+                <TextBlock Grid.Row="2"
                            Text="Puzzle"
                            FontSize="150"
+                           Margin="0 -30 0 0"
                            FontFamily="{StaticResource mainFont}"
                            FontWeight="Bold"
                            FontStyle="Italic"
@@ -67,7 +115,7 @@
                     Width="100" 
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Margin="10 100 0 0"
+                    Margin="10 10 0 0"
                     Click="Button_Click_1">
                 <materialDesign:PackIcon Kind="SwapHorizontal"
                                          Width="80"
@@ -79,14 +127,14 @@
                 </materialDesign:PackIcon>
             </Button>
 
-            <Button Grid.Column="2"
+            <Button Grid.Column="0"
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Height="100"
                     Width="100"
-                    HorizontalAlignment="Right"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Margin="0 10 10 0"
+                    Margin="10 100 0 0"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
                     Command="{Binding SettingCommand}">
                 <materialDesign:PackIcon Kind="Settings"
@@ -97,14 +145,14 @@
                                          VerticalAlignment="Center"></materialDesign:PackIcon>
             </Button>
 
-            <Button Grid.Column="2"
+            <Button Grid.Column="0"
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Height="100"
                     Width="100"
-                    HorizontalAlignment="Right"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Margin="0 120 10 0"
+                    Margin="10 200 0 0"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
                     Click="Button_Click_2">
                 <materialDesign:PackIcon Kind="LockReset"
@@ -114,6 +162,40 @@
                                          HorizontalAlignment="Center"
                                          VerticalAlignment="Center"></materialDesign:PackIcon>
             </Button>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Kind="Cash"
+                                             Width="60"
+                                             Height="60"
+                                             Margin="0 0 10 7"
+                                             HorizontalAlignment="Right"
+                                             VerticalAlignment="Top"></materialDesign:PackIcon>
+                    
+                    <TextBlock Grid.Column="1"
+                               FontFamily="{StaticResource mainFont}"
+                               FontSize="70"
+                               Text="{Binding usermoney, StringFormat={}{0}$}"
+                               Margin="10 -16 0 0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               TextAlignment="Center"
+                               Height="100"
+                               TextTrimming="CharacterEllipsis">
+                    </TextBlock>
+                </Grid>
+            </Grid>
+            
         </Grid>
 
         <Grid Grid.Row="1">

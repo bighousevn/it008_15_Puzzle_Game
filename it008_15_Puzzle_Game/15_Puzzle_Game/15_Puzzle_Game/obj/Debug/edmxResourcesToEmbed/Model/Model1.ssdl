@@ -26,17 +26,27 @@
     <Property Name="puzzle_id" Type="int" Nullable="false" />
     <Property Name="image_path" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
+  <EntityType Name="UserImages">
+    <Key>
+      <PropertyRef Name="image_id" />
+    </Key>
+    <Property Name="image_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="image_byte" Type="image" Nullable="false" />
+  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="user_id" />
     </Key>
     <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usermoney" Type="int" Nullable="false" />
+    <Property Name="maxlevel" Type="int" Nullable="false" />
     <Property Name="password_hash" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="created_at" Type="datetime" />
   </EntityType>
-  <Association Name="FK__LeaderBoa__level__5441852A">
+  <Association Name="FK__LeaderBoa__level__571DF1D5">
     <End Role="Levels" Type="Self.Levels" Multiplicity="1" />
     <End Role="LeaderBoards" Type="Self.LeaderBoards" Multiplicity="*" />
     <ReferentialConstraint>
@@ -48,7 +58,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LeaderBoa__puzzl__534D60F1">
+  <Association Name="FK__LeaderBoa__puzzl__5629CD9C">
     <End Role="Puzzles" Type="Self.Puzzles" Multiplicity="1" />
     <End Role="LeaderBoards" Type="Self.LeaderBoards" Multiplicity="*" />
     <ReferentialConstraint>
@@ -60,7 +70,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LeaderBoa__user___52593CB8">
+  <Association Name="FK__LeaderBoa__user___5535A963">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="LeaderBoards" Type="Self.LeaderBoards" Multiplicity="*" />
     <ReferentialConstraint>
@@ -72,22 +82,39 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__UserImage__user___4E88ABD4">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserImages" Type="Self.UserImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="UserImages">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="PuzzleGameDBModelStoreContainer">
     <EntitySet Name="LeaderBoards" EntityType="Self.LeaderBoards" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Levels" EntityType="Self.Levels" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Puzzles" EntityType="Self.Puzzles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserImages" EntityType="Self.UserImages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__LeaderBoa__level__5441852A" Association="Self.FK__LeaderBoa__level__5441852A">
+    <AssociationSet Name="FK__LeaderBoa__level__571DF1D5" Association="Self.FK__LeaderBoa__level__571DF1D5">
       <End Role="Levels" EntitySet="Levels" />
       <End Role="LeaderBoards" EntitySet="LeaderBoards" />
     </AssociationSet>
-    <AssociationSet Name="FK__LeaderBoa__puzzl__534D60F1" Association="Self.FK__LeaderBoa__puzzl__534D60F1">
+    <AssociationSet Name="FK__LeaderBoa__puzzl__5629CD9C" Association="Self.FK__LeaderBoa__puzzl__5629CD9C">
       <End Role="Puzzles" EntitySet="Puzzles" />
       <End Role="LeaderBoards" EntitySet="LeaderBoards" />
     </AssociationSet>
-    <AssociationSet Name="FK__LeaderBoa__user___52593CB8" Association="Self.FK__LeaderBoa__user___52593CB8">
+    <AssociationSet Name="FK__LeaderBoa__user___5535A963" Association="Self.FK__LeaderBoa__user___5535A963">
       <End Role="Users" EntitySet="Users" />
       <End Role="LeaderBoards" EntitySet="LeaderBoards" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserImage__user___4E88ABD4" Association="Self.FK__UserImage__user___4E88ABD4">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserImages" EntitySet="UserImages" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

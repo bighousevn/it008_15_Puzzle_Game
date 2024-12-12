@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -37,7 +38,7 @@ namespace _15_Puzzle_Game
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             AudioControl.Instance.OpenWindowEffect_Play();
-            PauseWindow wd = new PauseWindow(mainWindow); 
+            PauseWindow wd = new PauseWindow(mainWindow);
             wd.ShowDialog();
         }
 
