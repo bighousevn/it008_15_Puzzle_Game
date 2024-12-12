@@ -16,8 +16,9 @@
       mc:Ignorable="d"
       Title="GamePlayPage"
       d:DesignHeight="675"
-      d:DesignWidth="1210">
-    <Grid>
+      d:DesignWidth="1210"
+      KeyboardNavigation.TabNavigation="None">
+    <Grid Name="MainGrid"  Loaded="Grid_Loaded" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"></ColumnDefinition>
             <ColumnDefinition Width="5*"></ColumnDefinition>
@@ -40,7 +41,7 @@
                     <ColumnDefinition Width="3.5*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Grid>
+                <Grid >
                     <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                             Style="{StaticResource MaterialDesignFloatingActionButton}"
                             HorizontalAlignment="Center"
@@ -49,6 +50,7 @@
                             Width="50"
                             Height="50" 
                             Click="Button_Click"
+                            Focusable="False"
                             Command="{Binding ClearPictureSourceCommand}">
                         <materialDesign:PackIcon Kind="ArrowBack"
                                                  Width="30"
@@ -71,6 +73,7 @@
                                FontFamily="{StaticResource mainFont}"
                                FontSize="60"
                                FontStyle="Italic"
+                               Focusable="False"
                                Foreground="#0e5898"></TextBlock>
                     
                     <TextBlock x:Name="TextBlockTime"
@@ -82,6 +85,7 @@
                                FontFamily="{StaticResource mainFont}"
                                FontSize="70"
                                FontStyle="Italic"
+                               Focusable="False"
                                Foreground="#0e5898"></TextBlock>
                 </Grid>
 
@@ -98,6 +102,7 @@
                                VerticalAlignment="Center"
                                FontFamily="{StaticResource mainFont}"
                                FontSize="60"
+                               Focusable="False"
                                FontStyle="Italic"
                                Foreground="#0e5898"></TextBlock>
                     <TextBlock x:Name="TextBlockMove"
@@ -108,6 +113,7 @@
                                VerticalAlignment="Center"
                                FontFamily="{StaticResource mainFont}"
                                FontSize="80"
+                               Focusable="False"
                                FontStyle="Italic"
                                Foreground="#0e5898"></TextBlock>
                 </Grid>
@@ -130,6 +136,7 @@
                                FontFamily="{StaticResource mainFont}"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Bottom"
+                               Focusable="False"
                                Foreground="#0e5898"></TextBlock>
 
                     <Button Grid.Row="1"
@@ -137,7 +144,8 @@
                             Style="{StaticResource MaterialDesignFloatingActionButton}"
                             ToolTip="MaterialDesignFloatingActionButton"
                             Width="80"
-                            Height="80" 
+                            Height="80"
+                            Focusable="False"
                             Click="Button_Click_2"
                             Background="#0e5898">
                         <materialDesign:PackIcon Kind="Shuffle"
@@ -163,13 +171,14 @@
                        Foreground="#0e5898"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top" 
+                       Focusable="False"
                        Margin="0,10,0,0"/>
 
                 <materialDesign:Card Grid.Row="1" 
                                      Grid.RowSpan="2"
                                      HorizontalAlignment="Stretch"
                                      VerticalAlignment="Stretch"
-                                     Width="375">
+                                     Width="350">
                 <Border BorderBrush="#1791f8"
                         BorderThickness="2">
                     <ScrollViewer VerticalScrollBarVisibility="Disabled"
@@ -313,6 +322,7 @@
                         Background="#0e5898"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
+                        Focusable="False"
                         Margin="0,10,0,0" 
                         Command="{Binding SettingGamePlayCommand}">
                     <materialDesign:PackIcon Kind="DotsHorizontal"
@@ -330,10 +340,9 @@
         </Grid>
         <Frame Grid.Column="0"
                Grid.Row="1"
+               Focusable="False"
                x:Name ="PlayFrame"
-               NavigationUIVisibility ="Hidden"
-               >
-            
-        </Frame>
+               NavigationUIVisibility ="Hidden" KeyDown="GamePlayPage_KeyDown"
+               />
     </Grid>
 </Page>

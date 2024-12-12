@@ -454,6 +454,8 @@ C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_P
 C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.g.resources
 C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.exe
 C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.pdb
+<<<<<<< HEAD
+=======
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\BackGroundMusic.mp3
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\CloseWindow.mp3
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Signin.mp3
@@ -529,6 +531,10 @@ D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\D
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.pdb
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\OptionalPage.g.cs
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\OptionalPage.baml
+<<<<<<< HEAD
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\WpfAnimatedGif.dll
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\WpfAnimatedGif.pdb
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\WpfAnimatedGif.xml
+=======
+>>>>>>> a38290dcd3e0451189b6c56cdcb66363c136be0b
+>>>>>>> 2fb61b4131f8bdb91c26489fdc57c1dd297e9810

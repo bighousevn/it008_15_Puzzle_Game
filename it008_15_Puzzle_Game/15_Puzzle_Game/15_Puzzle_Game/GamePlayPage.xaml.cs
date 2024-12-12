@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Management;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,7 +24,8 @@ namespace _15_Puzzle_Game
     /// </summary>
     public partial class GamePlayPage : Page
     {
-        
+        public event EventHandler<KeyEventArgs> KeyPressed;
+
         public GamePlayPage(string n, string path,int checkOption)
         {
             InitializeComponent();
@@ -50,6 +52,22 @@ namespace _15_Puzzle_Game
 
             // Xử lý sự kiện khác nếu có
             playPage.OnMoveTextChanged += PlayPage_OnMoveTextChanged;
+
+            this.KeyDown += GamePlayPage_KeyDown;
+            playPage.SubscribeToGamePlayPageEvents(this);
+        }
+
+       
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            window.KeyDown += GamePlayPage_KeyDown;
+        }
+
+        private void GamePlayPage_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Khi một phím được nhấn, kích hoạt sự kiện KeyPressed
+            KeyPressed?.Invoke(this, e);
         }
         void PlayPage_UpdateUri(string uri)
         {
@@ -87,5 +105,7 @@ namespace _15_Puzzle_Game
             // Cập nhật nội dung của TextBlockMove từ sự kiện
             TextBlockMove.Text = newText;
         }
+
+        
     }
 }

@@ -469,6 +469,9 @@ namespace _15_Puzzle_Game
             Point clickedImagePosition = new Point(Canvas.GetLeft(clickedImage), Canvas.GetTop(clickedImage));
             Point emptyBoxPosition = new Point(Canvas.GetLeft(emptyBox), Canvas.GetTop(emptyBox));
 
+            Console.WriteLine(clickedImagePosition);
+            Console.WriteLine(emptyBoxPosition);
+
             var n = Math.Sqrt(imageList.Count());
             // Kiểm tra xem mảnh ghép có thể hoán đổi với ô trống không
             if (CanSwap(clickedImage, emptyBox, n))
@@ -493,6 +496,100 @@ namespace _15_Puzzle_Game
         public void ShuffleClick(object sender, RoutedEventArgs e)
         {
             PlaceImageList();
+        }
+
+        public void SubscribeToGamePlayPageEvents(GamePlayPage gamePlayPage)
+        {
+            gamePlayPage.KeyPressed += Grid_KeyDown;
+            Console.WriteLine(3);
+        }
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            Image emptyBox = imageList.FirstOrDefault(x => x.Tag.ToString() == "0");
+            Image targetImage = null;
+            Point emptyBoxPosition = new Point(Canvas.GetLeft(emptyBox), Canvas.GetTop(emptyBox));
+
+            double n = Math.Sqrt(imageList.Count); // Số lượng ô theo một chiều
+            double tileWidth= emptyBox.Width + paddingBetween;
+            Console.WriteLine(1);
+            switch (e.Key)
+            {
+                case Key.Left:
+                    // Tìm hình ở bên trái ô trống
+                    targetImage = imageList.FirstOrDefault(x =>
+                    {
+                        double xPosition = Canvas.GetLeft(x);
+                        double yPosition = Canvas.GetTop(x);
+
+                        // Kiểm tra xem hình ảnh có ở bên phải ô trống hay không
+                        return (Canvas.GetLeft(emptyBox) - xPosition ) == tileWidth &&
+                                 (yPosition - Canvas.GetTop(emptyBox)) == 0;
+                    });
+                    break;
+                case Key.Right:
+                    // Tìm hình ở bên phải ô trống
+                    targetImage = imageList.FirstOrDefault(x =>
+                    {
+                        double xPosition = Canvas.GetLeft(x);
+                        double yPosition = Canvas.GetTop(x);
+
+                        // Kiểm tra xem hình ảnh có ở bên phải ô trống hay không
+                        return (xPosition - Canvas.GetLeft(emptyBox) ) == tileWidth &&
+                                 (yPosition - Canvas.GetTop(emptyBox)) == 0;
+                    });
+                    break;
+                case Key.Up:
+                    // Tìm hình ở bên trên ô trống
+                    targetImage = imageList.FirstOrDefault(x =>
+                    {
+                        double xPosition = Canvas.GetLeft(x);
+                        double yPosition = Canvas.GetTop(x);
+
+                        // Kiểm tra xem hình ảnh có ở bên phải ô trống hay không
+                        return (xPosition - Canvas.GetLeft(emptyBox)) == 0 &&
+                                 (Canvas.GetTop(emptyBox) - yPosition ) == tileWidth;
+                    });
+                    break;
+                case Key.Down:
+                    // Tìm hình ở dưới ô trống
+                    targetImage = imageList.FirstOrDefault(x =>
+                    {
+                        double xPosition = Canvas.GetLeft(x);
+                        double yPosition = Canvas.GetTop(x);
+
+                        // Kiểm tra xem hình ảnh có ở bên phải ô trống hay không
+                        return (xPosition - Canvas.GetLeft(emptyBox)) == 0 &&
+                                (yPosition - Canvas.GetTop(emptyBox) ) == tileWidth;
+                    });
+                    break;
+            }
+
+            if (targetImage != null)
+            {
+                Point targetImagePosition = new Point(Canvas.GetLeft(targetImage), Canvas.GetTop(targetImage));
+
+
+                if (CanSwap(targetImage, emptyBox, n))
+                {
+                    // Hoán đổi vị trí giữa mảnh ghép và ô trống
+                    Canvas.SetLeft(targetImage, emptyBoxPosition.X);
+                    Canvas.SetTop(targetImage, emptyBoxPosition.Y);
+
+                    Canvas.SetLeft(emptyBox, targetImagePosition.X);
+                    Canvas.SetTop(emptyBox, targetImagePosition.Y);
+
+                    // Cập nhật lại danh sách các vị trí của mảnh ghép
+                    UpdateLocations(targetImage, emptyBox);
+
+                    AudioControl.Instance.WoodEffect_Play();
+                }
+
+                // Kiểm tra xem trò chơi đã hoàn thành chưa
+                CheckGame();
+            }
+            else
+                Console.WriteLine("image ko co");
+
         }
     }
 }
