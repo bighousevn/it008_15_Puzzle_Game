@@ -449,6 +449,21 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
+        private bool _isEnabled = true;
+        public bool isEnabled
+        {
+            get { return _isEnabled; }
+            set
+            {
+                if (_isEnabled != value)
+                {
+                    _isEnabled = value;
+                    OnPropertyChanged(nameof(isEnabled));
+                }
+
+            }
+        }
+
         public MainViewModel()
         {
             Isloaded = false;
@@ -540,7 +555,7 @@ namespace _15_Puzzle_Game.ViewModel
                 PictureName7 = "RedPanda";
                 PictureName8 = "Tiger";
                 PictureName9 = "Wolf";
-                LevelName = "Level: 3x3";
+                LevelName = "Level: 3x3"; 
             });
 
             Button4 = new RelayCommand<object>((p) => { return true; }, p => {

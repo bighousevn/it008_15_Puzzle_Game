@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static MaterialDesignThemes.Wpf.Theme.ToolBar;
 
 namespace _15_Puzzle_Game
 {
@@ -66,7 +67,7 @@ namespace _15_Puzzle_Game
         {
             if (CanEdit)
             {
-                var selectedImage = (System.Windows.Controls.Image)sender;
+                var selectedImage = (Image)sender;
                 if (!selectedImages.Contains(selectedImage))
                 {
                     selectedImages.Add(selectedImage);
@@ -100,13 +101,10 @@ namespace _15_Puzzle_Game
 
                 if (imageRecord != null)
                 {
-                    // Xóa bản ghi trong database
                     DataProvider.Instance.DB.UserImages.Remove(imageRecord);
                     DataProvider.Instance.DB.SaveChanges();
 
-                    // Xóa ImageControl khỏi WrapPanel và khỏi danh sách selectedImages
                     MainWrappanel.Children.Remove(ImageControl);
-                    // Xóa phần tử tại chỉ số i
                     selectedImages.RemoveAt(i);
                 }
             }
@@ -120,6 +118,7 @@ namespace _15_Puzzle_Game
                 AddButton.IsEnabled = false;
             else
                 AddButton.IsEnabled = CanEdit;
+
             DeleteButton.IsEnabled = CanEdit;
 
             EditStatusBtnText();
@@ -131,7 +130,7 @@ namespace _15_Puzzle_Game
 
                foreach(var item in MainWrappanel.Children)
                 {
-                    if(item is System.Windows.Controls.Image)
+                    if(item is Image)
                     {
                         Image image = (Image)item;
                         image.Opacity = 1.0;
@@ -172,6 +171,7 @@ namespace _15_Puzzle_Game
                 image_id = imageid,
                 image_byte = Image
             };
+
             var CurrUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
             CurrentUser.Instance.CurrentUserMoney -= 200;
             CurrUser.usermoney = CurrentUser.Instance.CurrentUserMoney;
@@ -181,6 +181,7 @@ namespace _15_Puzzle_Game
 
             DataProvider.Instance.DB.UserImages.Add(addimage);
             DataProvider.Instance.DB.SaveChanges();
+
             LoadImage();
         }
 

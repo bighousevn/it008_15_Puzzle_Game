@@ -6,13 +6,14 @@
       xmlns:local="clr-namespace:_15_Puzzle_Game"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
       xmlns:viewmodel="clr-namespace:_15_Puzzle_Game.ViewModel" 
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
       d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       TextElement.FontWeight="Regular"
       TextElement.FontSize="13"
       TextOptions.TextRenderingMode="Auto"
-      DataContext="{StaticResource MainVM}"
       mc:Ignorable="d"
+      DataContext="{StaticResource MainVM}"
       Title="SelectLevelPage" 
       d:DesignHeight="675"
       d:DesignWidth="1200">
@@ -82,22 +83,81 @@
                 <Grid.RenderTransform>
                     <ScaleTransform ScaleX="1" ScaleY="1"/>
                 </Grid.RenderTransform>
-                <Button Grid.Row="0"
+
+                <!--<Button Grid.Row="0"
                         Tag="3"
+                        x:Name="Btn"
                         materialDesign:ButtonAssist.CornerRadius="10"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Style="{StaticResource MaterialDesignRaisedButton}"
-                        ToolTip="MaterialDesignRaisedButton with Round Corners"
                         Height="240"
                         Width="380"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Center"
-                        Command="{Binding Button3}"
-                        Click="Button_Click">
+                        Click="Button_Click"
+                        IsEnabled="{Binding isEnabled}"
+                        Command="{Binding Button3}">
                     <Button.Background>
                         <ImageBrush ImageSource="Picture/GamePlay/Main3x3.jpg"></ImageBrush>
                     </Button.Background>
-                </Button>
+                </Button>-->
+
+                <Grid Grid.Row="0">
+                    <Image Grid.Row="0"
+                           Name="Btn3"
+                           Tag="3"
+                           Height="240"
+                           Width="380"
+                           Cursor="Hand"
+                           VerticalAlignment="Bottom"
+                           IsEnabled="{Binding isEnabled}"
+                           MouseDown="Btn3_MouseDown"
+                           HorizontalAlignment="Center">
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Setter Property="Source"
+                                        Value="Picture/GamePlay/Main3x3.jpg"></Setter>
+                                <Setter Property="Opacity"
+                                        Value="1"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding isEnabled}"
+                                                 Value="false">
+                                        <Setter Property="Opacity"
+                                                Value="0.5"></Setter>
+                                        <Setter Property="Source"
+                                                Value="Picture/GamePlay/Main5x5.jpg"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseDown">
+                                <i:InvokeCommandAction Command="{Binding Button3}" 
+                                                       CommandParameter="{Binding ElementName=Btn3}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Image>
+
+                    <materialDesign:PackIcon Kind="Lock"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"
+                                             Height="100"
+                                             Width="100">
+                        <materialDesign:PackIcon.Style>
+                            <Style TargetType="materialDesign:PackIcon">
+                                <Setter Property="Visibility"
+                                        Value="Collapsed"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding isEnabled}"
+                                                 Value="False">
+                                        <Setter Property="Visibility"
+                                                Value="Visible"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </materialDesign:PackIcon.Style>
+                    </materialDesign:PackIcon>
+                </Grid>
+                           
+                
                 <TextBlock Grid.Row="1" Text="3 x 3"
                            FontSize="80"
                            FontFamily="{StaticResource mainFont}"
