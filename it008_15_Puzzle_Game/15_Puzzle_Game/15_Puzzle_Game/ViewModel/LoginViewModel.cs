@@ -133,6 +133,7 @@ namespace _15_Puzzle_Game.ViewModel
                 CurrentUser.Instance.CurrentUserName = UserName;
                 var user = DataProvider.Instance.DB.Users.FirstOrDefault(x => x.username == UserName);
                 CurrentUser.Instance.CurrentUserid = user.user_id;
+                mainViewModel.CreateStageList();
                 CurrentUser.Instance.CurrentUserMoney = (int)user.usermoney;
                 mainViewModel.username = "Hello, " + UserName;
                 mainViewModel.usermoney = user.usermoney.ToString();
@@ -208,6 +209,7 @@ namespace _15_Puzzle_Game.ViewModel
                 password_hash = sha256(RegisterPassWord),
                 email = RegisterEmail,
                 created_at = DateTime.Now,
+                maxlevel = 1,
                 usermoney = 100
             };
 
