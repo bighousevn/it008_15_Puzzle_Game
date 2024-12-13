@@ -52,19 +52,7 @@ VALUES
 (3, '5x5', 25),
 (4, 'Option',9);
 
-<<<<<<< HEAD
 
-INSERT INTO Puzzles (puzzle_id, image_path)
-VALUES
-(1, 'Picture/1039168.png'),
-(2, 'Picture/1092839.jpg'),
-(3, 'Picture/BackGroundLogin.jpg'),
-(4, 'Picture/sunset-river-nature-scenery-4k-wallpaper-uhdpaper.com-693@0@j.jpg');
-
-INSERT INTO Puzzles (puzzle_id, image_path)
-VALUES
-(2, 'pack://application:,,,/Picture/GamePlay/1.jpg')
-=======
 insert into Puzzles
   values (1, 'pack://application:,,,/Picture/GamePlay/Animal/Beaver.jpg'),
 		 (2, 'pack://application:,,,/Picture/GamePlay/Animal/Cat.jpg'),
@@ -93,10 +81,9 @@ insert into Puzzles
 		 (25, 'pack://application:,,,/Picture/GamePlay/Anime/OnePiece.jpg'),
 		 (26, 'pack://application:,,,/Picture/GamePlay/Anime/Vegeta.png'),
 		 (27, 'pack://application:,,,/Picture/GamePlay/Anime/Zoro.jpg')
->>>>>>> a38290dcd3e0451189b6c56cdcb66363c136be0b
 
-drop table LeaderBoards
-drop table Puzzles
+
+
 
 select *
 from Puzzles

@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static MaterialDesignThemes.Wpf.Theme.ToolBar;
 
 namespace _15_Puzzle_Game
 {
@@ -46,7 +47,6 @@ namespace _15_Puzzle_Game
             foreach (var item in allImage)
             {
                 BitmapImage bitmap = ToImage(item.image_byte);
-
                 Image ImageControl = new Image
                 {
                     Source = bitmap,
@@ -64,9 +64,9 @@ namespace _15_Puzzle_Game
 
         void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            var selectedImage = (System.Windows.Controls.Image)sender;
             if (CanEdit)
             {
-                var selectedImage = (System.Windows.Controls.Image)sender;
                 if (!selectedImages.Contains(selectedImage))
                 {
                     selectedImages.Add(selectedImage);
@@ -83,7 +83,10 @@ namespace _15_Puzzle_Game
             }
             else
             {
-
+                var imageId = (int)selectedImage.Tag;
+                var imageRecord = DataProvider.Instance.DB.UserImages.FirstOrDefault(p => p.image_id == imageId);
+                BitmapImage bitmap = ToImage(imageRecord.image_byte);
+                NavigationService.Navigate(new SelectLevelOptional(bitmap.StreamSource.ToString(),bitmap));
             }
         }
 
@@ -153,7 +156,6 @@ namespace _15_Puzzle_Game
             }
             else
                 return;
-
             var Image = ImageToByte(bitmap);
 
             var user = DataProvider.Instance.DB.Users.Where(p => p.username == CurrentUser.Instance.CurrentUserName).FirstOrDefault();
@@ -172,6 +174,7 @@ namespace _15_Puzzle_Game
                 image_id = imageid,
                 image_byte = Image
             };
+            Console.WriteLine(Convert.FromBase64String(Convert.ToBase64String(addimage.image_byte)));
             var CurrUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
             CurrentUser.Instance.CurrentUserMoney -= 200;
             CurrUser.usermoney = CurrentUser.Instance.CurrentUserMoney;
@@ -183,6 +186,7 @@ namespace _15_Puzzle_Game
             DataProvider.Instance.DB.SaveChanges();
             LoadImage();
         }
+
 
         public BitmapImage ToImage(byte[] array)
         {

@@ -1,6 +1,7 @@
 ﻿using _15_Puzzle_Game.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,10 @@ namespace _15_Puzzle_Game
                     string imagePath = backgroundImage.ImageSource.ToString();
                     CurrentUser.Instance.CurrentImagePath=imagePath;
                     // Chuyển sang Page2 và truyền đường dẫn hình ảnh
-                    GamePlayPage gamePlayPage = new GamePlayPage(n,imagePath,0);
+
+
+                    BitmapImage bitmapImage = null ;
+                    GamePlayPage gamePlayPage = new GamePlayPage(n, imagePath, 0, bitmapImage);
                     this.NavigationService.Navigate(gamePlayPage);
                 }
             }

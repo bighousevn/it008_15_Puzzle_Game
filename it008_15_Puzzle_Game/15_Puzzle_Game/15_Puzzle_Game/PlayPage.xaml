@@ -16,20 +16,17 @@
        Title="PlayPage"
        d:DesignHeight="487.5"
        d:DesignWidth="825">
-<<<<<<< HEAD
-    <Grid >
-        <Border BorderBrush="Black" 
-=======
-    <Grid>
-        <Border BorderBrush="#0e5898" 
->>>>>>> a38290dcd3e0451189b6c56cdcb66363c136be0b
-                BorderThickness="2" 
-                Width="0" 
-                Height="0" 
-                HorizontalAlignment="Center" 
+
+	<Grid>
+		<Border BorderBrush="#0e5898"
+
+                BorderThickness="2"
+                Width="0"
+                Height="0"
+                HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Name="Myborder">
-            <Canvas Name="PuzzleCanvas"></Canvas>
-        </Border>
-    </Grid>
+			<Canvas Name="PuzzleCanvas"></Canvas>
+		</Border>
+	</Grid>
 </Page>
