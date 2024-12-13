@@ -315,9 +315,9 @@
     <EmbeddedResource Include="Music\Victory.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-<<<<<<< HEAD
+
     <Resource Include="Picture\GamePlay\1.jpg" />
-=======
+
     <Resource Include="Picture\GamePlay\Animal\Beaver.jpg" />
     <Resource Include="Picture\GamePlay\Animal\Fox.jpg" />
     <Resource Include="Picture\GamePlay\Animal\Rabbit.jpg" />
@@ -346,7 +346,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
->>>>>>> a38290dcd3e0451189b6c56cdcb66363c136be0b
+
     <Content Include="Picture\Icon.ico" />
   </ItemGroup>
   <ItemGroup>
