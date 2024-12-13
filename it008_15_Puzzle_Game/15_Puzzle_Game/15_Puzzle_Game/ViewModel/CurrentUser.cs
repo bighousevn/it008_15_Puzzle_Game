@@ -40,7 +40,5 @@ namespace _15_Puzzle_Game.ViewModel
             get { return _currentImagePath; }
             set { _currentImagePath = value; OnPropertyChanged(); }
         }
-        
-
     }
 }

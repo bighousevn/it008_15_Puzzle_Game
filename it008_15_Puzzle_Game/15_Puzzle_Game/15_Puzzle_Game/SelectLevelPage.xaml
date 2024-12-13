@@ -122,8 +122,6 @@
                                                  Value="false">
                                         <Setter Property="Opacity"
                                                 Value="0.5"></Setter>
-                                        <Setter Property="Source"
-                                                Value="Picture/GamePlay/Main5x5.jpg"></Setter>
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
@@ -150,6 +148,18 @@
                                                  Value="False">
                                         <Setter Property="Visibility"
                                                 Value="Visible"></Setter>
+                                    </DataTrigger>
+
+                                    <DataTrigger Binding="{Binding isLockEnabled1}" Value="True">
+                                        <DataTrigger.EnterActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:3" Value="{x:Static Visibility.Collapsed}" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>

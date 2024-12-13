@@ -35,12 +35,12 @@ namespace _15_Puzzle_Game
             if (mainwindow != null)
             {
                 mainwindow.mainFrame.NavigationService.GoBack();
+                mainwindow.mainFrame.NavigationService.GoBack();
             }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            
             this.Close();
         }
     }
