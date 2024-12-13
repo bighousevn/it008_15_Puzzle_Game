@@ -388,7 +388,7 @@ namespace _15_Puzzle_Game
                         DataProvider.Instance.DB.LeaderBoards.Add(newLeaderBoard);
                         DataProvider.Instance.DB.SaveChanges();
                     }
-
+                    mainViewModel.LoadStageList();
                     if (level.level_id == 1)
                         CurrentUser.Instance.CurrentUserMoney += 50;
                     else if (level.level_id == 2)

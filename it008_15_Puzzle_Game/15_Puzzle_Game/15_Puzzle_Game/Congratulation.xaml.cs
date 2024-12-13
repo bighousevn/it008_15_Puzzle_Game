@@ -35,6 +35,7 @@ namespace _15_Puzzle_Game
             if (mainwindow != null)
             {
                 mainwindow.mainFrame.NavigationService.GoBack();
+                mainwindow.mainFrame.NavigationService.GoBack();
             }
             var window = Window.GetWindow(this);
             var gamePlayPage = this.DataContext as GamePlayPage;
@@ -44,7 +45,6 @@ namespace _15_Puzzle_Game
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            
             this.Close();
         }
     }

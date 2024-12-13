@@ -5,18 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using static MaterialDesignThemes.Wpf.Theme.ToolBar;
+using AForge.Imaging;
+using System.Drawing;
 
 namespace _15_Puzzle_Game
 {
@@ -26,6 +22,9 @@ namespace _15_Puzzle_Game
     public partial class OptionalPage : Page
     {
         private List<System.Windows.Controls.Image> selectedImages = new List<System.Windows.Controls.Image>();  // Lưu trữ ảnh đã chọn
+        private List<byte[]> bytes = new List<byte[]>();
+        private List<byte[]> existedImage = new List<byte[]>();
+
         BitmapImage bitmap;
         int Userid;
         private bool CanEdit = false;
@@ -42,14 +41,21 @@ namespace _15_Puzzle_Game
         void LoadImage()
         {
             MainWrappanel.Children.Clear();
+            bytes.Clear();
 
             var allImage = DataProvider.Instance.DB.UserImages.Where(p => p.user_id == Userid);
             foreach (var item in allImage)
             {
-                BitmapImage bitmap = ToImage(item.image_byte);
-                Image ImageControl = new Image
+                bytes.Add(item.image_byte);
+                existedImage = DataProvider.Instance.DB.UserImages.Where(p => p.user_id == CurrentUser.Instance.CurrentUserid)
+                                                              .Select(p => p.image_byte)
+                                                              .ToList();
+
+                BitmapImage addbitmap = ToImage(item.image_byte);
+
+                System.Windows.Controls.Image ImageControl = new System.Windows.Controls.Image
                 {
-                    Source = bitmap,
+                    Source = addbitmap,
                     Width = 255,
                     Height = 255,
                     Margin = new Thickness(5),
@@ -64,9 +70,9 @@ namespace _15_Puzzle_Game
 
         void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            var selectedImage = (System.Windows.Controls.Image)sender;
             if (CanEdit)
             {
+                var selectedImage = (System.Windows.Controls.Image)sender;
                 if (!selectedImages.Contains(selectedImage))
                 {
                     selectedImages.Add(selectedImage);
@@ -83,10 +89,7 @@ namespace _15_Puzzle_Game
             }
             else
             {
-                var imageId = (int)selectedImage.Tag;
-                var imageRecord = DataProvider.Instance.DB.UserImages.FirstOrDefault(p => p.image_id == imageId);
-                BitmapImage bitmap = ToImage(imageRecord.image_byte);
-                NavigationService.Navigate(new SelectLevelOptional(bitmap.StreamSource.ToString(),bitmap));
+
             }
         }
 
@@ -103,17 +106,16 @@ namespace _15_Puzzle_Game
 
                 if (imageRecord != null)
                 {
-                    // Xóa bản ghi trong database
                     DataProvider.Instance.DB.UserImages.Remove(imageRecord);
                     DataProvider.Instance.DB.SaveChanges();
 
-                    // Xóa ImageControl khỏi WrapPanel và khỏi danh sách selectedImages
                     MainWrappanel.Children.Remove(ImageControl);
-                    // Xóa phần tử tại chỉ số i
                     selectedImages.RemoveAt(i);
+                    bytes.RemoveAt(i);
                 }
             }
             SampleImage.Source = null;
+            LoadImage();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -123,6 +125,7 @@ namespace _15_Puzzle_Game
                 AddButton.IsEnabled = false;
             else
                 AddButton.IsEnabled = CanEdit;
+
             DeleteButton.IsEnabled = CanEdit;
 
             EditStatusBtnText();
@@ -133,13 +136,13 @@ namespace _15_Puzzle_Game
                 selectedImages.Clear();
 
                foreach(var item in MainWrappanel.Children)
-                {
+               {
                     if(item is System.Windows.Controls.Image)
                     {
-                        Image image = (Image)item;
+                        System.Windows.Controls.Image image = (System.Windows.Controls.Image)item;
                         image.Opacity = 1.0;
                     }
-                }
+               }
             }
         }
 
@@ -156,13 +159,28 @@ namespace _15_Puzzle_Game
             }
             else
                 return;
-            var Image = ImageToByte(bitmap);
+
+            BitmapImage newBitmap = ResizeImage(bitmap);
+
+            var Image = ImageToByte(newBitmap);
+
+
+            
+            foreach(var item in existedImage)
+            {
+                var temp = ToImage(item);
+                var bitmaptemp1 = BitmapImage2Bitmap(temp);
+                var bitmaptemp2 = BitmapImage2Bitmap(newBitmap);
+                if (CompareImagesUsingTemplateMatching(bitmaptemp1, bitmaptemp2))
+                {
+                    MessageBox.Show("Already existed!");
+                    return;
+                }
+            }
 
             var user = DataProvider.Instance.DB.Users.Where(p => p.username == CurrentUser.Instance.CurrentUserName).FirstOrDefault();
-
             bool existedUserImage = DataProvider.Instance.DB.UserImages.Any();
             int imageid;
-
             if (existedUserImage)
                 imageid = DataProvider.Instance.DB.UserImages.Max(p => p.image_id) + 1;
             else
@@ -174,7 +192,7 @@ namespace _15_Puzzle_Game
                 image_id = imageid,
                 image_byte = Image
             };
-            Console.WriteLine(Convert.FromBase64String(Convert.ToBase64String(addimage.image_byte)));
+
             var CurrUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
             CurrentUser.Instance.CurrentUserMoney -= 200;
             CurrUser.usermoney = CurrentUser.Instance.CurrentUserMoney;
@@ -184,9 +202,9 @@ namespace _15_Puzzle_Game
 
             DataProvider.Instance.DB.UserImages.Add(addimage);
             DataProvider.Instance.DB.SaveChanges();
+
             LoadImage();
         }
-
 
         public BitmapImage ToImage(byte[] array)
         {
@@ -228,6 +246,100 @@ namespace _15_Puzzle_Game
                 StatusBtn.Text = "Not enough money";
             else
                 StatusBtn.Text = "200$ per one";
+        }
+
+        public BitmapImage ResizeImage(BitmapImage bitmap)
+        {
+            int newWidth = 300;
+            int newHeight = 300;
+
+            // Create a WriteableBitmap with the new size
+            WriteableBitmap writeableBitmap = new WriteableBitmap(newWidth, newHeight, 96, 96, PixelFormats.Pbgra32, null);
+
+
+            // Create a DrawingVisual to use for drawing the image
+            DrawingVisual drawingVisual = new DrawingVisual();
+            using (DrawingContext drawingContext = drawingVisual.RenderOpen())
+            {
+                // Draw the image into the DrawingContext with the new dimensions
+                drawingContext.DrawImage(bitmap, new Rect(0, 0, newWidth, newHeight));
+            }
+
+            // Create a RenderTargetBitmap to render the DrawingVisual into the WriteableBitmap
+            RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap(newWidth, newHeight, 96, 96, PixelFormats.Pbgra32);
+            renderTargetBitmap.Render(drawingVisual);
+
+            // Now copy the rendered result into the WriteableBitmap
+            writeableBitmap = new WriteableBitmap(renderTargetBitmap);
+
+            // Create a MemoryStream to save the resized image
+            MemoryStream memoryStream = new MemoryStream();
+            PngBitmapEncoder encoder = new PngBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(writeableBitmap));
+            encoder.Save(memoryStream);
+
+            // Reset MemoryStream to the beginning
+            memoryStream.Position = 0;
+
+            // Create a new BitmapImage from the MemoryStream
+            BitmapImage resizedImage = new BitmapImage();
+            resizedImage.BeginInit();
+            resizedImage.StreamSource = memoryStream;
+            resizedImage.CacheOption = BitmapCacheOption.OnLoad;
+            resizedImage.EndInit();
+
+            // Return the resized BitmapImage
+            return resizedImage;
+        }
+
+        public static bool CompareImagesUsingTemplateMatching(Bitmap image1, Bitmap image2)
+        {
+            ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0.7f); // Tìm kiếm độ tương đồng trên 90%
+
+            // Áp dụng TemplateMatching để so sánh hình ảnh mẫu với hình ảnh lớn
+            TemplateMatch[] matches = tm.ProcessImage(image1, image2);
+
+            // Kiểm tra nếu có kết quả phù hợp
+            if (matches.Length > 0 && matches[0].Similarity > 0.7f)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private Bitmap BitmapImage2Bitmap(BitmapImage bitmapImage)
+        {
+            // BitmapImage bitmapImage = new BitmapImage(new Uri("../Images/test.png", UriKind.Relative));
+
+            using (MemoryStream outStream = new MemoryStream())
+            {
+                BitmapEncoder enc = new BmpBitmapEncoder();
+                enc.Frames.Add(BitmapFrame.Create(bitmapImage));
+                enc.Save(outStream);
+                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(outStream);
+
+                return ConvertTo24bppRgb(new Bitmap(bitmap)); 
+            }
+        }
+
+        public static Bitmap ConvertTo24bppRgb(Bitmap original)
+        {
+            // Kiểm tra nếu ảnh đã có định dạng 24bppRGB
+            if (original.PixelFormat == System.Drawing.Imaging.PixelFormat.Format24bppRgb)
+            {
+                return original;
+            }
+
+            // Tạo Bitmap mới với định dạng 24bppRgb
+            Bitmap newBitmap = new Bitmap(original.Width, original.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+
+            // Vẽ ảnh gốc vào ảnh mới
+            using (Graphics g = Graphics.FromImage(newBitmap))
+            {
+                g.DrawImage(original, 0, 0);
+            }
+
+            return newBitmap;
         }
     }
 }

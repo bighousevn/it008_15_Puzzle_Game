@@ -4,7 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:_15_Puzzle_Game"
-       xmlns:viewmodel="clr-namespace:_15_Puzzle_Game.ViewModel"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
+      xmlns:viewmodel="clr-namespace:_15_Puzzle_Game.ViewModel"
       d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
        TextElement.FontWeight="Regular"
@@ -16,17 +17,45 @@
        Title="PlayPage"
        d:DesignHeight="487.5"
        d:DesignWidth="825">
-
-	<Grid>
-		<Border BorderBrush="#0e5898"
-
-                BorderThickness="2"
-                Width="0"
-                Height="0"
-                HorizontalAlignment="Center"
+    <Grid>
+        <Border BorderBrush="#0e5898" 
+                
+                BorderThickness="2" 
+                Width="0" 
+                Height="0" 
+                HorizontalAlignment="Center" 
                 VerticalAlignment="Center"
-                Name="Myborder">
-			<Canvas Name="PuzzleCanvas"></Canvas>
-		</Border>
-	</Grid>
+                Name="Myborder"
+                Background="White">
+            <Canvas Name="PuzzleCanvas"
+                    Background="White"></Canvas>
+        </Border>
+
+        <Image gif:ImageBehavior.AnimatedSource="Picture/Eternity.gif"
+               Height="150"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image gif:ImageBehavior.AnimatedSource="Picture/Eternity.gif"
+               Height="150"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
 </Page>

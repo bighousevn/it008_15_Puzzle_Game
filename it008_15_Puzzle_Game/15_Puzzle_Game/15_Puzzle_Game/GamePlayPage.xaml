@@ -17,8 +17,7 @@
       Title="GamePlayPage"
       d:DesignHeight="675"
       d:DesignWidth="1210"
-      KeyboardNavigation.TabNavigation="None"
-      >
+      KeyboardNavigation.TabNavigation="None">
     <Grid Name="MainGrid"  Loaded="Grid_Loaded" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"></ColumnDefinition>
@@ -179,13 +178,11 @@
                                      Grid.RowSpan="2"
                                      HorizontalAlignment="Stretch"
                                      VerticalAlignment="Stretch"
-                                     Width="350"
-                                     Focusable="False">
+                                     Width="350">
                 <Border BorderBrush="#1791f8"
                         BorderThickness="2">
-                    <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                  HorizontalAlignment="Stretch"
-                                  VerticalAlignment="Stretch">
+                    <ScrollViewer VerticalScrollBarVisibility="Disabled"
+                                  HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,0">
                         <ListView Grid.Row="1" 
                                   ItemsSource="{Binding XepHangList}">
                             <ListView.View>

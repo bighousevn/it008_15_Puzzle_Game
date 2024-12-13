@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:_15_Puzzle_Game"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
       xmlns:viewmodel="clr-namespace:_15_Puzzle_Game.ViewModel" 
       d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
@@ -19,6 +20,7 @@
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch">
     <Grid>
+
         <Grid.Background>
             <ImageBrush ImageSource="Picture/MainPageBackGround.jpg"/>
         </Grid.Background>
@@ -33,6 +35,13 @@
                 <ColumnDefinition Width="1.5*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+
+            <Image gif:ImageBehavior.AnimatedSource="Picture/FireWork.gif"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2" Margin="255,0,0,0"></Image>
+            <Image gif:ImageBehavior.AnimatedSource="Picture/FireWork.gif"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2" Margin="0,0,221,0"></Image>
 
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -181,7 +190,7 @@
                                              Margin="0 0 10 7"
                                              HorizontalAlignment="Right"
                                              VerticalAlignment="Top"></materialDesign:PackIcon>
-                    
+
                     <TextBlock Grid.Column="1"
                                FontFamily="{StaticResource mainFont}"
                                FontSize="70"
@@ -195,7 +204,7 @@
                     </TextBlock>
                 </Grid>
             </Grid>
-            
+
         </Grid>
 
         <Grid Grid.Row="1">

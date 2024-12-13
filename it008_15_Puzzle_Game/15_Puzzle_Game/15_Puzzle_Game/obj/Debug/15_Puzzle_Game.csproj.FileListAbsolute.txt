@@ -1,22 +1,354 @@
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\BackGroundMusic.mp3
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\CloseWindow.mp3
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Signin.mp3
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\EnterGame.mp3
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Wood.mp3
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\OpenWindow.mp3
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Logout.mp3
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Victory.mp3
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe.config
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.pdb
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.dll
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe.config
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.pdb
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.pdb
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.AssemblyReference.cache
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.g.cs
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.cache
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.lref
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.baml
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.g.resources
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.exe
+D:\2.HỌC\LTTQ\ĐỒ ÁN\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.pdb
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.AssemblyReference.cache
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.g.cs
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.cache
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.lref
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.exe
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.pdb
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe.config
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.pdb
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.pdb
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ResourceXAML\MainResource.baml
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.baml
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.g.resources
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayWindow.g.cs
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayWindow.baml
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.g.cs
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.baml
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.g.cs
+D:\Đồ án it008\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.baml
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe.config
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.pdb
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.pdb
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.AssemblyReference.cache
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayWindow.g.cs
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.g.cs
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.g.cs
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.g.cs
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.cache
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.lref
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayWindow.baml
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.baml
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ResourceXAML\MainResource.baml
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.baml
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.baml
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.g.resources
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.exe
+D:\DoAnIT008\IT008_SlidingPuzzle\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.pdb
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.AssemblyReference.cache
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.pdb
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe.config
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.pdb
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.pdb
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.AssemblyReference.cache
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.g.cs
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayWindow.g.cs
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.g.cs
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.g.cs
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.g.cs
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.cache
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.lref
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.baml
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayWindow.baml
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.baml
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ResourceXAML\MainResource.baml
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevel.baml
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.baml
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.g.resources
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.exe
+D:\New folder\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.pdb
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.AssemblyReference.cache
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.g.cs
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.g.cs
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.g.cs
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.cache
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.lref
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.exe
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.pdb
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe.config
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.pdb
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.pdb
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.baml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.baml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ResourceXAML\MainResource.baml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.baml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.g.resources
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayPage.g.cs
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayPage.baml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.g.cs
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.baml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.g.cs
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.baml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.dll
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.pdb
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.xml
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.g.cs
+D:\DoAnLegit\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe.config
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.exe
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\15_Puzzle_Game.pdb
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.dll
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.pdb
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.xml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.pdb
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.AssemblyReference.cache
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayPage.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.cache
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_MarkupCompile.lref
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayPage.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ResourceXAML\MainResource.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.g.resources
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.exe
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.pdb
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.pdb
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayPage.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayPage.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.dll
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.xml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game_Content.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.baml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.dll
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.xml
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.g.cs
+D:\DoAnLegitFinal\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.dll
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.dll
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.dll
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.dll
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.pdb
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.xml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.xml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.xml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.pdb
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.xml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.AssemblyReference.cache
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayPage.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayPage.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ResourceXAML\MainResource.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ForgotPasswordWindow.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ForgotPasswordWindow.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelOptional.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelOptional.baml
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ChangePasswordWindow.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ChangePasswordWindow.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.dll
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.dll
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.dll
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.pdb
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.xml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.xml
@@ -36,7 +368,6 @@ D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzz
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\OptionalPage.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.g.cs
@@ -45,10 +376,7 @@ D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzz
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_Content.g.cs
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.cache
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.lref
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ChangePasswordWindow.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.baml
@@ -57,7 +385,6 @@ D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzz
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\OptionalPage.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.baml
@@ -66,10 +393,159 @@ D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzz
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelOptional.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.baml
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.baml
-D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.g.resources
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe.config
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.pdb
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_Content.g.cs
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.cache
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.lref
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.g.resources
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.exe
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.pdb
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\BackGroundMusic.mp3
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\CloseWindow.mp3
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Wood.mp3
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\OpenWindow.mp3
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Signin.mp3
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\EnterGame.mp3
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Logout.mp3
+D:\Đồ Án\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Victory.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\BackGroundMusic.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\CloseWindow.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Signin.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\EnterGame.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Wood.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\OpenWindow.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Logout.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Victory.mp3
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe.config
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.pdb
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_Content.g.cs
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.cache
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.lref
+D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.g.resources
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.exe
 D:\2.HỌC\LTTQ\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.pdb
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\BackGroundMusic.mp3
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\CloseWindow.mp3
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Signin.mp3
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\EnterGame.mp3
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Wood.mp3
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\OpenWindow.mp3
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Logout.mp3
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Victory.mp3
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe.config
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.pdb
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ChangePasswordWindow.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ForgotPasswordWindow.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelOptional.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_Content.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.cache
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.lref
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ChangePasswordWindow.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ForgotPasswordWindow.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelOptional.baml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.g.resources
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.exe
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.pdb
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\BackGroundMusic.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\CloseWindow.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Signin.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\EnterGame.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Wood.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\OpenWindow.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Logout.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Victory.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe.config
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.exe
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Sliding_Puzzle.pdb
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.pdb
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\ControlzEx.xml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.xml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\EntityFramework.SqlServer.xml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignColors.pdb
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\System.Windows.Interactivity.xml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.AssemblyReference.cache
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ChangePasswordWindow.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ForgotPasswordWindow.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayPage.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelOptional.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_Content.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.cache
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle_MarkupCompile.lref
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\App.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ChangePasswordWindow.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Congratulation.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ForgotPasswordWindow.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\GamePlayPage.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\LoginWindow.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainPage.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\MainWindow.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PauseWindow.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PicturePage.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\PlayPage.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\RegisterWindow.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\ResourceXAML\MainResource.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelOptional.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SelectLevelPage.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\SettingWindow.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.g.resources
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\_15_Puzzle_Game.Properties.Resources.resources
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.GenerateResource.cache
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzle_Game.csproj.CoreCompileInputs.cache
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.exe
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.pdb
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\OptionalPage.g.cs
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\OptionalPage.baml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\WpfAnimatedGif.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\WpfAnimatedGif.pdb
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\WpfAnimatedGif.xml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.Imaging.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.Math.dll
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.xml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.Imaging.xml
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.Math.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.Imaging.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.Math.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\WpfAnimatedGif.dll
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.Imaging.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\AForge.Math.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\WpfAnimatedGif.pdb
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\WpfAnimatedGif.xml
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\OptionalPage.g.cs
+C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\OptionalPage.baml

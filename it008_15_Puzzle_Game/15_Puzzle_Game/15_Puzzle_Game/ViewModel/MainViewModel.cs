@@ -22,6 +22,9 @@ namespace _15_Puzzle_Game.ViewModel
 
         private ObservableCollection<XepHang> _XepHangList;
         public ObservableCollection<XepHang> XepHangList { get => _XepHangList; set { _XepHangList = value; OnPropertyChanged(); } }
+        private ObservableCollection<Stage> _StageList;
+        public ObservableCollection<Stage> StageList { get => _StageList; set { _StageList = value; OnPropertyChanged(); } }
+
         public ICommand PauseCommand { get; set; }
         public ICommand SettingGamePlayCommand { get; set; }
         public ICommand CloseSettingGamePlayWindowCommand { get; set; }
@@ -38,7 +41,6 @@ namespace _15_Puzzle_Game.ViewModel
         public ICommand SignOutCommnand { get; set; }
 
         public bool Isloaded;
-
         private string path1 = "Picture/GamePlay/Animal/Beaver.jpg";
         private string path2 = "Picture/GamePlay/Animal/Cat.jpg";
         private string path3 = "Picture/GamePlay/Animal/Dog.png";
@@ -98,7 +100,6 @@ namespace _15_Puzzle_Game.ViewModel
 
             }
         }
-
 
         private string _PictureName1;
         private string _PictureName2;
@@ -451,6 +452,196 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
+        private bool _isEnabled = true;
+        public bool isEnabled
+        {
+            get { return _isEnabled; }
+            set
+            {
+                if (_isEnabled != value)
+                {
+                    _isEnabled = value;
+                    OnPropertyChanged(nameof(isEnabled));
+                }
+
+            }
+        }
+
+        private bool _isLockEnabled1 = false;
+        public bool isLockEnabled1
+        {
+            get { return _isLockEnabled1; }
+            set
+            {
+                if (_isLockEnabled1 != value)
+                {
+                    _isLockEnabled1 = value;
+                    OnPropertyChanged(nameof(isLockEnabled1));
+                }
+
+            }
+        }
+        private bool _isLockEnabled2 = true;
+        public bool isLockEnabled2
+        {
+            get { return _isLockEnabled2; }
+            set
+            {
+                if (_isLockEnabled2 != value)
+                {
+                    _isLockEnabled2 = value;
+                    OnPropertyChanged(nameof(isLockEnabled2));
+                }
+
+            }
+        }
+        private bool unlockLevel1;
+        public bool UnLockLevel1
+        {
+            get { return unlockLevel1; }
+            set { if (unlockLevel1 != value) unlockLevel1 = value; OnPropertyChanged(nameof(UnLockLevel1)); }
+        }
+
+        private bool unlockLevel2;
+        public bool UnLockLevel2
+        {
+            get { return unlockLevel2; }
+            set { if (unlockLevel2 != value) unlockLevel2 = value; OnPropertyChanged(nameof(UnLockLevel2)); }
+        }
+
+        private bool unlockLevel3;
+        public bool UnLockLevel3
+        {
+            get { return unlockLevel3; }
+            set { if (unlockLevel3 != value) unlockLevel3 = value; OnPropertyChanged(nameof(UnLockLevel3)); }
+        }
+        private bool unlockPickture1;
+        public bool UnLockPicture1
+        {
+            get { return unlockPickture1; }
+            set
+            {
+                if (unlockPickture1 != value)
+                {
+                    unlockPickture1 = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private bool unlockPickture2;
+        public bool UnLockPicture2
+        {
+            get { return unlockPickture2; }
+            set
+            {
+                if (unlockPickture2 != value)
+                {
+                    unlockPickture2 = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private bool unlockPickture3;
+        public bool UnLockPicture3
+        {
+            get { return unlockPickture3; }
+            set
+            {
+                if (unlockPickture3 != value)
+                {
+                    unlockPickture3 = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private bool unlockPickture4;
+        public bool UnLockPicture4
+        {
+            get { return unlockPickture4; }
+            set
+            {
+                if (unlockPickture4 != value)
+                {
+                    unlockPickture4 = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private bool unlockPickture5;
+        public bool UnLockPicture5
+        {
+            get { return unlockPickture5; }
+            set
+            {
+                if (unlockPickture5 != value)
+                {
+                    unlockPickture5 = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private bool unlockPickture6;
+        public bool UnLockPicture6
+        {
+            get { return unlockPickture6; }
+            set
+            {
+                if (unlockPickture6 != value)
+                {
+                    unlockPickture6 = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private bool unlockPickture7;
+        public bool UnLockPicture7
+        {
+            get { return unlockPickture7; }
+            set
+            {
+                if (unlockPickture7 != value)
+                {
+                    unlockPickture7 = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private bool unlockPickture8;
+        public bool UnLockPicture8
+        {
+            get { return unlockPickture8; }
+            set
+            {
+                if (unlockPickture8 != value)
+                {
+                    unlockPickture8 = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private bool unlockPickture9;
+        public bool UnLockPicture9
+        {
+            get { return unlockPickture9; }
+            set
+            {
+                if (unlockPickture9 != value)
+                {
+                    unlockPickture9 = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
+
         public MainViewModel()
         {
             Isloaded = false;
@@ -460,6 +651,7 @@ namespace _15_Puzzle_Game.ViewModel
             _timer.Interval = TimeSpan.FromSeconds(1);
             _timer.Tick += Timer_Tick;
             LoadXepHangData();
+            StageList = new ObservableCollection<Stage>();
 
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
@@ -524,6 +716,16 @@ namespace _15_Puzzle_Game.ViewModel
             });
 
             Button3 = new RelayCommand<object>((p) => { return true; }, p => {
+                UnLockPicture1 = StageList[0].UnLock;
+                UnLockPicture2 = StageList[1].UnLock;
+                UnLockPicture3 = StageList[2].UnLock;
+                UnLockPicture4 = StageList[3].UnLock;
+                UnLockPicture5 = StageList[4].UnLock;
+                UnLockPicture6 = StageList[5].UnLock;
+                UnLockPicture7 = StageList[6].UnLock;
+                UnLockPicture8 = StageList[7].UnLock;
+                UnLockPicture9 = StageList[8].UnLock;
+
                 Picture1 = path1;
                 Picture2 = path2;
                 Picture3 = path3;
@@ -542,10 +744,20 @@ namespace _15_Puzzle_Game.ViewModel
                 PictureName7 = "RedPanda";
                 PictureName8 = "Tiger";
                 PictureName9 = "Wolf";
-                LevelName = "Level: 3x3";
+                LevelName = "Level: 3x3"; 
             });
 
             Button4 = new RelayCommand<object>((p) => { return true; }, p => {
+                UnLockPicture1 = StageList[9].UnLock;
+                UnLockPicture2 = StageList[10].UnLock;
+                UnLockPicture3 = StageList[11].UnLock;
+                UnLockPicture4 = StageList[12].UnLock;
+                UnLockPicture5 = StageList[13].UnLock;
+                UnLockPicture6 = StageList[14].UnLock;
+                UnLockPicture7 = StageList[15].UnLock;
+                UnLockPicture8 = StageList[16].UnLock;
+                UnLockPicture9 = StageList[17].UnLock;
+
                 Picture1 = path10;
                 Picture2 = path11;
                 Picture3 = path12;
@@ -568,6 +780,16 @@ namespace _15_Puzzle_Game.ViewModel
             });
             
             Button5 = new RelayCommand<object>((p) => { return true; }, p => {
+                UnLockPicture1=  StageList[18].UnLock;
+                UnLockPicture2 = StageList[19].UnLock;
+                UnLockPicture3 = StageList[20].UnLock;
+                UnLockPicture4 = StageList[21].UnLock;
+                UnLockPicture5 = StageList[22].UnLock;
+                UnLockPicture6 = StageList[23].UnLock;
+                UnLockPicture7 = StageList[24].UnLock;
+                UnLockPicture8 = StageList[25].UnLock;
+                UnLockPicture9 = StageList[26].UnLock;
+
                 Picture1 = path19;
                 Picture2 = path20;
                 Picture3 = path21;
@@ -678,6 +900,64 @@ namespace _15_Puzzle_Game.ViewModel
             _elapsedTime++;
             DisplayTime = TimeSpan.FromSeconds(_elapsedTime).ToString(@"mm\:ss");
         }
+        public void CreateStageList()
+        {
+            var currentUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName.ToString());
+            for (int i = 0; i < currentUser.maxlevel; i++)
+            {
+                Stage stage = new Stage
+                {
+                    Manchoi = i + 1,
+                    UnLock = true
+                };
+                StageList.Add(stage);
+            }
+            for (int i = currentUser.maxlevel; i < DataProvider.Instance.DB.Puzzles.Count(); i++)
+            {
+                Stage stage = new Stage
+                {
+                    Manchoi = i,
+                    UnLock = false
+                };
+                StageList.Add(stage);
+            }
+            UnLockLevels(currentUser.maxlevel);
+        }
+        private void UnLockLevels(int x)
+        {
+            UnLockLevel1 = true;
+            if (x > 18)
+            {
+                UnLockLevel2 = true;
+                UnLockLevel3 = true;
+            }
+            else if (x > 9) { UnLockLevel2 = true; UnLockLevel3 = false; }
+            else
+            {
+                UnLockLevel2 = false;
+                UnLockLevel3 = false;
+            }
+        }
+        public void LoadStageList()
+        {
+            var puzzle = DataProvider.Instance.DB.Puzzles
+                .FirstOrDefault(p => p.image_path == CurrentUser.Instance.CurrentImagePath);
+            if (puzzle == null) return;
+            else
+            {
+                int IDpuzzle = puzzle.puzzle_id;
+                var currentUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName.ToString());
+                if (IDpuzzle < currentUser.maxlevel) { return; }
+                else
+                {
+                    StageList[IDpuzzle].UnLock = true;
+                    currentUser.maxlevel++;
+                    DataProvider.Instance.DB.SaveChanges();
+                }
+                UnLockLevels(currentUser.maxlevel);
+            }
+        }
+
 
         public void LoadXepHangData()
         {

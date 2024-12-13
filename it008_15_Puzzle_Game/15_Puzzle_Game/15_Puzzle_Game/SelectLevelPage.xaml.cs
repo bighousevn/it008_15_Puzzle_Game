@@ -62,5 +62,31 @@ namespace _15_Puzzle_Game
         {
             NavigationService.GoBack();
         }
+
+        private void Btn3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Image image = sender as Image;
+            if(image.Tag.ToString() != "1")
+            {
+                if (image.Tag.ToString() == "3")
+                {
+                    CurrentUser.Instance.CurrentLevelName = "3x3";
+                }
+                else if (image.Tag.ToString() == "4")
+                {
+                    CurrentUser.Instance.CurrentLevelName = "4x4";
+                }
+                else
+                {
+                    CurrentUser.Instance.CurrentLevelName = "5x5";
+                }
+                NavigationService.Navigate(new PicturePage(image.Tag.ToString()));
+            }
+            else
+            {
+                CurrentUser.Instance.CurrentLevelName = "Option";
+                NavigationService.Navigate(new OptionalPage());
+            }
+        }
     }
 }
