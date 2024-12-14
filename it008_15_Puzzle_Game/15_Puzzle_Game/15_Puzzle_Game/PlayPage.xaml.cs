@@ -128,6 +128,18 @@ namespace _15_Puzzle_Game
             }
             return null;
         }
+        private OptionalGamePlayPage FindOpntionalGamePlayPage(DependencyObject current)
+        {
+            while (current != null)
+            {
+                var gamePlayPage = current as OptionalGamePlayPage;
+                if (gamePlayPage != null)
+                    return gamePlayPage;
+
+                current = VisualTreeHelper.GetParent(current);
+            }
+            return null;
+        }
 
         private Frame FindParentFrame(DependencyObject obj)
         {
@@ -453,12 +465,20 @@ namespace _15_Puzzle_Game
                     Console.WriteLine("No Parent Frame found.");
                 }
 
-                var gamePlayPage = FindGamePlayPage(this);
-                Console.WriteLine(gamePlayPage);
-                Console.WriteLine(parentFrame);
 
-                Congratulation congratulationWindow = new Congratulation(gamePlayPage);
-                congratulationWindow.ShowDialog();
+                if (CurrentUser.Instance.CurrentLevelName == "Option")
+                {
+                    var gamePlayPage = FindOpntionalGamePlayPage(this);
+                    OptionalCongratulation optionalCongratulationWindow = new OptionalCongratulation(gamePlayPage);
+                    optionalCongratulationWindow.ShowDialog();
+                }    
+                else
+                {
+                    var gamePlayPage = FindGamePlayPage(this);
+                    Congratulation congratulationWindow = new Congratulation(gamePlayPage);
+                    congratulationWindow.ShowDialog();
+                }    
+                    
                 
                 mainViewModel._elapsedTime = 1;
                 mainViewModel.StartTimer();
@@ -604,6 +624,10 @@ namespace _15_Puzzle_Game
         }
 
         public void SubscribeToGamePlayPageEvents(GamePlayPage gamePlayPage)
+        {
+            gamePlayPage.KeyPressed += Grid_KeyDown;
+        }
+        public void SubscribeToOptionalGamePlayPageEvents(OptionalGamePlayPage gamePlayPage)
         {
             gamePlayPage.KeyPressed += Grid_KeyDown;
         }

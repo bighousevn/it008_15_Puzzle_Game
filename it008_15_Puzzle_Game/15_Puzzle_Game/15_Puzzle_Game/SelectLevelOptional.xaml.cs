@@ -39,7 +39,7 @@ namespace _15_Puzzle_Game
             Button clickedButton = sender as Button;
             n = clickedButton.Tag.ToString();
 
-            NavigationService.Navigate(new GamePlayPage(n, path2));
+            NavigationService.Navigate(new OptionalGamePlayPage(n, path2));
 
             //
             //OpenFileDialog openFileDialog = new OpenFileDialog();

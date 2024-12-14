@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _15_Puzzle_Game.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,30 @@ namespace _15_Puzzle_Game
     /// </summary>
     public partial class OptionalCongratulation : Window
     {
-        public OptionalCongratulation()
+        OptionalGamePlayPage _page;
+        public OptionalCongratulation(OptionalGamePlayPage gamePlayPage)
         {
             InitializeComponent();
+            var mainViewModel = (MainViewModel)DataContext;
+            Console.WriteLine(this.DataContext);
+            mainViewModel.LoadXepHangData();
+            _page = gamePlayPage;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            var mainwindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (mainwindow != null)
+            {
+                mainwindow.mainFrame.NavigationService.GoBack();
+            }
+            var window = Application.Current.MainWindow;
+            window.KeyDown -= _page.GamePlayPage_KeyDown;
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

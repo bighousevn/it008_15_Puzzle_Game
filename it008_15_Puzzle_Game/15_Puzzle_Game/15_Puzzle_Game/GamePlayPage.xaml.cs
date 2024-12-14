@@ -68,7 +68,6 @@ namespace _15_Puzzle_Game
             playPage.OnMoveTextChanged += PlayPage_OnMoveTextChanged;
 
             this.KeyDown += GamePlayPage_KeyDown;
-            Console.WriteLine(this);
             playPage.SubscribeToGamePlayPageEvents(this);
         }
 
