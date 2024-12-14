@@ -24,20 +24,11 @@ namespace _15_Puzzle_Game
         public BitmapImage bitmap;
         public double paddingBetween;
         public int n2;
-        public string path2;
         int steps;
 
         string win_position;
         string current_position;
 
-
-        public event Action<string> OnImageUriChanged;
-
-        public void UpdateImageUri()
-        {
-            Console.WriteLine("Updating URI: " + path2);  // Kiểm tra xem phương thức có được gọi không.
-            OnImageUriChanged?.Invoke(path2);  // Kích hoạt sự kiện
-        }
 
         public event EventHandler<string> OnMoveTextChanged;
 
@@ -50,14 +41,14 @@ namespace _15_Puzzle_Game
         }
 
 
-        public PlayPage(string n, string path)
+        public PlayPage(string n, string path, BitmapImage bitmap1)
         {
             InitializeComponent();
-            Initial(n,path);
+            Initial(n,path, bitmap1);
         }
 
         //Thêm hình ảnh vào
-        private void Initial(string n, string path)
+        private void Initial(string n, string path, BitmapImage bitmap1)
         {
             if (imageList != null)
             {
@@ -78,12 +69,17 @@ namespace _15_Puzzle_Game
             }
 
             bitmap = new BitmapImage();
-
-            bitmap.BeginInit();
-            bitmap.UriSource = new Uri(path);
-            bitmap.EndInit();
-
-            path2 = path;
+            if (CurrentUser.Instance.CurrentLevelName == "Option")
+            {
+                bitmap = bitmap1;
+            }
+            else
+            {
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(path);
+                bitmap.EndInit();
+            }
+           
 
             switch (int.Parse(n))
             {
@@ -108,7 +104,7 @@ namespace _15_Puzzle_Game
            CreateImageList();
            AddImages();
         }
-      
+
 
         //Tạo các image nhỏ 3x3,4x4,5x5
         private void CreateImageList()
@@ -128,24 +124,6 @@ namespace _15_Puzzle_Game
 
 
 
-        private CroppedBitmap CropImage2(BitmapImage main_bitmap, int x, int y, int height, int width)
-        {
-            //if (main_bitmap.PixelWidth >= width * n2 && main_bitmap.PixelHeight >= height * n2)
-            //{
-            //    CroppedBitmap croppedImage = new CroppedBitmap(main_bitmap, new Int32Rect(x, y, height, width));
-            //    return croppedImage;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Ảnh quá lớn để cắt", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    return null;
-            //}
-            
-            CroppedBitmap croppedImage = new CroppedBitmap(main_bitmap, new Int32Rect(x, y, height, width));
-            return croppedImage;
-        }
-
-
         private void CropImage(BitmapImage main_bitmap, int height, int width)
         {
             int x = 0, y = 0;
@@ -153,7 +131,7 @@ namespace _15_Puzzle_Game
 
             for (int blocks = 0; blocks < n2*n2; blocks++)
             {
-                CroppedBitmap cropped_image = CropImage2(main_bitmap, x, y, height, width);
+                CroppedBitmap cropped_image = new CroppedBitmap(main_bitmap, new Int32Rect(x, y, height, width));
                 images.Add(cropped_image);
                 x += width;
                 if (x == width * n2)
@@ -352,23 +330,6 @@ namespace _15_Puzzle_Game
                 var mainViewModel = (MainViewModel)DataContext;
                 mainViewModel.StopTimer();
 
-                //var newLevel = new Level();
-                //if (DataProvider.Instance.DB.Levels.Count() == 0) newLevel.level_id = 1;
-                //else newLevel.level_id = DataProvider.Instance.DB.Levels.Max(l => l.level_id)+1;
-
-                //newLevel.level_name = CurrentUser.Instance.CurrentLevelName;
-                //newLevel.grid_size = getGridSize();
-
-                //DataProvider.Instance.DB.Levels.Add(newLevel);
-                //DataProvider.Instance.DB.SaveChanges();
-
-                //var newPuzzle = new Puzzle();
-                //if (DataProvider.Instance.DB.Puzzles.Count() == 0) newPuzzle.puzzle_id = 1;
-                //else newPuzzle.puzzle_id = DataProvider.Instance.DB.Puzzles.Max(l => l.puzzle_id)+1;
-
-                //newPuzzle.image_path = CurrentUser.Instance.CurrentImagePath;
-                //DataProvider.Instance.DB.Puzzles.Add(newPuzzle);
-                //DataProvider.Instance.DB.SaveChanges();
 
                 if(CurrentUser.Instance.CurrentLevelName != "Option")
                 {
@@ -441,23 +402,58 @@ namespace _15_Puzzle_Game
                 }    
 
                 mainViewModel.Move = steps;
-                AudioControl.Instance.VictoryEffect_Play();
+                //AudioControl.Instance.VictoryEffect_Play();
+              
+
+                var parentFrame = FindParentFrame(this);
+                if (parentFrame != null)
+                {
+                    Console.WriteLine("Parent Frame found.");
+                }
+                else
+                {
+                    Console.WriteLine("No Parent Frame found.");
+                }
+
+                var gamePlayPage = FindGamePlayPage(this);
+                Console.WriteLine(gamePlayPage);
+                Console.WriteLine(parentFrame);
+
                 Congratulation congratulationWindow = new Congratulation();
+                congratulationWindow.DataContext = gamePlayPage;
                 congratulationWindow.ShowDialog();
                 mainViewModel._elapsedTime = 1;
                 mainViewModel.StartTimer();
+
                 PlaceImageList();
             }
         }
-        //private int getGridSize()
-        //{
-        //    if (CurrentUser.Instance.CurrentLevelName == "4x4" ) 
-        //        return 16;
-        //    if (CurrentUser.Instance.CurrentLevelName == "5x5")
-        //        return 25;
-        //    return 9;
-        //}
 
+        private GamePlayPage FindGamePlayPage(DependencyObject current)
+        {
+            while (current != null)
+            {
+                var gamePlayPage = current as GamePlayPage;
+                if (gamePlayPage != null)
+                    return gamePlayPage;
+
+                current = VisualTreeHelper.GetParent(current);
+            }
+            return null;
+        }
+
+        private Frame FindParentFrame(DependencyObject obj)
+        {
+            while (obj != null)
+            {
+                obj = VisualTreeHelper.GetParent(obj);
+                if (obj is Frame)
+                {
+                    return obj as Frame;
+                }
+            }
+            return null;
+        }
 
 
         private void OnPicClick(object sender, MouseButtonEventArgs e)
@@ -469,8 +465,7 @@ namespace _15_Puzzle_Game
             Point clickedImagePosition = new Point(Canvas.GetLeft(clickedImage), Canvas.GetTop(clickedImage));
             Point emptyBoxPosition = new Point(Canvas.GetLeft(emptyBox), Canvas.GetTop(emptyBox));
 
-            Console.WriteLine(clickedImagePosition);
-            Console.WriteLine(emptyBoxPosition);
+            
 
             var n = Math.Sqrt(imageList.Count());
             // Kiểm tra xem mảnh ghép có thể hoán đổi với ô trống không
@@ -501,7 +496,6 @@ namespace _15_Puzzle_Game
         public void SubscribeToGamePlayPageEvents(GamePlayPage gamePlayPage)
         {
             gamePlayPage.KeyPressed += Grid_KeyDown;
-            Console.WriteLine(3);
         }
         private void Grid_KeyDown(object sender, KeyEventArgs e)
         {
@@ -511,7 +505,6 @@ namespace _15_Puzzle_Game
 
             double n = Math.Sqrt(imageList.Count); // Số lượng ô theo một chiều
             double tileWidth= emptyBox.Width + paddingBetween;
-            Console.WriteLine(1);
             switch (e.Key)
             {
                 case Key.Left:
@@ -587,8 +580,6 @@ namespace _15_Puzzle_Game
                 // Kiểm tra xem trò chơi đã hoàn thành chưa
                 CheckGame();
             }
-            else
-                Console.WriteLine("image ko co");
 
         }
     }
