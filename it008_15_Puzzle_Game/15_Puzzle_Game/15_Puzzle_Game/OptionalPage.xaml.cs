@@ -71,6 +71,7 @@ namespace _15_Puzzle_Game
         void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             var selectedImage = (System.Windows.Controls.Image)sender;
+
             if (CanEdit)
             {
                 if (!selectedImages.Contains(selectedImage))
@@ -91,8 +92,11 @@ namespace _15_Puzzle_Game
             {
                 var imageId = (int)selectedImage.Tag;
                 var imageRecord = DataProvider.Instance.DB.UserImages.FirstOrDefault(p => p.image_id == imageId);
+
                 BitmapImage bitmap = ToImage(imageRecord.image_byte);
-                NavigationService.Navigate(new SelectLevelOptional(bitmap.StreamSource.ToString(), bitmap));
+                string base64String = Convert.ToBase64String(imageRecord.image_byte);
+                
+                NavigationService.Navigate(new SelectLevelOptional(base64String, bitmap));
             }
         }
 
