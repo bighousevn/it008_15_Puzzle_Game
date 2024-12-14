@@ -415,17 +415,16 @@ namespace _15_Puzzle_Game
                     Console.WriteLine("No Parent Frame found.");
                 }
 
-                
-              
-
                 var gamePlayPage = FindGamePlayPage(this);
                 Console.WriteLine(gamePlayPage);
                 Console.WriteLine(parentFrame);
+
                 Congratulation congratulationWindow = new Congratulation();
                 congratulationWindow.DataContext = gamePlayPage;
                 congratulationWindow.ShowDialog();
                 mainViewModel._elapsedTime = 1;
                 mainViewModel.StartTimer();
+
                 PlaceImageList();
             }
         }
