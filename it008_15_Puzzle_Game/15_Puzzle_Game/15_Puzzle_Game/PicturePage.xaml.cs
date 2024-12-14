@@ -48,8 +48,6 @@ namespace _15_Puzzle_Game
                     this.NavigationService.Navigate(gamePlayPage);
                 }
             }
-            var mainViewModel=(MainViewModel)DataContext;
-            mainViewModel.LoadStageList();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
