@@ -4,10 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
 namespace _15_Puzzle_Game
@@ -41,14 +43,14 @@ namespace _15_Puzzle_Game
         }
 
 
-        public PlayPage(string n, string path, BitmapImage bitmap1)
+        public PlayPage(string n, string path)
         {
             InitializeComponent();
-            Initial(n,path, bitmap1);
+            Initial(n,path);
         }
 
         //Thêm hình ảnh vào
-        private void Initial(string n, string path, BitmapImage bitmap1)
+        private void Initial(string n, string path)
         {
             if (imageList != null)
             {
@@ -71,7 +73,17 @@ namespace _15_Puzzle_Game
             bitmap = new BitmapImage();
             if (CurrentUser.Instance.CurrentLevelName == "Option")
             {
-                bitmap = bitmap1;
+                byte[] imageBytes = Convert.FromBase64String(path);
+
+                // Sử dụng MemoryStream để tạo hình ảnh
+                using (MemoryStream stream = new MemoryStream(imageBytes))
+                {
+                    bitmap.BeginInit();
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmap.StreamSource = stream;
+                    bitmap.EndInit();
+                    bitmap.Freeze(); // Đóng băng bitmap nếu sử dụng trên thread khác
+                }
             }
             else
             {
@@ -103,6 +115,31 @@ namespace _15_Puzzle_Game
             n2 = int.Parse(n);
            CreateImageList();
            AddImages();
+        }
+        private GamePlayPage FindGamePlayPage(DependencyObject current)
+        {
+            while (current != null)
+            {
+                var gamePlayPage = current as GamePlayPage;
+                if (gamePlayPage != null)
+                    return gamePlayPage;
+
+                current = VisualTreeHelper.GetParent(current);
+            }
+            return null;
+        }
+
+        private Frame FindParentFrame(DependencyObject obj)
+        {
+            while (obj != null)
+            {
+                obj = VisualTreeHelper.GetParent(obj);
+                if (obj is Frame)
+                {
+                    return obj as Frame;
+                }
+            }
+            return null;
         }
 
 
@@ -233,6 +270,7 @@ namespace _15_Puzzle_Game
             //while (!CountInversions(shuffleimages))
             //    shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
             //imageList = shuffleimages;
+
             steps = 0;
             ChangeMoveText(steps.ToString());
 
@@ -419,9 +457,9 @@ namespace _15_Puzzle_Game
                 Console.WriteLine(gamePlayPage);
                 Console.WriteLine(parentFrame);
 
-                Congratulation congratulationWindow = new Congratulation();
-                congratulationWindow.DataContext = gamePlayPage;
+                Congratulation congratulationWindow = new Congratulation(gamePlayPage);
                 congratulationWindow.ShowDialog();
+                
                 mainViewModel._elapsedTime = 1;
                 mainViewModel.StartTimer();
 
@@ -429,31 +467,7 @@ namespace _15_Puzzle_Game
             }
         }
 
-        private GamePlayPage FindGamePlayPage(DependencyObject current)
-        {
-            while (current != null)
-            {
-                var gamePlayPage = current as GamePlayPage;
-                if (gamePlayPage != null)
-                    return gamePlayPage;
 
-                current = VisualTreeHelper.GetParent(current);
-            }
-            return null;
-        }
-
-        private Frame FindParentFrame(DependencyObject obj)
-        {
-            while (obj != null)
-            {
-                obj = VisualTreeHelper.GetParent(obj);
-                if (obj is Frame)
-                {
-                    return obj as Frame;
-                }
-            }
-            return null;
-        }
 
 
         private void OnPicClick(object sender, MouseButtonEventArgs e)
@@ -465,7 +479,7 @@ namespace _15_Puzzle_Game
             Point clickedImagePosition = new Point(Canvas.GetLeft(clickedImage), Canvas.GetTop(clickedImage));
             Point emptyBoxPosition = new Point(Canvas.GetLeft(emptyBox), Canvas.GetTop(emptyBox));
 
-            
+
 
             var n = Math.Sqrt(imageList.Count());
             // Kiểm tra xem mảnh ghép có thể hoán đổi với ô trống không
@@ -486,7 +500,103 @@ namespace _15_Puzzle_Game
 
             // Kiểm tra xem trò chơi đã hoàn thành chưa
             CheckGame();
-        } 
+        }
+
+
+        //private void OnPicClick(object sender, MouseButtonEventArgs e)
+        //{
+        //    Image clickedImage = (Image)sender;
+        //    Image emptyBox = imageList.FirstOrDefault(x => x.Tag.ToString() == "0");
+
+        //    // Lấy tọa độ của các mảnh ghép
+        //    Point clickedImagePosition = new Point(Canvas.GetLeft(clickedImage), Canvas.GetTop(clickedImage));
+        //    Point emptyBoxPosition = new Point(Canvas.GetLeft(emptyBox), Canvas.GetTop(emptyBox));
+
+        //    var n = Math.Sqrt(imageList.Count());
+
+        //    // Kiểm tra xem mảnh ghép có thể hoán đổi với ô trống không
+        //    if (CanSwap(clickedImage, emptyBox, n))
+        //    {
+        //        // Tạo storyboard cho animation
+        //        Storyboard storyboard = new Storyboard();
+
+        //        // Animation cho hình được click
+        //        DoubleAnimation animateLeft1 = new DoubleAnimation
+        //        {
+        //            From = clickedImagePosition.X,
+        //            To = emptyBoxPosition.X,
+        //            Duration = TimeSpan.FromSeconds(0.2), // Thời gian animation
+        //            EasingFunction = new QuadraticEase() // Hiệu ứng trơn mượt
+        //        };
+
+        //        DoubleAnimation animateTop1 = new DoubleAnimation
+        //        {
+        //            From = clickedImagePosition.Y,
+        //            To = emptyBoxPosition.Y,
+        //            Duration = TimeSpan.FromSeconds(0.2),
+        //            EasingFunction = new QuadraticEase()
+        //        };
+
+        //        // Animation cho ô trống
+        //        DoubleAnimation animateLeft2 = new DoubleAnimation
+        //        {
+        //            From = emptyBoxPosition.X,
+        //            To = clickedImagePosition.X,
+        //            Duration = TimeSpan.FromSeconds(0.2),
+        //            EasingFunction = new QuadraticEase()
+        //        };
+
+        //        DoubleAnimation animateTop2 = new DoubleAnimation
+        //        {
+        //            From = emptyBoxPosition.Y,
+        //            To = clickedImagePosition.Y,
+        //            Duration = TimeSpan.FromSeconds(0.2),
+        //            EasingFunction = new QuadraticEase()
+        //        };
+
+        //        // Gắn animation vào Storyboard
+        //        Storyboard.SetTarget(animateLeft1, clickedImage);
+        //        Storyboard.SetTargetProperty(animateLeft1, new PropertyPath(Canvas.LeftProperty));
+
+        //        Storyboard.SetTarget(animateTop1, clickedImage);
+        //        Storyboard.SetTargetProperty(animateTop1, new PropertyPath(Canvas.TopProperty));
+
+        //        Storyboard.SetTarget(animateLeft2, emptyBox);
+        //        Storyboard.SetTargetProperty(animateLeft2, new PropertyPath(Canvas.LeftProperty));
+
+        //        Storyboard.SetTarget(animateTop2, emptyBox);
+        //        Storyboard.SetTargetProperty(animateTop2, new PropertyPath(Canvas.TopProperty));
+
+        //        // Thêm animation vào Storyboard
+        //        storyboard.Children.Add(animateLeft1);
+        //        storyboard.Children.Add(animateTop1);
+        //        storyboard.Children.Add(animateLeft2);
+        //        storyboard.Children.Add(animateTop2);
+
+        //        // Xử lý sự kiện khi animation kết thúc
+        //        storyboard.Completed += (s, args) =>
+        //        {
+        //            // Cập nhật lại vị trí cuối cùng để đảm bảo chính xác
+        //            Canvas.SetLeft(clickedImage, emptyBoxPosition.X);
+        //            Canvas.SetTop(clickedImage, emptyBoxPosition.Y);
+        //            Canvas.SetLeft(emptyBox, clickedImagePosition.X);
+        //            Canvas.SetTop(emptyBox, clickedImagePosition.Y);
+
+
+        //            // Cập nhật lại danh sách các vị trí của mảnh ghép
+        //            UpdateLocations(clickedImage, emptyBox);
+
+        //            // Phát âm thanh
+        //            AudioControl.Instance.WoodEffect_Play();
+
+        //            // Kiểm tra trạng thái trò chơi
+        //            CheckGame();
+        //        };
+
+        //        // Bắt đầu animation
+        //        storyboard.Begin();
+        //    }
+        //}
 
         public void ShuffleClick(object sender, RoutedEventArgs e)
         {

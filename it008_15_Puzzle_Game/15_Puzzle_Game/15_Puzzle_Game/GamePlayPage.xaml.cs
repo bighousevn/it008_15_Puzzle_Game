@@ -3,6 +3,7 @@ using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Policy;
@@ -30,7 +31,7 @@ namespace _15_Puzzle_Game
         PlayPage playPage;
 
 
-        public GamePlayPage(string n, string path, int checkOption, BitmapImage bitmap1)
+        public GamePlayPage(string n, string path)
         {
             InitializeComponent();
             // Lấy ViewModel
@@ -38,18 +39,29 @@ namespace _15_Puzzle_Game
             mainViewModel.LoadXepHangData();
 
             // Khởi tạo PlayPage
-            playPage = new PlayPage(n, path, bitmap1);
+            playPage = new PlayPage(n, path);
             PlayFrame.Navigate(playPage);
 
             //Nếu n == "1", lắng nghe URI từ PlayPage
-            if (checkOption == 1)
+            if (CurrentUser.Instance.CurrentLevelName == "Option")
             {
-                sampleImage.Source = bitmap1;
+                byte[] imageBytes = Convert.FromBase64String(path);
+
+                // Sử dụng MemoryStream để tạo hình ảnh
+                using (MemoryStream stream = new MemoryStream(imageBytes))
+                {
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmap.StreamSource = stream;
+                    bitmap.EndInit();
+                    bitmap.Freeze(); // Đóng băng bitmap nếu sử dụng trên thread khác
+                }
             }
             else
             {
                 // Nếu n != "1", sử dụng Binding
-                sampleImage.SetBinding(Image.SourceProperty, new Binding("PictureSource") { Source = mainViewModel });
+                sampleImage.SetBinding(System.Windows.Controls.Image.SourceProperty, new Binding("PictureSource") { Source = mainViewModel });
             }
 
             // Xử lý sự kiện khác nếu có
@@ -65,6 +77,7 @@ namespace _15_Puzzle_Game
         {
             var window = Window.GetWindow(this);
             window.KeyDown += GamePlayPage_KeyDown;
+            
         }
 
         public void GamePlayPage_KeyDown(object sender, KeyEventArgs e)

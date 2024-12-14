@@ -44,8 +44,7 @@ namespace _15_Puzzle_Game
                     // Chuyển sang Page2 và truyền đường dẫn hình ảnh
 
 
-                    BitmapImage bitmapImage = null ;
-                    GamePlayPage gamePlayPage = new GamePlayPage(n, imagePath, 0, bitmapImage);
+                    GamePlayPage gamePlayPage = new GamePlayPage(n, imagePath);
                     this.NavigationService.Navigate(gamePlayPage);
                 }
             }

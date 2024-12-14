@@ -21,11 +21,14 @@ namespace _15_Puzzle_Game
     /// </summary>
     public partial class Congratulation : Window
     {
-        public Congratulation()
+        GamePlayPage _page;
+        public Congratulation(GamePlayPage gamePlayPage)
         {
             InitializeComponent();
             var mainViewModel = (MainViewModel)DataContext;
+            Console.WriteLine(this.DataContext);
             mainViewModel.LoadXepHangData();
+            _page= gamePlayPage;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,10 +40,8 @@ namespace _15_Puzzle_Game
                 mainwindow.mainFrame.NavigationService.GoBack();
             }
             var window = Application.Current.MainWindow;
-            var gamePlayPage = this.DataContext as GamePlayPage;
-            window.KeyDown -= gamePlayPage.GamePlayPage_KeyDown;
+            window.KeyDown -= _page.GamePlayPage_KeyDown;
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Close();
