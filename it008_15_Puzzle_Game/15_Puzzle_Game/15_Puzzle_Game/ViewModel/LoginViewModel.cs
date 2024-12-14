@@ -130,13 +130,15 @@ namespace _15_Puzzle_Game.ViewModel
             if (accCount)
             {
                 IsLogin = true;
-                CurrentUser.Instance.CurrentUserName = UserName;
+                
                 var user = DataProvider.Instance.DB.Users.FirstOrDefault(x => x.username == UserName);
                 CurrentUser.Instance.CurrentUserid = user.user_id;
-                mainViewModel.CreateStageList();
+                CurrentUser.Instance.CurrentUserName = UserName;
                 CurrentUser.Instance.CurrentUserMoney = (int)user.usermoney;
+                mainViewModel.CreateStageList();
                 mainViewModel.username = "Hello, " + UserName;
                 mainViewModel.usermoney = user.usermoney.ToString();
+                mainViewModel.LoadStageList();
                 p.Close();
             }
             else

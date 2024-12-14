@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:_15_Puzzle_Game"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
       xmlns:viewmodel="clr-namespace:_15_Puzzle_Game.ViewModel" 
       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
@@ -84,22 +85,6 @@
                     <ScaleTransform ScaleX="1" ScaleY="1"/>
                 </Grid.RenderTransform>
 
-                <!--<Button Grid.Row="0"
-                        Tag="3"
-                        x:Name="Btn"
-                        materialDesign:ButtonAssist.CornerRadius="10"
-                        Height="240"
-                        Width="380"
-                        VerticalAlignment="Bottom"
-                        HorizontalAlignment="Center"
-                        Click="Button_Click"
-                        IsEnabled="{Binding isEnabled}"
-                        Command="{Binding Button3}">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Picture/GamePlay/Main3x3.jpg"></ImageBrush>
-                    </Button.Background>
-                </Button>-->
-
                 <Grid Grid.Row="0">
                     <Image Grid.Row="0"
                            Name="Btn3"
@@ -108,7 +93,7 @@
                            Width="380"
                            Cursor="Hand"
                            VerticalAlignment="Bottom"
-                           IsEnabled="{Binding isEnabled}"
+                           IsEnabled="{Binding UnLockLevel1}"
                            MouseDown="Btn3_MouseDown"
                            HorizontalAlignment="Center">
                         <Image.Style>
@@ -117,8 +102,10 @@
                                         Value="Picture/GamePlay/Main3x3.jpg"></Setter>
                                 <Setter Property="Opacity"
                                         Value="1"></Setter>
+                                <Setter Property="Stretch"
+                                        Value="Fill"></Setter>
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding isEnabled}"
+                                    <DataTrigger Binding="{Binding UnLockLevel1}"
                                                  Value="false">
                                         <Setter Property="Opacity"
                                                 Value="0.5"></Setter>
@@ -134,23 +121,23 @@
                         </i:Interaction.Triggers>
                     </Image>
 
-                    <materialDesign:PackIcon Kind="Lock"
-                                             HorizontalAlignment="Center"
-                                             VerticalAlignment="Center"
-                                             Height="100"
-                                             Width="100">
-                        <materialDesign:PackIcon.Style>
-                            <Style TargetType="materialDesign:PackIcon">
+                    <Image HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Height="200"
+                           Width="300"
+                           gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
+                        <Image.Style>
+                            <Style TargetType="Image">
                                 <Setter Property="Visibility"
                                         Value="Collapsed"></Setter>
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding isEnabled}"
+                                    <DataTrigger Binding="{Binding UnLockLevel1}"
                                                  Value="False">
                                         <Setter Property="Visibility"
                                                 Value="Visible"></Setter>
                                     </DataTrigger>
 
-                                    <DataTrigger Binding="{Binding isLockEnabled1}" Value="True">
+                                    <DataTrigger Binding="{Binding UnLockLevel1}" Value="true">
                                         <DataTrigger.EnterActions>
                                             <BeginStoryboard>
                                                 <Storyboard>
@@ -163,12 +150,13 @@
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
-                        </materialDesign:PackIcon.Style>
-                    </materialDesign:PackIcon>
+                        </Image.Style>
+                    </Image>
                 </Grid>
                            
                 
-                <TextBlock Grid.Row="1" Text="3 x 3"
+                <TextBlock Grid.Row="1" 
+                           Text="3 x 3"
                            FontSize="80"
                            FontFamily="{StaticResource mainFont}"
                            HorizontalAlignment="Center"
@@ -176,8 +164,7 @@
                            Foreground="#0e5898"/>
             </Grid>
 
-            <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+            <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top" 
                     Margin="10,10,0,0"
@@ -207,29 +194,87 @@
                 <Grid.RenderTransform>
                     <ScaleTransform ScaleX="1" ScaleY="1"/>
                 </Grid.RenderTransform>
-                <Button Tag="5" 
-                        materialDesign:ButtonAssist.CornerRadius="10"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Style="{StaticResource MaterialDesignRaisedButton}"
-                        ToolTip="MaterialDesignRaisedButton with Round Corners"
-                        Height="240"
-                        Width="380"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"
-                        Click="Button_Click"
-                        Command="{Binding Button5}">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Picture/GamePlay/Main5x5.jpg"></ImageBrush>
-                    </Button.Background>
-                </Button>
-                <TextBlock Grid.Row="1" 
-                           Text="5 X 5"
+                <Image Grid.Row="0"
+                       Name="Btn5"
+                       Tag="5"
+                       Height="240"
+                       Width="380"
+                       Cursor="Hand"
+                       VerticalAlignment="Bottom"
+                       IsEnabled="{Binding UnLockLevel3}"
+                       MouseDown="Btn3_MouseDown"
+                       HorizontalAlignment="Center">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source"
+                                    Value="Picture/GamePlay/Main5x5.jpg"></Setter>
+                            <Setter Property="Opacity"
+                                    Value="1"></Setter>
+                            <Setter Property="Stretch"
+                                    Value="Fill"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding UnLockLevel3}"
+                                             Value="false">
+                                    <Setter Property="Opacity"
+                                            Value="0.5"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown">
+                            <i:InvokeCommandAction Command="{Binding Button5}" 
+                                                   CommandParameter="{Binding ElementName=Btn5}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Image>
+
+                <Image HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Height="200"
+                       Width="300"
+                       gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Visibility"
+                                    Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding UnLockLevel3}"
+                                             Value="False">
+                                    <Setter Property="Visibility"
+                                            Value="Visible"></Setter>
+                                </DataTrigger>
+
+                                <DataTrigger Binding="{Binding UnLockLevel3}" 
+                                             Value="true">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:3" 
+                                                                            Value="{x:Static Visibility.Collapsed}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </DataTrigger.EnterActions>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="1"
+                           Text="5 x 5"
                            FontSize="80"
                            FontFamily="{StaticResource mainFont}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Top"
                            Foreground="#0e5898"/>
+
             </Grid>
+
+
 
         </Grid>
         <Grid Grid.Column="1"
@@ -249,23 +294,78 @@
                 <Grid.RenderTransform>
                     <ScaleTransform ScaleX="1" ScaleY="1"/>
                 </Grid.RenderTransform>
-                <Button Tag="4" 
-                        materialDesign:ButtonAssist.CornerRadius="10"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Style="{StaticResource MaterialDesignRaisedButton}"
-                        ToolTip="MaterialDesignRaisedButton with Round Corners"
-                        Height="240"
-                        Width="380"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"
-                        Click="Button_Click"
-                        Command="{Binding Button4}">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Picture/GamePlay/Main4x4.jpg"></ImageBrush>
-                    </Button.Background>
-                </Button>
-                <TextBlock Grid.Row="1" 
-                           Text="4 X 4"
+                <Image Grid.Row="0"
+                       Name="Btn4"
+                       Tag="4"
+                       Height="240"
+                       Width="380"
+                       Cursor="Hand"
+                       VerticalAlignment="Bottom"
+                       IsEnabled="{Binding UnLockLevel2}"
+                       MouseDown="Btn3_MouseDown"
+                       HorizontalAlignment="Center">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source"
+                                    Value="Picture/GamePlay/Main4x4.jpg"></Setter>
+                            <Setter Property="Opacity"
+                                    Value="1"></Setter>
+                            <Setter Property="Stretch"
+                                    Value="Fill"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding UnLockLevel2}"
+                                             Value="false">
+                                    <Setter Property="Opacity"
+                                            Value="0.5"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown">
+                            <i:InvokeCommandAction Command="{Binding Button4}" 
+                                                   CommandParameter="{Binding ElementName=Btn4}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Image>
+
+                <Image HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Height="200"
+                       Width="300"
+                       gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Visibility"
+                                    Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding UnLockLevel2}"
+                                             Value="false">
+                                    <Setter Property="Visibility"
+                                            Value="Visible"></Setter>
+                                </DataTrigger>
+
+                                <DataTrigger Binding="{Binding UnLockLevel2}" 
+                                             Value="true">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:3" 
+                                                            Value="{x:Static Visibility.Collapsed}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </DataTrigger.EnterActions>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="1"
+                           Text="4 x 4"
                            FontSize="80"
                            FontFamily="{StaticResource mainFont}"
                            HorizontalAlignment="Center"
@@ -313,9 +413,7 @@
                 </Grid.RenderTransform>
                 <Button Tag="1"
                         materialDesign:ButtonAssist.CornerRadius="10"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Style="{StaticResource MaterialDesignRaisedButton}"
-                        ToolTip="MaterialDesignRaisedButton with Round Corners"
                         Height="240"
                         Width="380"
                         HorizontalAlignment="Center"

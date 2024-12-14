@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\
 _15_Puzzle_Game
 none
 false
 DEBUG;TRACE
-C:\Users\PC\source\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\App.xaml
-16-509782826
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\App.xaml
+17-1007445397
 3-1779014245
-36-180837137
-32-629135844
-ChangePasswordWindow.xaml;Congratulation.xaml;ForgotPasswordWindow.xaml;GamePlayPage.xaml;LoginWindow.xaml;MainPage.xaml;MainWindow.xaml;OptionalPage.xaml;PauseWindow.xaml;PicturePage.xaml;PlayPage.xaml;RegisterWindow.xaml;ResourceXAML\MainResource.xaml;SelectLevelOptional.xaml;SelectLevelPage.xaml;SettingWindow.xaml;
+371787908250
+321059558932
+ChangePasswordWindow.xaml;Congratulation.xaml;ForgotPasswordWindow.xaml;GamePlayPage.xaml;LoginWindow.xaml;MainPage.xaml;MainWindow.xaml;OptionalGamePlayPage.xaml;OptionalPage.xaml;PauseWindow.xaml;PicturePage.xaml;PlayPage.xaml;RegisterWindow.xaml;ResourceXAML\MainResource.xaml;SelectLevelOptional.xaml;SelectLevelPage.xaml;SettingWindow.xaml;
 
-False
+True
 

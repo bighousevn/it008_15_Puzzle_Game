@@ -24,6 +24,19 @@ namespace _15_Puzzle_Game.ViewModel
         public ObservableCollection<XepHang> XepHangList { get => _XepHangList; set { _XepHangList = value; OnPropertyChanged(); } }
         private ObservableCollection<Stage> _StageList;
         public ObservableCollection<Stage> StageList { get => _StageList; set { _StageList = value; OnPropertyChanged(); } }
+        private ObservableCollection<bool> _IsLockEnabled;
+        public ObservableCollection<bool> IsLockEnabled
+        {
+            get => _IsLockEnabled;
+            set
+            {
+                if (_IsLockEnabled != value)
+                {
+                    _IsLockEnabled = value;
+                    OnPropertyChanged(nameof(IsLockEnabled));
+                }
+            }
+        }
 
         public ICommand PauseCommand { get; set; }
         public ICommand SettingGamePlayCommand { get; set; }
@@ -452,69 +465,27 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
 
-        private bool _isEnabled = true;
-        public bool isEnabled
-        {
-            get { return _isEnabled; }
-            set
-            {
-                if (_isEnabled != value)
-                {
-                    _isEnabled = value;
-                    OnPropertyChanged(nameof(isEnabled));
-                }
-
-            }
-        }
-
-        private bool _isLockEnabled1 = false;
-        public bool isLockEnabled1
-        {
-            get { return _isLockEnabled1; }
-            set
-            {
-                if (_isLockEnabled1 != value)
-                {
-                    _isLockEnabled1 = value;
-                    OnPropertyChanged(nameof(isLockEnabled1));
-                }
-
-            }
-        }
-        private bool _isLockEnabled2 = true;
-        public bool isLockEnabled2
-        {
-            get { return _isLockEnabled2; }
-            set
-            {
-                if (_isLockEnabled2 != value)
-                {
-                    _isLockEnabled2 = value;
-                    OnPropertyChanged(nameof(isLockEnabled2));
-                }
-
-            }
-        }
+        
         private bool unlockLevel1;
         public bool UnLockLevel1
         {
             get { return unlockLevel1; }
             set { if (unlockLevel1 != value) unlockLevel1 = value; OnPropertyChanged(nameof(UnLockLevel1)); }
         }
-
         private bool unlockLevel2;
         public bool UnLockLevel2
         {
             get { return unlockLevel2; }
             set { if (unlockLevel2 != value) unlockLevel2 = value; OnPropertyChanged(nameof(UnLockLevel2)); }
         }
-
         private bool unlockLevel3;
         public bool UnLockLevel3
         {
             get { return unlockLevel3; }
             set { if (unlockLevel3 != value) unlockLevel3 = value; OnPropertyChanged(nameof(UnLockLevel3)); }
         }
+
+
         private bool unlockPickture1;
         public bool UnLockPicture1
         {
@@ -528,7 +499,6 @@ namespace _15_Puzzle_Game.ViewModel
                 }
             }
         }
-
         private bool unlockPickture2;
         public bool UnLockPicture2
         {
@@ -542,7 +512,6 @@ namespace _15_Puzzle_Game.ViewModel
                 }
             }
         }
-
         private bool unlockPickture3;
         public bool UnLockPicture3
         {
@@ -556,7 +525,6 @@ namespace _15_Puzzle_Game.ViewModel
                 }
             }
         }
-
         private bool unlockPickture4;
         public bool UnLockPicture4
         {
@@ -570,7 +538,6 @@ namespace _15_Puzzle_Game.ViewModel
                 }
             }
         }
-
         private bool unlockPickture5;
         public bool UnLockPicture5
         {
@@ -584,7 +551,6 @@ namespace _15_Puzzle_Game.ViewModel
                 }
             }
         }
-
         private bool unlockPickture6;
         public bool UnLockPicture6
         {
@@ -598,7 +564,6 @@ namespace _15_Puzzle_Game.ViewModel
                 }
             }
         }
-
         private bool unlockPickture7;
         public bool UnLockPicture7
         {
@@ -612,7 +577,6 @@ namespace _15_Puzzle_Game.ViewModel
                 }
             }
         }
-
         private bool unlockPickture8;
         public bool UnLockPicture8
         {
@@ -641,6 +605,21 @@ namespace _15_Puzzle_Game.ViewModel
         }
 
 
+        private bool _isLock = true;
+        public bool isLock
+        {
+            get { return _isLock; }
+            set
+            {
+                if (_isLock != value)
+                {
+                    _isLock = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
 
         public MainViewModel()
         {
@@ -652,6 +631,7 @@ namespace _15_Puzzle_Game.ViewModel
             _timer.Tick += Timer_Tick;
             LoadXepHangData();
             StageList = new ObservableCollection<Stage>();
+            IsLockEnabled = new ObservableCollection<bool>(new bool[27]);
 
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
@@ -846,6 +826,7 @@ namespace _15_Puzzle_Game.ViewModel
             loginvm.IsLogin = false;
             loginvm.UserName = string.Empty;
             loginvm.Password = string.Empty;
+            StageList.Clear();
             loginwindow.ShowDialog();
         }
 
@@ -854,7 +835,6 @@ namespace _15_Puzzle_Game.ViewModel
             if (parameter is Window window)
                 window.Close();
         }
-
         private void getPictureSource(object parameter)
         {
             if (parameter is Button button)
@@ -865,9 +845,20 @@ namespace _15_Puzzle_Game.ViewModel
                     PictureSource = Picture2;
                 if (button.Name == "Button3")
                     PictureSource = Picture3;
+                if (button.Name == "Button4")
+                    PictureSource = Picture4;
+                if (button.Name == "Button5")
+                    PictureSource = Picture5;
+                if (button.Name == "Button6")
+                    PictureSource = Picture6;
+                if (button.Name == "Button7")
+                    PictureSource = Picture7;
+                if (button.Name == "Button8")
+                    PictureSource = Picture8;
+                if (button.Name == "Button9")
+                    PictureSource = Picture9;
             }
         }
-
         public void ResetTimer()
         {
             if (_isTimerRunning)
@@ -875,7 +866,6 @@ namespace _15_Puzzle_Game.ViewModel
                 _elapsedTime = 0;
             }
         }
-
         public void StartTimer()
         {
             if(!_isTimerRunning)
@@ -884,7 +874,6 @@ namespace _15_Puzzle_Game.ViewModel
                 IsTimerRunning = true;
             }
         }
-
         public void StopTimer()
         {
             if (_isTimerRunning)
@@ -900,9 +889,10 @@ namespace _15_Puzzle_Game.ViewModel
             _elapsedTime++;
             DisplayTime = TimeSpan.FromSeconds(_elapsedTime).ToString(@"mm\:ss");
         }
+
         public void CreateStageList()
         {
-            var currentUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName.ToString());
+            var currentUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
             for (int i = 0; i < currentUser.maxlevel; i++)
             {
                 Stage stage = new Stage
@@ -923,6 +913,7 @@ namespace _15_Puzzle_Game.ViewModel
             }
             UnLockLevels(currentUser.maxlevel);
         }
+
         private void UnLockLevels(int x)
         {
             UnLockLevel1 = true;
@@ -931,13 +922,18 @@ namespace _15_Puzzle_Game.ViewModel
                 UnLockLevel2 = true;
                 UnLockLevel3 = true;
             }
-            else if (x > 9) { UnLockLevel2 = true; UnLockLevel3 = false; }
+            else if (x > 9) 
+            { 
+                UnLockLevel2 = true;
+                UnLockLevel3 = false;
+            }
             else
             {
                 UnLockLevel2 = false;
                 UnLockLevel3 = false;
             }
         }
+
         public void LoadStageList()
         {
             var puzzle = DataProvider.Instance.DB.Puzzles
@@ -946,8 +942,11 @@ namespace _15_Puzzle_Game.ViewModel
             else
             {
                 int IDpuzzle = puzzle.puzzle_id;
-                var currentUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName.ToString());
-                if (IDpuzzle < currentUser.maxlevel) { return; }
+                var currentUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
+                if (IDpuzzle < currentUser.maxlevel) 
+                { 
+                    return; 
+                }
                 else
                 {
                     StageList[IDpuzzle].UnLock = true;
@@ -957,7 +956,6 @@ namespace _15_Puzzle_Game.ViewModel
                 UnLockLevels(currentUser.maxlevel);
             }
         }
-
 
         public void LoadXepHangData()
         {
