@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using AForge.Imaging;
 using System.Drawing;
+using System.Windows.Media.Media3D;
 
 namespace _15_Puzzle_Game
 {
@@ -53,6 +54,11 @@ namespace _15_Puzzle_Game
 
                 BitmapImage addbitmap = ToImage(item.image_byte);
 
+                ScaleTransform scaleTransform = new ScaleTransform();
+                scaleTransform.ScaleX = 1;
+                scaleTransform.ScaleY = 1;
+                var imageStyle = (Style)this.FindResource("ImageStyle");
+
                 System.Windows.Controls.Image ImageControl = new System.Windows.Controls.Image
                 {
                     Source = addbitmap,
@@ -60,7 +66,9 @@ namespace _15_Puzzle_Game
                     Height = 255,
                     Margin = new Thickness(5),
                     Stretch = Stretch.Fill,
-                    Tag = item.image_id
+                    Tag = item.image_id,
+                    RenderTransform = scaleTransform,
+                    Style = imageStyle
                 };
 
                 ImageControl.MouseLeftButtonDown += Image_MouseLeftButtonUp;
@@ -119,6 +127,7 @@ namespace _15_Puzzle_Game
                     MainWrappanel.Children.Remove(ImageControl);
                     selectedImages.RemoveAt(i);
                     bytes.RemoveAt(i);
+                    existedImage.RemoveAt(i);
                 }
             }
             SampleImage.Source = null;
@@ -155,6 +164,8 @@ namespace _15_Puzzle_Game
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentUser.Instance.CurrentUserMoney < 200)
+               { return; }
             OpenFileDialog OB = new OpenFileDialog();
             OB.FileName = "";
             OB.Filter = "Supported Images| *.jpg;*.png";
@@ -260,54 +271,43 @@ namespace _15_Puzzle_Game
             int newWidth = 300;
             int newHeight = 300;
 
-            // Create a WriteableBitmap with the new size
             WriteableBitmap writeableBitmap = new WriteableBitmap(newWidth, newHeight, 96, 96, PixelFormats.Pbgra32, null);
 
-
-            // Create a DrawingVisual to use for drawing the image
             DrawingVisual drawingVisual = new DrawingVisual();
             using (DrawingContext drawingContext = drawingVisual.RenderOpen())
             {
-                // Draw the image into the DrawingContext with the new dimensions
                 drawingContext.DrawImage(bitmap, new Rect(0, 0, newWidth, newHeight));
             }
 
-            // Create a RenderTargetBitmap to render the DrawingVisual into the WriteableBitmap
             RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap(newWidth, newHeight, 96, 96, PixelFormats.Pbgra32);
             renderTargetBitmap.Render(drawingVisual);
 
-            // Now copy the rendered result into the WriteableBitmap
             writeableBitmap = new WriteableBitmap(renderTargetBitmap);
 
-            // Create a MemoryStream to save the resized image
             MemoryStream memoryStream = new MemoryStream();
             PngBitmapEncoder encoder = new PngBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(writeableBitmap));
             encoder.Save(memoryStream);
 
-            // Reset MemoryStream to the beginning
             memoryStream.Position = 0;
 
-            // Create a new BitmapImage from the MemoryStream
             BitmapImage resizedImage = new BitmapImage();
             resizedImage.BeginInit();
             resizedImage.StreamSource = memoryStream;
             resizedImage.CacheOption = BitmapCacheOption.OnLoad;
             resizedImage.EndInit();
 
-            // Return the resized BitmapImage
             return resizedImage;
         }
 
         public static bool CompareImagesUsingTemplateMatching(Bitmap image1, Bitmap image2)
         {
-            ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0.7f); // Tìm kiếm độ tương đồng trên 90%
+            ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0.9f);
 
-            // Áp dụng TemplateMatching để so sánh hình ảnh mẫu với hình ảnh lớn
             TemplateMatch[] matches = tm.ProcessImage(image1, image2);
 
             // Kiểm tra nếu có kết quả phù hợp
-            if (matches.Length > 0 && matches[0].Similarity > 0.7f)
+            if (matches.Length > 0 && matches[0].Similarity > 0.9f)
             {
                 return true;
             }

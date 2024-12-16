@@ -207,7 +207,6 @@
     <Compile Include="SettingWindow.xaml.cs">
       <DependentUpon>SettingWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\BackGround.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\CurrentUser.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />

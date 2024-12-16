@@ -22,10 +22,11 @@ namespace _15_Puzzle_Game
     public partial class Congratulation : Window
     {
         GamePlayPage _page;
+        MainViewModel mainViewModel;
         public Congratulation(GamePlayPage gamePlayPage)
         {
             InitializeComponent();
-            var mainViewModel = (MainViewModel)DataContext;
+            mainViewModel = (MainViewModel)DataContext;
             Console.WriteLine(this.DataContext);
             mainViewModel.LoadXepHangData();
             _page= gamePlayPage;

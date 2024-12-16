@@ -100,6 +100,7 @@ namespace _15_Puzzle_Game.ViewModel
             CloseWindowEffect.Volume = EffectVolume;
             OpenWindowEffect.Volume = EffectVolume;
             LogoutEffect.Volume = EffectVolume;
+            VictoryEffect.Volume = EffectVolume;
         }
 
         public void BackgroundMusic_Play()

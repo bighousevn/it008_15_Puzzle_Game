@@ -38,6 +38,8 @@ namespace _15_Puzzle_Game
             var mainViewModel = (MainViewModel)DataContext;
             Button clickedButton = sender as Button;
             n = clickedButton.Tag.ToString();
+            mainViewModel._elapsedTime = 0;
+            mainViewModel.StartTimer();
 
             NavigationService.Navigate(new OptionalGamePlayPage(n, path2));
 
