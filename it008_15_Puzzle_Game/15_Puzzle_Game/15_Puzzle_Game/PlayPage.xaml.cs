@@ -2,9 +2,11 @@
 using _15_Puzzle_Game.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -557,6 +559,7 @@ namespace _15_Puzzle_Game
 
         private void CreateSwapAnimations(Image clickedImage, Image emptyBox, Point clickedImagePosition, Point emptyBoxPosition, Storyboard storyboard)
         {
+            // Animation cho ô được chọn
             DoubleAnimation animateLeft1 = new DoubleAnimation
             {
                 From = clickedImagePosition.X,
@@ -606,8 +609,8 @@ namespace _15_Puzzle_Game
             // Thêm animation vào Storyboard
             storyboard.Children.Add(animateLeft1);
             storyboard.Children.Add(animateTop1);
-            storyboard.Children.Add(animateLeft2);
-            storyboard.Children.Add(animateTop2);
+           // storyboard.Children.Add(animateLeft2);
+           // storyboard.Children.Add(animateTop2);
         }
         private void OnPicClick(object sender, MouseButtonEventArgs e)
         {
@@ -619,72 +622,14 @@ namespace _15_Puzzle_Game
             Point emptyBoxPosition = new Point(Canvas.GetLeft(emptyBox), Canvas.GetTop(emptyBox));
 
             var n = Math.Sqrt(imageList.Count());
-            //// Kiểm tra xem mảnh ghép có thể hoán đổi với ô trống không
-
-            //    // Tạo storyboard cho animation
-            //    Storyboard storyboard = new Storyboard();
-
-            //    // Animation cho hình được click
-            //    DoubleAnimation animateLeft1 = new DoubleAnimation
-            //    {
-            //        From = clickedImagePosition.X,
-            //        To = emptyBoxPosition.X,
-            //        Duration = TimeSpan.FromSeconds(0.1), // Thời gian animation
-            //        EasingFunction = new QuadraticEase() // Hiệu ứng trơn mượt
-            //    };
-
-            //    DoubleAnimation animateTop1 = new DoubleAnimation
-            //    {
-            //        From = clickedImagePosition.Y,
-            //        To = emptyBoxPosition.Y,
-            //        Duration = TimeSpan.FromSeconds(0.1),
-            //        EasingFunction = new QuadraticEase()
-            //    };
-
-            //// Animation cho ô trống
-            //DoubleAnimation animateLeft2 = new DoubleAnimation
-            //{
-            //    From = emptyBoxPosition.X,
-            //    To = clickedImagePosition.X,
-            //    Duration = TimeSpan.FromSeconds(0.1),
-            //    EasingFunction = new QuadraticEase()
-            //};
-
-            //DoubleAnimation animateTop2 = new DoubleAnimation
-            //{
-            //    From = emptyBoxPosition.Y,
-            //    To = clickedImagePosition.Y,
-            //    Duration = TimeSpan.FromSeconds(0.1),
-            //    EasingFunction = new QuadraticEase()
-            //};
-
-            //// Gắn animation vào Storyboard
-            //Storyboard.SetTarget(animateLeft1, clickedImage);
-            //    Storyboard.SetTargetProperty(animateLeft1, new PropertyPath(Canvas.LeftProperty));
-
-            //    Storyboard.SetTarget(animateTop1, clickedImage);
-            //    Storyboard.SetTargetProperty(animateTop1, new PropertyPath(Canvas.TopProperty));
-
-            //Storyboard.SetTarget(animateLeft2, emptyBox);
-            //Storyboard.SetTargetProperty(animateLeft2, new PropertyPath(Canvas.LeftProperty));
-
-            //Storyboard.SetTarget(animateTop2, emptyBox);
-            //Storyboard.SetTargetProperty(animateTop2, new PropertyPath(Canvas.TopProperty));
-
-            //// Thêm animation vào Storyboard
-            //storyboard.Children.Add(animateLeft1);
-            //    storyboard.Children.Add(animateTop1);
-            //storyboard.Children.Add(animateLeft2);
-            //storyboard.Children.Add(animateTop2);
-
-            // Xử lý sự kiện khi animation kết thúc
-
 
             Storyboard storyboard = new Storyboard();
 
             if (CanSwap(clickedImage, emptyBox, n))
             {
                 //animation slide và swap hình
+                Canvas.SetLeft(emptyBox, clickedImagePosition.X);
+                Canvas.SetTop(emptyBox, clickedImagePosition.Y);
                 CreateSwapAnimations(clickedImage, emptyBox, clickedImagePosition, emptyBoxPosition, storyboard);
 
                 storyboard.Completed += (s, args) =>
@@ -727,6 +672,7 @@ namespace _15_Puzzle_Game
 
             double n = Math.Sqrt(imageList.Count); // Số lượng ô theo một chiều
             double tileWidth = emptyBox.Width + paddingBetween;
+
             switch (e.Key)
             {
                 case Key.Left:
@@ -783,6 +729,29 @@ namespace _15_Puzzle_Game
             {
                 Point targetImagePosition = new Point(Canvas.GetLeft(targetImage), Canvas.GetTop(targetImage));
 
+                if (CanSwap(targetImage, emptyBox, n))
+                {
+                    Storyboard storyboard = new Storyboard();
+                    Canvas.SetLeft(emptyBox, targetImagePosition.X);
+                    Canvas.SetTop(emptyBox, targetImagePosition.Y);
+                    CreateSwapAnimations(targetImage, emptyBox, targetImagePosition, emptyBoxPosition, storyboard);
+                    
+                    //MessageBox.Show(emptyBoxPosition.ToString());
+                    storyboard.Completed += (s, args) =>
+                    {
+                        // Cập nhật lại danh sách các vị trí của mảnh ghép
+                        UpdateLocations(targetImage, emptyBox);
+                        AudioControl.Instance.WoodEffect_Play();
+                        // Kiểm tra trạng thái trò chơi
+                        CheckGame();
+                        storyboard.Children.Clear();
+
+                    };
+
+                    storyboard.Begin();
+
+                }
+
 
                 //if (CanSwap(targetImage, emptyBox, n))
                 //{
@@ -801,25 +770,6 @@ namespace _15_Puzzle_Game
 
                 ////Kiểm tra xem trò chơi đã hoàn thành chưa
                 //CheckGame();
-
-                if (CanSwap(targetImage, emptyBox, n))
-                {
-                    Storyboard storyboard = new Storyboard();
-                    CreateSwapAnimations(targetImage, emptyBox, targetImagePosition, emptyBoxPosition, storyboard);
-
-                    storyboard.Completed += (s, args) =>
-                    {
-                        // Cập nhật lại danh sách các vị trí của mảnh ghép
-                        UpdateLocations(targetImage, emptyBox);
-                        AudioControl.Instance.WoodEffect_Play();
-                        // Kiểm tra trạng thái trò chơi
-                        CheckGame();
-
-                    };
-                    storyboard.Begin();
-                    storyboard.Children.Clear();
-
-                }
             }
 
         }
