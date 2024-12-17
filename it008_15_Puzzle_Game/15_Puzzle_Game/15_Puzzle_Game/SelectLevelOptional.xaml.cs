@@ -40,7 +40,7 @@ namespace _15_Puzzle_Game
             n = clickedButton.Tag.ToString();
             mainViewModel._elapsedTime = 0;
             mainViewModel.StartTimer();
-
+            AudioControl.Instance.StartGameEffect_Play();
             NavigationService.Navigate(new OptionalGamePlayPage(n, path2));
 
             //
@@ -76,6 +76,7 @@ namespace _15_Puzzle_Game
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            AudioControl.Instance.BackEffect_Play();
             NavigationService.GoBack();
         }
     }

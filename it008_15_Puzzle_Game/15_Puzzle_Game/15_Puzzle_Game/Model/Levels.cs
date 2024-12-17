@@ -18,13 +18,19 @@ namespace _15_Puzzle_Game.Model
         public Levels()
         {
             this.LeaderBoards = new HashSet<LeaderBoards>();
+            this.Puzzles = new HashSet<Puzzles>();
+            this.UserImageRecords = new HashSet<UserImageRecords>();
         }
     
         public int level_id { get; set; }
         public string level_name { get; set; }
-        public int grid_size { get; set; }
+        public Nullable<int> grid_size { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LeaderBoards> LeaderBoards { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Puzzles> Puzzles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserImageRecords> UserImageRecords { get; set; }
     }
 }

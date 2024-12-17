@@ -503,12 +503,14 @@ namespace _15_Puzzle_Game
                 {
                     var gamePlayPage = FindOpntionalGamePlayPage(this);
                     OptionalCongratulation optionalCongratulationWindow = new OptionalCongratulation(gamePlayPage);
+                    AudioControl.Instance.VictoryEffect_Play();
                     optionalCongratulationWindow.ShowDialog();
                 }
                 else
                 {
                     var gamePlayPage = FindGamePlayPage(this);
                     Congratulation congratulationWindow = new Congratulation(gamePlayPage);
+                    AudioControl.Instance.VictoryEffect_Play();
                     congratulationWindow.ShowDialog();
                 }
 

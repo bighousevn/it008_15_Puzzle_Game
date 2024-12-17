@@ -165,6 +165,9 @@
     <Compile Include="Model\Puzzles.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\UserImageRecords.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\UserImages.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -364,6 +367,9 @@
     <Resource Include="Picture\GamePlay\Anime\Obito.jpg" />
     <Resource Include="Picture\GamePlay\Anime\Vegeta.png" />
     <Resource Include="Picture\GamePlay\Anime\Zoro.jpg" />
+    <Resource Include="Picture\FireWork.gif" />
+    <Resource Include="Picture\Congratulation.gif" />
+    <Resource Include="Picture\Eternity.gif" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -374,9 +380,21 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Picture\FireWork.gif" />
-    <Resource Include="Picture\Congratulation.gif" />
-    <Resource Include="Picture\Eternity.gif" />
+    <EmbeddedResource Include="Music\OpenLevel.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Music\MouseHover.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Music\Back.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Music\StartGame.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Music\Error.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="Picture\Icon.ico" />
   </ItemGroup>
   <ItemGroup>

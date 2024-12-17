@@ -81,6 +81,7 @@ namespace _15_Puzzle_Game
             var window = Window.GetWindow(this);
             window.KeyDown -= GamePlayPage_KeyDown;
             PlayFrame.KeyDown -= GamePlayPage_KeyDown;
+            AudioControl.Instance.BackEffect_Play();
             NavigationService.GoBack();
         }
 

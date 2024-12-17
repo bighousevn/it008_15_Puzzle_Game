@@ -174,3 +174,8 @@ D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\D
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\15_Puzzl.EDA40FB8.Up2Date
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.exe
 D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\obj\Debug\Sliding_Puzzle.pdb
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\OpenLevel.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\MouseHover.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Back.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\StartGame.mp3
+D:\it008_15_Puzzle_Game\it008_15_Puzzle_Game\15_Puzzle_Game\15_Puzzle_Game\bin\Debug\Music\Error.mp3

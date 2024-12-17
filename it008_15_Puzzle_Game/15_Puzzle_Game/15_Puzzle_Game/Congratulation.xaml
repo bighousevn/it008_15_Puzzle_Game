@@ -321,7 +321,8 @@
                                 HorizontalAlignment="Left"
                                 Margin="20 0 0 0"
                                 Background="#ffb734"
-                                BorderBrush="Transparent" Click="Button_Click_1">
+                                BorderBrush="Transparent" 
+                                Click="Button_Click_1">
                             <TextBlock Text="Play Again"
                                        FontSize="35"
                                        FontFamily="{StaticResource mainFont}"

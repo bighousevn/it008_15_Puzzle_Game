@@ -84,6 +84,7 @@ namespace _15_Puzzle_Game
             {
                 if (!selectedImages.Contains(selectedImage))
                 {
+                    AudioControl.Instance.ErrorEffect_Play();
                     selectedImages.Add(selectedImage);
                     selectedImage.Opacity = 0.5;
                     SampleImage.Source = selectedImage.Source;
@@ -98,6 +99,7 @@ namespace _15_Puzzle_Game
             }
             else
             {
+                AudioControl.Instance.StartGameEffect_Play();
                 var imageId = (int)selectedImage.Tag;
                 var imageRecord = DataProvider.Instance.DB.UserImages.FirstOrDefault(p => p.image_id == imageId);
 
@@ -212,12 +214,15 @@ namespace _15_Puzzle_Game
             };
 
             var CurrUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
+
             CurrentUser.Instance.CurrentUserMoney -= 200;
+            if (CurrentUser.Instance.CurrentUserMoney < 200)
+                AddButton.IsEnabled = false;
+
             CurrUser.usermoney = CurrentUser.Instance.CurrentUserMoney;
             var mainviewModel = this.DataContext as MainViewModel;
             mainviewModel.usermoney = CurrentUser.Instance.CurrentUserMoney.ToString();
             EditStatusBtnText();
-
             DataProvider.Instance.DB.UserImages.Add(addimage);
             DataProvider.Instance.DB.SaveChanges();
 
@@ -255,6 +260,7 @@ namespace _15_Puzzle_Game
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            AudioControl.Instance.BackEffect_Play();
             NavigationService.GoBack();
         }
 

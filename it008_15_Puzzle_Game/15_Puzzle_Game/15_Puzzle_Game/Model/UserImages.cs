@@ -14,10 +14,18 @@ namespace _15_Puzzle_Game.Model
     
     public partial class UserImages
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UserImages()
+        {
+            this.UserImageRecords = new HashSet<UserImageRecords>();
+        }
+    
         public int image_id { get; set; }
         public int user_id { get; set; }
         public byte[] image_byte { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserImageRecords> UserImageRecords { get; set; }
         public virtual Users Users { get; set; }
     }
 }

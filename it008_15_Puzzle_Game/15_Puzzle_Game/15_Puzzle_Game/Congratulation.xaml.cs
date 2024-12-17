@@ -34,10 +34,12 @@ namespace _15_Puzzle_Game
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            mainViewModel.LoadStageList();
             this.Close();
             var mainwindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
             if (mainwindow != null)
             {
+                mainwindow.mainFrame.NavigationService.GoBack();
                 mainwindow.mainFrame.NavigationService.GoBack();
             }
             var window = Application.Current.MainWindow;
