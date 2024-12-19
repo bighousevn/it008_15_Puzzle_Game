@@ -23,6 +23,20 @@ namespace _15_Puzzle_Game.ViewModel
             get { return _currentUserid; }
             set { _currentUserid = value; OnPropertyChanged(); }
         }
+        private int _levelID;
+        public int LevelID
+        {
+            get { return _levelID; }
+            set{ _levelID=value; OnPropertyChanged(); }
+        }
+        private int userImageID;
+
+        public int UserImageID
+        {
+            get { return userImageID; }
+            set { userImageID = value;OnPropertyChanged(); }
+        }
+
         private int _currentUserMoney;
         public int CurrentUserMoney
         {

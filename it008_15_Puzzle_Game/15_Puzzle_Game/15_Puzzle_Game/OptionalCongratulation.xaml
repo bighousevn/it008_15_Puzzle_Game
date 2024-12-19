@@ -138,7 +138,7 @@
                                    Foreground="#22b2ef"></TextBlock>
 
                         <TextBlock Grid.Column="1"
-                                   Text="{Binding DisplayTime}"
+                                   Text="{Binding BestTime}"
                                    FontFamily="{StaticResource mainFont}"
                                    FontSize="50"
                                    HorizontalAlignment="Center"
@@ -163,7 +163,7 @@
                                    Foreground="#22b2ef"></TextBlock>
 
                         <TextBlock Grid.Column="3"
-                                   Text="{Binding Move}"
+                                   Text="{Binding BestMove}"
                                    FontFamily="{StaticResource mainFont}"
                                    FontSize="50"
                                    HorizontalAlignment="Center"

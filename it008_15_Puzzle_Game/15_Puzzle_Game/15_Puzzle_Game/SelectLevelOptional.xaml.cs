@@ -38,6 +38,18 @@ namespace _15_Puzzle_Game
             var mainViewModel = (MainViewModel)DataContext;
             Button clickedButton = sender as Button;
             n = clickedButton.Tag.ToString();
+            if (clickedButton.Tag.ToString() == "3")
+            {
+                CurrentUser.Instance.LevelID = 1;
+            }
+            else if (clickedButton.Tag.ToString() == "4")
+            {
+                CurrentUser.Instance.LevelID = 2;
+            }
+            else
+            {
+                CurrentUser.Instance.LevelID = 3;
+            }
             mainViewModel._elapsedTime = 0;
             mainViewModel.StartTimer();
             AudioControl.Instance.StartGameEffect_Play();

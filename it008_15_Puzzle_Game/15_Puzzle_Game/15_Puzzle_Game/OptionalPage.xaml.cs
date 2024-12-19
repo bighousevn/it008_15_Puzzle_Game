@@ -101,6 +101,7 @@ namespace _15_Puzzle_Game
             {
                 AudioControl.Instance.StartGameEffect_Play();
                 var imageId = (int)selectedImage.Tag;
+                CurrentUser.Instance.UserImageID = imageId;
                 var imageRecord = DataProvider.Instance.DB.UserImages.FirstOrDefault(p => p.image_id == imageId);
 
                 BitmapImage bitmap = ToImage(imageRecord.image_byte);
