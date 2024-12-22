@@ -143,8 +143,10 @@ namespace _15_Puzzle_Game.ViewModel
             }
             else
             {
-                IsLogin = false;
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
+                IsLogin = false;
+                return;
+                
             }
 
             if (!mainViewModel.Isloaded)
