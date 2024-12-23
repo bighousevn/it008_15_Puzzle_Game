@@ -18,10 +18,10 @@
         Height="600" 
         Width="550">
     <Border BorderBrush="Gray"
-        BorderThickness="0"
-        Background="White"
-        Height="600" 
-        Width="550">
+            BorderThickness="0"
+            Background="White"
+            Height="600" 
+            Width="550">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"></RowDefinition>
@@ -38,12 +38,12 @@
                        Width="400"></Image>
 
                 <TextBlock Grid.Row="1"
-                       Text="Congratulations"
-                       FontSize="70"
-                       FontFamily="{StaticResource mainFont}"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Top"
-                       Foreground="#fa70c6"></TextBlock>
+                           Text="Congratulations"
+                           FontSize="70"
+                           FontFamily="{StaticResource mainFont}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           Foreground="#fa70c6"></TextBlock>
             </Grid>
 
             <Grid Grid.Row="1">
@@ -83,11 +83,11 @@
                            Foreground="#22b2ef"></TextBlock>
 
                     <TextBlock Grid.Column="3"
-                           Text="{Binding Move }"
-                           FontFamily="{StaticResource mainFont}"
-                           FontSize="50"
-                           TextAlignment="Left"
-                           Foreground="#22b2ef"></TextBlock>
+                               Text="{Binding Move}"
+                               FontFamily="{StaticResource mainFont}"
+                               FontSize="50"
+                               TextAlignment="Left"
+                               Foreground="#22b2ef"></TextBlock>
 
                     <Image Grid.Column="0"
                            Grid.ColumnSpan="2"
@@ -138,7 +138,7 @@
                                    Foreground="#22b2ef"></TextBlock>
 
                         <TextBlock Grid.Column="1"
-                                   Text="{Binding DisplayTime}"
+                                   Text="{Binding BestTime}"
                                    FontFamily="{StaticResource mainFont}"
                                    FontSize="50"
                                    HorizontalAlignment="Center"
@@ -163,11 +163,9 @@
                                    Foreground="#22b2ef"></TextBlock>
 
                         <TextBlock Grid.Column="3"
-                                   Text="{Binding Move}"
+                                   Text="{Binding BestMove}"
                                    FontFamily="{StaticResource mainFont}"
                                    FontSize="50"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
                                    TextAlignment="Left"
                                    Foreground="#22b2ef"></TextBlock>
                     </Grid>
@@ -183,43 +181,41 @@
 
                     <Grid Grid.Column="0">
                         <Button materialDesign:ButtonAssist.CornerRadius="20"
-                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                            Style="{StaticResource MaterialDesignRaisedButton}"
-                            Width="150"
-                            Height="50"
-                            Padding="0"
-                            HorizontalAlignment="Right"
-                            Margin="0,0,20,0"
-                            Background="#fa70c6"
-                            BorderBrush="Transparent"
-                            Click="Button_Click">
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="150"
+                                Height="50"
+                                Padding="0"
+                                HorizontalAlignment="Right"
+                                Margin="0,0,20,0"
+                                Background="#fa70c6"
+                                BorderBrush="Transparent"
+                                Click="Button_Click">
                             <TextBlock Text="Main Menu"
-                                   FontSize="35"
-                                   FontFamily="{StaticResource mainFont}"
-                                   TextAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   Padding="0"/>
+                                       FontSize="35"
+                                       FontFamily="{StaticResource mainFont}"
+                                       TextAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Padding="0"/>
                         </Button>
                     </Grid>
 
                     <Grid Grid.Column="1">
                         <Button materialDesign:ButtonAssist.CornerRadius="20"
-                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                            Style="{StaticResource MaterialDesignRaisedButton}"
-                            Width="150"
-                            Height="50"
-                            Padding="0"
-                            HorizontalAlignment="Left"
-                            Margin="20 0 0 0"
-                            Background="#ffb734"
-                            BorderBrush="Transparent" Click="Button_Click_1">
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="150"
+                                Height="50"
+                                Padding="0"
+                                HorizontalAlignment="Left"
+                                Margin="20 0 0 0"
+                                Background="#ffb734"
+                                BorderBrush="Transparent" Click="Button_Click_1">
                             <TextBlock Text="Play Again"
-                                   FontSize="35"
-                                   FontFamily="{StaticResource mainFont}"
-                                   TextAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
+                                       FontSize="35"
+                                       FontFamily="{StaticResource mainFont}"
+                                       TextAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
                         </Button>
                     </Grid>
                 </Grid>

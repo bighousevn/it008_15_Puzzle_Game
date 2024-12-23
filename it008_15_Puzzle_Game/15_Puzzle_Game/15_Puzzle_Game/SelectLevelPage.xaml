@@ -76,7 +76,8 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="1"
-                  Style="{StaticResource GridStyle}">
+                  Style="{StaticResource GridStyle}"
+                  MouseEnter="Grid_MouseEnter">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -186,7 +187,8 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="1"
-                  Style="{StaticResource GridStyle}">
+                  Style="{StaticResource GridStyle}"
+                  MouseEnter="Grid_MouseEnter">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -286,7 +288,8 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="1"
-                  Style="{StaticResource GridStyle}">
+                  Style="{StaticResource GridStyle}"
+                  MouseEnter="Grid_MouseEnter">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -403,7 +406,8 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="1"
-                  Style="{StaticResource GridStyle}">
+                  Style="{StaticResource GridStyle}"
+                  MouseEnter="Grid_MouseEnter">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>

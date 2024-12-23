@@ -27,6 +27,18 @@
         <MappingFragment StoreEntitySet="Puzzles">
           <ScalarProperty Name="puzzle_id" ColumnName="puzzle_id" />
           <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="level_id" ColumnName="level_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserImageRecords">
+      <EntityTypeMapping TypeName="PuzzleGameDBModel.UserImageRecords">
+        <MappingFragment StoreEntitySet="UserImageRecords">
+          <ScalarProperty Name="record_id" ColumnName="record_id" />
+          <ScalarProperty Name="user_image_id" ColumnName="user_image_id" />
+          <ScalarProperty Name="level_id" ColumnName="level_id" />
+          <ScalarProperty Name="move" ColumnName="move" />
+          <ScalarProperty Name="time_taken" ColumnName="time_taken" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

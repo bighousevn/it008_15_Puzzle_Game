@@ -28,6 +28,7 @@ namespace _15_Puzzle_Game.Model
         public virtual DbSet<LeaderBoards> LeaderBoards { get; set; }
         public virtual DbSet<Levels> Levels { get; set; }
         public virtual DbSet<Puzzles> Puzzles { get; set; }
+        public virtual DbSet<UserImageRecords> UserImageRecords { get; set; }
         public virtual DbSet<UserImages> UserImages { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }

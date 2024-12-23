@@ -76,7 +76,7 @@
                         Background="#fdfdfd"
                         Grid.Column="1"
                         Style="{StaticResource BorderStyle}">
-                    <Grid>
+                    <Grid MouseEnter="Grid_MouseEnter">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2.5*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
@@ -147,7 +147,7 @@
                         Background="#fce2fd"
                         Grid.Column="3"
                         Style="{StaticResource BorderStyle}">
-                    <Grid>
+                    <Grid MouseEnter="Grid_MouseEnter">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2.5*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
@@ -220,7 +220,7 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                         Width="300"
                         Background="#fdfdfd"
                         Style="{StaticResource BorderStyle}">
-                    <Grid>
+                    <Grid MouseEnter="Grid_MouseEnter">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2.5*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
@@ -241,10 +241,10 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                             </Button.Background>
                         </Button>
                         <Image HorizontalAlignment="Center"
-       VerticalAlignment="Center"
-       Height="300"
-       Width="300"
-       gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
+                               VerticalAlignment="Center"
+                               Height="300"
+                               Width="300"
+                               gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                             <Image.Style>
                                 <Style TargetType="Image">
                                     <Setter Property="Visibility"
@@ -291,7 +291,7 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                         Background="#fdfdfd"
                         Grid.Column="1"
                         Style="{StaticResource BorderStyle}">
-                    <Grid>
+                    <Grid MouseEnter="Grid_MouseEnter">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2.5*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
@@ -365,7 +365,7 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                         Background="#fce2fd"
                         Grid.Column="3"
                         Style="{StaticResource BorderStyle}">
-                    <Grid>
+                    <Grid MouseEnter="Grid_MouseEnter">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2.5*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
@@ -437,7 +437,7 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                         Width="300"
                         Background="#fdfdfd"
                         Style="{StaticResource BorderStyle}">
-                    <Grid>
+                    <Grid MouseEnter="Grid_MouseEnter">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2.5*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
@@ -458,19 +458,19 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                             </Button.Background>
                         </Button>
                         <Image HorizontalAlignment="Center"
-       VerticalAlignment="Center"
-       Height="300"
-       Width="300"
-       gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
+                               VerticalAlignment="Center"
+                               Height="300"
+                               Width="300"
+                               gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                             <Image.Style>
                                 <Style TargetType="Image">
                                     <Setter Property="Visibility"
-                    Value="Collapsed"></Setter>
+                                            Value="Collapsed"></Setter>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding UnLockPicture6}"
-                             Value="false">
+                                                     Value="false">
                                             <Setter Property="Visibility"
-                            Value="Visible"></Setter>
+                                                    Value="Visible"></Setter>
                                         </DataTrigger>
 
                                         <!--<DataTrigger Binding="{Binding UnLockPicture6}" 
@@ -509,7 +509,7 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                         Background="#fdfdfd"
                         Grid.Column="1"
                         Style="{StaticResource BorderStyle}">
-                    <Grid>
+                    <Grid MouseEnter="Grid_MouseEnter">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2.5*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
@@ -532,10 +532,10 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                             
                         </Button>
                         <Image HorizontalAlignment="Center"
-       VerticalAlignment="Center"
-       Height="300"
-       Width="300"
-       gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
+                               VerticalAlignment="Center"
+                               Height="300"
+                               Width="300"
+                               gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                             <Image.Style>
                                 <Style TargetType="Image">
                                     <Setter Property="Visibility"
@@ -582,7 +582,7 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                         Background="#fce2fd"
                         Grid.Column="3"
                         Style="{StaticResource BorderStyle}">
-                    <Grid>
+                    <Grid MouseEnter="Grid_MouseEnter">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2.5*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
@@ -603,19 +603,19 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                             </Button.Background>
                         </Button>
                         <Image HorizontalAlignment="Center"
-       VerticalAlignment="Center"
-       Height="300"
-       Width="300"
-       gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
+                               VerticalAlignment="Center"
+                               Height="300"
+                               Width="300"
+                               gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                             <Image.Style>
                                 <Style TargetType="Image">
                                     <Setter Property="Visibility"
-                    Value="Collapsed"></Setter>
+                                            Value="Collapsed"></Setter>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding UnLockPicture8}"
-                             Value="false">
+                                                     Value="false">
                                             <Setter Property="Visibility"
-                            Value="Visible"></Setter>
+                                                    Value="Visible"></Setter>
                                         </DataTrigger>
 
                                         <!--<DataTrigger Binding="{Binding UnLockPicture8}" 
@@ -654,7 +654,7 @@ gif:ImageBehavior.AnimatedSource="Picture/Lock.gif">
                         Width="300"
                         Background="#fdfdfd"
                         Style="{StaticResource BorderStyle}">
-                    <Grid>
+                    <Grid MouseEnter="Grid_MouseEnter">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2.5*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>

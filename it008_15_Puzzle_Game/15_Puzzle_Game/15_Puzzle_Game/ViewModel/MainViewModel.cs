@@ -414,6 +414,22 @@ namespace _15_Puzzle_Game.ViewModel
 
             }
         }
+        private int _bestmove;
+
+        public int BestMove
+        {
+            get { return _bestmove; }
+            set { _bestmove = value; OnPropertyChanged(); }
+        }
+        private string _bestTime;
+
+        public string BestTime
+        {
+            get { return _bestTime; }
+            set { _bestTime = value; OnPropertyChanged(); }
+        }
+
+
         private int _move=0;
         public int Move
         {
@@ -889,7 +905,7 @@ namespace _15_Puzzle_Game.ViewModel
             _elapsedTime++;
             DisplayTime = TimeSpan.FromSeconds(_elapsedTime).ToString(@"mm\:ss");
         }
-
+        
         public void CreateStageList()
         {
             var currentUser = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);

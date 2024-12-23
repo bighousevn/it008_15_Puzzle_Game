@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace _15_Puzzle_Game
 {
@@ -22,6 +10,20 @@ namespace _15_Puzzle_Game
         public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            TextBlockPassWord.Text = LoginPasswordBox.Password;
+            LoginPasswordBox.Visibility = Visibility.Collapsed;
+            TextBlockPassWord.Visibility = Visibility.Visible;
+        }
+
+        private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            LoginPasswordBox.Password = TextBlockPassWord.Text;
+            LoginPasswordBox.Visibility = Visibility.Visible;
+            TextBlockPassWord.Visibility = Visibility.Collapsed;
         }
     }
 }

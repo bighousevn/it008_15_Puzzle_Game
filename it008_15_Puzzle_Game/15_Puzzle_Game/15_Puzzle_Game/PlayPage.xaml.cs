@@ -412,15 +412,15 @@ namespace _15_Puzzle_Game
             {
                 var mainViewModel = (MainViewModel)DataContext;
                 mainViewModel.StopTimer();
-
+                int newMove = steps;
+                int newTimeTaken = mainViewModel.getTime();
 
                 if (CurrentUser.Instance.CurrentLevelName != "Option")
                 {
                     var user = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
                     var level = DataProvider.Instance.DB.Levels.FirstOrDefault(p => p.level_name == CurrentUser.Instance.CurrentLevelName);
                     var puzzle = DataProvider.Instance.DB.Puzzles.FirstOrDefault(p => p.image_path == CurrentUser.Instance.CurrentImagePath);
-                    int newMove = steps;
-                    int newTimeTaken = mainViewModel.getTime();
+                    
                     if (DataProvider.Instance.DB.LeaderBoards.Count() > 0)
                     {
                         var existingLeaderBoard = DataProvider.Instance.DB.LeaderBoards
@@ -483,6 +483,63 @@ namespace _15_Puzzle_Game
                     mainViewModel.usermoney = user.usermoney.ToString();
                     DataProvider.Instance.DB.SaveChanges();
                 }
+                else
+                {
+                    if (DataProvider.Instance.DB.UserImageRecords.Count() > 0)
+                    {
+                        var existingImageRecord = DataProvider.Instance.DB.UserImageRecords
+                        .FirstOrDefault(p => p.user_image_id==CurrentUser.Instance.UserImageID && p.level_id==CurrentUser.Instance.LevelID);
+
+
+
+                        if (existingImageRecord != null)
+                        {
+                            // Cập nhật nếu move hoặc time_taken mới nhỏ hơn
+                            if (newTimeTaken < existingImageRecord.time_taken ||
+                               (newTimeTaken == existingImageRecord.time_taken && newMove < existingImageRecord.move))
+                            {
+                                existingImageRecord.move = newMove;
+                                existingImageRecord.time_taken = newTimeTaken;
+                                DataProvider.Instance.DB.SaveChanges();
+                                mainViewModel.BestMove = newMove;
+                                mainViewModel.BestTime = TimeSpan.FromSeconds(newTimeTaken).ToString(@"mm\:ss");
+                            }
+                            mainViewModel.BestMove = existingImageRecord.move;
+                            mainViewModel.BestTime= TimeSpan.FromSeconds(existingImageRecord.time_taken).ToString(@"mm\:ss");
+                        }
+                        else
+                        {
+                            // Thêm mới nếu không tồn tại
+                            var newUserImageRecord = new UserImageRecords
+                            {
+                                record_id = DataProvider.Instance.DB.UserImageRecords.Max(p => p.record_id) + 1,
+                                user_image_id = CurrentUser.Instance.UserImageID,
+                                level_id = CurrentUser.Instance.LevelID,
+                                move = newMove,
+                                time_taken = newTimeTaken
+                            };
+                            DataProvider.Instance.DB.UserImageRecords.Add(newUserImageRecord);
+                            DataProvider.Instance.DB.SaveChanges();
+                            mainViewModel.BestMove = newMove;
+                            mainViewModel.BestTime = TimeSpan.FromSeconds(newTimeTaken).ToString(@"mm\:ss");
+                        }
+                    }
+                    else
+                    {
+                        var newUserImageRecord = new UserImageRecords
+                        {
+                            record_id = 1,
+                            user_image_id = CurrentUser.Instance.UserImageID,
+                            level_id = CurrentUser.Instance.LevelID,
+                            move = newMove,
+                            time_taken = newTimeTaken
+                        };
+                        DataProvider.Instance.DB.UserImageRecords.Add(newUserImageRecord);
+                        DataProvider.Instance.DB.SaveChanges();
+                        mainViewModel.BestMove = newMove;
+                        mainViewModel.BestTime = TimeSpan.FromSeconds(newTimeTaken).ToString(@"mm\:ss");
+                    }
+                }
 
                 mainViewModel.Move = steps;
                 //AudioControl.Instance.VictoryEffect_Play();
@@ -503,12 +560,14 @@ namespace _15_Puzzle_Game
                 {
                     var gamePlayPage = FindOpntionalGamePlayPage(this);
                     OptionalCongratulation optionalCongratulationWindow = new OptionalCongratulation(gamePlayPage);
+                    AudioControl.Instance.VictoryEffect_Play();
                     optionalCongratulationWindow.ShowDialog();
                 }
                 else
                 {
                     var gamePlayPage = FindGamePlayPage(this);
                     Congratulation congratulationWindow = new Congratulation(gamePlayPage);
+                    AudioControl.Instance.VictoryEffect_Play();
                     congratulationWindow.ShowDialog();
                 }
 

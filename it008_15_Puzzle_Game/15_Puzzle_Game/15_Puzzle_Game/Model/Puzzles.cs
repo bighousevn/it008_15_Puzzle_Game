@@ -22,8 +22,10 @@ namespace _15_Puzzle_Game.Model
     
         public int puzzle_id { get; set; }
         public string image_path { get; set; }
+        public int level_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LeaderBoards> LeaderBoards { get; set; }
+        public virtual Levels Levels { get; set; }
     }
 }

@@ -117,8 +117,8 @@
                           Height="90">
                         <PasswordBox x:Name="LoginPasswordBox"
                                      materialDesign:HintAssist.Hint="Password"
-                                     Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                                      FontFamily="{StaticResource mainFont}"
+                                     Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                                      FontSize="45"
                                      Background="White"
                                      BorderBrush="Transparent"
@@ -131,6 +131,26 @@
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </PasswordBox>
+                        <TextBox x:Name="TextBlockPassWord"
+                                 Text="{Binding Password, Mode=TwoWay}"
+                                 materialDesign:HintAssist.Hint="Password"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 FontFamily="{StaticResource mainFont}"
+                                 FontSize="45"
+                                 Visibility="Collapsed"
+                                 Background="White"
+                                 Height="90"
+                                 VerticalContentAlignment="Center"
+                                 BorderBrush="Transparent"
+                                 Padding="10"></TextBox>
+                        <ToggleButton Content="{materialDesign:PackIcon Kind=Eye,                                                         Size=21}"
+                                      IsChecked="False"
+                                      Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Center"
+                                      Checked="ToggleButton_Checked"
+                                      Unchecked="ToggleButton_Unchecked">
+                        </ToggleButton>                    
                     </Grid>
 
                     <Grid Grid.Row="2">
