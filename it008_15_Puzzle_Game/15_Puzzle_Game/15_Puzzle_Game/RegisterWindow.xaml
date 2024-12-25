@@ -59,13 +59,39 @@
                      materialDesign:HintAssist.Hint="Password"
                      materialDesign:TextFieldAssist.UnderlineBrush="#cb6be6"
                      Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
-        <i:Interaction.Triggers>
+            <i:Interaction.Triggers>
                 <i:EventTrigger EventName="PasswordChanged">
                     <i:InvokeCommandAction Command="{Binding RegisterPasswordChangedCommand}" 
                                            CommandParameter="{Binding ElementName=RegisterPasswordBox}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </PasswordBox>
+        <TextBox x:Name="TextBlockPassWord"
+                 Grid.Row="2"
+                 Margin="10 0 10 0"
+                 Text="{Binding Password, Mode=TwoWay}"
+                 materialDesign:HintAssist.Hint="Password"
+                 materialDesign:HintAssist.Foreground="#cb6be6"
+                     materialDesign:TextFieldAssist.UnderlineBrush="#cb6be6"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                 FontFamily="{StaticResource mainFont}"
+                 FontSize="35"
+                 Visibility="Collapsed"
+                 Background="White"
+                 VerticalContentAlignment="Center"
+                 BorderBrush="Transparent"></TextBox>
+        <ToggleButton Content="{materialDesign:PackIcon Kind=Eye,                                                         Size=21}"
+                      IsChecked="False"
+                      Grid.Row="2"
+                      Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Center"
+                      Checked="ToggleButton_Checked"
+                      Unchecked="ToggleButton_Unchecked">
+        </ToggleButton>
+
+
+
 
         <TextBox Grid.Row="3"
                  Margin="10 0 10 0"

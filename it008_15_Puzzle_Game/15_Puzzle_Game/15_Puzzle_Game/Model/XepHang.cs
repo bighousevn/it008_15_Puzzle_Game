@@ -13,5 +13,4 @@ namespace _15_Puzzle_Game.Model
         public LeaderBoards _LeaderBoard { get; set; }
         public string TimeDisplay { get; set; } 
     }
-
 }

@@ -46,10 +46,10 @@ CREATE TABLE Puzzles (
 
 -- Bảng LeaderBoards
 CREATE TABLE LeaderBoards (
-	leaderboards_id int primary key,
-    user_id INT NOT NULL,
+	leaderboards_id int NULL primary key,
     puzzle_id INT NOT NULL,
-    level_id INT NOT NULL,
+    level_id NOT NULL,
+    user_id INT NOT NULL,
     move INT NOT NULL,
     time_taken INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(user_id),

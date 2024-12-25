@@ -13,7 +13,6 @@ namespace _15_Puzzle_Game.ViewModel
 {
     public class AudioControl
     {
-        private static AudioControl _instance;
         private MediaPlayer BackgroundMusic;
         private MediaPlayer WoodEffect;
         private MediaPlayer FlickEffect;
@@ -31,6 +30,7 @@ namespace _15_Puzzle_Game.ViewModel
         public Double BackGroundMusicVolume { get; set; }
         public Double EffectVolume { get; set; }
 
+        private static AudioControl _instance;
         public static AudioControl Instance
         {
             get
@@ -46,8 +46,8 @@ namespace _15_Puzzle_Game.ViewModel
 
         public AudioControl()
         {
-            BackGroundMusicVolume = 0;
-            EffectVolume = 1;
+            BackGroundMusicVolume = 0.5;
+            EffectVolume = 0.5;
 
             BackgroundMusic = new MediaPlayer();
             BackgroundMusic.Open(new Uri(Path.Combine(Environment.CurrentDirectory, "Music", "BackGroundMusic.mp3")));

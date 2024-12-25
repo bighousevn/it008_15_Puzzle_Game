@@ -323,6 +323,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Picture\Bear.gif" />
+    <Resource Include="Picture\Pokemon.jpg" />
+    <Resource Include="Picture\Skeleton.gif" />
     <Resource Include="Picture\Lock.gif" />
     <Resource Include="Picture\Like.gif" />
     <EmbeddedResource Include="Music\BackGroundMusic.mp3">
@@ -370,16 +373,6 @@
     <Resource Include="Picture\FireWork.gif" />
     <Resource Include="Picture\Congratulation.gif" />
     <Resource Include="Picture\Eternity.gif" />
-    <Content Include="Model\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <EmbeddedResource Include="Music\OpenLevel.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -395,6 +388,16 @@
     <EmbeddedResource Include="Music\Error.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Picture\Icon.ico" />
   </ItemGroup>
   <ItemGroup>
