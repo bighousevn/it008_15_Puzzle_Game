@@ -8,17 +8,17 @@ namespace _15_Puzzle_Game.Model
 {
     public class DataProvider
     {
-       private static DataProvider instance;
-       public static DataProvider Instance
-       {
-            get
-            {
-                if (instance == null)
-                    instance = new DataProvider();
-                return instance;
-            }
-            set { instance = value; }
-       }
+        private static DataProvider instance;
+        public static DataProvider Instance
+        {
+             get
+             {
+                 if (instance == null)
+                     instance = new DataProvider();
+                 return instance;
+             }
+             set { instance = value; }
+        }
         public PuzzleGameDBEntities DB { get; set; }
         private DataProvider()
         {

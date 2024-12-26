@@ -24,19 +24,6 @@ namespace _15_Puzzle_Game.ViewModel
         public ObservableCollection<XepHang> XepHangList { get => _XepHangList; set { _XepHangList = value; OnPropertyChanged(); } }
         private ObservableCollection<Stage> _StageList;
         public ObservableCollection<Stage> StageList { get => _StageList; set { _StageList = value; OnPropertyChanged(); } }
-        private ObservableCollection<bool> _IsLockEnabled;
-        public ObservableCollection<bool> IsLockEnabled
-        {
-            get => _IsLockEnabled;
-            set
-            {
-                if (_IsLockEnabled != value)
-                {
-                    _IsLockEnabled = value;
-                    OnPropertyChanged(nameof(IsLockEnabled));
-                }
-            }
-        }
 
         public ICommand PauseCommand { get; set; }
         public ICommand SettingGamePlayCommand { get; set; }
@@ -647,7 +634,6 @@ namespace _15_Puzzle_Game.ViewModel
             _timer.Tick += Timer_Tick;
             LoadXepHangData();
             StageList = new ObservableCollection<Stage>();
-            IsLockEnabled = new ObservableCollection<bool>(new bool[27]);
 
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
@@ -763,6 +749,7 @@ namespace _15_Puzzle_Game.ViewModel
                 Picture7 = path16;
                 Picture8 = path17;
                 Picture9 = path18;
+
                 PictureName1 = "ChillGuy";
                 PictureName2 = "JerryLove";
                 PictureName3 = "Kid";
@@ -795,6 +782,7 @@ namespace _15_Puzzle_Game.ViewModel
                 Picture7 = path25;
                 Picture8 = path26;
                 Picture9 = path27;
+
                 PictureName1 = "Broly";
                 PictureName2 = "Doflamigo";
                 PictureName3 = "Songoku";
@@ -843,6 +831,14 @@ namespace _15_Puzzle_Game.ViewModel
             loginvm.UserName = string.Empty;
             loginvm.Password = string.Empty;
             StageList.Clear();
+            CurrentUser.Instance.UserImageID = 0;
+            CurrentUser.Instance.CurrentImagePath = null;
+            CurrentUser.Instance.CurrentUserid = 0;
+            CurrentUser.Instance.CurrentLevelName = string.Empty;
+            CurrentUser.Instance.CurrentUserMoney = 0;
+            CurrentUser.Instance.CurrentUserName = string.Empty;
+            CurrentUser.Instance.LevelID = 0;
+
             loginwindow.ShowDialog();
         }
 

@@ -122,11 +122,20 @@ namespace _15_Puzzle_Game
 
                 var imageRecord = DataProvider.Instance.DB.UserImages.FirstOrDefault(p => p.image_id == imageId);
 
+                var bestRecord = DataProvider.Instance.DB.UserImageRecords.Where(p => p.user_image_id == imageId);
+
                 if (imageRecord != null)
                 {
                     DataProvider.Instance.DB.UserImages.Remove(imageRecord);
+                    
+                    if(bestRecord != null)
+                    {
+                        foreach(var record in bestRecord)
+                        {
+                            DataProvider.Instance.DB.UserImageRecords.Remove(record);
+                        }
+                    }
                     DataProvider.Instance.DB.SaveChanges();
-
                     MainWrappanel.Children.Remove(ImageControl);
                     selectedImages.RemoveAt(i);
                     bytes.RemoveAt(i);

@@ -152,6 +152,7 @@ namespace _15_Puzzle_Game.ViewModel
             if (!mainViewModel.Isloaded)
                 mainViewModel.LoadedWindow(mainWindow);
         }
+
         private bool SendVerificationCode(string toEmail, string VerificationCode)
         {
             try

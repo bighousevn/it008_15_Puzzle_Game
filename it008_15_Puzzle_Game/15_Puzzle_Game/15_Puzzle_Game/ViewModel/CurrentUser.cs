@@ -30,13 +30,11 @@ namespace _15_Puzzle_Game.ViewModel
             set{ _levelID=value; OnPropertyChanged(); }
         }
         private int userImageID;
-
         public int UserImageID
         {
             get { return userImageID; }
             set { userImageID = value;OnPropertyChanged(); }
         }
-
         private int _currentUserMoney;
         public int CurrentUserMoney
         {
