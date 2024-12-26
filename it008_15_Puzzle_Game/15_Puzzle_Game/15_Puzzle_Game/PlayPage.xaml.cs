@@ -16,13 +16,11 @@ using System.Windows.Media.Imaging;
 
 namespace _15_Puzzle_Game
 {
-    /// <summary>
-    /// Interaction logic for PlayPage.xaml
-    /// </summary>
     public partial class PlayPage : Page
     {
         public List<Image> imageList = new List<Image>();
         public List<Image> imageList2 = new List<Image>();
+
         public List<CroppedBitmap> images = new List<CroppedBitmap>();
         public List<string> locations = new List<string>();
         public List<string> currentLocations = new List<string>();
@@ -85,7 +83,7 @@ namespace _15_Puzzle_Game
                     bitmap.CacheOption = BitmapCacheOption.OnLoad;
                     bitmap.StreamSource = stream;
                     bitmap.EndInit();
-                    bitmap.Freeze(); // Đóng băng bitmap nếu sử dụng trên thread khác
+                    bitmap.Freeze(); 
                 }
             }
             else
@@ -119,6 +117,9 @@ namespace _15_Puzzle_Game
             CreateImageList();
             AddImages();
         }
+
+        //
+        //Tìm navigation phù hợp
         private GamePlayPage FindGamePlayPage(DependencyObject current)
         {
             while (current != null)
@@ -131,7 +132,7 @@ namespace _15_Puzzle_Game
             }
             return null;
         }
-        private OptionalGamePlayPage FindOpntionalGamePlayPage(DependencyObject current)
+        private OptionalGamePlayPage FindOptionalGamePlayPage(DependencyObject current)
         {
             while (current != null)
             {
@@ -156,8 +157,9 @@ namespace _15_Puzzle_Game
             }
             return null;
         }
+        //
 
-
+        //
         //Tạo các image nhỏ 3x3,4x4,5x5
         private void CreateImageList()
         {
@@ -173,9 +175,6 @@ namespace _15_Puzzle_Game
                 imageList.Add(temp);
             }
         }
-
-
-
         private void CropImage(BitmapImage main_bitmap, int height, int width)
         {
             int x = 0, y = 0;
@@ -193,7 +192,6 @@ namespace _15_Puzzle_Game
                 }
             }
         }
-
         private void AddImages()
         {
             float scaleX = (float)390 / bitmap.PixelWidth;
@@ -210,19 +208,14 @@ namespace _15_Puzzle_Game
             CopyImageList(imageList, imageList2);
             PlaceImageList();
         }
-
         private void CopyImageList(List<Image> sourceList, List<Image> destinationList)
         {
-            // Xóa tất cả phần tử trong destinationList trước khi sao chép
             destinationList.Clear();
 
-            // Sao chép từng Image từ sourceList sang destinationList
             foreach (var image in sourceList)
             {
-                // Tạo một bản sao mới của Image
                 Image newImage = new Image();
 
-                // Sao chép các thuộc tính của Image (có thể thêm các thuộc tính cần sao chép khác ở đây)
                 newImage.Source = image.Source;
                 newImage.Width = image.Width;
                 newImage.Height = image.Height;
@@ -232,59 +225,47 @@ namespace _15_Puzzle_Game
                 newImage.VerticalAlignment = image.VerticalAlignment;
                 newImage.MouseLeftButtonDown += OnPicClick;
 
-                // Thêm bản sao vào destinationList
                 destinationList.Add(newImage);
             }
         }
-
-
         public BitmapImage ResizeAndDisplayImage(BitmapImage main_bitmap, double scaleX, double scaleY)
         {
-            // Calculate the new width and height based on the scaling factors
             int newWidth = (int)(main_bitmap.PixelWidth * scaleX);
             int newHeight = (int)(main_bitmap.PixelHeight * scaleY);
 
-            // Create a WriteableBitmap with the new size
             WriteableBitmap writeableBitmap = new WriteableBitmap(newWidth, newHeight, 96, 96, PixelFormats.Pbgra32, null);
 
 
-            // Create a DrawingVisual to use for drawing the image
             DrawingVisual drawingVisual = new DrawingVisual();
             using (DrawingContext drawingContext = drawingVisual.RenderOpen())
             {
-                // Draw the image into the DrawingContext with the new dimensions
                 drawingContext.DrawImage(main_bitmap, new Rect(0, 0, newWidth, newHeight));
             }
 
-            // Create a RenderTargetBitmap to render the DrawingVisual into the WriteableBitmap
             RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap(newWidth, newHeight, 96, 96, PixelFormats.Pbgra32);
             renderTargetBitmap.Render(drawingVisual);
 
-            // Now copy the rendered result into the WriteableBitmap
             writeableBitmap = new WriteableBitmap(renderTargetBitmap);
 
-            // Create a MemoryStream to save the resized image
             MemoryStream memoryStream = new MemoryStream();
             PngBitmapEncoder encoder = new PngBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(writeableBitmap));
             encoder.Save(memoryStream);
 
-            // Reset MemoryStream to the beginning
             memoryStream.Position = 0;
 
-            // Create a new BitmapImage from the MemoryStream
             BitmapImage resizedImage = new BitmapImage();
             resizedImage.BeginInit();
             resizedImage.StreamSource = memoryStream;
             resizedImage.CacheOption = BitmapCacheOption.OnLoad;
             resizedImage.EndInit();
 
-            // Return the resized BitmapImage
             return resizedImage;
         }
+        //
 
-
-
+        //
+        // Kiểm tra danh sách có giải được không ?
         static bool CountInversions(List<Image> puzzle)
         {
             int inversions = 0;
@@ -303,25 +284,25 @@ namespace _15_Puzzle_Game
             }
             return inversions % 2 == 0;
         }
-
-
+        
+        // Thêm hình ảnh vào Canvas
         public void PlaceImageList()
         {
             //Shuffle lại danh sách hình ảnh
 
-            //var shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            //while (!CountInversions(shuffleimages))
-            //    shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            //imageList = shuffleimages;
+            var shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            while (!CountInversions(shuffleimages))
+                shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            imageList = shuffleimages;
 
             CopyImageList(imageList2, imageList);
             steps = 0;
             ChangeMoveText(steps.ToString());
 
-            double x = 0; // Khởi tạo vị trí x
-            double y = 0; // Khởi tạo vị trí y
-            double width = imageList[0].Width; // Chiều rộng của mỗi hình ảnh
-            double height = imageList[0].Height; // Chiều cao của mỗi hình ảnh
+            double x = 0; 
+            double y = 0; 
+            double width = imageList[0].Width; 
+            double height = imageList[0].Height; 
 
             PuzzleCanvas.Children.Clear();
 
@@ -331,8 +312,8 @@ namespace _15_Puzzle_Game
             {
                 var img = imageList[i];
 
-                // Điều chỉnh vị trí hình ảnh
-                if (i % n2 == 0 && i != 0)  // Khi tới hình ảnh thứ 4 và thứ 7, di chuyển xuống hàng mới
+        
+                if (i % n2 == 0 && i != 0)  
                 {
                     y = y + height + paddingBetween;  // Di chuyển xuống hàng mới
                     x = 0; // Đặt lại x về vị trí đầu dòng mới
@@ -346,9 +327,8 @@ namespace _15_Puzzle_Game
                 PuzzleCanvas.Children.Add(img);
 
                 // Cập nhật vị trí để hình ảnh tiếp theo được thêm vào cạnh bên
-                x = x + width + paddingBetween;  // Di chuyển sang bên phải
-
-                // Nếu bạn muốn lưu vị trí hình ảnh, có thể lưu vào danh sách
+                x = x + width + paddingBetween; 
+               
                 win_position += (i);
 
             }
@@ -358,13 +338,16 @@ namespace _15_Puzzle_Game
             foreach (var child in imageList)
             {
                 if (child is Image image)
-                {
-                    // Kiểm tra thuộc tính Tag (hoặc các thuộc tính khác tùy theo yêu cầu)
+                {              
                     locations.Add(image.Tag?.ToString());
                 }
             }
         }
+        //
 
+
+        //
+        //Sự kiện click chuột và bấm phím
         private bool CanSwap(Image clickedImage, Image emptyBox, double n)
         {
             // Lấy tọa độ của mảnh ghép đã click và ô trống
@@ -378,7 +361,6 @@ namespace _15_Puzzle_Game
             return (Math.Abs(clickedLeft - emptyLeft) == ((int)check) && clickedTop == emptyTop) || // Kề nhau theo chiều ngang
                    (Math.Abs(clickedTop - emptyTop) == ((int)check) && clickedLeft == emptyLeft);   // Kề nhau theo chiều dọc
         }
-
         private void UpdateLocations(Image clickedImage, Image emptyBox)
         {
             // Cập nhật vị trí của clickedImage và emptyBox trong danh sách locations
@@ -397,225 +379,7 @@ namespace _15_Puzzle_Game
             ChangeMoveText(steps.ToString());
         }
 
-        public void CheckGame()
-        {
-            current_position = "";
-            // Kết hợp các vị trí hiện tại thành chuỗi
-            current_position = string.Join("", locations);
-
-            // Hiển thị kết quả trong các Label
-
-            // Kiểm tra nếu vị trí hiện tại khớp với vị trí chiến thắng
-            Console.WriteLine(win_position);
-            Console.WriteLine(current_position);
-            if (win_position == current_position)
-            {
-                var mainViewModel = (MainViewModel)DataContext;
-                mainViewModel.StopTimer();
-                int newMove = steps;
-                int newTimeTaken = mainViewModel.getTime();
-
-                if (CurrentUser.Instance.CurrentLevelName != "Option")
-                {
-                    var user = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
-                    var level = DataProvider.Instance.DB.Levels.FirstOrDefault(p => p.level_name == CurrentUser.Instance.CurrentLevelName);
-                    var puzzle = DataProvider.Instance.DB.Puzzles.FirstOrDefault(p => p.image_path == CurrentUser.Instance.CurrentImagePath);
-                    
-                    if (DataProvider.Instance.DB.LeaderBoards.Count() > 0)
-                    {
-                        var existingLeaderBoard = DataProvider.Instance.DB.LeaderBoards
-                        .FirstOrDefault(p => p.user_id == user.user_id
-                                          && p.puzzle_id == puzzle.puzzle_id
-                                          && p.level_id == level.level_id);
-
-
-
-                        if (existingLeaderBoard != null)
-                        {
-                            // Cập nhật nếu move hoặc time_taken mới nhỏ hơn
-                            if (newTimeTaken < existingLeaderBoard.time_taken ||
-                               (newTimeTaken == existingLeaderBoard.time_taken && newMove < existingLeaderBoard.move))
-                            {
-                                existingLeaderBoard.move = newMove;
-                                existingLeaderBoard.time_taken = newTimeTaken;
-                                DataProvider.Instance.DB.SaveChanges();
-                            }
-                        }
-                        else
-                        {
-                            // Thêm mới nếu không tồn tại
-                            var newLeaderBoard = new LeaderBoards
-                            {
-                                leaderboards_id = DataProvider.Instance.DB.LeaderBoards.Max(p => p.leaderboards_id) + 1,
-                                user_id = user.user_id,
-                                puzzle_id = puzzle.puzzle_id,
-                                level_id = level.level_id,
-                                move = newMove,
-                                time_taken = newTimeTaken
-                            };
-                            DataProvider.Instance.DB.LeaderBoards.Add(newLeaderBoard);
-                            DataProvider.Instance.DB.SaveChanges();
-                        }
-                    }
-                    else
-                    {
-                        var newLeaderBoard = new LeaderBoards
-                        {
-                            leaderboards_id = 1,
-                            user_id = user.user_id,
-                            puzzle_id = puzzle.puzzle_id,
-                            level_id = level.level_id,
-                            move = newMove,
-                            time_taken = newTimeTaken
-                        };
-                        DataProvider.Instance.DB.LeaderBoards.Add(newLeaderBoard);
-                        DataProvider.Instance.DB.SaveChanges();
-                    }
-                    mainViewModel.LoadStageList();
-                    if (level.level_id == 1)
-                        CurrentUser.Instance.CurrentUserMoney += 50;
-                    else if (level.level_id == 2)
-                        CurrentUser.Instance.CurrentUserMoney += 100;
-                    else
-                        CurrentUser.Instance.CurrentUserMoney += 150;
-
-                    user.usermoney = CurrentUser.Instance.CurrentUserMoney;
-                    mainViewModel.usermoney = user.usermoney.ToString();
-                    DataProvider.Instance.DB.SaveChanges();
-                }
-                else
-                {
-                    if (DataProvider.Instance.DB.UserImageRecords.Count() > 0)
-                    {
-                        var existingImageRecord = DataProvider.Instance.DB.UserImageRecords
-                        .FirstOrDefault(p => p.user_image_id==CurrentUser.Instance.UserImageID && p.level_id==CurrentUser.Instance.LevelID);
-
-
-
-                        if (existingImageRecord != null)
-                        {
-                            // Cập nhật nếu move hoặc time_taken mới nhỏ hơn
-                            if (newTimeTaken < existingImageRecord.time_taken ||
-                               (newTimeTaken == existingImageRecord.time_taken && newMove < existingImageRecord.move))
-                            {
-                                existingImageRecord.move = newMove;
-                                existingImageRecord.time_taken = newTimeTaken;
-                                DataProvider.Instance.DB.SaveChanges();
-                                mainViewModel.BestMove = newMove;
-                                mainViewModel.BestTime = TimeSpan.FromSeconds(newTimeTaken).ToString(@"mm\:ss");
-                            }
-                            mainViewModel.BestMove = existingImageRecord.move;
-                            mainViewModel.BestTime= TimeSpan.FromSeconds(existingImageRecord.time_taken).ToString(@"mm\:ss");
-                        }
-                        else
-                        {
-                            // Thêm mới nếu không tồn tại
-                            var newUserImageRecord = new UserImageRecords
-                            {
-                                record_id = DataProvider.Instance.DB.UserImageRecords.Max(p => p.record_id) + 1,
-                                user_image_id = CurrentUser.Instance.UserImageID,
-                                level_id = CurrentUser.Instance.LevelID,
-                                move = newMove,
-                                time_taken = newTimeTaken
-                            };
-                            DataProvider.Instance.DB.UserImageRecords.Add(newUserImageRecord);
-                            DataProvider.Instance.DB.SaveChanges();
-                            mainViewModel.BestMove = newMove;
-                            mainViewModel.BestTime = TimeSpan.FromSeconds(newTimeTaken).ToString(@"mm\:ss");
-                        }
-                    }
-                    else
-                    {
-                        var newUserImageRecord = new UserImageRecords
-                        {
-                            record_id = 1,
-                            user_image_id = CurrentUser.Instance.UserImageID,
-                            level_id = CurrentUser.Instance.LevelID,
-                            move = newMove,
-                            time_taken = newTimeTaken
-                        };
-                        DataProvider.Instance.DB.UserImageRecords.Add(newUserImageRecord);
-                        DataProvider.Instance.DB.SaveChanges();
-                        mainViewModel.BestMove = newMove;
-                        mainViewModel.BestTime = TimeSpan.FromSeconds(newTimeTaken).ToString(@"mm\:ss");
-                    }
-                }
-
-                mainViewModel.Move = steps;
-                //AudioControl.Instance.VictoryEffect_Play();
-
-
-                var parentFrame = FindParentFrame(this);
-                if (parentFrame != null)
-                {
-                    Console.WriteLine("Parent Frame found.");
-                }
-                else
-                {
-                    Console.WriteLine("No Parent Frame found.");
-                }
-
-
-                if (CurrentUser.Instance.CurrentLevelName == "Option")
-                {
-                    var gamePlayPage = FindOpntionalGamePlayPage(this);
-                    OptionalCongratulation optionalCongratulationWindow = new OptionalCongratulation(gamePlayPage);
-                    AudioControl.Instance.VictoryEffect_Play();
-                    optionalCongratulationWindow.ShowDialog();
-                }
-                else
-                {
-                    var gamePlayPage = FindGamePlayPage(this);
-                    Congratulation congratulationWindow = new Congratulation(gamePlayPage);
-                    AudioControl.Instance.VictoryEffect_Play();
-                    congratulationWindow.ShowDialog();
-                }
-
-
-                mainViewModel._elapsedTime = 1;
-                mainViewModel.StartTimer();
-
-                PlaceImageList();
-            }
-        }
-
-
-
-
-        //private void OnPicClick(object sender, MouseButtonEventArgs e)
-        //{
-        //    Image clickedImage = (Image)sender;
-        //    Image emptyBox = imageList.FirstOrDefault(x => x.Tag.ToString() == "0");
-
-        //    // Lấy tọa độ của các mảnh ghép
-        //    Point clickedImagePosition = new Point(Canvas.GetLeft(clickedImage), Canvas.GetTop(clickedImage));
-        //    Point emptyBoxPosition = new Point(Canvas.GetLeft(emptyBox), Canvas.GetTop(emptyBox));
-
-
-
-        //    var n = Math.Sqrt(imageList.Count());
-        //    // Kiểm tra xem mảnh ghép có thể hoán đổi với ô trống không
-        //    if (CanSwap(clickedImage, emptyBox, n))
-        //    {
-        //        // Hoán đổi vị trí giữa mảnh ghép và ô trống
-        //        Canvas.SetLeft(clickedImage, emptyBoxPosition.X);
-        //        Canvas.SetTop(clickedImage, emptyBoxPosition.Y);
-
-        //        Canvas.SetLeft(emptyBox, clickedImagePosition.X);
-        //        Canvas.SetTop(emptyBox, clickedImagePosition.Y);
-
-        //        // Cập nhật lại danh sách các vị trí của mảnh ghép
-        //        UpdateLocations(clickedImage, emptyBox);
-
-        //        AudioControl.Instance.WoodEffect_Play();
-        //    }
-
-        //    // Kiểm tra xem trò chơi đã hoàn thành chưa
-        //    CheckGame();
-        //}
-
-
-
+        //Cài đặt Animation
         private void CreateSwapAnimations(Image clickedImage, Image emptyBox, Point clickedImagePosition, Point emptyBoxPosition, Storyboard storyboard)
         {
             // Animation cho ô được chọn
@@ -671,6 +435,8 @@ namespace _15_Puzzle_Game
            // storyboard.Children.Add(animateLeft2);
            // storyboard.Children.Add(animateTop2);
         }
+        
+        //Sự kiên chuột
         private void OnPicClick(object sender, MouseButtonEventArgs e)
         {
             Image clickedImage = (Image)sender;
@@ -702,27 +468,13 @@ namespace _15_Puzzle_Game
                 };
 
                 // Bắt đầu animation
-                //storyboard.Stop();
-
                 storyboard.Begin();
                 storyboard.Children.Clear();
             }
 
         }
 
-        public void ShuffleClick(object sender, RoutedEventArgs e)
-        {
-            PlaceImageList();
-        }
-
-        public void SubscribeToGamePlayPageEvents(GamePlayPage gamePlayPage)
-        {
-            gamePlayPage.KeyPressed += Grid_KeyDown;
-        }
-        public void SubscribeToOptionalGamePlayPageEvents(OptionalGamePlayPage gamePlayPage)
-        {
-            gamePlayPage.KeyPressed += Grid_KeyDown;
-        }
+        //Sự kiện phím
         private void Grid_KeyDown(object sender, KeyEventArgs e)
         {
             Image emptyBox = imageList.FirstOrDefault(x => x.Tag.ToString() == "0");
@@ -794,7 +546,7 @@ namespace _15_Puzzle_Game
                     Canvas.SetLeft(emptyBox, targetImagePosition.X);
                     Canvas.SetTop(emptyBox, targetImagePosition.Y);
                     CreateSwapAnimations(targetImage, emptyBox, targetImagePosition, emptyBoxPosition, storyboard);
-                    
+
                     //MessageBox.Show(emptyBoxPosition.ToString());
                     storyboard.Completed += (s, args) =>
                     {
@@ -811,27 +563,211 @@ namespace _15_Puzzle_Game
 
                 }
 
-
-                //if (CanSwap(targetImage, emptyBox, n))
-                //{
-                //    // Hoán đổi vị trí giữa mảnh ghép và ô trống
-                //    Canvas.SetLeft(targetImage, emptyBoxPosition.X);
-                //    Canvas.SetTop(targetImage, emptyBoxPosition.Y);
-
-                //    Canvas.SetLeft(emptyBox, targetImagePosition.X);
-                //    Canvas.SetTop(emptyBox, targetImagePosition.Y);
-
-                //    // Cập nhật lại danh sách các vị trí của mảnh ghép
-                //    UpdateLocations(targetImage, emptyBox);
-
-                //    AudioControl.Instance.WoodEffect_Play();
-                //}
-
-                ////Kiểm tra xem trò chơi đã hoàn thành chưa
-                //CheckGame();
             }
 
         }
+        //
+
+        //Kiểm tra thắng chưa
+        public void CheckGame()
+        {
+            current_position = "";
+            // Kết hợp các vị trí hiện tại thành chuỗi
+            current_position = string.Join("", locations);
+
+            // Hiển thị kết quả trong các Label
+
+            // Kiểm tra nếu vị trí hiện tại khớp với vị trí chiến thắng
+            Console.WriteLine(win_position);
+            Console.WriteLine(current_position);
+            if (win_position == current_position)
+            {
+                var mainViewModel = (MainViewModel)DataContext;
+                mainViewModel.StopTimer();
+                int newMove = steps;
+                int newTimeTaken = mainViewModel.getTime();
+
+                if (CurrentUser.Instance.CurrentLevelName != "Option")
+                {
+                    var user = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
+                    var level = DataProvider.Instance.DB.Levels.FirstOrDefault(p => p.level_name == CurrentUser.Instance.CurrentLevelName);
+                    var puzzle = DataProvider.Instance.DB.Puzzles.FirstOrDefault(p => p.image_path == CurrentUser.Instance.CurrentImagePath);
+
+                    if (DataProvider.Instance.DB.LeaderBoards.Count() > 0)
+                    {
+                        var existingLeaderBoard = DataProvider.Instance.DB.LeaderBoards
+                        .FirstOrDefault(p => p.user_id == user.user_id
+                                          && p.puzzle_id == puzzle.puzzle_id
+                                          && p.level_id == level.level_id);
+
+
+
+                        if (existingLeaderBoard != null)
+                        {
+                            // Cập nhật nếu move hoặc time_taken mới nhỏ hơn
+                            if (newTimeTaken < existingLeaderBoard.time_taken ||
+                               (newTimeTaken == existingLeaderBoard.time_taken && newMove < existingLeaderBoard.move))
+                            {
+                                existingLeaderBoard.move = newMove;
+                                existingLeaderBoard.time_taken = newTimeTaken;
+                                DataProvider.Instance.DB.SaveChanges();
+                            }
+                        }
+                        else
+                        {
+                            // Thêm mới nếu không tồn tại
+                            var newLeaderBoard = new LeaderBoards
+                            {
+                                leaderboards_id = DataProvider.Instance.DB.LeaderBoards.Max(p => p.leaderboards_id) + 1,
+                                user_id = user.user_id,
+                                puzzle_id = puzzle.puzzle_id,
+                                level_id = level.level_id,
+                                move = newMove,
+                                time_taken = newTimeTaken
+                            };
+                            DataProvider.Instance.DB.LeaderBoards.Add(newLeaderBoard);
+                            DataProvider.Instance.DB.SaveChanges();
+                        }
+                    }
+                    else
+                    {
+                        var newLeaderBoard = new LeaderBoards
+                        {
+                            leaderboards_id = 1,
+                            user_id = user.user_id,
+                            puzzle_id = puzzle.puzzle_id,
+                            level_id = level.level_id,
+                            move = newMove,
+                            time_taken = newTimeTaken
+                        };
+                        DataProvider.Instance.DB.LeaderBoards.Add(newLeaderBoard);
+                        DataProvider.Instance.DB.SaveChanges();
+                    }
+                    mainViewModel.LoadStageList();
+                    if (level.level_id == 1)
+                        CurrentUser.Instance.CurrentUserMoney += 50;
+                    else if (level.level_id == 2)
+                        CurrentUser.Instance.CurrentUserMoney += 100;
+                    else
+                        CurrentUser.Instance.CurrentUserMoney += 150;
+
+                    user.usermoney = CurrentUser.Instance.CurrentUserMoney;
+                    mainViewModel.usermoney = user.usermoney.ToString();
+                    DataProvider.Instance.DB.SaveChanges();
+                }
+                else
+                {
+                    if (DataProvider.Instance.DB.UserImageRecords.Count() > 0)
+                    {
+                        var existingImageRecord = DataProvider.Instance.DB.UserImageRecords
+                        .FirstOrDefault(p => p.user_image_id == CurrentUser.Instance.UserImageID && p.level_id == CurrentUser.Instance.LevelID);
+
+
+
+                        if (existingImageRecord != null)
+                        {
+                            // Cập nhật nếu move hoặc time_taken mới nhỏ hơn
+                            if (newTimeTaken < existingImageRecord.time_taken ||
+                               (newTimeTaken == existingImageRecord.time_taken && newMove < existingImageRecord.move))
+                            {
+                                existingImageRecord.move = newMove;
+                                existingImageRecord.time_taken = newTimeTaken;
+                                DataProvider.Instance.DB.SaveChanges();
+                                mainViewModel.BestMove = newMove;
+                                mainViewModel.BestTime = TimeSpan.FromSeconds(newTimeTaken).ToString(@"mm\:ss");
+                            }
+                            mainViewModel.BestMove = existingImageRecord.move;
+                            mainViewModel.BestTime = TimeSpan.FromSeconds(existingImageRecord.time_taken).ToString(@"mm\:ss");
+                        }
+                        else
+                        {
+                            // Thêm mới nếu không tồn tại
+                            var newUserImageRecord = new UserImageRecords
+                            {
+                                record_id = DataProvider.Instance.DB.UserImageRecords.Max(p => p.record_id) + 1,
+                                user_image_id = CurrentUser.Instance.UserImageID,
+                                level_id = CurrentUser.Instance.LevelID,
+                                move = newMove,
+                                time_taken = newTimeTaken
+                            };
+                            DataProvider.Instance.DB.UserImageRecords.Add(newUserImageRecord);
+                            DataProvider.Instance.DB.SaveChanges();
+                            mainViewModel.BestMove = newMove;
+                            mainViewModel.BestTime = TimeSpan.FromSeconds(newTimeTaken).ToString(@"mm\:ss");
+                        }
+                    }
+                    else
+                    {
+                        var newUserImageRecord = new UserImageRecords
+                        {
+                            record_id = 1,
+                            user_image_id = CurrentUser.Instance.UserImageID,
+                            level_id = CurrentUser.Instance.LevelID,
+                            move = newMove,
+                            time_taken = newTimeTaken
+                        };
+                        DataProvider.Instance.DB.UserImageRecords.Add(newUserImageRecord);
+                        DataProvider.Instance.DB.SaveChanges();
+                        mainViewModel.BestMove = newMove;
+                        mainViewModel.BestTime = TimeSpan.FromSeconds(newTimeTaken).ToString(@"mm\:ss");
+                    }
+                }
+
+                mainViewModel.Move = steps;
+                //AudioControl.Instance.VictoryEffect_Play();
+
+
+                var parentFrame = FindParentFrame(this);
+                if (parentFrame != null)
+                {
+                    Console.WriteLine("Parent Frame found.");
+                }
+                else
+                {
+                    Console.WriteLine("No Parent Frame found.");
+                }
+
+
+                if (CurrentUser.Instance.CurrentLevelName == "Option")
+                {
+                    var gamePlayPage = FindOptionalGamePlayPage(this);
+                    OptionalCongratulation optionalCongratulationWindow = new OptionalCongratulation(gamePlayPage);
+                    AudioControl.Instance.VictoryEffect_Play();
+                    optionalCongratulationWindow.ShowDialog();
+                }
+                else
+                {
+                    var gamePlayPage = FindGamePlayPage(this);
+                    Congratulation congratulationWindow = new Congratulation(gamePlayPage);
+                    AudioControl.Instance.VictoryEffect_Play();
+                    congratulationWindow.ShowDialog();
+                }
+
+
+                mainViewModel._elapsedTime = 1;
+                mainViewModel.StartTimer();
+
+                PlaceImageList();
+            }
+        }
+
+        //Shuffle click
+        public void ShuffleClick(object sender, RoutedEventArgs e)
+        {
+            PlaceImageList();
+        }
+
+
+        //Cài đặt thêm sự kiện để cập nhập UI
+        public void SubscribeToGamePlayPageEvents(GamePlayPage gamePlayPage)
+        {
+            gamePlayPage.KeyPressed += Grid_KeyDown;
+        }
+        public void SubscribeToOptionalGamePlayPageEvents(OptionalGamePlayPage gamePlayPage)
+        {
+            gamePlayPage.KeyPressed += Grid_KeyDown;
+        }
+       
     }
 }
 

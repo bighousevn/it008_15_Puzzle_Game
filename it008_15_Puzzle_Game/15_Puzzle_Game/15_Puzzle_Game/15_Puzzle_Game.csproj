@@ -323,6 +323,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Picture\merry-christmas-christmas.gif" />
+    <Resource Include="Picture\cat.gif" />
+    <Resource Include="Picture\skeleton.gif" />
     <Resource Include="Picture\Lock.gif" />
     <Resource Include="Picture\Like.gif" />
     <EmbeddedResource Include="Music\BackGroundMusic.mp3">
@@ -395,6 +398,7 @@
     <EmbeddedResource Include="Music\Error.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Resource Include="Picture\bear.gif" />
     <Content Include="Picture\Icon.ico" />
   </ItemGroup>
   <ItemGroup>

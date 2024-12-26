@@ -12,6 +12,7 @@ CREATE TABLE Users (
     email VARCHAR(100) NOT NULL UNIQUE,
     created_at DATETIME DEFAULT GETDATE()
 )
+
 CREATE TABLE UserImages (
     image_id INT IDENTITY(1,1) PRIMARY KEY,
     user_id INT NOT NULL,

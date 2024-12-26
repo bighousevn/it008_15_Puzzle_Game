@@ -30,7 +30,6 @@ namespace _15_Puzzle_Game
             playPage = new PlayPage(n, path);
             PlayFrame.Navigate(playPage);
 
-            //Nếu n == "1", lắng nghe URI từ PlayPage
 
                 byte[] imageBytes = Convert.FromBase64String(path);
 
@@ -42,7 +41,7 @@ namespace _15_Puzzle_Game
                     bitmap.CacheOption = BitmapCacheOption.OnLoad;
                     bitmap.StreamSource = stream;
                     bitmap.EndInit();
-                    bitmap.Freeze(); // Đóng băng bitmap nếu sử dụng trên thread khác
+                    bitmap.Freeze(); 
                 sampleImage.Source = bitmap;
                 }
 
@@ -50,9 +49,7 @@ namespace _15_Puzzle_Game
 
             // Xử lý sự kiện khác nếu có
             playPage.OnMoveTextChanged += PlayPage_OnMoveTextChanged;
-
             this.KeyDown += GamePlayPage_KeyDown;
-            Console.WriteLine(this);
             playPage.SubscribeToOptionalGamePlayPageEvents(this);
 
         }

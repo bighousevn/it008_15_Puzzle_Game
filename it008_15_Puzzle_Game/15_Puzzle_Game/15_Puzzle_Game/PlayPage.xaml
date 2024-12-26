@@ -31,28 +31,28 @@
                     Background="White"></Canvas>
         </Border>
 
-        <Image gif:ImageBehavior.AnimatedSource="Picture/Eternity.gif"
-               Height="150"
+        <Image gif:ImageBehavior.AnimatedSource="Picture/bear.gif"
+               Height="246"
                HorizontalAlignment="Left"
                VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="90"/>
+                    <RotateTransform Angle="0"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image gif:ImageBehavior.AnimatedSource="Picture/Eternity.gif"
-               Height="150"
-               HorizontalAlignment="Right"
-               VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+        <Image gif:ImageBehavior.AnimatedSource="Picture/skeleton.gif"
+               Height="285"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="608,122,0,0" Width="248">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="90"/>
+                    <RotateTransform Angle="0"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
