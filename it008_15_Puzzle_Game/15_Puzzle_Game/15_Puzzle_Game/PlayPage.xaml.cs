@@ -33,7 +33,7 @@ namespace _15_Puzzle_Game
 
 
         public event EventHandler<string> OnMoveTextChanged;
-         
+
 
         // Phương thức để thay đổi nội dung TextBlockMove và gọi sự kiện
         public void ChangeMoveText(string newText)
@@ -41,6 +41,8 @@ namespace _15_Puzzle_Game
             OnMoveTextChanged?.Invoke(this, newText);
         }
 
+
+      
         public PlayPage(string n, string path)
         {
             InitializeComponent();
@@ -78,7 +80,7 @@ namespace _15_Puzzle_Game
                     bitmap.CacheOption = BitmapCacheOption.OnLoad;
                     bitmap.StreamSource = stream;
                     bitmap.EndInit();
-                    bitmap.Freeze(); 
+                    bitmap.Freeze();
                 }
             }
             else
@@ -265,22 +267,41 @@ namespace _15_Puzzle_Game
         }
 
         //Hàm kiểm tra puzzle có giải được hay không
-        static bool CountInversions(List<Image> puzzle)
+        public bool CountInversions(List<Image> puzzle)
         {
             int inversions = 0;
             int length = puzzle.Count;
+            int emptyBox = 1;
 
             // Tính số đảo
             for (int i = 0; i < length - 1; i++)
             {
                 for (int j = i + 1; j < length; j++)
                 {
-                    if (int.Parse(puzzle[i].Tag.ToString()) > int.Parse(puzzle[j].Tag.ToString()) && puzzle[i].Tag.ToString() != "0" && puzzle[j].Tag.ToString() != "0")
+                    if (int.Parse(puzzle[i].Tag.ToString()) > int.Parse(puzzle[j].Tag.ToString()) 
+                        && puzzle[i].Tag.ToString() != "0" && puzzle[j].Tag.ToString() != "0")
                     {
                         inversions++;
                     }
                 }
             }
+            for (int i = 0; i < length - 1; i++)
+            {
+                if (puzzle[i].Tag.ToString() == "0")
+                  {
+                    emptyBox = i;
+                    break;
+                   }
+
+            }
+
+            //nếu n chẳn thì tổng inversion và dòng của emptyBox phải lẻ
+            if (n2 % 2 == 0)
+            {           
+                double result = Math.Floor((emptyBox * 1.0)/(n2*1.0 ) );
+                return (result + inversions) % 2 != 0;
+            }
+            //nếu n lẻ thì inversion phải chẳn
             return inversions % 2 == 0;
         }
 
@@ -293,13 +314,14 @@ namespace _15_Puzzle_Game
                 shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
             imageList = shuffleimages;
 
+            
             steps = 0;
             ChangeMoveText(steps.ToString());
 
-            double x = 0; 
-            double y = 0; 
-            double width = imageList[0].Width; 
-            double height = imageList[0].Height; 
+            double x = 0;
+            double y = 0;
+            double width = imageList[0].Width;
+            double height = imageList[0].Height;
 
             PuzzleCanvas.Children.Clear();
 
@@ -309,10 +331,10 @@ namespace _15_Puzzle_Game
             {
                 var img = imageList[i];
 
-                if (i % n2 == 0 && i != 0) 
+                if (i % n2 == 0 && i != 0)
                 {
-                    y = y + height + paddingBetween;  
-                    x = 0; 
+                    y = y + height + paddingBetween;
+                    x = 0;
                 }
 
                 Canvas.SetLeft(img, x);
@@ -320,7 +342,7 @@ namespace _15_Puzzle_Game
 
                 PuzzleCanvas.Children.Add(img);
 
-                x = x + width + paddingBetween; 
+                x = x + width + paddingBetween;
 
                 win_position += (i);
 
@@ -376,7 +398,7 @@ namespace _15_Puzzle_Game
         public void CheckGame()
         {
             current_position = "";
-            current_position = string.Join("", locations);
+            current_position = string.Join(" ", locations);
 
             // Kiểm tra nếu vị trí hiện tại khớp với vị trí chiến thắng
             Console.WriteLine(win_position);
@@ -393,7 +415,7 @@ namespace _15_Puzzle_Game
                     var user = DataProvider.Instance.DB.Users.FirstOrDefault(p => p.username == CurrentUser.Instance.CurrentUserName);
                     var level = DataProvider.Instance.DB.Levels.FirstOrDefault(p => p.level_name == CurrentUser.Instance.CurrentLevelName);
                     var puzzle = DataProvider.Instance.DB.Puzzles.FirstOrDefault(p => p.image_path == CurrentUser.Instance.CurrentImagePath);
-                    
+
                     if (DataProvider.Instance.DB.LeaderBoards.Count() > 0)
                     {
                         var existingLeaderBoard = DataProvider.Instance.DB.LeaderBoards
@@ -459,7 +481,7 @@ namespace _15_Puzzle_Game
                     if (DataProvider.Instance.DB.UserImageRecords.Count() > 0)
                     {
                         var existingImageRecord = DataProvider.Instance.DB.UserImageRecords
-                        .FirstOrDefault(p => p.user_image_id==CurrentUser.Instance.UserImageID && p.level_id==CurrentUser.Instance.LevelID);
+                        .FirstOrDefault(p => p.user_image_id == CurrentUser.Instance.UserImageID && p.level_id == CurrentUser.Instance.LevelID);
 
 
 
@@ -475,7 +497,7 @@ namespace _15_Puzzle_Game
                                 mainViewModel.BestTime = TimeSpan.FromSeconds(newTimeTaken).ToString(@"mm\:ss");
                             }
                             mainViewModel.BestMove = existingImageRecord.move;
-                            mainViewModel.BestTime= TimeSpan.FromSeconds(existingImageRecord.time_taken).ToString(@"mm\:ss");
+                            mainViewModel.BestTime = TimeSpan.FromSeconds(existingImageRecord.time_taken).ToString(@"mm\:ss");
                         }
                         else
                         {
@@ -516,7 +538,7 @@ namespace _15_Puzzle_Game
                 mainViewModel.Move = steps;
 
                 var parentFrame = FindParentFrame(this);
-              
+
                 if (CurrentUser.Instance.CurrentLevelName == "Option")
                 {
                     var gamePlayPage = FindOpntionalGamePlayPage(this);
@@ -548,8 +570,8 @@ namespace _15_Puzzle_Game
             {
                 From = clickedImagePosition.X,
                 To = emptyBoxPosition.X,
-                Duration = TimeSpan.FromSeconds(0.1), 
-                EasingFunction = new QuadraticEase() 
+                Duration = TimeSpan.FromSeconds(0.1),
+                EasingFunction = new QuadraticEase()
             };
 
             DoubleAnimation animateTop1 = new DoubleAnimation
@@ -586,6 +608,7 @@ namespace _15_Puzzle_Game
 
             Storyboard.SetTarget(animateTop2, emptyBox);
             Storyboard.SetTargetProperty(animateTop2, new PropertyPath(Canvas.TopProperty));
+
             storyboard.Children.Add(animateLeft1);
             storyboard.Children.Add(animateTop1);
         }
@@ -621,7 +644,7 @@ namespace _15_Puzzle_Game
             }
 
         }
-        
+
         //Hàm thực hiện nhấn phím
         private void Grid_KeyDown(object sender, KeyEventArgs e)
         {
@@ -629,7 +652,7 @@ namespace _15_Puzzle_Game
             Image targetImage = null;
             Point emptyBoxPosition = new Point(Canvas.GetLeft(emptyBox), Canvas.GetTop(emptyBox));
 
-            double n = Math.Sqrt(imageList.Count); 
+            double n = Math.Sqrt(imageList.Count);
             double tileWidth = emptyBox.Width + paddingBetween;
 
             switch (e.Key)
