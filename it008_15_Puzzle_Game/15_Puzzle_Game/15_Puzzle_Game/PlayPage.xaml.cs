@@ -41,8 +41,6 @@ namespace _15_Puzzle_Game
             OnMoveTextChanged?.Invoke(this, newText);
         }
 
-
-      
         public PlayPage(string n, string path)
         {
             InitializeComponent();
