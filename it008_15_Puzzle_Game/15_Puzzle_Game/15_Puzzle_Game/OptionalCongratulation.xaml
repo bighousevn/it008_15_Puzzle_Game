@@ -151,9 +151,8 @@
                                    Text="{Binding BestTime}"
                                    FontFamily="{StaticResource mainFont}"
                                    FontSize="50"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
                                    TextAlignment="Left"
+                                   VerticalAlignment="Center"
                                    Foreground="#22b2ef"></TextBlock>
                     </Grid>
 
