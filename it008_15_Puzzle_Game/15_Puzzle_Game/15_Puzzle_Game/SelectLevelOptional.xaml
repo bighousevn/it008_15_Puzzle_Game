@@ -40,8 +40,7 @@
                                FontFamily="{StaticResource mainFont}"/>
                 </Button>
 
-                <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Style="{StaticResource MaterialDesignFloatingActionButton}"
+                <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top" 
                         Margin="10,10,0,0"
@@ -70,7 +69,6 @@
             <Grid Grid.Column="2">
                 <Button Tag="5" 
                         materialDesign:ButtonAssist.CornerRadius="10"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Style="{StaticResource MaterialDesignRaisedButton}"
                         Height="260"
                         Width="380"
@@ -89,7 +87,6 @@
                     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                     materialDesign:ButtonProgressAssist.Value="-1"
                     FontSize="300"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"

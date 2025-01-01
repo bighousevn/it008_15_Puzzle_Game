@@ -2,11 +2,8 @@
 using _15_Puzzle_Game.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -40,8 +37,6 @@ namespace _15_Puzzle_Game
         {
             OnMoveTextChanged?.Invoke(this, newText);
         }
-
-
       
         public PlayPage(string n, string path)
         {
@@ -155,8 +150,6 @@ namespace _15_Puzzle_Game
             }
             return null;
         }
-        //
-
         //
         //Tạo các image nhỏ 3x3,4x4,5x5
         private void CreateImageList()
@@ -288,17 +281,17 @@ namespace _15_Puzzle_Game
             for (int i = 0; i < length - 1; i++)
             {
                 if (puzzle[i].Tag.ToString() == "0")
-                  {
+                {
                     emptyBox = i;
                     break;
-                   }
+                }
 
             }
 
             //nếu n chẳn thì tổng inversion và dòng của emptyBox phải lẻ
             if (n2 % 2 == 0)
             {           
-                double result = Math.Floor((emptyBox * 1.0)/(n2*1.0 ) );
+                double result = Math.Floor((emptyBox * 1.0)/( n2 * 1.0));
                 return (result + inversions) % 2 != 0;
             }
             //nếu n lẻ thì inversion phải chẳn
@@ -309,12 +302,11 @@ namespace _15_Puzzle_Game
         public void PlaceImageList()
         {
             CopyImageList(imageList2, imageList);
-            var shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            while (!CountInversions(shuffleimages))
-                shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
-            imageList = shuffleimages;
+            //var shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            //while (!CountInversions(shuffleimages))
+            //    shuffleimages = imageList.OrderBy(a => Guid.NewGuid()).ToList();
+            //imageList = shuffleimages;
 
-            
             steps = 0;
             ChangeMoveText(steps.ToString());
 
@@ -398,7 +390,7 @@ namespace _15_Puzzle_Game
         public void CheckGame()
         {
             current_position = "";
-            current_position = string.Join(" ", locations);
+            current_position = string.Join("", locations);
 
             // Kiểm tra nếu vị trí hiện tại khớp với vị trí chiến thắng
             Console.WriteLine(win_position);
@@ -560,9 +552,7 @@ namespace _15_Puzzle_Game
                 PlaceImageList();
             }
         }
-
-
-        //
+        
         //Hàm tạo Animation
         private void CreateSwapAnimations(Image clickedImage, Image emptyBox, Point clickedImagePosition, Point emptyBoxPosition, Storyboard storyboard)
         {

@@ -323,7 +323,7 @@ namespace _15_Puzzle_Game
             TemplateMatch[] matches = tm.ProcessImage(image1, image2);
 
             // Kiểm tra nếu có kết quả phù hợp
-            if (matches.Length > 0 && matches[1].Similarity > 0.9f)
+            if (matches.Length > 0 && matches[0].Similarity > 0.9f)
             {
                 return true;
             }
