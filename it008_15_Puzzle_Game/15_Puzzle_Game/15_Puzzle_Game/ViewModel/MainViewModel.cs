@@ -623,7 +623,6 @@ namespace _15_Puzzle_Game.ViewModel
         }
 
 
-
         public MainViewModel()
         {
             Isloaded = false;
@@ -794,6 +793,7 @@ namespace _15_Puzzle_Game.ViewModel
                 PictureName9 = "Zoro";
                 LevelName = "Level: 5x5";
             });
+
             ClearPictureSourceCommand = new RelayCommand<object>((p) => { return true; }, p =>
             {
                 PictureSource = string.Empty;

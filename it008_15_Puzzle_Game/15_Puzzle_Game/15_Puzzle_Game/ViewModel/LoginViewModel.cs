@@ -33,7 +33,6 @@ namespace _15_Puzzle_Game.ViewModel
             set { _VerificationCode = value; OnPropertyChanged(); }
         }
         private string _GeneratedVerificationCode;
-
         private bool _isEnabledRegisterButton = false;
         public bool isEnabledRegisterButton
         {

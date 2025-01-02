@@ -32,12 +32,14 @@
         </Border>
 
         <Image gif:ImageBehavior.AnimatedSource="Picture/Bear.gif"
+               gif:ImageBehavior.AnimateInDesignMode="True"
                Height="150"
                HorizontalAlignment="Left"
                VerticalAlignment="Center"
                Margin="20">
         </Image>
         <Image gif:ImageBehavior.AnimatedSource="Picture/Skeleton.gif"
+               gif:ImageBehavior.AnimateInDesignMode="True"
                Height="150"
                HorizontalAlignment="Right"
                VerticalAlignment="Center"

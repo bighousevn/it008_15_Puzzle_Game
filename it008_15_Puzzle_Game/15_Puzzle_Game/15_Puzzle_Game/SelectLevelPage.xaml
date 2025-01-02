@@ -381,7 +381,6 @@
                     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                     materialDesign:ButtonProgressAssist.Value="-1"
                     FontSize="300"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
