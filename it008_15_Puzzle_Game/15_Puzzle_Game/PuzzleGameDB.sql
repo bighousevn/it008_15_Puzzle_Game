@@ -12,6 +12,11 @@ CREATE TABLE Users (
     email VARCHAR(100) NOT NULL UNIQUE,
     created_at DATETIME DEFAULT GETDATE()
 )
+select *
+from Users
+UPDATE Users
+SET maxlevel = 27
+WHERE user_id = 1;
 
 CREATE TABLE UserImages (
     image_id INT IDENTITY(1,1) PRIMARY KEY,
