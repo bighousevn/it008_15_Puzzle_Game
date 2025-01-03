@@ -895,7 +895,6 @@ namespace _15_Puzzle_Game.ViewModel
             }
         }
         public int getTime() { return  _elapsedTime; }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             _elapsedTime++;

@@ -42,16 +42,13 @@ namespace _15_Puzzle_Game
                     bitmap.StreamSource = stream;
                     bitmap.EndInit();
                     bitmap.Freeze(); 
-                sampleImage.Source = bitmap;
+                    sampleImage.Source = bitmap;
                 }
-
-          
 
             // Xử lý sự kiện khác nếu có
             playPage.OnMoveTextChanged += PlayPage_OnMoveTextChanged;
             this.KeyDown += GamePlayPage_KeyDown;
             playPage.SubscribeToOptionalGamePlayPageEvents(this);
-
         }
 
 

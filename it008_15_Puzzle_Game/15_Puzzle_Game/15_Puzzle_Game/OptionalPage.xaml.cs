@@ -194,8 +194,6 @@ namespace _15_Puzzle_Game
 
             var Image = ImageToByte(newBitmap);
 
-
-            
             foreach(var item in existedImage)
             {
                 var temp = ToImage(item);
@@ -252,7 +250,7 @@ namespace _15_Puzzle_Game
             }
         }
 
-        public static byte[] ImageToByte(BitmapImage img)
+        public byte[] ImageToByte(BitmapImage img)
         {
             using (MemoryStream memoryStream = new MemoryStream())
             {
@@ -299,14 +297,12 @@ namespace _15_Puzzle_Game
             renderTargetBitmap.Render(drawingVisual);
 
             writeableBitmap = new WriteableBitmap(renderTargetBitmap);
-
             MemoryStream memoryStream = new MemoryStream();
             PngBitmapEncoder encoder = new PngBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(writeableBitmap));
             encoder.Save(memoryStream);
 
             memoryStream.Position = 0;
-
             BitmapImage resizedImage = new BitmapImage();
             resizedImage.BeginInit();
             resizedImage.StreamSource = memoryStream;
@@ -332,8 +328,6 @@ namespace _15_Puzzle_Game
 
         private Bitmap BitmapImage2Bitmap(BitmapImage bitmapImage)
         {
-            // BitmapImage bitmapImage = new BitmapImage(new Uri("../Images/test.png", UriKind.Relative));
-
             using (MemoryStream outStream = new MemoryStream())
             {
                 BitmapEncoder enc = new BmpBitmapEncoder();
@@ -341,7 +335,7 @@ namespace _15_Puzzle_Game
                 enc.Save(outStream);
                 Bitmap bitmap = new Bitmap(outStream);
 
-                return ConvertTo24bppRgb(new Bitmap(bitmap)); 
+                return ConvertTo24bppRgb(new Bitmap(bitmap));
             }
         }
 

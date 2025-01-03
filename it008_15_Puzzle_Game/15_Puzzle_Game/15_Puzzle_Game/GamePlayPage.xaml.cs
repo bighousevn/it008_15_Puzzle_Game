@@ -1,14 +1,6 @@
 ﻿using _15_Puzzle_Game.ViewModel;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Management;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -57,7 +49,7 @@ namespace _15_Puzzle_Game
             else
             {
                 // Nếu n != "1", sử dụng Binding
-                sampleImage.SetBinding(System.Windows.Controls.Image.SourceProperty, new Binding("PictureSource") { Source = mainViewModel });
+                sampleImage.SetBinding(Image.SourceProperty, new Binding("PictureSource") { Source = mainViewModel });
             }
 
             // Xử lý sự kiện khác nếu có

@@ -5,20 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0d6f3de5878d4f1682044113241d331b" Name="Diagram1">
-        <EntityTypeShape EntityType="PuzzleGameDBModel.LeaderBoards" Width="1.5" PointX="7.125" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PuzzleGameDBModel.LeaderBoards" Width="1.5" PointX="7.5" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PuzzleGameDBModel.Levels" Width="1.5" PointX="4.5" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PuzzleGameDBModel.Puzzles" Width="1.5" PointX="7.125" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PuzzleGameDBModel.UserImageRecords" Width="1.5" PointX="2.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PuzzleGameDBModel.UserImages" Width="1.5" PointX="2.25" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PuzzleGameDBModel.Users" Width="1.5" PointX="4.5" PointY="0.625" IsExpanded="true" />
-        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__level__5FB337D6" ManuallyRouted="true" >
-          <ConnectorPoint PointX="6" PointY="3.875" />
-          <ConnectorPoint PointX="6" PointY="3.75125" />
-          <ConnectorPoint PointX="6.375" PointY="3.5" />
-          <ConnectorPoint PointX="6.375" PointY="3.3536587417870756" />
-          <ConnectorPoint PointX="6.75" PointY="3.3536587417870756" />
-          <ConnectorPoint PointX="6.75" PointY="3.7494921874999996" />
-          <ConnectorPoint PointX="7.125" PointY="3.3744921874999996" />
+        <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__level__5FB337D6" ManuallyRouted="false" >
         </AssociationConnector>
         <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__puzzl__5EBF139D" ManuallyRouted="false" />
         <AssociationConnector Association="PuzzleGameDBModel.FK__LeaderBoa__user___5DCAEF64" ManuallyRouted="false" />

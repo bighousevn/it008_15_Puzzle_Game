@@ -2,11 +2,8 @@
 using _15_Puzzle_Game.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -114,9 +111,7 @@ namespace _15_Puzzle_Game
             CreateImageList();
             AddImages();
         }
-        //
 
-        //
         //Hàm tìm kiếm page trong navigation
         private GamePlayPage FindGamePlayPage(DependencyObject current)
         {
@@ -272,7 +267,7 @@ namespace _15_Puzzle_Game
         {
             int inversions = 0;
             int length = puzzle.Count;
-            int emptyBox = 1;
+            int emptyBox = 0;
             // Tính số đảo
             for (int i = 0; i < length - 1; i++)
             {
@@ -285,7 +280,7 @@ namespace _15_Puzzle_Game
                     }
                 }
             }
-            for (int i = 0; i < length - 1; i++)
+            for (int i = 0; i < length; i++)
             {
                 if (puzzle[i].Tag.ToString() == (n2 * n2 - 1).ToString())
                 {
@@ -561,8 +556,6 @@ namespace _15_Puzzle_Game
                 PlaceImageList();
             }
         }
-
-
         //
         //Hàm tạo Animation
         private void CreateSwapAnimations(Image clickedImage, Image emptyBox, Point clickedImagePosition, Point emptyBoxPosition, Storyboard storyboard)
@@ -726,8 +719,7 @@ namespace _15_Puzzle_Game
             }
 
         }
-        //
-
+        
         //
         //Thực hiện đăng ký event keyDown trên GamePlayPage và OptionalGamePLayPage
         public void SubscribeToGamePlayPageEvents(GamePlayPage gamePlayPage)

@@ -46,8 +46,8 @@ namespace _15_Puzzle_Game.ViewModel
 
         public AudioControl()
         {
-            BackGroundMusicVolume = 0.5;
-            EffectVolume = 0.5;
+            BackGroundMusicVolume = 0;
+            EffectVolume = 0;
 
             BackgroundMusic = new MediaPlayer();
             BackgroundMusic.Open(new Uri(Path.Combine(Environment.CurrentDirectory, "Music", "BackGroundMusic.mp3")));

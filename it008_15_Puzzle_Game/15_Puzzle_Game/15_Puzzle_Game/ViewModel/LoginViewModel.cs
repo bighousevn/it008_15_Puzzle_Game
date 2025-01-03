@@ -242,6 +242,7 @@ namespace _15_Puzzle_Game.ViewModel
             var emailRegex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             return Regex.IsMatch(email, emailRegex);
         }
+
         static public string sha256(string randomString)
         {
             var crypt = new System.Security.Cryptography.SHA256Managed();
